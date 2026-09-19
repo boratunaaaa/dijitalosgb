@@ -38,8 +38,8 @@ const sektorGorseli = (dosya?: string) =>
 <Layout metadata={metadata}>
   <Hero
     actions={[
-      { variant: 'primary', text: 'Yükümlülüğümü öğren', href: '/teklif-al/' },
-      { text: 'Uzaktan İSG eğitimi', href: '/isg-egitimi/' },
+      { variant: 'primary', text: 'Yükümlülüğümü hesapla', href: '/araclar/isg-yukumluluk-hesaplama/' },
+      { text: 'Teklif al', href: '/teklif-al/' },
     ]}
     image={{
       src: sahaDenetim,
@@ -47,13 +47,14 @@ const sektorGorseli = (dosya?: string) =>
     }}
   >
     <Fragment slot="title">
-      İSG yükümlülüğünüz belli.<br />
-      <span class="decoration-accent underline decoration-4 underline-offset-8">Belirsiz olan, ne kadara kapanacağı.</span>
+      Ne cezayı ödeyin,<br />
+      <span class="decoration-accent underline decoration-4 underline-offset-8">ne gereksiz hizmeti.</span>
     </Fragment>
     <Fragment slot="subtitle">
-      Yükümlülüğünüz tehlike sınıfına ve çalışan sayısına göre değişir; aynı başlıkları
-      sayan tekliflerin arasındaki fark da genelde buradan çıkar.{' '}
-      <strong>Önce hangi yükümlülüğün size düştüğünü netleştiriyoruz.</strong>
+      Çoğu iş yeri ya zorunlu olan bir şeyi atlıyor ya da zorunlu olmayan bir şeye
+      her ay para ödüyor. İkisi de aynı yerden çıkıyor: tehlike sınıfının ve çalışan
+      sayısının ne gerektirdiğini kimse baştan söylemiyor.{' '}
+      <strong>Biz önce onu çıkarıyoruz — iki dakikada, ücretsiz.</strong>
     </Fragment>
 
     {/* Güven şeridi: ilk ekranda cevaplanması gereken üç soru — kim veriyor,
