@@ -13,10 +13,11 @@ export const site = {
   name: "Dijital OSGB",
   tagline: "İş sağlığı ve güvenliğinde dijital çözüm ortağınız",
 
-  // TODO: gerçek değerlerle doldurulacak. Boş kalanlar sayfada gösterilmez.
-  telefon: "",
-  eposta: "",
-  whatsapp: "",
+  // Boş kalanlar sayfada gösterilmez.
+  telefon: "+90 542 523 47 23",      // görünen biçim
+  telefonHref: "+905425234723",      // tel: ve wa.me için ham biçim
+  eposta: "info@dijitalosgb.com",
+  whatsapp: "905425234723",
 
   /**
    * KVKK aydınlatma metninde "veri sorumlusu" olarak gösterilecek tüzel/gerçek
@@ -26,7 +27,7 @@ export const site = {
    */
   // İSG uzmanlığı belge sınıfı (A/B/C) — hangi tehlike sınıfına hizmet
   // verilebileceğini belirler, sayfa hedeflerini bu çizer.
-  uzmanBelgeSinifi: "",
+  uzmanBelgeSinifi: "A",
 
   // Saha OSGB hizmetinin verilebildiği iller. OSGB'ler kurulu oldukları il ve
   // SINIR KOMŞUSU illerde hizmet verebilir; bu liste onun sonucudur.
@@ -52,8 +53,8 @@ export const isOrtagi = {
  * Alanlar doldurulmadan aydınlatma metni "eksik" uyarısı gösterir.
  */
 export const veriSorumlusu = {
-  unvan: "",     // ticari unvan veya ad soyad
-  adres: "",     // tebligata elverişli adres
+  unvan: "Mehmet Kadir Uğur",   // kullanıcı 2026-09-19'da veri sorumlusu olarak kendini bildirdi
+  adres: "",     // TODO: tebligata elverişli adres — kullanıcıdan bekleniyor
   eposta: "kvkk@dijitalosgb.com",
   vkn: "",       // vergi/TC kimlik no (isteğe bağlı gösterim)
 } as const;

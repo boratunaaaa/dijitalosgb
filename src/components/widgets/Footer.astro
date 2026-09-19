@@ -4,6 +4,7 @@ import logoTam from '~/assets/images/logo-tam.png';
 import { Icon } from 'astro-icon/components';
 import { SITE } from 'astrowind:config';
 import { getHomePermalink } from '~/utils/permalinks';
+import { site } from '~/data/site';
 
 interface Link {
   text?: string;
@@ -41,6 +42,33 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
           <a class="inline-block" href={getHomePermalink()} aria-label={SITE?.name}>
             <Image src={logoTam} alt={SITE?.name} width={640} height={203} class="w-full max-w-xs h-auto" />
           </a>
+        </div>
+        {/* İletişim bloğu logo altında: footer'ı tarayan ziyaretçinin
+            numarayı aradığı yer burası. Boş alanlar hiç basılmaz. */}
+        <div class="mb-4 flex flex-col gap-1 text-sm">
+          {site.telefon && (
+            <a class="inline-flex items-center gap-2 font-semibold text-default hover:text-primary" href={`tel:${site.telefonHref}`}>
+              <Icon name="tabler:phone" class="w-4 h-4 shrink-0" />
+              {site.telefon}
+            </a>
+          )}
+          {site.whatsapp && (
+            <a
+              class="inline-flex items-center gap-2 text-muted hover:text-primary"
+              href={`https://wa.me/${site.whatsapp}`}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <Icon name="tabler:brand-whatsapp" class="w-4 h-4 shrink-0" />
+              WhatsApp
+            </a>
+          )}
+          {site.eposta && (
+            <a class="inline-flex items-center gap-2 text-muted hover:text-primary" href={`mailto:${site.eposta}`}>
+              <Icon name="tabler:mail" class="w-4 h-4 shrink-0" />
+              {site.eposta}
+            </a>
+          )}
         </div>
         <div class="text-sm text-muted flex gap-1">
           {
