@@ -1,0 +1,114 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import StructuredData from '~/components/common/StructuredData.astro';
+import { site, isOrtagi, uzman } from '~/data/site';
+import { isOrtagiReferanslari, uzmanReferanslari, referansSayisi } from '~/data/referanslar';
+
+const metadata = {
+  title: 'Referanslar — Hizmet Verilen Kurumlar',
+  description: `İSG uzmanı olarak görev alınan projeler ve saha hizmetini veren yetkili iş ortağımızın hizmet verdiği ${referansSayisi} kurum.`,
+};
+
+const sayfaUrl = `${site.url}/referanslar/`;
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Ana sayfa', item: `${site.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Referanslar', item: sayfaUrl },
+  ],
+};
+---
+
+<Layout metadata={metadata}>
+  <StructuredData slot="head" schema={breadcrumb} />
+
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-10 md:py-14">
+    <nav aria-label="Konum" class="text-sm text-muted mb-6">
+      <a href="/" class="hover:underline">Ana sayfa</a>
+      <span class="mx-1.5">/</span>
+      <span class="text-default">Referanslar</span>
+    </nav>
+
+    <h1 class="text-3xl md:text-4xl font-bold font-heading text-heading tracking-tight mb-4">Referanslar</h1>
+    <p class="text-lg text-muted max-w-3xl mb-12">
+      Aşağıdaki iki liste bilerek ayrı duruyor. İSG eğitimlerini ve uzmanlık
+      hizmetini doğrudan veriyoruz; saha OSGB hizmetini yetkili iş ortağımız
+      veriyor. Hangi işin kimin üzerinden yürüdüğünü listede de görebilmeniz için
+      ayırdık.
+    </p>
+
+    <div class="mb-14">
+      <h2 class="text-2xl font-bold font-heading text-heading mb-2">
+        İSG uzmanı olarak görev alınan kurumlar
+      </h2>
+      <p class="text-muted mb-6">
+        {uzman.unvan}{uzman.belgeSinifi ? ` (${uzman.belgeSinifi} sınıfı)` : ''} olarak
+        görev alınan kurum ve projeler.
+      </p>
+      <ul class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        {
+          uzmanReferanslari.map((ad) => (
+            <li class="rounded-xl ring-1 ring-gray-200 dark:ring-slate-700 bg-white dark:bg-slate-900 px-4 py-5 text-center font-semibold text-heading">
+              {ad}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="text-2xl font-bold font-heading text-heading mb-2">
+        İş ortağımızın hizmet verdiği kurumlar
+      </h2>
+      <p class="text-muted mb-6 max-w-3xl">
+        Saha iş sağlığı ve güvenliği hizmetleri, Çalışma ve Sosyal Güvenlik
+        Bakanlığı'ndan yetkili iş ortağımız <strong>{isOrtagi.ad}</strong> tarafından
+        veriliyor. Aşağıdaki {referansSayisi} kurum onun portföyüdür.
+      </p>
+      <p class="text-sm text-muted mb-4">
+        Renkli olanlar iki listede birden yer alıyor: hem iş ortağımızın portföyünde,
+        hem de doğrudan görev aldığımız kurumlar arasında.
+      </p>
+      <ul class="flex flex-wrap gap-2">
+        {
+          isOrtagiReferanslari.map((ad) => (
+            <li
+              class:list={[
+                'rounded-full px-3.5 py-1.5 text-sm',
+                uzmanReferanslari.includes(ad)
+                  ? 'bg-primary/10 text-primary font-semibold'
+                  : 'bg-gray-100 dark:bg-slate-800 text-default',
+              ]}
+            >
+              {ad}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div class="mt-14 rounded-2xl bg-primary/5 dark:bg-primary/10 ring-1 ring-primary/20 p-6 md:p-8">
+      <h2 class="text-xl font-bold font-heading text-heading mb-2">Sizin işyeriniz hangi listede olurdu?</h2>
+      <p class="text-muted mb-5 max-w-2xl">
+        Tehlike sınıfınızı ve çalışan sayınızı söyleyin; yükümlülüğünüzü çıkarıp
+        yazılı teklifle dönelim.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a
+          href="/teklif-al/"
+          class="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 font-semibold text-white hover:opacity-90 transition"
+        >
+          Teklif al
+        </a>
+        <a
+          href="/araclar/isg-yukumluluk-hesaplama/"
+          class="inline-flex items-center justify-center rounded-full ring-1 ring-gray-300 dark:ring-slate-600 px-6 py-3 font-semibold text-default hover:bg-gray-50 dark:hover:bg-slate-800 transition"
+        >
+          Önce kendim hesaplayayım
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

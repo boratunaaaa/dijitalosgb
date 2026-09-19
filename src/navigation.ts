@@ -4,6 +4,7 @@ import { illerSayfali } from './data/iller';
 import { rehberler } from './data/rehber';
 import { hizmetler } from './data/hizmetler';
 import { sektorler } from './data/sektorler';
+import { referansSayisi } from './data/referanslar';
 
 export const headerData = {
   links: [
@@ -23,19 +24,23 @@ export const headerData = {
       links: sektorler.map((x) => ({ text: x.ad, href: getPermalink(`/sektorler/${x.slug}`) })),
     },
     {
-      text: 'OSGB bölgeleri',
+      text: 'Bölgeler',
       href: getPermalink('/osgb-hizmeti'),
       // Saha hizmeti il sınırlı olduğu için menüde de yalnız hizmet
       // verebildiğimiz ilçeler var.
       links: ilceler.map((i) => ({ text: `${i.ad} OSGB`, href: getPermalink(`/osgb/${i.slug}`) })),
     },
     {
-      text: 'İSG eğitimi',
+      text: 'Eğitim',
       href: getPermalink('/isg-egitimi'),
       links: [
         { text: 'Tüm Türkiye', href: getPermalink('/isg-egitimi') },
         ...illerSayfali.slice(0, 8).map((i) => ({ text: i.ad, href: getPermalink(`/isg-egitimi/${i.slug}`) })),
       ],
+    },
+    {
+      text: 'Referanslar',
+      href: getPermalink('/referanslar'),
     },
     {
       text: 'Araçlar',
@@ -83,6 +88,7 @@ export const footerData = {
       title: 'Kurumsal',
       links: [
         { text: 'Hakkımızda', href: getPermalink('/hakkimizda') },
+        { text: `Referanslar (${referansSayisi}+)`, href: getPermalink('/referanslar') },
         { text: 'Teklif al', href: getPermalink('/teklif-al') },
         { text: 'KVKK Aydınlatma Metni', href: getPermalink('/kvkk') },
         { text: 'Gizlilik Politikası', href: getPermalink('/gizlilik-politikasi') },

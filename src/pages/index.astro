@@ -2,6 +2,7 @@
 import santiyePlanlama from '~/assets/images/santiye-is-guvenligi-planlama.jpg';
 import degerlendirmeToplantisi from '~/assets/images/isyerinde-isg-degerlendirme-toplantisi.jpg';
 import Layout from '~/layouts/PageLayout.astro';
+import { uzmanReferanslari, isOrtagiReferanslari, referansSayisi } from '~/data/referanslar';
 import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Steps from '~/components/widgets/Steps.astro';
@@ -59,6 +60,30 @@ const metadata = {
       </dl>
     </Fragment>
   </Hero>
+
+  {/* Referans şeridi hero'nun hemen altında: ziyaretçinin ilk sorusu
+      "bu iş kimlerle yapılmış" ve cevabı aşağıda aranmamalı. İki küme
+      ayrı etiketle veriliyor; kimin portföyü olduğu gizlenmiyor. */}
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 py-8 border-y border-gray-200 dark:border-slate-700">
+    <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-5">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-muted">Görev alınan kurumlar</h2>
+      <a href="/referanslar/" class="text-sm font-semibold text-primary hover:underline">
+        {referansSayisi}+ referansın tamamı
+      </a>
+    </div>
+    <ul class="flex flex-wrap gap-2">
+      {uzmanReferanslari.map((ad) => (
+        <li class="rounded-full bg-primary/10 text-primary px-3.5 py-1.5 text-sm font-semibold">{ad}</li>
+      ))}
+      {isOrtagiReferanslari.filter((ad) => !uzmanReferanslari.includes(ad)).slice(0, 10).map((ad) => (
+        <li class="rounded-full bg-gray-100 dark:bg-slate-800 px-3.5 py-1.5 text-sm text-default">{ad}</li>
+      ))}
+    </ul>
+    <p class="mt-4 text-xs text-muted">
+      Renkli olanlar İSG uzmanı olarak doğrudan görev alınan kurumlar; diğerleri saha
+      hizmetini veren yetkili iş ortağımızın portföyündendir.
+    </p>
+  </section>
 
   <Stats
     title="Yükümlülüğün üç sayısı"
