@@ -38,6 +38,355 @@ export type BlogYazisi = {
 
 export const yazilar: BlogYazisi[] = [
   {
+    slug: 'isyeri-hekimi-zorunlulugu-2026',
+    baslik: 'İşyeri Hekimi Hangi Durumlarda Zorunludur? (2026 Güncel)',
+    ozet:
+      'Özet: Az tehlikeli sınıfta 50 ve daha fazla çalışanı olan, tehlikeli ve çok tehlikeli sınıfta ise en az 1 çalışanı olan tüm işyerleri işyeri hekimi görevlendirmek zorundadır.',
+    tarih: '2026-09-20',
+    kategori: 'mevzuat',
+    sure: 4,
+    govde: [
+      {
+        tip: 'p',
+        metin:
+          'Kısaca: İşyeri hekimi zorunluluğu, işyerinin tehlike sınıfına ve çalışan sayısına göre belirlenir. 6331 sayılı İSG Kanunu uyarınca tehlikeli ve çok tehlikeli sınıfta 1 kişi bile çalışsa hekim zorunluluğu vardır.',
+      },
+      { tip: 'h2', metin: 'Çalışan Sayısı ve Tehlike Sınıfı Kriterleri' },
+      {
+        tip: 'liste',
+        maddeler: [
+          'Çok Tehlikeli Sınıf: 1 ve üzeri çalışan (Zorunlu)',
+          'Tehlikeli Sınıf: 1 ve üzeri çalışan (Zorunlu)',
+          'Az Tehlikeli Sınıf: Sadece 50 ve üzeri çalışan varsa zorunludur.',
+        ],
+      },
+      { tip: 'h2', metin: 'İşyeri Hekiminin Görevleri Nelerdir?' },
+      {
+        tip: 'p',
+        metin:
+          'İşe giriş muayeneleri, periyodik sağlık taramaları ve meslek hastalıklarının önlenmesi gibi kritik görevleri üstlenirler. Sağlık raporu olmadan işe başlatılan işçinin yaşayacağı herhangi bir sağlık sorununda işveren doğrudan kusurlu sayılır.',
+      },
+      {
+        tip: 'not',
+        metin:
+          'Gerçek Saha Tecrübesi: Sıkça karşılaştığımız bir hata, "biz sadece ofisiz" diyerek hekim bulundurmayan 55 kişilik az tehlikeli firmaların geriye dönük ciddi SGK cezalarıyla karşılaşmasıdır.',
+      },
+    ],
+    baglantilar: [
+      { metin: 'İşyeri Hekimliği Hizmeti', href: '/hizmetler/isyeri-hekimligi/' },
+    ],
+  },
+  {
+    slug: 'santiyelerde-is-guvenligi-yuksekte-calisma',
+    baslik: 'Şantiyelerde İş Güvenliği: Yüksekte Çalışma Kuralları',
+    ozet:
+      'Özet: Yapı İşlerinde İSG Yönetmeliğine göre seviye farkı bulunan ve düşme sonucu yaralanma ihtimali olan her yer "yüksekte çalışma" sayılır ve özel eğitim, yaşam hattı ve emniyet kemeri gerektirir.',
+    tarih: '2026-09-20',
+    kategori: 'sektorel',
+    sure: 5,
+    govde: [
+      {
+        tip: 'p',
+        metin:
+          'Kısaca: Şantiyelerdeki ölümlü iş kazalarının %40\'ından fazlası yüksekten düşme kaynaklıdır. Yüksekte çalışma, sadece iskelede değil; çatı, asansör boşluğu veya şaft kenarlarında çalışmayı da kapsar.',
+      },
+      { tip: 'h2', metin: 'Alınması Gereken Kritik Önlemler' },
+      {
+        tip: 'liste',
+        maddeler: [
+          'Toplu Korunma Önceliklidir: Emniyet kemerinden önce, kenar koruyucu (korkuluk) veya güvenlik ağları kurulmalıdır.',
+          'Yaşam Hatları: Çalışanın emniyet kemerini bağlayacağı yatay veya dikey yaşam hatları standartlara (EN 795) uygun çekilmelidir.',
+          'Yüksekte Çalışma Eğitimi ve Sağlık Raporu: Çalışanların sağlık raporlarında "Yüksekte çalışabilir" ibaresi kesinlikle olmalıdır.',
+        ],
+      },
+      {
+        tip: 'not',
+        metin:
+          'Saha Tecrübesi: Denetimlerde en çok tutanak tutulan konu, işçiye paraşüt tipi emniyet kemeri verilmesine rağmen, kemerin bağlanacağı uygun bir ankraj noktasının (yaşam hattı) bulunmamasıdır.',
+      },
+    ],
+    baglantilar: [
+      { metin: 'İnşaat Sektörü İSG', href: '/hizmetler/sektorler/insaat/' },
+    ],
+  },
+  {
+    slug: 'risk-degerlendirmesi-yapmamanin-cezasi',
+    baslik: 'Risk Değerlendirmesi Yapmamanın Cezası Nedir?',
+    ozet:
+      'Özet: İşyerinde risk değerlendirmesi yapmamanın cezası ilk ay için tespit edildiğinde temel ceza kesilirken, eksikliğin giderilmediği her ay için bu ceza katlanarak artmaya devam eder.',
+    tarih: '2026-09-20',
+    kategori: 'mevzuat',
+    sure: 4,
+    govde: [
+      {
+        tip: 'p',
+        metin:
+          'Kısaca: 6331 sayılı Kanun Madde 10 gereği her işveren risk değerlendirmesi yapmak veya yaptırmakla yükümlüdür. Tehlike sınıfı gözetmeksizin, bakkaldan holdinge kadar her işyeri için zorunludur.',
+      },
+      { tip: 'h2', metin: 'Cezalar Nasıl Hesaplanır?' },
+      {
+        tip: 'p',
+        metin:
+          'Risk değerlendirmesi yapılmadığı tespit edildiğinde, Kanun\'un 26. Maddesi (ç) bendi uyarınca idari para cezası uygulanır. Ancak asıl tehlike, bu eksikliğin devam ettiği her ay için cezanın tekrar ve 1.5 katı oranında kesilmesidir.',
+      },
+      { tip: 'h2', metin: 'İşin Durdurulması Riski' },
+      {
+        tip: 'liste',
+        maddeler: [
+          'Çok tehlikeli (Örn: Maden, inşaat, kimya) sınıfta yer alan işyerlerinde risk değerlendirmesi yapılmamışsa, doğrudan "işin durdurulması" kararı verilebilir.',
+        ],
+      },
+      {
+        tip: 'not',
+        metin:
+          'Uyarı: Sadece ceza ödemekle kalmazsınız; risk analizi olmayan bir işyerinde iş kazası yaşanırsa, işveren SGK rücu davalarında %100 kusurlu sayılma riskiyle karşı karşıya kalır.',
+      },
+    ],
+    baglantilar: [
+      { metin: 'Risk Değerlendirmesi', href: '/hizmetler/risk-degerlendirmesi/' },
+    ],
+  },
+  {
+    slug: 'patlamadan-korunma-dokumani-pkd-nedir',
+    baslik: 'Patlamadan Korunma Dokümanı (PKD) Hangi İşyerleri İçin Gereklidir?',
+    ozet:
+      'Özet: Yanıcı, parlayıcı veya patlayıcı gaz, toz ve sıvıların bulunduğu; örneğin akaryakıt istasyonları, un fabrikaları ve kimya tesisleri gibi işyerlerinde PKD hazırlanması yasal bir zorunluluktur.',
+    tarih: '2026-09-20',
+    kategori: 'mevzuat',
+    sure: 5,
+    govde: [
+      {
+        tip: 'p',
+        metin:
+          'Kısaca: Çalışanların Patlayıcı Ortamların Tehlikelerinden Korunması Hakkında Yönetmelik gereği, işverenler patlama riski olan ortamları sınıflandırmalı ve bir Patlamadan Korunma Dokümanı hazırlamalıdır.',
+      },
+      { tip: 'h2', metin: 'PKD Zorunluluğu Olan Başlıca Sektörler' },
+      {
+        tip: 'liste',
+        maddeler: [
+          'Akaryakıt İstasyonları ve LPG dolum tesisleri.',
+          'Un, yem ve şeker fabrikaları (Toz patlaması riski).',
+          'Ahşap işleme tesisleri (Talaş tozu patlaması riski).',
+          'Kimya, boya ve tiner üretimi / depolaması yapan tesisler.',
+        ],
+      },
+      {
+        tip: 'not',
+        metin:
+          'Saha Tecrübesi: Mobilya atölyelerinde zımpara tozu sebebiyle patlama riskinin çok yüksek olduğu sıkça göz ardı edilir. PKD, sadece kimyasal sıvılar için değil, organik tozlar için de hayati önem taşır.',
+      },
+    ],
+    baglantilar: [
+      { metin: 'Fabrika İSG', href: '/hizmetler/sektorler/fabrika/' },
+    ],
+  },
+  {
+    slug: 'meslek-hastaliklari-isverenin-sorumluluklari',
+    baslik: 'Meslek Hastalıkları ve İşverenin Sorumlulukları',
+    ozet:
+      'Özet: Meslek hastalığı, çalışanın işin niteliğine göre tekrarlanan bir sebeple veya işin yürütüm şartları yüzünden uğradığı geçici veya sürekli hastalık durumudur. İşveren, riskleri kaynağında yok etmekle yükümlüdür.',
+    tarih: '2026-09-20',
+    kategori: 'uygulama',
+    sure: 6,
+    govde: [
+      {
+        tip: 'p',
+        metin:
+          'Kısaca: 5510 sayılı Kanun kapsamında tanımlanan meslek hastalıkları, iş kazalarından farklı olarak yıllar içinde ortaya çıkar. Gürültüye bağlı işitme kaybı veya toz solumaya bağlı silikozis en yaygın örnekleridir.',
+      },
+      { tip: 'h2', metin: 'İşverenin Temel Yükümlülükleri' },
+      {
+        tip: 'liste',
+        maddeler: [
+          'Ortam Ölçümleri: İş Hijyeni ölçümleri (toz, gürültü, aydınlatma vb.) düzenli olarak yaptırılmalıdır.',
+          'Sağlık Gözetimi: İşyeri hekimi tarafından çalışanın periyodik muayenesi eksiksiz yapılmalıdır.',
+          'KKD Temini: Gürültülü ortamda kulaklık, tozlu ortamda uygun maske zimmetlenerek kullandırılmalı ve denetlenmelidir.',
+        ],
+      },
+      {
+        tip: 'not',
+        metin:
+          'Önemli: Meslek hastalığı tanısı konduğunda, işverenin geçmişe dönük sağlık muayenesi ve iş hijyeni ölçüm raporları en büyük yasal kanıttır. Kaydı tutulmayan her önlem, alınmamış sayılır.',
+      },
+    ],
+    baglantilar: [
+      { metin: 'İşyeri Hekimliği', href: '/hizmetler/isyeri-hekimligi/' },
+      { metin: 'İş Hijyeni Ölçümleri', href: '/hizmetler/is-hijyeni-olcumleri/' },
+    ],
+  },
+  {
+    slug: 'periyodik-kontroller-ekipman-listesi',
+    baslik: 'Periyodik Kontroller: Hangi Ekipman Kaç Ayda Bir Kontrol Edilmeli?',
+    ozet:
+      'Özet: İş Ekipmanlarının Kullanımında Sağlık ve Güvenlik Şartları Yönetmeliği uyarınca; kompresörler, kazanlar, vinçler, forkliftler ve asansörler standartlarda aksi belirtilmediği sürece yılda en az 1 kez periyodik kontrole tabi tutulmalıdır.',
+    tarih: '2026-09-20',
+    kategori: 'mevzuat',
+    sure: 5,
+    govde: [
+      {
+        tip: 'p',
+        metin:
+          'Kısaca: İşyerindeki basınçlı kaplar, kaldırma/iletme ekipmanları ve elektrik tesisatları zamanla aşınır veya deforme olur. Bu deformasyonların iş kazasına dönüşmeden tespit edilmesi için periyodik muayeneler zorunludur.',
+      },
+      { tip: 'h2', metin: 'Sık Kullanılan Ekipmanların Kontrol Periyotları' },
+      {
+        tip: 'liste',
+        maddeler: [
+          'Kaldırma ve İletme Makinaları (Vinç, Forklift, Transpalet): Yılda en az 1 kez.',
+          'Basınçlı Kaplar (Kompresör, Kalorifer Kazanı, Otoklav): Yılda en az 1 kez.',
+          'Elektrik Tesisatı ve Topraklama Ölçümü: Yılda en az 1 kez.',
+          'İş Makinaları (Ekskavatör, Loder): Yılda en az 1 kez.',
+        ],
+      },
+      {
+        tip: 'not',
+        metin:
+          'Gerçek Saha Tecrübesi: Bakanlık denetimlerinde sadece raporun varlığına değil, raporu düzenleyen yetkili kişinin EKİPNET (İş Ekipmanları Periyodik Kontrol Uzmanları Kayıt Programı) kayıt numarasının olup olmadığına da bakılır. Geçersiz kişilerden alınan raporlar denetimde yok sayılır.',
+      },
+    ],
+    baglantilar: [
+      { metin: 'Periyodik Kontroller Hizmeti', href: '/hizmetler/periyodik-kontroller/' },
+    ],
+  },
+  {
+    slug: 'is-guvenligi-uzmani-calistirma-yukumlulugu',
+    baslik: 'İş Güvenliği Uzmanı Çalıştırma Yükümlülüğü Ne Zaman Başlar?',
+    ozet:
+      'Özet: 6331 sayılı İSG Kanunu kapsamında, tehlikeli ve çok tehlikeli sınıftaki tüm işyerleri (çalışan sayısına bakılmaksızın) ve 50\'den fazla çalışanı olan az tehlikeli işyerleri İSG uzmanı bulundurmak zorundadır.',
+    tarih: '2026-09-20',
+    kategori: 'mevzuat',
+    sure: 4,
+    govde: [
+      {
+        tip: 'p',
+        metin:
+          'Kısaca: Türkiye\'de iş güvenliği uzmanı bulundurma zorunluluğu tehlike sınıfı bazlıdır. 50\'den az çalışanı olan "az tehlikeli" yerler için kanunun ilgili maddesinin yürürlüğü şimdilik ertelenmiş olsa da, diğer tüm işyerlerinde zorunluluk tam zamanlı olarak aktiftir.',
+      },
+      { tip: 'h2', metin: 'Hangi Sınıf Uzman Hangi İşyerine Bakabilir?' },
+      {
+        tip: 'liste',
+        maddeler: [
+          'A Sınıfı Uzman: Tüm tehlike sınıflarına (Az, Tehlikeli, Çok Tehlikeli) bakabilir.',
+          'B Sınıfı Uzman: Az Tehlikeli ve Tehlikeli sınıflara bakabilir.',
+          'C Sınıfı Uzman: Sadece Az Tehlikeli sınıfa bakabilir.',
+        ],
+      },
+      {
+        tip: 'not',
+        metin:
+          'Uyarı: OSGB aracılığıyla hizmet almanız, İSG Katip sistemi üzerinden resmi atamaların yapıldığı andan itibaren yasal geçerlilik kazanır. Hizmet sözleşmesi imzalamak yeterli değildir, e-devlet (İSG-Katip) onayı şarttır.',
+      },
+    ],
+    baglantilar: [
+      { metin: 'İş Güvenliği Uzmanlığı', href: '/hizmetler/is-guvenligi-uzmanligi/' },
+    ],
+  },
+  {
+    slug: 'isg-kurullari-nasil-kurulur',
+    baslik: 'İş Sağlığı ve Güvenliği Kurulları Nasıl Kurulur?',
+    ozet:
+      'Özet: 50 ve daha fazla çalışanın bulunduğu ve 6 aydan fazla süren işlerin yapıldığı işyerlerinde işveren, İş Sağlığı ve Güvenliği Kurulu kurmakla yükümlüdür.',
+    tarih: '2026-09-20',
+    kategori: 'uygulama',
+    sure: 5,
+    govde: [
+      {
+        tip: 'p',
+        metin:
+          'Kısaca: İSG Kurulu, işyerindeki sağlık ve güvenlik risklerini değerlendirmek ve alınacak önlemleri karara bağlamak için düzenli olarak toplanan resmi bir komitedir. Alınan kararlar işveren için bağlayıcıdır.',
+      },
+      { tip: 'h2', metin: 'Kurul Kimlerden Oluşur?' },
+      {
+        tip: 'liste',
+        maddeler: [
+          'İşveren veya işveren vekili (Kurul başkanıdır)',
+          'İş güvenliği uzmanı ve İşyeri hekimi',
+          'İnsan kaynakları / Personel yöneticisi',
+          'Çalışan temsilcisi ve formen / ustabaşı',
+        ],
+      },
+      { tip: 'h2', metin: 'Toplantı Sıklığı' },
+      {
+        tip: 'p',
+        metin:
+          'Çok tehlikeli işyerlerinde ayda 1, tehlikeli işyerlerinde 2 ayda 1, az tehlikeli işyerlerinde 3 ayda 1 toplanması yasal bir zorunluluktur.',
+      },
+    ],
+    baglantilar: [
+      { metin: 'OSGB Hizmetleri', href: '/hizmetler/' },
+    ],
+  },
+  {
+    slug: 'kkd-seciminde-dikkat-edilmesi-gerekenler',
+    baslik: 'Kişisel Koruyucu Donanım (KKD) Seçiminde Dikkat Edilmesi Gerekenler',
+    ozet:
+      'Özet: Kişisel Koruyucu Donanım (KKD), kaynağında önlenemeyen riskler için son çaredir. KKD seçimi mutlaka risk değerlendirmesine göre yapılmalı ve CE işaretine sahip olmalıdır.',
+    tarih: '2026-09-20',
+    kategori: 'uygulama',
+    sure: 5,
+    govde: [
+      {
+        tip: 'p',
+        metin:
+          'Kısaca: Baret, iş ayakkabısı veya maske almak yeterli değildir. Önemli olan, o donanımın çalışma ortamındaki spesifik riske uygun olup olmadığıdır. (Örneğin; elektrikçi ayakkabısında çelik burun yerine kompozit burun olması gibi).',
+      },
+      { tip: 'h2', metin: 'KKD Sürecindeki Yasal Adımlar' },
+      {
+        tip: 'liste',
+        maddeler: [
+          'Doğru Ürün Seçimi: İSG Uzmanı ve İşyeri hekimi tavsiyesi ile standartlara (EN normları) uygun seçim yapılmalıdır.',
+          'Eğitim: İşçiye o donanımın nasıl kullanılacağı ve neden takması gerektiği anlatılmalıdır.',
+          'Zimmet: Teslim edilen her KKD için yazılı ve imzalı "KKD Zimmet Tutanağı" tutulmalıdır.',
+          'Denetim: İşveren, KKD\'nin kullanımını sahada aktif olarak denetlemelidir.',
+        ],
+      },
+      {
+        tip: 'not',
+        metin:
+          'Saha Tecrübesi: Bir iş kazası davasında işveren işçiye KKD verdiğini sadece zimmet tutanağı ile kanıtlayabilir. Fatura kanıt sayılmaz, çünkü o ürünün o işçiye teslim edildiğini ispatlamaz.',
+      },
+    ],
+    baglantilar: [
+      { metin: 'Fabrika İSG Hizmetleri', href: '/hizmetler/sektorler/fabrika/' },
+    ],
+  },
+  {
+    slug: 'osgb-firmasi-secerken-dikkat-edilmesi-gereken-5-madde',
+    baslik: 'OSGB Firması Seçerken Dikkat Edilmesi Gereken 5 Kritik Madde',
+    ozet:
+      'Özet: İşyeriniz için Ortak Sağlık ve Güvenlik Birimi (OSGB) seçerken sadece fiyata değil; firmanın referanslarına, uzman kadrosuna, dijital altyapısına ve bakanlık yetki belgelerine dikkat etmelisiniz.',
+    tarih: '2026-09-20',
+    kategori: 'sektorel',
+    sure: 6,
+    govde: [
+      {
+        tip: 'p',
+        metin:
+          'Kısaca: OSGB hizmeti, yasal sorumluluğunuzu bir süreliğine devrettiğiniz stratejik bir iş ortaklığıdır. Yanlış bir hizmet, iş kazalarında işvereni doğrudan hukuki risk altında bırakır.',
+      },
+      { tip: 'h2', metin: 'Dikkat Edilecek Hususlar' },
+      {
+        tip: 'liste',
+        maddeler: [
+          'ÇSGB Yetki Belgesi: Hizmet alınacak OSGB\'nin Bakanlık onaylı yetki belgesinin geçerliliği mutlaka sorgulanmalıdır.',
+          'Sektör Tecrübesi: Sizin tehlike sınıfınızda ve sektörünüzde daha önce çalışmış, o spesifik riskleri bilen uzman kadrosu önemlidir.',
+          'Dijital Altyapı ve Arşivleme: Eğitim tutanakları, risk analizleri ve defter nüshalarının dijital ortamda şeffafça paylaşılması ve yedeklenmesi.',
+          'Denetim Yeteneği: Görevlendirilen uzman ve hekimin, işverene gerçekçi ve uygulanabilir raporlar sunabilme kabiliyeti.',
+          'Sürekli İletişim: Sadece evrak imzalamak için değil, sahayı iyileştirmek için düzenli ziyaret eden bir ekip.',
+        ],
+      },
+      {
+        tip: 'not',
+        metin:
+          'Gerçek Saha Tecrübesi: Birçok işletme, ucuz hizmet almak uğruna ayda 1 saat bile sahaya gelmeyen ekiplerle anlaşmaktadır. Olası bir kazada eksik evrakların cezası, OSGB faturasının onlarca katı olmaktadır. Dijital OSGB olarak en büyük vaadimiz, şeffaf ve denetlenebilir bir İSG kültürü yaratmaktır.',
+      },
+    ],
+    baglantilar: [
+      { metin: 'Referanslarımız', href: '/referanslar/' },
+      { metin: 'Tüm Hizmetlerimiz', href: '/hizmetler/' },
+    ],
+  },
+  {
     slug: 'acil-durum-eylem-plani-nasil-hazirlanir-isveren-rehberi',
     baslik: 'Acil Durum Eylem Planı Nasıl Hazırlanır? İşverenler İçin 5 Adım',
     ozet:
