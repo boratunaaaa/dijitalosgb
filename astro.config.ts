@@ -43,7 +43,11 @@ export default defineConfig({
       cssVariable: '--font-inter',
       weights: ['100 900'],
       styles: ['normal'],
-      subsets: ['latin'],
+      // 'latin-ext' ŞART: Türkçe ğ, ş, ı, İ karakterleri latin altkümesinde
+      // YOK. Yalnız 'latin' ile yüklenince tarayıcı bu harfleri sistem
+      // fontundan alıyor ve kelime ortasında yazı tipi değişiyor
+      // ('yükümlülüǧünüz'). Türkçe bir sitede görünür bir kusur.
+      subsets: ['latin', 'latin-ext'],
       fallbacks: ['sans-serif'],
     },
   ],
