@@ -41,13 +41,6 @@ async function chromeBul() {
 async function levhalariOku() {
   const { readFile } = await import('node:fs/promises');
   const kaynak = await readFile(path.join(kok, 'src/data/levhalar.ts'), 'utf8');
-
-  const renkBlok = kaynak.match(/turRenkleri[^=]*=\s*{([\s\S]*?)\n};/)[1];
-  const renkler = {};
-  for (const m of renkBlok.matchAll(/(\w+):\s*{\s*zemin:\s*'([^']+)',\s*cizim:\s*'([^']+)'/g)) {
-    renkler[m[1]] = { zemin: m[2], cizim: m[3] };
-  }
-
   const dizi = kaynak.slice(kaynak.indexOf('export const levhalar'));
   const levhalar = [];
   for (const blok of dizi.split(/\n  {\n/).slice(1)) {
@@ -55,54 +48,31 @@ async function levhalariOku() {
       const m = blok.match(new RegExp(`${alan}: '((?:[^'\\\\]|\\\\.)*)'`));
       return m ? m[1].replace(/\\'/g, "'") : '';
     };
-    const ikon = blok.match(/ikon: `([\s\S]*?)`,/);
     if (!al('slug')) continue;
-    levhalar.push({
-      slug: al('slug'),
-      baslik: al('baslik'),
-      metin: al('metin'),
-      tur: al('tur'),
-      ikon: ikon ? ikon[1] : '',
-    });
+    levhalar.push({ slug: al('slug'), baslik: al('baslik'), metin: al('metin'), tur: al('tur'), iso: al('iso') });
   }
-  return { levhalar, renkler };
+  return levhalar;
 }
 
-/** Levhanın işaret gövdesi — türüne göre şekil, renk ve piktogram yerleşimi. */
-function isaretSvg(levha, renk) {
-  const { zemin, cizim } = renk;
-  const ikon = `<g fill="${cizim}" stroke="${cizim}" style="--zemin:${zemin};color:${cizim}" transform="translate(50 50) scale(0.62) translate(-50 -50)">${levha.ikon}</g>`;
-
-  if (levha.tur === 'yasak') {
-    return `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="50" cy="50" r="48" fill="#C8102E"/>
-      <circle cx="50" cy="50" r="38" fill="#ffffff"/>
-      ${ikon}
-      <rect x="44" y="-2" width="12" height="104" fill="#C8102E" transform="rotate(45 50 50)"/>
-    </svg>`;
-  }
-  if (levha.tur === 'uyari') {
-    return `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <path d="M50 2 98 92H2Z" fill="#1a1a1a"/>
-      <path d="M50 16 86 84H14Z" fill="${zemin}"/>
-      <g transform="translate(0 12)">${ikon}</g>
-    </svg>`;
-  }
-  if (levha.tur === 'emredici') {
-    return `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="50" cy="50" r="48" fill="${zemin}"/>
-      ${ikon}
-    </svg>`;
-  }
-  // acil ve yangin: dolu dikdörtgen
-  return `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <rect x="2" y="12" width="96" height="76" rx="4" fill="${zemin}"/>
-    ${ikon}
-  </svg>`;
+/** ISO 7010 işaretini dosyadan okuyup sayfaya gömülebilir hâle getirir. */
+async function isaretOku(iso) {
+  const { readFile } = await import('node:fs/promises');
+  const ham = await readFile(path.join(kok, 'src/assets/isaretler', `${iso}.svg`), 'utf8');
+  const onek = `s${iso}`;
+  const acilis = ham.slice(0, ham.indexOf('>') + 1);
+  const g = (ad) => acilis.match(new RegExp(`${ad}="([\\d.]+)`))?.[1];
+  const en = g('width') ?? '100';
+  const boy = g('height') ?? '100';
+  const yeniAcilis = acilis
+    .replace(/\s(width|height)="[^"]*"/g, '')
+    .replace('<svg', `<svg viewBox="0 0 ${en} ${boy}" width="100%" height="100%" preserveAspectRatio="xMidYMid meet"`);
+  return (yeniAcilis + ham.slice(acilis.length))
+    .replace(/id="([^"]+)"/g, (_, d) => `id="${onek}-${d}"`)
+    .replace(/url\(#([^)]+)\)/g, (_, d) => `url(#${onek}-${d})`)
+    .replace(/(xlink:href|href)="#([^"]+)"/g, (_, a, d) => `${a}="#${onek}-${d}"`);
 }
 
-function sayfaHtml(levha, renkler) {
-  const renk = renkler[levha.tur];
+function sayfaHtml(levha, isaret) {
   return `<!doctype html><html lang="tr"><head><meta charset="utf-8">
 <style>
   @page { size: A4 portrait; margin: 0; }
@@ -132,7 +102,7 @@ function sayfaHtml(levha, renkler) {
   footer strong { color: #333; font-weight: 600; }
 </style></head><body>
   <main>
-    <div class="isaret">${isaretSvg(levha, renk)}</div>
+    <div class="isaret">${isaret}</div>
     <h1>${levha.metin}</h1>
   </main>
   <footer>
@@ -143,7 +113,7 @@ function sayfaHtml(levha, renkler) {
 }
 
 const chrome = await chromeBul();
-const { levhalar, renkler } = await levhalariOku();
+const levhalar = await levhalariOku();
 const cikti = path.join(kok, 'public/levhalar');
 const gecici = path.join(kok, '.levha-tmp');
 await mkdir(cikti, { recursive: true });
@@ -151,7 +121,7 @@ await mkdir(gecici, { recursive: true });
 
 for (const levha of levhalar) {
   const html = path.join(gecici, `${levha.slug}.html`);
-  await writeFile(html, sayfaHtml(levha, renkler), 'utf8');
+  await writeFile(html, sayfaHtml(levha, await isaretOku(levha.iso)), 'utf8');
   await run(chrome, [
     '--headless',
     '--disable-gpu',

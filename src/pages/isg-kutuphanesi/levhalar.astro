@@ -2,7 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 import StructuredData from '~/components/common/StructuredData.astro';
 import { site } from '~/data/site';
-import { levhalar, levhaSayisi, turAdlari, turAciklamalari, turRenkleri, type LevhaTuru } from '~/data/levhalar';
+import { levhalar, levhaSayisi, turAdlari, turAciklamalari, type LevhaTuru } from '~/data/levhalar';
 
 const metadata = {
   title: 'Ücretsiz İSG Levhaları — A4 PDF İndir',
@@ -32,20 +32,37 @@ const schema = [
   },
 ];
 
-/** Levhanın işaret gövdesi — PDF üreticisiyle aynı düzen. */
-function isaretSvg(levha: (typeof levhalar)[number]) {
-  const { zemin, cizim } = turRenkleri[levha.tur];
-  const ikon = `<g fill="${cizim}" stroke="${cizim}" style="--zemin:${zemin};color:${cizim}" transform="translate(50 50) scale(0.62) translate(-50 -50)">${levha.ikon}</g>`;
-  if (levha.tur === 'yasak') {
-    return `<circle cx="50" cy="50" r="48" fill="#C8102E"/><circle cx="50" cy="50" r="38" fill="#ffffff"/>${ikon}<rect x="44" y="-2" width="12" height="104" fill="#C8102E" transform="rotate(45 50 50)"/>`;
-  }
-  if (levha.tur === 'uyari') {
-    return `<path d="M50 2 98 92H2Z" fill="#1a1a1a"/><path d="M50 16 86 84H14Z" fill="${zemin}"/><g transform="translate(0 12)">${ikon}</g>`;
-  }
-  if (levha.tur === 'emredici') {
-    return `<circle cx="50" cy="50" r="48" fill="${zemin}"/>${ikon}`;
-  }
-  return `<rect x="2" y="12" width="96" height="76" rx="4" fill="${zemin}"/>${ikon}`;
+// ISO 7010 işaretleri derleme sırasında ham metin olarak okunuyor; her levha
+// kartında aynı dosya gösteriliyor, PDF de aynı kaynaktan üretiliyor.
+const isaretDosyalari = import.meta.glob<string>('~/assets/isaretler/*.svg', {
+  eager: true,
+  query: '?raw',
+  import: 'default',
+});
+
+/**
+ * ISO dosyasını sayfaya gömülebilir hâle getirir.
+ * Dosyalarda viewBox yok; sabit width/height var ve sırası dosyadan dosyaya
+ * değişiyor. Değerleri ayrı ayrı okuyup viewBox'a çeviriyor, ölçüyü CSS'e
+ * bırakmak için attribute'ları siliyoruz. Ayrıca id'ler ön eklenerek aynı
+ * sayfadaki başka bir işaretin tanımlarıyla çakışması önleniyor.
+ */
+function isaret(iso: string) {
+  const ham = isaretDosyalari[`/src/assets/isaretler/${iso}.svg`];
+  if (!ham) return '';
+  const onek = `s${iso}`;
+  const acilis = ham.slice(0, ham.indexOf('>') + 1);
+  const g = (ad: string) => acilis.match(new RegExp(`${ad}="([\\d.]+)`))?.[1];
+  const en = g('width') ?? '100';
+  const boy = g('height') ?? '100';
+  const yeniAcilis = acilis.replace(/\s(width|height)="[^"]*"/g, '') + '';
+  return (
+    yeniAcilis.replace('<svg', `<svg viewBox="0 0 ${en} ${boy}" width="100%" height="100%" preserveAspectRatio="xMidYMid meet"`) +
+    ham.slice(acilis.length)
+  )
+    .replace(/id="([^"]+)"/g, (_m, d) => `id="${onek}-${d}"`)
+    .replace(/url\(#([^)]+)\)/g, (_m, d) => `url(#${onek}-${d})`)
+    .replace(/(xlink:href|href)="#([^"]+)"/g, (_m, a, d) => `${a}="#${onek}-${d}"`);
 }
 ---
 
@@ -69,10 +86,10 @@ function isaretSvg(levha: (typeof levhalar)[number]) {
       kayıt açmanıza, e-posta bırakmanıza gerek yok.
     </p>
     <p class="text-muted max-w-3xl mb-10">
-      Şekil ve renkler Sağlık ve Güvenlik İşaretleri Yönetmeliği'nin düzenine göre:
-      yasağı kırmızı daire, tehlikeyi sarı üçgen, zorunluluğu mavi daire,
-      kaçış ve ilk yardımı yeşil, yangın ekipmanını kırmızı dikdörtgen anlatır.
-      Renk ve şekli doğru seçmek, üzerindeki yazıdan daha önemli: uzaktan okunan şey renktir.
+      İşaretler ISO 7010 standardının kendi sembolleri — Sağlık ve Güvenlik
+      İşaretleri Yönetmeliği'nin tarif ettiği düzen de buna dayanıyor, yani
+      sahada herkesin tanıdığı şekiller. Renk ve şekli doğru seçmek üzerindeki
+      yazıdan önemli: uzaktan okunan şey renktir.
     </p>
 
     {
@@ -85,12 +102,11 @@ function isaretSvg(levha: (typeof levhalar)[number]) {
             <ul class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {grup.map((l) => (
                 <li class="rounded-2xl ring-1 ring-gray-200 dark:ring-slate-700 bg-white dark:bg-slate-900 p-5 flex flex-col">
-                  <svg
-                    viewBox="0 0 100 100"
+                  <div
                     role="img"
                     aria-label={l.baslik}
-                    class="w-full max-w-[140px] mx-auto mb-4"
-                    set:html={isaretSvg(l)}
+                    class="w-full max-w-[140px] aspect-square mx-auto mb-4 overflow-hidden [&>svg]:w-full [&>svg]:h-full"
+                    set:html={isaret(l.iso)}
                   />
                   <h3 class="font-semibold text-heading leading-snug mb-1">{l.baslik}</h3>
                   <p class="text-xs text-muted flex-1 mb-4">{l.nerede}</p>
