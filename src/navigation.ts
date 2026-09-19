@@ -43,6 +43,10 @@ export const headerData = {
       href: getPermalink('/referanslar'),
     },
     {
+      text: 'SSS',
+      href: getPermalink('/sss'),
+    },
+    {
       text: 'Araçlar',
       href: getPermalink('/araclar'),
       links: [
@@ -81,6 +85,7 @@ export const footerData = {
     {
       title: 'Rehber ve araçlar',
       links: [
+        { text: 'Sıkça sorulan sorular', href: getPermalink('/sss') },
         { text: 'Tehlike sınıfı sorgulama', href: getPermalink('/araclar/tehlike-sinifi-sorgulama') },
         { text: 'İSG yükümlülük hesaplama', href: getPermalink('/araclar/isg-yukumluluk-hesaplama') },
         ...rehberler.map((r) => ({ text: r.soru, href: getPermalink(`/rehber/${r.slug}`) })),
