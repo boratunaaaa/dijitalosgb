@@ -1,9 +1,20 @@
 ---
+import { Image } from 'astro:assets';
 import { SITE } from 'astrowind:config';
+import logo from '~/assets/images/logo.png';
 ---
 
-<span
-  class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
->
-  {SITE?.name}
-</span>
+{/*
+  Header'da tam marka kilidi değil, ÜST BÖLÜMÜ kullanılıyor.
+  Orijinal dosya 3:1 bir afiş: slogan ve üç hizmet satırı da içinde.
+  Header'da ~190px genişlikte o alt yazılar okunmaz lekeye dönüşüyordu.
+  Tam kilit footer gibi geniş alanlarda duruyor (logo-tam.png).
+*/}
+<Image
+  src={logo}
+  alt={SITE?.name}
+  width={760}
+  height={132}
+  loading="eager"
+  class="h-9 w-auto sm:h-10"
+/>
