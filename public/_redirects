@@ -1,0 +1,5 @@
+# /sitemap.xml'e gelen tarayıcı gerçek 301 alsın.
+# Astro'nun `redirects` ayarı statik çıktıda meta-refresh İÇEREN BİR HTML
+# üretiyordu; arama motoru sitemap yerine HTML görüyordu. Cloudflare Pages
+# `_redirects` dosyasını sunucu tarafında işler, gerçek 301 döner.
+/sitemap.xml  /sitemap-index.xml  301

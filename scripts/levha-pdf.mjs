@@ -61,11 +61,16 @@ async function isaretOku(iso) {
   const onek = `s${iso}`;
   const acilis = ham.slice(0, ham.indexOf('>') + 1);
   const g = (ad) => acilis.match(new RegExp(`${ad}="([\\d.]+)`))?.[1];
-  const en = g('width') ?? '100';
-  const boy = g('height') ?? '100';
+  // Kaynak dosyanın KENDİ viewBox'ı varsa ona dokunulmaz. Eskiden viewBox
+  // her zaman width/height'tan yeniden kuruluyordu; width/height taşımayan
+  // (yalnız viewBox'lı) bir SVG geldiğinde koordinat sistemi 100x100'e
+  // düşüyor ve çizim kâğıdın dışında kalıp levha BOŞ basılıyordu.
+  const mevcutVb = acilis.match(/viewBox="[^"]+"/)?.[0];
+  const vb = mevcutVb ?? `viewBox="0 0 ${g('width') ?? '100'} ${g('height') ?? '100'}"`;
   const yeniAcilis = acilis
     .replace(/\s(width|height)="[^"]*"/g, '')
-    .replace('<svg', `<svg viewBox="0 0 ${en} ${boy}" width="100%" height="100%" preserveAspectRatio="xMidYMid meet"`);
+    .replace(/\sviewBox="[^"]*"/g, '')
+    .replace('<svg', `<svg ${vb} width="100%" height="100%" preserveAspectRatio="xMidYMid meet"`);
   return (yeniAcilis + ham.slice(acilis.length))
     .replace(/id="([^"]+)"/g, (_, d) => `id="${onek}-${d}"`)
     .replace(/url\(#([^)]+)\)/g, (_, d) => `url(#${onek}-${d})`)
