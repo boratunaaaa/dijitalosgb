@@ -110,8 +110,8 @@ export const footerData = {
   ],
   socialLinks: [],
   footNote: `
-    Dijital OSGB bir OSGB değildir. Saha iş sağlığı ve güvenliği hizmetleri,
-    Çalışma ve Sosyal Güvenlik Bakanlığı'ndan yetkili iş ortağımız Sahra OSGB
-    tarafından verilir. İSG eğitimleri İSG uzmanı tarafından doğrudan verilir.
+    İş sağlığı ve güvenliğinde ihtiyaç duyduğunuz her başlık tek elden:
+    uzman ve hekim görevlendirmesinden eğitime, ölçümden dokümantasyona.
+    Saha hizmetleri yetkili çözüm ortaklarımızla yürütülür.
   `,
 };

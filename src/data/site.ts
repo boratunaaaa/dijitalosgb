@@ -113,11 +113,16 @@ export const ekip = [
   },
 ] as const;
 
-/** Her sayfanın altbilgisinde görünen yasal not. */
+/**
+ * Organization şemasının açıklaması — Google'ın arama sonucunda
+ * gösterebileceği metin. Burada ne yaptığımız anlatılır; kapsam ve yetki
+ * ayrımının ayrıntısı hakkımızda ve teklif sayfalarında duruyor.
+ */
 export const yasalNot =
-  "Dijital OSGB bir OSGB değildir. Saha iş sağlığı ve güvenliği hizmetleri, " +
-  "Çalışma ve Sosyal Güvenlik Bakanlığı'ndan yetkili iş ortağımız Sahra OSGB " +
-  "tarafından verilir. İSG eğitimleri İSG uzmanı tarafından doğrudan verilir.";
+  "İş sağlığı ve güvenliği hizmetleri: iş güvenliği uzmanı ve işyeri hekimi " +
+  "görevlendirmesi, risk değerlendirmesi, acil durum planı, iş hijyeni " +
+  "ölçümleri, periyodik kontroller, mobil sağlık taraması ve İSG eğitimleri. " +
+  "Saha hizmetleri yetkili çözüm ortaklarıyla yürütülür.";
 
 /** Temel eğitim süreleri — tehlike sınıfına göre, ders saati. */
 export const egitimSureleri = [
