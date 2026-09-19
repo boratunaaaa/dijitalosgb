@@ -87,6 +87,7 @@ export const sektorler: Sektor[] = [
   },
   {
     slug: 'gida-restoran',
+    gorsel: 'sektor-gida-restoran.jpg',
     ad: 'Gıda ve restoran',
     h1: 'Gıda İşletmeleri ve Restoranlarda İş Güvenliği',
     ozet: 'Mutfak riskleri, kayma-düşme, sıcak yüzey ve portör muayenesi.',
@@ -101,6 +102,7 @@ export const sektorler: Sektor[] = [
   },
   {
     slug: 'saglik-kurumlari',
+    gorsel: 'sektor-saglik-kurumlari.jpg',
     ad: 'Sağlık kurumları',
     h1: 'Hastane ve Sağlık Kurumlarında İş Güvenliği',
     ozet: 'Biyolojik etken, kesici-delici yaralanma, radyasyon ve şiddet riski.',
@@ -147,6 +149,7 @@ export const sektorler: Sektor[] = [
   },
   {
     slug: 'kimya-boya',
+    gorsel: 'sektor-kimya-boya.jpg',
     ad: 'Kimya ve boya',
     h1: 'Kimya ve Boya Tesislerinde İş Güvenliği',
     ozet: 'Kimyasal maruziyet, patlayıcı ortam, MSDS yönetimi ve dökülme müdahalesi.',
@@ -162,6 +165,7 @@ export const sektorler: Sektor[] = [
   },
   {
     slug: 'otomotiv-servis',
+    gorsel: 'sektor-otomotiv-servis.jpg',
     ad: 'Otomotiv ve servis',
     h1: 'Oto Servis ve Bakım İşletmelerinde İş Güvenliği',
     ozet: 'Lift ve kriko güvenliği, egzoz gazı, akü asidi, boyahane ve yağ atıkları.',
@@ -177,6 +181,7 @@ export const sektorler: Sektor[] = [
   },
   {
     slug: 'enerji-elektrik',
+    gorsel: 'sektor-enerji-elektrik.jpg',
     ad: 'Enerji ve elektrik',
     h1: 'Enerji ve Elektrik İşlerinde İş Güvenliği',
     ozet: 'Elektrik çarpması, ark parlaması, kilitleme-etiketleme ve yüksekte çalışma.',
@@ -192,6 +197,7 @@ export const sektorler: Sektor[] = [
   },
   {
     slug: 'egitim-kurumlari',
+    gorsel: 'sektor-egitim-kurumlari.jpg',
     ad: 'Okul ve kreş',
     h1: 'Okul, Kreş ve Eğitim Kurumlarında İş Güvenliği',
     ozet: 'Tahliye planı, laboratuvar ve atölye güvenliği, mutfak hijyeni, oyun alanı.',
@@ -207,6 +213,7 @@ export const sektorler: Sektor[] = [
   },
   {
     slug: 'perakende-magaza',
+    gorsel: 'sektor-perakende-magaza.jpg',
     ad: 'Perakende ve mağaza',
     h1: 'Mağaza ve Perakende İşletmelerinde İş Güvenliği',
     ozet: 'Depo rafı, yük taşıma, kasa ergonomisi, müşteri yoğunluğu ve acil çıkış.',
@@ -222,6 +229,7 @@ export const sektorler: Sektor[] = [
   },
   {
     slug: 'otel-konaklama',
+    gorsel: 'sektor-otel-konaklama.jpg',
     ad: 'Otel ve konaklama',
     h1: 'Otel ve Konaklama Tesislerinde İş Güvenliği',
     ozet: 'Mutfak, çamaşırhane, kat hizmetleri, havuz ve yangın tahliyesi.',
@@ -237,6 +245,7 @@ export const sektorler: Sektor[] = [
   },
   {
     slug: 'temizlik-peyzaj',
+    gorsel: 'sektor-temizlik-peyzaj.jpg',
     ad: 'Temizlik ve peyzaj',
     h1: 'Temizlik ve Peyzaj Hizmetlerinde İş Güvenliği',
     ozet: 'Kimyasal maruziyet, yüksekte cam temizliği, kesici bahçe ekipmanları, dağınık saha.',
@@ -252,6 +261,7 @@ export const sektorler: Sektor[] = [
   },
   {
     slug: 'matbaa-ambalaj',
+    gorsel: 'sektor-matbaa-ambalaj.jpg',
     ad: 'Matbaa ve ambalaj',
     h1: 'Matbaa ve Ambalaj Tesislerinde İş Güvenliği',
     ozet: 'Mürekkep ve solvent, silindir yakalaması, gürültü ve kâğıt tozu.',
@@ -267,6 +277,7 @@ export const sektorler: Sektor[] = [
   },
   {
     slug: 'ahsap-mobilya',
+    gorsel: 'sektor-ahsap-mobilya.jpg',
     ad: 'Ahşap ve mobilya',
     h1: 'Ahşap İşleme ve Mobilya Atölyelerinde İş Güvenliği',
     ozet: 'Ahşap tozu, daire testere, tutkal ve vernik, toz patlaması riski.',
@@ -282,6 +293,7 @@ export const sektorler: Sektor[] = [
   },
   {
     slug: 'madencilik',
+    gorsel: 'sektor-madencilik.jpg',
     ad: 'Madencilik ve taş ocağı',
     h1: 'Madencilik ve Taş Ocaklarında İş Güvenliği',
     ozet: 'Göçük, patlatma, toz ve gaz, nakliye ve kurtarma organizasyonu.',
