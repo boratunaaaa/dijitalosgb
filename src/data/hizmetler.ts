@@ -183,4 +183,94 @@ export const hizmetler: Hizmet[] = [
       { soru: 'Bu hizmet OSGB sözleşmesinin yerine geçer mi?', cevap: 'Hayır. İş güvenliği uzmanı ve işyeri hekimi görevlendirmesi ayrı bir yükümlülüktür ve bulunduğunuz ilde yetkili bir OSGB ile yapılır.' },
     ],
   },
+  {
+    slug: 'is-hijyeni-olcumleri',
+    ad: 'İş hijyeni ölçümleri',
+    h1: 'İş Hijyeni Ölçüm, Test ve Analizleri',
+    ozet:
+      'Gürültü, toz, kimyasal maruziyet, titreşim, aydınlatma ve termal konfor ölçümleri; yetkili laboratuvar üzerinden.',
+    kapsam: 'saha',
+    giris:
+      'Risk değerlendirmesinde "gürültü yüksek" demek yetmez; maruziyetin sınır değerin ' +
+      'altında olup olmadığı ölçümle gösterilir. İş hijyeni ölçümleri, işyeri ortamındaki ' +
+      'fiziksel ve kimyasal etkenlerin çalışan üzerindeki maruziyetini sayıyla ortaya koyar ' +
+      've hem risk değerlendirmesinin hem de denetimlerin dayanağı olur.',
+    onemliNot:
+      'İş hijyeni ölçüm, test ve analizleri yalnızca Çalışma ve Sosyal Güvenlik Bakanlığınca ' +
+      'yetkilendirilmiş laboratuvarlarca yapılabilir. Ölçümler yetkili laboratuvar ' +
+      'üzerinden yürütülür; biz ölçüm planını kurar, sonucu risk değerlendirmenize ve ' +
+      'aksiyon planınıza bağlarız.',
+    kapsamMaddeleri: [
+      { baslik: 'Gürültü maruziyeti', aciklama: 'Kişisel maruziyet ve ortam gürültüsü ölçümü; sınır değerle karşılaştırma.' },
+      { baslik: 'Toz ve kimyasal maruziyet', aciklama: 'Solunabilir toz, uçucu organik bileşikler ve işyerine özgü kimyasallar.' },
+      { baslik: 'Titreşim', aciklama: 'El-kol ve bütün vücut titreşimi maruziyeti.' },
+      { baslik: 'Aydınlatma ve termal konfor', aciklama: 'Çalışma alanlarında aydınlatma düzeyi, sıcaklık, nem ve hava akımı.' },
+      { baslik: 'Raporlama ve aksiyon', aciklama: 'Sonuçların risk değerlendirmesine işlenmesi ve gereken önlemlerin planlanması.' },
+    ],
+    sss: [
+      { soru: 'Ölçümleri ne sıklıkla yaptırmalıyım?', cevap: 'Sıklık tek bir sayıyla verilemez; işyerinin tehlike sınıfına, ölçülen etkene ve risk değerlendirmesinin sonucuna göre belirlenir. İşyerinde ortam, süreç veya ekipman değiştiğinde ölçüm yenilenir. İşyerinize özgü ölçüm planını çıkarıp yazılı veriyoruz.' },
+      { soru: 'Ölçümü siz mi yapıyorsunuz?', cevap: 'Ölçümler, mevzuat gereği Bakanlıkça yetkilendirilmiş laboratuvarlarca yapılır. Biz ölçüm ihtiyacını belirler, planı kurar, yetkili laboratuvarla süreci yürütür ve çıkan sonucu İSG dosyanıza işleriz.' },
+      { soru: 'Ölçüm sonucu sınır değeri aşarsa ne olur?', cevap: 'Aşım tespit edilen etken için önlem sıralaması uygulanır: önce kaynakta kontrol, sonra ortamda kontrol, en son kişisel koruyucu donanım. Alınan önlem sonrası ölçüm tekrarlanarak etkisi gösterilir.' },
+    ],
+  },
+  {
+    slug: 'periyodik-kontroller',
+    ad: 'Periyodik kontroller',
+    h1: 'İş Ekipmanlarının Periyodik Kontrolleri',
+    ozet:
+      'Kaldırma araçları, basınçlı kaplar, elektrik tesisatı ve tezgâhların yetkili kişilerce periyodik muayenesi.',
+    kapsam: 'saha',
+    giris:
+      'İş ekipmanları, kullanım sırasında oluşan tehlikelerin zamanında görülebilmesi için ' +
+      'düzenli aralıklarla kontrol edilir. Periyodik kontrol bir formalite değil; kaldırma ' +
+      'aracının halatı, kompresörün emniyet ventili veya topraklama direnci ancak ölçülerek ' +
+      'güvenli sayılabilir. Kontroller yapılmadığında hem kaza riski hem de denetimde ' +
+      'doğrudan tespit doğar.',
+    onemliNot:
+      'Periyodik kontroller, ekipmanın türüne göre mevzuatta tanımlanmış yetkili kişilerce ' +
+      'yapılır ve raporlanır. Kontrol aralıkları ekipmana göre değişir; üretici talimatında ' +
+      'daha kısa bir süre öngörülmüşse o süre esas alınır.',
+    kapsamMaddeleri: [
+      { baslik: 'Kaldırma ve iletme ekipmanları', aciklama: 'Vinç, caraskal, forklift, asansör, platform ve sapanlar.' },
+      { baslik: 'Basınçlı kaplar ve tesisatlar', aciklama: 'Kompresör, hava tankı, kazan, hidrofor ve emniyet donanımları.' },
+      { baslik: 'Elektrik tesisatı ve topraklama', aciklama: 'Topraklama direnci, kaçak akım koruma ve pano ölçümleri.' },
+      { baslik: 'Tezgâh ve makineler', aciklama: 'Koruyucu tertibat, acil stop ve güvenlik donanımı kontrolü.' },
+      { baslik: 'Rapor ve takip takvimi', aciklama: 'Her ekipman için rapor ve bir sonraki kontrol tarihini gösteren takvim.' },
+    ],
+    sss: [
+      { soru: 'Kontrol aralığı ne kadar?', cevap: 'Aralık ekipmana göre değişir ve mevzuatta ekipman türü bazında tanımlanmıştır; üretici daha kısa bir süre öngörmüşse üreticinin süresi uygulanır. İşyerinizdeki ekipman listesini çıkarıp her biri için geçerli aralığı yazılı veriyoruz.' },
+      { soru: 'Kontrolü kim yapabilir?', cevap: 'Ekipmanın türüne göre mevzuatta belirlenmiş yetkili kişilerce yapılır. Kontrolü yapan kişinin yetkisi, düzenlenen raporun geçerliliğinin de şartıdır.' },
+      { soru: 'Raporu kaybedersek ne olur?', cevap: 'Denetimde ibraz edilemeyen rapor, yapılmamış kontrol gibi değerlendirilir. Kontrol raporlarını ekipman bazında dosyalayıp yenileme tarihlerini takvime bağlıyoruz.' },
+    ],
+  },
+  {
+    slug: 'patlamadan-korunma-dokumani',
+    ad: 'Patlamadan korunma dokümanı',
+    h1: 'Patlamadan Korunma Dokümanı (PKD)',
+    ozet:
+      'Patlayıcı ortam oluşabilecek işyerlerinde zorunlu doküman: bölge sınıflandırması, risk değerlendirmesi ve önlem planı.',
+    kapsam: 'ulusal',
+    giris:
+      'Yanıcı gaz, buhar, sis veya yanıcı toz bulutunun oluşabildiği işyerlerinde işveren, ' +
+      'patlama risklerini değerlendirip patlamadan korunma dokümanı hazırlamakla yükümlüdür. ' +
+      'Doküman; hangi bölgelerde patlayıcı ortam oluşabileceğini, bu bölgelerin nasıl ' +
+      'sınıflandırıldığını, alınan önlemleri ve bölgede kullanılacak ekipmanın uygunluğunu ' +
+      'gösterir.',
+    onemliNot:
+      'Patlamadan korunma dokümanı işyerine özgüdür; şablon doldurarak hazırlanamaz. ' +
+      'Bölge sınıflandırması yerinde inceleme, proses bilgisi ve malzeme güvenlik bilgi ' +
+      'formlarının birlikte değerlendirilmesini gerektirir.',
+    kapsamMaddeleri: [
+      { baslik: 'Patlayıcı ortam tespiti', aciklama: 'Yanıcı madde envanteri, proses incelemesi ve ortam koşullarının değerlendirilmesi.' },
+      { baslik: 'Bölge sınıflandırması', aciklama: 'Gaz ve toz için bölgelerin belirlenmesi ve krokilendirilmesi.' },
+      { baslik: 'Patlama riski değerlendirmesi', aciklama: 'Tutuşma kaynakları, olasılık ve sonuçların değerlendirilmesi.' },
+      { baslik: 'Önlem ve ekipman uygunluğu', aciklama: 'Havalandırma, topraklama, statik elektrik önlemleri ve bölgeye uygun ekipman seçimi.' },
+      { baslik: 'Doküman ve güncelleme', aciklama: 'Dokümanın hazırlanması; işyerinde değişiklik olduğunda gözden geçirilmesi.' },
+    ],
+    sss: [
+      { soru: 'Hangi işyerlerinde zorunlu?', cevap: 'Yanıcı gaz, buhar, sis veya yanıcı toz nedeniyle patlayıcı ortam oluşma ihtimali bulunan her işyerinde zorunludur. Boyahane, un ve yem tesisleri, akaryakıt istasyonları, kimyasal depoları ve ahşap işleme atölyeleri sık karşılaşılan örneklerdir.' },
+      { soru: 'Risk değerlendirmesi yaptırdık, yine de gerekli mi?', cevap: 'Evet. Patlamadan korunma dokümanı, genel risk değerlendirmesinden ayrı ve ona ek bir yükümlülüktür; patlayıcı ortam riskini özel olarak ele alır.' },
+      { soru: 'Doküman ne zaman yenilenir?', cevap: 'İşyerinde, iş ekipmanında veya organizasyonda önemli bir değişiklik olduğunda gözden geçirilir ve gerekiyorsa güncellenir.' },
+    ],
+  },
 ];
