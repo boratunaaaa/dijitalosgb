@@ -24,26 +24,11 @@ export const headerData = {
       links: sektorler.map((x) => ({ text: x.ad, href: getPermalink(`/sektorler/${x.slug}`) })),
     },
     {
-      text: 'Bölgeler',
-      href: getPermalink('/osgb-hizmeti'),
-      // Saha hizmeti il sınırlı olduğu için menüde de yalnız hizmet
-      // verebildiğimiz ilçeler var.
-      links: ilceler.map((i) => ({ text: `${i.ad} OSGB`, href: getPermalink(`/osgb/${i.slug}`) })),
-    },
-    {
       text: 'Eğitim',
       href: getPermalink('/isg-egitimi'),
       links: [
         { text: 'İSG eğitimi', href: getPermalink('/isg-egitimi') },
       ],
-    },
-    {
-      text: 'Referanslar',
-      href: getPermalink('/referanslar'),
-    },
-    {
-      text: 'SSS',
-      href: getPermalink('/sss'),
     },
     {
       text: 'Araçlar',
@@ -59,6 +44,8 @@ export const headerData = {
       href: getPermalink('/blog'),
       links: [
         { text: 'Tüm yazılar', href: getPermalink('/blog') },
+        { text: 'Sıkça sorulan sorular', href: getPermalink('/sss') },
+        { text: 'Referanslar', href: getPermalink('/referanslar') },
         ...yazilar.slice(0, 6).map((y) => ({ text: y.baslik, href: getPermalink(`/blog/${y.slug}`) })),
       ],
     },

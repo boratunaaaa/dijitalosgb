@@ -24,15 +24,23 @@
   --font-serif: var(--aw-font-serif, ui-serif), ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
   --font-heading: var(--aw-font-heading, ui-sans-serif), ui-sans-serif, system-ui, sans-serif;
 
-  --animate-fade: fadeInUp 0.5s both;
+  /*
+   * Giriş animasyonu bilerek opacity kullanmıyor.
+   *
+   * Şablonun özgün hâli 0% opacity ile başlıyordu ve `both` dolgu kipiyle
+   * birlikte bu, kaydırma gözlemcisi tetiklenene kadar içeriği görünmez
+   * bırakıyordu: ziyaretçi bir ekran dolusu boş beyaz alan görüyordu.
+   * Sınıflardaki `opacity-0` kaldırıldıktan sonra da sorun sürdü, çünkü
+   * animasyonun kendisi sıfırdan başlıyordu. Artık yalnız hafif bir
+   * yukarı kayma var; içerik her an okunabilir durumda.
+   */
+  --animate-fade: fadeInUp 0.4s both;
 
   @keyframes fadeInUp {
     0% {
-      opacity: 0;
-      transform: translateY(0.75rem);
+      transform: translateY(0.5rem);
     }
     100% {
-      opacity: 1;
       transform: translateY(0);
     }
   }
