@@ -1,0 +1,75 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import StructuredData from '~/components/common/StructuredData.astro';
+import { site } from '~/data/site';
+import { yazilar, kategoriAdlari, yaziSayisi } from '~/data/blog';
+
+const metadata = {
+  title: 'İSG Rehberi — Mevzuat ve Uygulama Yazıları',
+  description: `İş sağlığı ve güvenliği mevzuatı, yükümlülükler ve saha uygulaması üzerine ${yaziSayisi} yazı. Güncel yönetmeliklere dayalı, sade anlatım.`,
+};
+
+const sirali = [...yazilar].sort((a, b) => b.tarih.localeCompare(a.tarih));
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  name: metadata.title,
+  description: metadata.description,
+  url: `${site.url}/blog/`,
+  inLanguage: 'tr-TR',
+  publisher: { '@type': 'Organization', name: site.name, url: site.url },
+  blogPost: sirali.map((y) => ({
+    '@type': 'BlogPosting',
+    headline: y.baslik,
+    description: y.ozet,
+    datePublished: y.tarih,
+    url: `${site.url}/blog/${y.slug}/`,
+  })),
+};
+
+const tarihYaz = (t: string) =>
+  new Date(t).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+
+<Layout metadata={metadata}>
+  <StructuredData slot="head" schema={schema} />
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 py-10 md:py-14">
+    <nav aria-label="Konum" class="text-sm text-muted mb-6">
+      <a href="/" class="hover:underline">Ana sayfa</a>
+      <span class="mx-1.5">/</span>
+      <span class="text-default">Rehber</span>
+    </nav>
+
+    <h1 class="text-3xl md:text-4xl font-bold font-heading text-heading tracking-tight mb-4">İSG rehberi</h1>
+    <p class="text-lg text-muted max-w-3xl mb-10">
+      Mevzuatın ne dediğini ve sahada nasıl karşılık bulduğunu anlatan yazılar.
+      Her yazı bir soruya cevap veriyor ve cevabı ilk paragrafta söylüyor.
+    </p>
+
+    <ul class="grid gap-5 sm:grid-cols-2">
+      {
+        sirali.map((y) => (
+          <li class="rounded-2xl ring-1 ring-gray-200 dark:ring-slate-700 bg-white dark:bg-slate-900 p-6 hover:ring-primary/40 transition flex flex-col">
+            <div class="flex items-center gap-3 mb-3 text-xs">
+              <span class="rounded-full bg-primary/10 text-primary px-2.5 py-0.5 font-semibold">
+                {kategoriAdlari[y.kategori]}
+              </span>
+              <span class="text-muted">{y.sure} dk okuma</span>
+            </div>
+            <h2 class="text-lg font-bold font-heading text-heading mb-2 text-balance">
+              <a href={`/blog/${y.slug}/`} class="hover:underline">
+                {y.baslik}
+              </a>
+            </h2>
+            <p class="text-sm text-muted flex-1">{y.ozet}</p>
+            <time datetime={y.tarih} class="mt-4 text-xs text-muted">
+              {tarihYaz(y.tarih)}
+            </time>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Layout>

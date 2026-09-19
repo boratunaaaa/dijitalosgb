@@ -4,6 +4,7 @@ import { rehberler } from './data/rehber';
 import { hizmetler } from './data/hizmetler';
 import { sektorler } from './data/sektorler';
 import { referansSayisi } from './data/referanslar';
+import { yazilar } from './data/blog';
 
 export const headerData = {
   links: [
@@ -55,8 +56,11 @@ export const headerData = {
     },
     {
       text: 'Rehber',
-      href: getPermalink('/rehber'),
-      links: rehberler.map((r) => ({ text: r.soru, href: getPermalink(`/rehber/${r.slug}`) })),
+      href: getPermalink('/blog'),
+      links: [
+        { text: 'Tüm yazılar', href: getPermalink('/blog') },
+        ...yazilar.slice(0, 6).map((y) => ({ text: y.baslik, href: getPermalink(`/blog/${y.slug}`) })),
+      ],
     },
   ],
   actions: [{ text: 'Teklif al', href: getPermalink('/teklif-al'), variant: 'primary' }],
@@ -83,6 +87,7 @@ export const footerData = {
     {
       title: 'Rehber ve araçlar',
       links: [
+        { text: 'İSG rehberi (blog)', href: getPermalink('/blog') },
         { text: 'Sıkça sorulan sorular', href: getPermalink('/sss') },
         { text: 'Tehlike sınıfı sorgulama', href: getPermalink('/araclar/tehlike-sinifi-sorgulama') },
         { text: 'İSG yükümlülük hesaplama', href: getPermalink('/araclar/isg-yukumluluk-hesaplama') },
