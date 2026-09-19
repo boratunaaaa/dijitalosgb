@@ -1,6 +1,5 @@
 import { getPermalink } from './utils/permalinks';
 import { ilceler } from './data/ilceler';
-import { illerSayfali } from './data/iller';
 import { rehberler } from './data/rehber';
 import { hizmetler } from './data/hizmetler';
 import { sektorler } from './data/sektorler';
@@ -34,8 +33,7 @@ export const headerData = {
       text: 'Eğitim',
       href: getPermalink('/isg-egitimi'),
       links: [
-        { text: 'Tüm Türkiye', href: getPermalink('/isg-egitimi') },
-        ...illerSayfali.slice(0, 8).map((i) => ({ text: i.ad, href: getPermalink(`/isg-egitimi/${i.slug}`) })),
+        { text: 'İSG eğitimi', href: getPermalink('/isg-egitimi') },
       ],
     },
     {

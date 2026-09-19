@@ -1,84 +1,311 @@
 ---
+import type { ImageMetadata } from 'astro';
 import Layout from '~/layouts/PageLayout.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
+import Hero from '~/components/widgets/Hero.astro';
 import Stats from '~/components/widgets/Stats.astro';
-import Features from '~/components/widgets/Features.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import StructuredData from '~/components/common/StructuredData.astro';
+import egitimGorsel from '~/assets/images/isg-egitimi-sinif.jpg';
 import { site, egitimSureleri } from '~/data/site';
-import { illerSayfali, tumIller } from '~/data/iller';
+import { egitimKurallari } from '~/data/mevzuat';
 
 const metadata = {
-  title: 'Uzaktan İSG Eğitimi — Türkiye Geneli',
-  description: "Çalışanların zorunlu temel İSG eğitimi, 81 ilde uzaktan. Az tehlikeli 8, tehlikeli 12, çok tehlikeli 16 ders saati.",
+  title: 'İSG Eğitimi — Türkiye Geneli, Güncel Mevzuata Uygun',
+  description:
+    'Çalışanların zorunlu temel İSG eğitimi, 2 Nisan 2026 tarihli yeni yönetmeliğe göre. Az tehlikeli 8, tehlikeli 12, çok tehlikeli 16 ders saati. Türkiye genelinde uzaktan, yüz yüze veya karma.',
 };
 
-const sss = [
-  { title: 'Uzaktan İSG eğitimi geçerli mi?', description: 'Evet. Yönetmelik uzaktan eğitimi tanıyor. Ek-1’deki ilk üç konu başlığı her işyerinde uzaktan verilebilir; dördüncü başlık tehlikeli ve çok tehlikeli işyerlerinde yüz yüze zorunludur.' },
-  { title: 'Eğitim kaç saat olmak zorunda?', description: 'Tehlike sınıfına göre: az tehlikeli 8, tehlikeli 12, çok tehlikeli 16 ders saati. Bu süreler yönetmelikle sabittir.' },
-  { title: 'Eğitim sonunda hangi belge düzenleniyor?', description: 'Katılım tutanağı ve yönetmeliğin Ek-2’sindeki forma uygun temel eğitim belgesi. Belgeler çalışanın özlük dosyasında saklanır.' },
-  { title: 'Başka şehirdeki çalışanlarıma eğitim verebilir misiniz?', description: 'Evet. Saha OSGB hizmetinde il sınırı vardır, eğitimde yoktur. 81 ildeki çalışanlara uzaktan eğitim verilebilir.' },
-  { title: 'Eğitimi kim veriyor?', description: 'Eğitimler İSG uzmanı tarafından doğrudan verilir. Bu hizmette aracı yoktur.' },
+/**
+ * Eğitim içeriği, yönetmeliğin Ek-1 listesindeki dört başlık üzerine kurulu.
+ * Alt maddeler mevzuattaki konu adlarıyla yazıldı; pazarlama başlığı
+ * uydurulmadı ki işveren kendi dosyasındaki listeyle birebir eşleştirebilsin.
+ */
+const konular = [
+  {
+    no: 1,
+    baslik: 'Genel konular',
+    yontem: 'Uzaktan verilebilir',
+    maddeler: [
+      'Çalışma mevzuatı ile ilgili bilgiler',
+      'Çalışanların yasal hak ve sorumlulukları',
+      'İşyeri temizliği ve düzeni',
+      'İş kazası ve meslek hastalığından doğan hukuki sonuçlar',
+    ],
+  },
+  {
+    no: 2,
+    baslik: 'Sağlık konuları',
+    yontem: 'Uzaktan verilebilir',
+    maddeler: [
+      'Meslek hastalıklarının sebepleri',
+      'Hastalıktan korunma prensipleri ve korunma tekniklerinin uygulanması',
+      'Biyolojik ve psikososyal risk etmenleri',
+      'İlk yardım',
+    ],
+  },
+  {
+    no: 3,
+    baslik: 'Teknik konular',
+    yontem: 'Uzaktan verilebilir',
+    maddeler: [
+      'Kimyasal, fiziksel ve ergonomik risk etmenleri',
+      'Elle kaldırma ve taşıma',
+      'Parlama, patlama, yangın ve yangından korunma',
+      'İş ekipmanlarının güvenli kullanımı',
+      'Ekranlı araçlarla çalışma',
+      'Elektrik tehlikeleri, riskleri ve önlemleri',
+      'İş kazalarının sebepleri ve korunma prensipleri',
+      'Güvenlik ve sağlık işaretleri',
+      'Kişisel koruyucu donanım kullanımı',
+      'İş sağlığı ve güvenliği genel kuralları ve güvenlik kültürü',
+      'Tahliye ve kurtarma',
+    ],
+  },
+  {
+    no: 4,
+    baslik: 'İşe ve işyerine özgü riskler',
+    yontem: 'Tehlikeli ve çok tehlikeli sınıfta yüz yüze',
+    maddeler: [
+      'Yüksekte çalışma',
+      'Kapalı alanda çalışma',
+      'Kaynak işleri ve sıcak çalışma',
+      'Özel risk taşıyan ekipmanla çalışma',
+      'İşyerinin kendi faaliyetinden doğan diğer riskler',
+    ],
+  },
 ];
 
-const structuredData = [{
-  '@context': 'https://schema.org',
-  '@type': 'Course',
-  name: 'Çalışanların Temel İş Sağlığı ve Güvenliği Eğitimi',
-  description: '6331 sayılı Kanun kapsamında zorunlu temel İSG eğitimi.',
-  inLanguage: 'tr',
-  provider: { '@type': 'Organization', name: site.name, url: site.url },
-  hasCourseInstance: egitimSureleri.map((e) => ({
-    '@type': 'CourseInstance',
-    name: `${e.sinif} işyerleri için temel İSG eğitimi`,
-    courseMode: 'online',
-    courseWorkload: `PT${e.saat}H`,
-  })),
-}];
+const sayfaUrl = `${site.url}/isg-egitimi/`;
+
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: 'Çalışanların Temel İş Sağlığı ve Güvenliği Eğitimi',
+    description:
+      '6331 sayılı Kanun kapsamında zorunlu temel İSG eğitimi; 2/4/2026 tarihli ve 33212 sayılı Resmî Gazete’de yayımlanan yönetmeliğe uygun olarak verilir.',
+    inLanguage: 'tr',
+    url: sayfaUrl,
+    provider: { '@type': 'Organization', name: site.name, url: site.url },
+    hasCourseInstance: egitimSureleri.map((e) => ({
+      '@type': 'CourseInstance',
+      name: `${e.sinif} işyerleri için temel İSG eğitimi`,
+      courseMode: e.sinif === 'Az tehlikeli' ? 'online' : 'blended',
+      courseWorkload: `PT${e.saat}H`,
+    })),
+  },
+];
 ---
+
 <Layout metadata={metadata}>
   <StructuredData slot="head" schema={structuredData} />
-  <HeroText
-    tagline="81 ilde geçerli"
-    title="Uzaktan İSG eğitimi"
-    subtitle="Saha OSGB hizmetinde il sınırı vardır; eğitimde yoktur. Çalışanlarınız Türkiye'nin neresinde olursa olsun zorunlu temel eğitimi uzaktan tamamlayabilir."
-    actions={[{ variant: 'primary', text: 'Eğitim teklifi al', href: '/teklif-al/' }]}
-  />
+
+  <Hero
+    tagline="Türkiye geneli"
+    actions={[
+      { variant: 'primary', text: 'Eğitim teklifi al', href: '/teklif-al/' },
+      { text: 'Yükümlülüğümü hesapla', href: '/araclar/isg-yukumluluk-hesaplama/' },
+    ]}
+    image={{ src: egitimGorsel as ImageMetadata, alt: 'İş sağlığı ve güvenliği eğitimi oturumu' }}
+  >
+    <Fragment slot="title">
+      Çalışan eğitimleri, <span class="decoration-accent underline decoration-4 underline-offset-8">güncel yönetmeliğe göre</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      Çalışanların İSG eğitimleri 2 Nisan 2026’da yeniden düzenlendi ve önceki
+      yönetmelik tamamen yürürlükten kaldırıldı. <strong>Eğitimlerimizi ve
+      belgelendirmeyi bu yeni düzenlemeye göre yürütüyoruz.</strong>
+    </Fragment>
+    <Fragment slot="trust">
+      <dl class="mt-9 grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-5 border-t border-gray-200 dark:border-slate-700 pt-6">
+        <div>
+          <dt class="text-xs font-semibold uppercase tracking-wider text-muted">Kapsam</dt>
+          <dd class="mt-1 font-semibold text-heading">81 il</dd>
+        </div>
+        <div>
+          <dt class="text-xs font-semibold uppercase tracking-wider text-muted">Yöntem</dt>
+          <dd class="mt-1 font-semibold text-heading">Uzaktan · yüz yüze · karma</dd>
+        </div>
+        <div>
+          <dt class="text-xs font-semibold uppercase tracking-wider text-muted">Eğitim veren</dt>
+          <dd class="mt-1 font-semibold text-heading">A sınıfı İSG uzmanı</dd>
+        </div>
+      </dl>
+    </Fragment>
+  </Hero>
 
   <Stats
-    title="Temel eğitim süreleri"
-    subtitle="Yönetmelikle sabit; pazarlık konusu değildir."
-    stats={egitimSureleri.map((e) => ({ title: `${e.saat} saat`, amount: e.sinif }))}
+    title="Temel eğitim kaç ders saati?"
+    subtitle="Süreler yönetmelikle sabittir. Bir ders saati 45 dakika eğitim ve 15 dakika aradan oluşur."
+    stats={egitimSureleri.map((e) => ({ amount: `${e.saat}`, title: `${e.sinif} · ders saati` }))}
   />
 
-  <Features
-    title="Neyin uzaktan verilebildiği sınıfa bağlı"
-    columns={3}
-    items={egitimSureleri.map((e) => ({
-      title: e.sinif,
-      description: `${e.saat} ders saati. ${e.uzaktan}.`,
-      icon: 'tabler:device-laptop',
-    }))}
-  />
+  <!-- Yeni yönetmeliğin getirdikleri: işverenin en çok gözden kaçırdığı kısım -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-10 md:py-14">
+    <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-3">
+      2026 düzenlemesiyle ne değişti?
+    </h2>
+    <p class="text-muted max-w-3xl mb-8">
+      Eğitim süreleri aynı kaldı, ama eğitimin nasıl planlanacağı ve
+      belgeleneceği değişti. Elinizdeki eski kayıtlar bu başlıklarda eksik
+      kalıyor olabilir.
+    </p>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="rounded-2xl ring-1 ring-gray-200 dark:ring-slate-700 bg-white dark:bg-slate-900 p-5">
+        <div class="text-sm font-semibold uppercase tracking-wider text-muted">İşe başlama eğitimi</div>
+        <div class="mt-1.5 text-2xl font-bold text-heading">en az {egitimKurallari.iseBaslamaEgitimiSaat} saat</div>
+        <p class="mt-1.5 text-sm text-muted">
+          Ayrı bir eğitimdir ve temel eğitim süresinden sayılmaz. Çalışan işe
+          başlarken verilir.
+        </p>
+      </div>
+      <div class="rounded-2xl ring-1 ring-gray-200 dark:ring-slate-700 bg-white dark:bg-slate-900 p-5">
+        <div class="text-sm font-semibold uppercase tracking-wider text-muted">Temel eğitim süresi</div>
+        <div class="mt-1.5 text-2xl font-bold text-heading">{egitimKurallari.temelEgitimAyLimiti} ay içinde</div>
+        <p class="mt-1.5 text-sm text-muted">
+          Temel eğitim, işe girişten itibaren en geç üç ay içinde tamamlanır.
+        </p>
+      </div>
+      <div class="rounded-2xl ring-1 ring-gray-200 dark:ring-slate-700 bg-white dark:bg-slate-900 p-5">
+        <div class="text-sm font-semibold uppercase tracking-wider text-muted">Ders saati tanımı</div>
+        <div class="mt-1.5 text-2xl font-bold text-heading">45 + 15 dakika</div>
+        <p class="mt-1.5 text-sm text-muted">
+          İlk kez resmî tanım geldi: 45 dakika eğitim, ardından 15 dakika ara.
+        </p>
+      </div>
+      <div class="rounded-2xl ring-1 ring-gray-200 dark:ring-slate-700 bg-white dark:bg-slate-900 p-5">
+        <div class="text-sm font-semibold uppercase tracking-wider text-muted">İşe özgü riskler</div>
+        <div class="mt-1.5 text-2xl font-bold text-heading">2 · 3 · 4 saat</div>
+        <p class="mt-1.5 text-sm text-muted">
+          Dördüncü başlık için asgari süre belirlendi: az tehlikelide 2,
+          tehlikelide 3, çok tehlikelide 4 ders saati.
+        </p>
+      </div>
+      <div class="rounded-2xl ring-1 ring-gray-200 dark:ring-slate-700 bg-white dark:bg-slate-900 p-5">
+        <div class="text-sm font-semibold uppercase tracking-wider text-muted">Yenileme eğitimi</div>
+        <div class="mt-1.5 text-2xl font-bold text-heading">en az {egitimKurallari.yenilemeAsgariSaat} ders saati</div>
+        <p class="mt-1.5 text-sm text-muted">
+          Yenilemenin de asgari bir süresi var; kısa bir tazeleme yeterli
+          sayılmıyor.
+        </p>
+      </div>
+      <div class="rounded-2xl ring-1 ring-gray-200 dark:ring-slate-700 bg-white dark:bg-slate-900 p-5">
+        <div class="text-sm font-semibold uppercase tracking-wider text-muted">Uzaktan eğitimde ölçme</div>
+        <div class="mt-1.5 text-2xl font-bold text-heading">en az {egitimKurallari.uzaktanGecmePuani} puan</div>
+        <p class="mt-1.5 text-sm text-muted">
+          Uzaktan eğitimde katılım ve başarı ölçülür; sistem giriş-çıkış ve
+          tamamlama kaydı tutar.
+        </p>
+      </div>
+    </div>
+    <p class="mt-6 text-sm text-muted">
+      Kaynak: {egitimKurallari.kaynak}.
+    </p>
+  </section>
 
-  <FAQs schema title="Sık sorulanlar" items={sss} />
+  <!-- Eğitim içeriği: Ek-1 dört başlık -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-10 md:py-14 border-t border-gray-200 dark:border-slate-800">
+    <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-3">Eğitim içeriği</h2>
+    <p class="text-muted max-w-3xl mb-8">
+      Konular, yönetmeliğin Ek-1 listesindeki dört başlıktan oluşur. İlk üç
+      başlık her tehlike sınıfında uzaktan verilebilir; dördüncü başlık
+      tehlikeli ve çok tehlikeli işyerlerinde yüz yüze verilir.
+    </p>
+    <div class="grid gap-5 md:grid-cols-2">
+      {
+        konular.map((k) => (
+          <div class="rounded-2xl ring-1 ring-gray-200 dark:ring-slate-700 bg-white dark:bg-slate-900 p-6">
+            <div class="flex items-start justify-between gap-3 mb-3">
+              <h3 class="text-lg font-bold font-heading text-heading">
+                <span class="text-primary">{k.no}.</span> {k.baslik}
+              </h3>
+              <span
+                class:list={[
+                  'shrink-0 rounded-full px-2.5 py-1 text-xs font-semibold',
+                  k.no === 4
+                    ? 'bg-amber-100 text-amber-900 dark:bg-amber-900/40 dark:text-amber-200'
+                    : 'bg-emerald-100 text-emerald-900 dark:bg-emerald-900/40 dark:text-emerald-200',
+                ]}
+              >
+                {k.yontem}
+              </span>
+            </div>
+            <ul class="space-y-1.5 text-sm text-muted">
+              {k.maddeler.map((m) => (
+                <li class="flex gap-2">
+                  <span class="text-primary shrink-0" aria-hidden="true">
+                    ·
+                  </span>
+                  <span>{m}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </section>
 
-  <Features
-    title="İllere göre"
-    subtitle="Aşağıdaki iller için ayrı sayfa var; eğitim hizmetimiz 81 ilin tamamını kapsıyor."
-    columns={3}
-    items={illerSayfali.map((i) => ({
-      title: i.ad,
-      description: i.sektor.slice(0, 90) + '…',
-      icon: 'tabler:map-pin',
-      callToAction: { text: 'Detay', href: `/isg-egitimi/${i.slug}/` },
-    }))}
-  />
+  <!-- Belgelendirme -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-10 md:py-14 border-t border-gray-200 dark:border-slate-800">
+    <div class="grid gap-8 lg:grid-cols-2 lg:gap-14">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-3">
+          Belgelendirme ve kayıtlar
+        </h2>
+        <p class="text-muted mb-5">
+          Eğitimin verilmiş olması yetmez; denetimde istenen şey kayıttır.
+          Eğitim sonunda düzenlenen belgeler yeni yönetmeliğin öngördüğü
+          bilgileri taşır ve işyeri dosyanıza hazır şekilde teslim edilir.
+        </p>
+        <ul class="space-y-3 text-muted">
+          <li class="flex gap-3">
+            <span class="text-primary font-bold shrink-0">✓</span>
+            <span>Katılım tutanağı ve çalışan bazında eğitim belgesi</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-primary font-bold shrink-0">✓</span>
+            <span>Belgede eğitimin türü, veriliş yöntemi ve konu başına ders saati</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-primary font-bold shrink-0">✓</span>
+            <span>Uzaktan eğitimde katılım ve ölçme değerlendirme kayıtları</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-primary font-bold shrink-0">✓</span>
+            <span>Yenileme takvimi: her çalışan için bir sonraki eğitim tarihi</span>
+          </li>
+        </ul>
+      </div>
+      <div class="rounded-2xl bg-gray-50 dark:bg-slate-800/60 ring-1 ring-gray-200 dark:ring-slate-700 p-6 md:p-8">
+        <h3 class="text-lg font-bold font-heading text-heading mb-3">Eğitim ne zaman yenilenir?</h3>
+        <ul class="space-y-3">
+          {
+            egitimSureleri.map((e) => (
+              <li class="flex items-baseline justify-between gap-4 border-b border-gray-200 dark:border-slate-700 pb-3 last:border-0 last:pb-0">
+                <span class="text-default">{e.sinif}</span>
+                <span class="font-semibold text-heading whitespace-nowrap">
+                  {e.sinif === 'Çok tehlikeli' ? 'yılda bir' : e.sinif === 'Tehlikeli' ? 'iki yılda bir' : 'üç yılda bir'}
+                </span>
+              </li>
+            ))
+          }
+        </ul>
+        <p class="mt-4 text-sm text-muted">
+          İş kazası veya meslek hastalığı yaşanması, işyerinde ya da kullanılan
+          ekipmanda değişiklik olması hâlinde süre beklenmeden ilave eğitim
+          verilir.
+        </p>
+      </div>
+    </div>
+  </section>
 
   <CallToAction
-    title="Hizmet verilen iller"
-    subtitle={tumIller.join(' · ')}
-    actions={[{ variant: 'primary', text: 'Teklif al', href: '/teklif-al/' }]}
+    title="Çalışanlarınız için eğitim planı çıkaralım"
+    subtitle="Kaç çalışanınız olduğunu ve tehlike sınıfınızı söyleyin; hangi eğitimin kimlere, kaç saat ve hangi yöntemle verileceğini yazılı olarak gönderelim."
+    actions={[
+      { variant: 'primary', text: 'Eğitim teklifi al', href: '/teklif-al/' },
+      { text: 'Sık sorulan sorular', href: '/sss/' },
+    ]}
   />
 </Layout>

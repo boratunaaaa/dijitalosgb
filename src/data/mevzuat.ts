@@ -51,12 +51,48 @@ export const gecerliBelgeSiniflari: Record<TehlikeSinifi, string[]> = {
   'cok-tehlikeli': ['A'],
 };
 
-/** Temel İSG eğitimi: ders saati ve yenileme aralığı (yıl). */
-export const temelEgitim: Record<TehlikeSinifi, { saat: number; yenilemeYil: number }> = {
-  'az-tehlikeli': { saat: 8, yenilemeYil: 3 },
-  tehlikeli: { saat: 12, yenilemeYil: 2 },
-  'cok-tehlikeli': { saat: 16, yenilemeYil: 1 },
+/**
+ * Temel İSG eğitimi.
+ *
+ * 2 Nisan 2026 tarihli ve 33212 sayılı Resmî Gazete'de yayımlanan yeni
+ * Çalışanların İş Sağlığı ve Güvenliği Eğitimlerinin Usul ve Esasları
+ * Hakkında Yönetmelik esas alınmıştır; bu yönetmelik 2013 tarihli olanı
+ * tamamen yürürlükten kaldırmıştır.
+ *
+ *  - saat: temel eğitimin toplam asgari ders saati (değişmedi)
+ *  - ozgurRiskSaat: Ek-1'in dördüncü başlığı olan "işe ve işyerine özgü
+ *    riskler" için ayrılması gereken asgari ders saati (YENİ)
+ *  - yenilemeYil: yenileme aralığı
+ */
+export const temelEgitim: Record<
+  TehlikeSinifi,
+  { saat: number; ozguRiskSaat: number; yenilemeYil: number }
+> = {
+  'az-tehlikeli': { saat: 8, ozguRiskSaat: 2, yenilemeYil: 3 },
+  tehlikeli: { saat: 12, ozguRiskSaat: 3, yenilemeYil: 2 },
+  'cok-tehlikeli': { saat: 16, ozguRiskSaat: 4, yenilemeYil: 1 },
 };
+
+/**
+ * Yeni yönetmeliğin getirdiği, eskiden olmayan kurallar.
+ * Sayfalarda tek tek yazmak yerine buradan okunur ki bir daha
+ * değiştiğinde tek yerden güncellensin.
+ */
+export const egitimKurallari = {
+  /** Bir ders saati: 45 dakika eğitim + 15 dakika ara (toplam 60 dakika). */
+  dersSaatiDakika: 45,
+  araDakika: 15,
+  /** Temel eğitimin işe girişten itibaren tamamlanması gereken süre. */
+  temelEgitimAyLimiti: 3,
+  /** İşe başlama eğitimi asgari süresi; temel eğitim süresinden sayılmaz. */
+  iseBaslamaEgitimiSaat: 2,
+  /** Yenileme eğitiminin asgari ders saati. */
+  yenilemeAsgariSaat: 8,
+  /** Uzaktan eğitimde ölçme değerlendirmeden geçme puanı. */
+  uzaktanGecmePuani: 60,
+  /** Yönetmeliğin Resmî Gazete künyesi. */
+  kaynak: '2/4/2026 tarihli ve 33212 sayılı Resmî Gazete',
+} as const;
 
 /**
  * Diğer sağlık personeli görevlendirme süreleri.

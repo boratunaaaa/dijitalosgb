@@ -149,19 +149,19 @@ export const sorular: Soru[] = [
     kategori: 'egitim',
     soru: 'Çalışan eğitimi kaç saat olmalı?',
     cevap:
-      'Temel iş sağlığı ve güvenliği eğitimi az tehlikeli sınıfta en az 8, tehlikeli sınıfta 12, çok tehlikeli sınıfta 16 ders saatidir. Bu süreler yönetmelikle sabittir ve pazarlık konusu değildir.',
+      'Temel iş sağlığı ve güvenliği eğitimi az tehlikeli sınıfta en az 8, tehlikeli sınıfta 12, çok tehlikeli sınıfta 16 ders saatidir. Yeni yönetmelikle bu sürenin içinden "işe ve işyerine özgü riskler" başlığına ayrılması gereken asgari süre de belirlendi: sırasıyla 2, 3 ve 4 ders saati. Bir ders saati 45 dakika eğitim ve 15 dakika aradan oluşur.',
   },
   {
     kategori: 'egitim',
     soru: 'Eğitim ne sıklıkla yenilenir?',
     cevap:
-      'Yenileme aralığı tehlike sınıfına bağlıdır: çok tehlikeli sınıfta yılda bir, tehlikeli sınıfta iki yılda bir, az tehlikeli sınıfta üç yılda bir. İş kazası veya meslek hastalığı yaşanması, işyerinde değişiklik olması gibi hâllerde süre beklenmeden ilave eğitim verilir.',
+      'Yenileme aralığı tehlike sınıfına bağlıdır: çok tehlikeli sınıfta yılda bir, tehlikeli sınıfta iki yılda bir, az tehlikeli sınıfta üç yılda bir. Yenileme eğitiminin de asgari süresi vardır; en az 8 ders saati olarak yapılır. İş kazası veya meslek hastalığı yaşanması, işyerinde değişiklik olması gibi hâllerde süre beklenmeden ilave eğitim verilir.',
   },
   {
     kategori: 'egitim',
     soru: 'İSG eğitimi uzaktan verilebilir mi?',
     cevap:
-      'Büyük ölçüde evet. Az tehlikeli sınıftaki işyerlerinde temel eğitimin tamamı uzaktan verilebilir. Tehlikeli ve çok tehlikeli sınıfta ise eğitim konularının dördüncü başlığı yüz yüze verilmek zorundadır; kalan başlıklar uzaktan verilebilir.',
+      'Evet; eğitimler uzaktan, yüz yüze veya ikisi bir arada verilebilir. Ek-1’deki genel, sağlık ve teknik konular her tehlike sınıfında uzaktan verilebilir. Dördüncü başlık olan işe ve işyerine özgü riskler ise tehlikeli ve çok tehlikeli işyerlerinde yüz yüze verilmek zorundadır. Uzaktan eğitimde katılım kaydı tutulur ve ölçme değerlendirmeden en az 60 puan alınması gerekir.',
   },
   {
     kategori: 'egitim',
@@ -173,7 +173,7 @@ export const sorular: Soru[] = [
     kategori: 'egitim',
     soru: 'Yeni işe aldığım çalışana ne zaman eğitim vermeliyim?',
     cevap:
-      'Çalışan işe başlamadan önce eğitim almalıdır. İşe giriş eğitimi verilmeden çalıştırma, eğitimin hiç verilmemesiyle aynı sonucu doğurur.',
+      'İki ayrı eğitimden söz ediyoruz. İşe başlama eğitimi, çalışan işe başlarken verilir ve en az iki saattir; bu süre temel eğitim süresinden sayılmaz. Temel İSG eğitiminin ise işe girişten itibaren en geç üç ay içinde tamamlanması gerekir. Bu ayrım, 2 Nisan 2026 tarihli yeni yönetmelikle netleşti.',
   },
   {
     kategori: 'egitim',
