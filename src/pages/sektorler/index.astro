@@ -1,33 +1,111 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
-import Features from '~/components/widgets/Features.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+import StructuredData from '~/components/common/StructuredData.astro';
+import { Image } from 'astro:assets';
+import { site } from '~/data/site';
 import { sektorler } from '~/data/sektorler';
 
 const metadata = {
-  title: 'Sektörler',
-  description: 'İnşaat, üretim, lojistik, ofis, gıda ve sağlık sektörlerinde iş güvenliği: her sektörün kendi riskleri ve yükümlülükleri.',
+  title: 'Sektörler — Hangi İşte Hangi Risk Öne Çıkıyor',
+  description: `İnşaattan gıdaya, metalden lojistiğe ${sektorler.length} sektörde iş güvenliği: her birinin kendi riskleri, tehlike sınıfı ve öncelikli yükümlülükleri.`,
 };
+
+const sayfaUrl = `${site.url}/sektorler/`;
+
+// Görseller build sırasında optimize edilsin diye toplu içe aktarma.
+const gorseller = import.meta.glob<{ default: ImageMetadata }>('~/assets/images/sektor-*.jpg', { eager: true });
+const gorselBul = (dosya?: string) =>
+  dosya ? gorseller[`/src/assets/images/${dosya}`]?.default : undefined;
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Ana sayfa', item: `${site.url}/` },
+      { '@type': 'ListItem', position: 2, name: 'Sektörler', item: sayfaUrl },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: metadata.title,
+    description: metadata.description,
+    url: sayfaUrl,
+    inLanguage: 'tr-TR',
+  },
+];
 ---
+
 <Layout metadata={metadata}>
-  <HeroText
-    title="Sektörler"
-    subtitle="Yükümlülük herkes için aynı kanundan doğuyor ama riskler aynı değil. Şantiyedeki öncelik yüksekten düşme, depodaki forklift trafiği, ofisteki tahliye düzeni."
-    actions={[{ variant: 'primary', text: 'Teklif al', href: '/teklif-al/' }]}
-  />
-  <Features
-    columns={2}
-    items={sektorler.map((s) => ({
-      title: s.ad,
-      description: s.ozet,
-      icon: 'tabler:building-factory-2',
-      callToAction: { text: 'Detay', href: `/sektorler/${s.slug}/` },
-    }))}
-  />
-  <CallToAction
-    title="Sektörünüz listede yok mu?"
-    subtitle="Ne iş yaptığınızı yazın; tehlike sınıfınızı ve yükümlülüğünüzü çıkaralım."
-    actions={[{ variant: 'primary', text: 'Ücretsiz ön değerlendirme', href: '/teklif-al/' }]}
-  />
+  <StructuredData slot="head" schema={schema} />
+
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-10 md:py-14">
+    <nav aria-label="Konum" class="text-sm text-muted mb-6">
+      <a href="/" class="hover:underline">Ana sayfa</a>
+      <span class="mx-1.5">/</span>
+      <span class="text-default">Sektörler</span>
+    </nav>
+
+    <h1 class="text-3xl md:text-4xl font-bold font-heading text-heading tracking-tight mb-4">Sektörler</h1>
+    <p class="text-lg text-muted max-w-3xl mb-10">
+      Yükümlülük herkes için aynı kanundan doğuyor ama riskler aynı değil.
+      Şantiyede öncelik yüksekten düşme, depoda forklift trafiği, ofiste tahliye düzeni.
+      Sektörünüzü seçin, neyin öne çıktığını görün.
+    </p>
+
+    <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        sektorler.map((s) => {
+          const gorsel = gorselBul(s.gorsel);
+          return (
+            <li>
+              <a
+                href={`/sektorler/${s.slug}/`}
+                class="group block h-full overflow-hidden rounded-2xl ring-1 ring-gray-200 dark:ring-slate-700 bg-white dark:bg-slate-900 transition hover:ring-primary/40 hover:shadow-md"
+              >
+                {gorsel && (
+                  <Image
+                    src={gorsel}
+                    alt={s.ad}
+                    widths={[400, 700]}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    class="h-32 w-full object-cover transition duration-300 group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                    loading="lazy"
+                  />
+                )}
+                <div class="p-4">
+                  <h2 class="font-bold text-heading leading-snug mb-1 group-hover:text-primary transition">
+                    {s.ad}
+                  </h2>
+                  <p class="text-sm text-muted line-clamp-2">{s.ozet}</p>
+                </div>
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+
+    <div class="mt-12 rounded-2xl bg-primary/5 dark:bg-primary/10 ring-1 ring-primary/20 p-6 md:p-8">
+      <h2 class="text-xl font-bold font-heading text-heading mb-2">Sektörünüz listede yok mu?</h2>
+      <p class="text-muted mb-5 max-w-2xl">
+        Ne iş yaptığınızı yazın; NACE kodunuzdan tehlike sınıfınızı ve yükümlülüğünüzü çıkaralım.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a
+          href="/teklif-al/"
+          class="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 font-semibold text-white hover:opacity-90 transition"
+        >
+          Ücretsiz ön değerlendirme
+        </a>
+        <a
+          href="/araclar/tehlike-sinifi-sorgulama/"
+          class="inline-flex items-center justify-center rounded-full ring-1 ring-gray-300 dark:ring-slate-600 px-6 py-3 font-semibold text-default hover:bg-gray-50 dark:hover:bg-slate-800 transition"
+        >
+          Tehlike sınıfımı sorgula
+        </a>
+      </div>
+    </div>
+  </section>
 </Layout>
