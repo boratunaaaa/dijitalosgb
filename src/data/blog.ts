@@ -38,6 +38,168 @@ export type BlogYazisi = {
 
 export const yazilar: BlogYazisi[] = [
   {
+    slug: 'acil-durum-eylem-plani-nasil-hazirlanir-isveren-rehberi',
+    baslik: 'Acil Durum Eylem Planı Nasıl Hazırlanır? İşverenler İçin 5 Adım',
+    ozet:
+      'Özet: İşyerlerinde Acil Durumlar Hakkında Yönetmelik gereğince, her işletmenin tehlike sınıfına bakılmaksızın yangın, deprem ve tahliye senaryolarını içeren bir acil durum planı hazırlaması zorunludur.',
+    tarih: '2026-09-20',
+    kategori: 'mevzuat',
+    sure: 4,
+    govde: [
+      {
+        tip: 'p',
+        metin:
+          'Kısaca: Sadece kâğıt üzerinde kalan bir plan, olası bir yangında veya depremde hayat kurtarmaz. İşyerlerinde Acil Durumlar Hakkında Yönetmelik madde 7 uyarınca, acil durum planı 5 temel aşamadan oluşur: Belirleme, önleyici tedbirler, görevlendirme, müdahale planı ve tatbikat.',
+      },
+      { tip: 'h2', metin: '1. Acil Durumların Belirlenmesi' },
+      {
+        tip: 'p',
+        metin:
+          'İşyerinin konumu, kullanılan kimyasallar ve binanın yaşı göz önüne alınarak yangın, deprem, sel, kimyasal sızıntı veya sabotaj gibi riskler belirlenir.',
+      },
+      { tip: 'h2', metin: '2. Acil Durum Ekiplerinin Kurulması' },
+      {
+        tip: 'p',
+        metin:
+          'Çok tehlikeli sınıfta her 30 çalışana 1, tehlikeli sınıfta 40 çalışana 1, az tehlikeli sınıfta ise 50 çalışana 1 "Arama, Kurtarma, Tahliye ve Yangınla Mücadele" personeli görevlendirilmesi yasal zorunluluktur.',
+      },
+      { tip: 'h2', metin: '3. Tatbikatların Gerçekleştirilmesi' },
+      {
+        tip: 'not',
+        metin:
+          'Uygulama Notu: Hazırlanan acil durum planı, yılda en az 1 defa tüm çalışanların katılımıyla fiili olarak tatbik edilmeli ve raporlanmalıdır. Denetimlerde sadece plana değil, en son yapılan tatbikatın fotoğraflı raporuna da bakılır.',
+      },
+    ],
+    baglantilar: [
+      { metin: 'Acil Durum Eylem Planı Hizmeti', href: '/hizmetler/acil-durum-eylem-plani/' },
+      { metin: 'İş Güvenliği Uzmanlığı', href: '/hizmetler/is-guvenligi-uzmanligi/' },
+    ],
+  },
+  {
+    slug: 'ofislerde-is-guvenligi-masa-basi-calisan-tehlikeleri',
+    baslik: 'Ofislerde İş Güvenliği: Masa Başı Çalışanları Bekleyen 3 Gizli Tehlike',
+    ozet:
+      'Özet: Ofis ortamları "az tehlikeli" sınıfta yer alsa da; ergonomik riskler, kapalı alan hava kalitesi ve elektrik tesisatı sorunları nedeniyle ciddi meslek hastalıkları ve iş kazalarına zemin hazırlayabilir.',
+    tarih: '2026-09-20',
+    kategori: 'sektorel',
+    sure: 5,
+    govde: [
+      {
+        tip: 'p',
+        metin:
+          'Kısaca: Plazalarda veya ofislerde çalışanlar için risk görünmezdir. Gürültülü makineler veya ağır yükler yoktur ancak ergonomik hasarlar yavaş ve kalıcıdır. Ekranlı Araçlarla Çalışmalarda Sağlık ve Güvenlik Önlemleri Hakkında Yönetmelik, ofis ortamlarını sıkı kurallara bağlar.',
+      },
+      { tip: 'h2', metin: 'En Sık Karşılaşılan Ofis Riskleri' },
+      {
+        tip: 'liste',
+        maddeler: [
+          'Ergonomik Sorunlar: Yanlış koltuk seçimi ve monitör yüksekliği nedeniyle oluşan boyun fıtığı ve karpal tünel sendromu.',
+          'Kablo Karmaşası: Yerde dağınık duran uzatma kabloları nedeniyle takılma ve düşmeler.',
+          'İklimlendirme ve Hava Kalitesi: Düzenli bakımı yapılmayan klimalardan yayılan Lejyoner hastalığı riski.',
+        ],
+      },
+      {
+        tip: 'not',
+        metin:
+          'Saha Tecrübesi: Geçtiğimiz yıl az tehlikeli bir çağrı merkezinde yaptığımız risk değerlendirmesinde, personelin %40\'ının ekran yansıması (parlama) nedeniyle kronik baş ağrısı çektiğini tespit ettik. Sadece perdelerin değiştirilmesiyle bile performans artışı sağlandı.',
+      },
+    ],
+    baglantilar: [
+      { metin: 'Risk Değerlendirmesi', href: '/hizmetler/risk-degerlendirmesi/' },
+      { metin: 'Ofislerde İSG Çözümleri', href: '/hizmetler/sektorler/ofis/' },
+    ],
+  },
+  {
+    slug: 'bakanlik-denetimlerinde-en-cok-kesilen-isg-cezalari',
+    baslik: 'Bakanlık İSG Denetimlerinde En Çok Kesilen Cezalar ve Nedenleri',
+    ozet:
+      'İş Müfettişleri tarafından yapılan saha denetimlerinde en sık kesilen idari para cezalarının başında; onaylı defter eksikliği, yapılmamış periyodik kontroller ve mesleki yeterlilik belgesi olmayan çalışanlar geliyor.',
+    tarih: '2026-09-20',
+    kategori: 'uygulama',
+    sure: 5,
+    govde: [
+      {
+        tip: 'p',
+        metin:
+          'Kısaca: 6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Çalışma ve Sosyal Güvenlik Bakanlığı müfettişlerince yapılan denetimlerde, işverenin en çok ceza yediği konular evrak eksikliğinden çok, sahaya yansımayan kâğıt üzerindeki uygulamalardır.',
+      },
+      { tip: 'h2', metin: '1. Onaylı Defterin Doldurulmaması' },
+      {
+        tip: 'p',
+        metin:
+          '6331 sayılı Kanun Madde 8 uyarınca iş güvenliği uzmanı ve işyeri hekimi tespitlerini Onaylı Deftere yazar. Saha tecrübelerimizde görüyoruz ki; defterin işyerinde bulunmaması veya boş olması denetimde "işverenin İSG hizmeti almadığı" yönünde kanaat oluşturuyor. Uzmanın yazdığı tespitlerin altına işverenin "görüldü" imzası atması, kusurun sorumluluğunu değil, önlem alma niyetini gösterir.',
+      },
+      { tip: 'h2', metin: '2. Periyodik Kontrolü Geçmiş Ekipmanlar' },
+      {
+        tip: 'p',
+        metin:
+          'İş Ekipmanlarının Kullanımında Sağlık ve Güvenlik Şartları Yönetmeliği gereği kompresör, forklift ve vinç gibi ekipmanların kontrolü şarttır. Denetimlerde en sık karşılaştığımız manzara; firmanın raporu yaptırmış olması ancak geçerlilik süresinin (genelde 1 yıl) dolmuş olmasıdır. Rapor süresi geçmiş ekipman, hiç kontrol edilmemiş sayılır.',
+      },
+      { tip: 'h2', metin: '3. Mesleki Yeterlilik (MYK) Belgesi Eksikliği' },
+      {
+        tip: 'p',
+        metin:
+          'Tehlikeli ve çok tehlikeli işlerde çalışan personelin (örneğin kaynakçı, çelik kondisyoncu) MYK belgesi yoksa, kişi başı ağır idari para cezaları kesilir. İSG Temel Eğitimi almış olmak, MYK belgesi yerine kesinlikle geçmez.',
+      },
+      {
+        tip: 'not',
+        metin:
+          'Gerçek Saha Tecrübesi: Geçtiğimiz ay girdiğimiz bir denetimde, risk analizi ve acil durum planı kusursuz olan bir işletme, sadece forklift operatörünün belgesi yenilenmediği için ceza aldı. İSG bir dosya değil, sürekli takip işidir.',
+      },
+    ],
+    baglantilar: [
+      { metin: 'Risk değerlendirmesi hizmeti', href: '/hizmetler/risk-degerlendirmesi/' },
+      { metin: 'Periyodik kontroller', href: '/hizmetler/periyodik-kontroller/' },
+    ],
+  },
+
+  {
+    slug: 'is-kazasi-sonrasi-isverenin-hukuki-sorumluluklari',
+    baslik: 'İş Kazası Sonrası İşverenin Hukuki Sorumlulukları Nelerdir?',
+    ozet:
+      'Özet: İş kazası sonrasında işverenin SGK\'ya 3 iş günü içinde bildirim yapması zorunludur. Ayrıca işverenin kusur oranı; risk analizi, eğitim tutanakları ve KKD zimmet formlarının eksiksiz olmasına göre belirlenir.',
+    tarih: '2026-09-20',
+    kategori: 'mevzuat',
+    sure: 6,
+    govde: [
+      {
+        tip: 'p',
+        metin:
+          'Kısaca: İş kazası yaşandığında işverenin sorumluluğu sadece sağlık ekiplerini çağırmakla bitmez. Olayın Sosyal Güvenlik Kurumu\'na (SGK) bildirilmesinden, kazanın kök nedeninin araştırılıp risk değerlendirmesinin güncellenmesine kadar hukuki bir süreç başlar.',
+      },
+      { tip: 'h2', metin: '3 İş Günü Kuralı' },
+      {
+        tip: 'p',
+        metin:
+          '5510 sayılı Sosyal Sigortalar ve Genel Sağlık Sigortası Kanunu Madde 13 gereğince, bir kaza iş kazası sayıldığı andan itibaren işveren kolluk kuvvetlerine derhal, SGK’ya ise en geç kazadan sonraki 3 iş günü içinde bildirim yapmak zorundadır.',
+      },
+      { tip: 'h2', metin: 'Müfettişin İlk Baktığı 3 Belge' },
+      {
+        tip: 'liste',
+        maddeler: [
+          'Kazaya neden olan risk, "Risk Değerlendirmesi" raporunda öngörülmüş mü?',
+          'Kazazedeye o makine/iş ile ilgili özel bir "İSG Eğitimi" verilmiş mi?',
+          'Olayda koruyucu donanım eksikliği varsa, çalışana KKD (Kişisel Koruyucu Donanım) zimmet tutanağı imzalatılmış mı?',
+        ],
+      },
+      { tip: 'h2', metin: 'Kusur Oranı Nasıl Düşer?' },
+      {
+        tip: 'p',
+        metin:
+          'Yargıtay kararlarına göre işverenin sorumluluğu "kusursuz sorumluluk" değil, "kusur oranına göre sorumluluk"tur. Eğer işveren mevzuatın gerektirdiği her türlü makine koruyucusunu taktırmış, eğitimi vermiş ve denetim mekanizmasını işletmişse kusur oranı çalışana (veya kaçınılmazlık ilkesine) kayabilir.',
+      },
+      {
+        tip: 'not',
+        metin:
+          'Olay yeri incelemesi tamamlanmadan kazaya sebep olan makinede veya ortamda değişiklik yapmayın. Bu, delil karartma şüphesi doğurabilir.',
+      },
+    ],
+    baglantilar: [
+      { metin: 'İş Güvenliği Uzmanlığı Hizmeti', href: '/hizmetler/is-guvenligi-uzmanligi/' },
+      { metin: 'Acil Durum Eylem Planı', href: '/hizmetler/acil-durum-eylem-plani/' },
+    ],
+  },
+  {
     slug: 'isg-egitim-yonetmeligi-2026-degisiklikleri',
     baslik: 'İSG Eğitim Yönetmeliği 2026’da Değişti: İşvereni Ne Bekliyor?',
     ozet:
@@ -156,6 +318,7 @@ export const yazilar: BlogYazisi[] = [
     baglantilar: [
       { metin: 'Tehlike sınıfı sorgulama aracı', href: '/araclar/tehlike-sinifi-sorgulama/' },
       { metin: 'Yükümlülük hesaplama', href: '/araclar/isg-yukumluluk-hesaplama/' },
+      { metin: 'İş Güvenliği Uzmanlığı Hizmeti', href: '/hizmetler/is-guvenligi-uzmanligi/' },
     ],
   },
 
@@ -263,6 +426,7 @@ export const yazilar: BlogYazisi[] = [
     ],
     baglantilar: [
       { metin: 'Risk değerlendirmesi hizmetimiz', href: '/hizmetler/risk-degerlendirmesi/' },
+      { metin: 'Acil Durum Eylem Planı', href: '/hizmetler/acil-durum-eylem-plani/' },
       { metin: 'Sık sorulan sorular', href: '/sss/' },
     ],
   },
@@ -688,7 +852,10 @@ export const yazilar: BlogYazisi[] = [
           'Çalışan temsilcisi, iş sağlığı ve güvenliği çalışmalarına katılır, önerilerde bulunur ve çalışanların görüşünü işverene iletir. Risk değerlendirmesi ekibinde yer alması da bu nedenledir.',
       },
     ],
-    baglantilar: [{ metin: 'İSG danışmanlığı', href: '/hizmetler/isg-danismanligi/' }],
+    baglantilar: [
+      { metin: 'İSG danışmanlığı', href: '/hizmetler/isg-danismanligi/' },
+      { metin: 'İş Güvenliği Uzmanlığı', href: '/hizmetler/is-guvenligi-uzmanligi/' },
+    ],
   },
   {
     slug: 'mesleki-egitim-belgesi-zorunlulugu',

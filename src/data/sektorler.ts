@@ -29,7 +29,7 @@ export const sektorler: Sektor[] = [
     gorsel: 'sektor-insaat.jpg',
     ad: 'İnşaat ve şantiye',
     h1: 'İnşaat ve Şantiyelerde İş Güvenliği',
-    ozet: 'Yapı işlerinde sağlık ve güvenlik planı, yüksekte çalışma, iskele ve kazı güvenliği.',
+    ozet: 'İnşaat ve şantiye projelerinde, yüksekte çalışma, iskele kurulumu, kazı güvenliği ve iş kazalarını önlemeye yönelik kapsamlı sağlık ve güvenlik planı hazırlama süreçleri. Profesyonel OSGB hizmetlerimizle şantiyenizi güvence altına alın.',
     tehlikeSinifi: 'Yapı işleri ağırlıklı olarak çok tehlikeli sınıfta yer alır.',
     riskler: [
       { baslik: 'Yüksekten düşme', aciklama: 'İnşaat sektöründe ölümlü iş kazalarının başlıca nedeni. İskele, platform, korkuluk ve düşme durdurma sistemleri planlanmadan saha açılmamalı.' },
@@ -45,7 +45,7 @@ export const sektorler: Sektor[] = [
     gorsel: 'sektor-fabrika-uretim.jpg',
     ad: 'Fabrika ve üretim',
     h1: 'Fabrika ve Üretim Tesislerinde İş Güvenliği',
-    ozet: 'Makine güvenliği, ortam ölçümü, periyodik kontroller ve vardiyalı çalışma düzeni.',
+    ozet: 'Fabrika ve üretim tesisleri için makine güvenliği, iş hijyeni ortam ölçümleri, periyodik kontroller ve vardiyalı çalışma düzenine uygun İSG süreçleri. Üretim hattında sıfır iş kazası hedefiyle OSGB desteği.',
     tehlikeSinifi: 'Üretim kolu ve kullanılan proseslere göre tehlikeli veya çok tehlikeli sınıf yaygındır.',
     riskler: [
       { baslik: 'Makine ve ekipman', aciklama: 'Koruyucu, acil stop ve etiketleme-kilitleme (LOTO) düzeninin kurulması.' },
@@ -61,7 +61,7 @@ export const sektorler: Sektor[] = [
     gorsel: 'sektor-lojistik-depo.jpg',
     ad: 'Lojistik ve depo',
     h1: 'Lojistik ve Depolarda İş Güvenliği',
-    ozet: 'Forklift trafiği, raf sistemleri, yükleme-boşaltma ve ergonomi.',
+    ozet: 'Lojistik ve depolama alanlarında forklift-yaya trafik yönetimi, yüksek raf sistemleri güvenliği, yükleme-boşaltma risk analizleri ve ergonomik çalışma koşulları sağlamaya yönelik OSGB hizmetleri.',
     tehlikeSinifi: 'Depolama ve taşımacılık faaliyetleri genellikle tehlikeli sınıfta değerlendirilir.',
     riskler: [
       { baslik: 'Forklift ve yaya', aciklama: 'Araç ve yaya güzergâhlarının fiziksel olarak ayrılması; en sık ölümlü depo kazası bu kesişimde.' },
@@ -76,7 +76,7 @@ export const sektorler: Sektor[] = [
     gorsel: 'sektor-ofis-hizmet.jpg',
     ad: 'Ofis ve hizmet',
     h1: 'Ofis ve Hizmet İşletmelerinde İş Güvenliği',
-    ozet: 'Az tehlikeli sınıfta yükümlülük, ergonomi ve acil durum düzeni. Eğitimin tamamı uzaktan verilebilir.',
+    ozet: 'Ofis ve hizmet sektöründe az tehlikeli sınıf İSG yükümlülükleri, ofis ergonomisi, acil durum eylem planı hazırlığı ve uzaktan İSG eğitimleri ile kesintisiz ve pratik danışmanlık.',
     tehlikeSinifi: 'Ofis ve büro faaliyetleri çoğunlukla az tehlikeli sınıftadır.',
     riskler: [
       { baslik: 'Ekran başında çalışma', aciklama: 'Boyun, bel ve göz şikâyetleri; çalışma istasyonu düzeni ve mola planı.' },
