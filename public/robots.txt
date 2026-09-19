@@ -1,4 +1,2 @@
 User-agent: *
-Allow: /
-
-Sitemap: https://dijitalosgb.com/sitemap-index.xml
+Disallow:

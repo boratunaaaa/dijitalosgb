@@ -1,23 +1,22 @@
 ---
-import Base from "../../layouts/Base.astro";
-import { rehberler } from "../../data/rehber";
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import { rehberler } from '~/data/rehber';
+
+const metadata = { title: 'İSG Rehberi', description: 'OSGB zorunluluğu, tehlike sınıfı ve uzaktan eğitim kuralları — yönetmeliğe dayalı net cevaplar.' };
 ---
-<Base
-  title="İSG Rehberi"
-  description="OSGB zorunluluğu, tehlike sınıfı ve uzaktan eğitim kuralları — yönetmeliğe dayalı kısa ve net cevaplar."
->
-  <section class="band">
-    <div class="wrap stack">
-      <h1>İSG rehberi</h1>
-      <p class="prose muted">Sık sorulan üç soruya yönetmeliğe dayalı net cevaplar.</p>
-      <div class="stack" style="margin-top:8px">
-        {rehberler.map((r) => (
-          <a class="card" href={`/rehber/${r.slug}/`} style="text-decoration:none;color:inherit">
-            <h3>{r.soru}</h3>
-            <p class="muted">{r.ozet}</p>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-</Base>
+<Layout metadata={metadata}>
+  <HeroText title="İSG rehberi" subtitle="Sık sorulan sorulara yönetmeliğe dayalı, kısa ve kesin cevaplar." />
+  <Features
+    columns={1}
+    items={rehberler.map((r) => ({
+      title: r.soru,
+      description: r.ozet,
+      icon: 'tabler:help-circle',
+      callToAction: { text: 'Cevabı oku', href: `/rehber/${r.slug}/` },
+    }))}
+  />
+  <CallToAction title="Kendi durumunuzu soralım" actions={[{ variant: 'primary', text: 'Teklif al', href: '/teklif-al/' }]} />
+</Layout>

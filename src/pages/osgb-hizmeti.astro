@@ -1,0 +1,65 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import { site, isOrtagi } from '~/data/site';
+import { ilceler } from '~/data/ilceler';
+
+const metadata = { title: 'OSGB Hizmeti — İstanbul, Kocaeli, Tekirdağ' };
+---
+<Layout metadata={metadata}>
+  <HeroText
+    tagline={site.hizmetIlleri.join(' · ')}
+    title="OSGB hizmeti"
+    subtitle="İş güvenliği uzmanı ve işyeri hekimi görevlendirmesi, risk değerlendirmesi, acil durum planı, ortam ölçümü ve işyerinde mobil sağlık taraması."
+    actions={[
+      { variant: 'primary', text: 'Teklif al', href: '/teklif-al/' },
+      { text: 'Mobil sağlık taraması', href: '/mobil-saglik-taramasi/' },
+    ]}
+  />
+
+  <Features
+    columns={2}
+    items={[
+      { title: 'İş güvenliği uzmanı', description: 'Görevlendirme, risk değerlendirmesi, acil durum planı ve periyodik saha denetimleri.', icon: 'tabler:shield-check' },
+      { title: 'İşyeri hekimi', description: 'İşe giriş ve periyodik muayeneler, sağlık gözetimi kayıtlarının tutulması.', icon: 'tabler:stethoscope' },
+      { title: 'Çalışan eğitimi', description: 'Temel eğitim ve yenileme. Uygun tehlike sınıfında tamamı uzaktan verilebilir.', icon: 'tabler:school' },
+      { title: 'Ortam ölçümü', description: 'Gürültü, toz ve kimyasal maruziyet ölçümleri; sonuçların rapora bağlanması.', icon: 'tabler:wave-sine' },
+    ]}
+  />
+
+  <Content
+    title="Neden yalnız bu iller"
+    image={{ src: 'https://images.unsplash.com/photo-1524293568345-75d62c3664f7?auto=format&fit=crop&w=900&q=80', alt: 'Harita üzerinde bölge planlaması' }}
+  >
+    <Fragment slot="content">
+      <p>
+        OSGB'ler kurulu oldukları il ve <strong>sınır komşusu illerde</strong> hizmet
+        verebilir; ötesi için o ilde şube açmak gerekir. İş ortağımız {isOrtagi.ad}
+        İstanbul'da olduğu için saha kapsamımız {site.hizmetIlleri.join(', ')}.
+      </p>
+      <p class="mt-3">
+        Eğitim tarafında böyle bir sınır yok — orada Türkiye'nin 81 iline hizmet
+        veriyoruz.
+      </p>
+    </Fragment>
+  </Content>
+
+  <Features
+    title="İlçeler"
+    columns={3}
+    items={ilceler.map((i) => ({
+      title: i.ad,
+      description: i.il,
+      icon: 'tabler:map-pin',
+      callToAction: { text: 'Detay', href: `/osgb/${i.slug}/` },
+    }))}
+  />
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Teklif al', href: '/teklif-al/' }]}
+    title="Yükümlülüğünüzü çıkaralım"
+  />
+</Layout>

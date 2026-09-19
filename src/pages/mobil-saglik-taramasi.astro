@@ -1,69 +1,57 @@
 ---
-import Base from "../layouts/Base.astro";
-import { site, isOrtagi } from "../data/site";
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import StructuredData from '~/components/common/StructuredData.astro';
+import { site, isOrtagi } from '~/data/site';
+
+const metadata = {
+  title: 'Mobil Sağlık Taraması',
+  description: 'İşe giriş ve periyodik muayeneler işyerinizde. Odyometri, SFT, akciğer grafisi ve laboratuvar; vardiya kaybı olmadan.',
+};
 
 const sss = [
-  { s: "Mobil sağlık aracı ne yapar?", c: "İşe giriş ve periyodik muayenelerin işyerinde yapılmasını sağlar. Odyometri, solunum fonksiyon testi, akciğer grafisi ve laboratuvar örneklemesi araçta yapılabilir." },
-  { s: "Neden işyerine gelen araç?", c: "Çalışanların tek tek hastaneye gitmesi vardiya kaybı demektir. Araç işyerine geldiğinde aynı gün içinde çok sayıda çalışan taranır, üretim durmaz." },
-  { s: "Hangi illere geliyor?", c: "Saha hizmeti kapsamımızla aynı: İstanbul, Kocaeli ve Tekirdağ. OSGB'ler kurulu oldukları il ve sınır komşusu illerde hizmet verebilir." },
+  { title: 'Mobil sağlık aracı ne yapar?', description: 'İşe giriş ve periyodik muayenelerin işyerinde yapılmasını sağlar. Odyometri, solunum fonksiyon testi, akciğer grafisi ve laboratuvar örneklemesi araçta yapılabilir.' },
+  { title: 'Neden işyerine gelen araç?', description: 'Çalışanların tek tek hastaneye gitmesi vardiya kaybı demektir. Araç işyerine geldiğinde aynı gün içinde çok sayıda çalışan taranır, üretim durmaz.' },
+  { title: 'Hangi illere geliyor?', description: `Saha hizmeti kapsamımızla aynı: ${site.hizmetIlleri.join(', ')}. OSGB'ler kurulu oldukları il ve sınır komşusu illerde hizmet verebilir.` },
 ];
 
-const schema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Service",
-      name: "Mobil sağlık taraması",
-      serviceType: "İşyerinde periyodik sağlık muayenesi",
-      areaServed: site.hizmetIlleri.map((i) => ({ "@type": "AdministrativeArea", name: i })),
-      provider: { "@type": "Organization", name: isOrtagi.ad },
-    },
-    {
-      "@type": "FAQPage",
-      mainEntity: sss.map((q) => ({
-        "@type": "Question", name: q.s,
-        acceptedAnswer: { "@type": "Answer", text: q.c },
-      })),
-    },
-  ],
-};
+const structuredData = [{
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Mobil sağlık taraması',
+  serviceType: 'İşyerinde periyodik sağlık muayenesi',
+  areaServed: site.hizmetIlleri.map((i) => ({ '@type': 'AdministrativeArea', name: i })),
+  provider: { '@type': 'Organization', name: isOrtagi.ad },
+}];
 ---
-<Base
-  title="Mobil Sağlık Taraması"
-  description="İşe giriş ve periyodik muayeneler işyerinizde. Odyometri, SFT, akciğer grafisi ve laboratuvar; vardiya kaybı olmadan aynı gün içinde."
-  schema={schema}
->
-  <section class="band">
-    <div class="wrap stack">
-      <p class="eyebrow">{site.hizmetIlleri.join(" · ")}</p>
-      <h1>Sağlık taraması işyerinize gelir</h1>
-      <p class="prose" style="font-size:1.08rem">
-        Periyodik muayene yükümlülüğünün en pahalı kısmı testin kendisi değil,
-        çalışanın işten ayrı geçirdiği zamandır. Mobil araç işyerinize
-        geldiğinde tarama üretim akışını durdurmadan tamamlanır.
-      </p>
-      <div><a class="btn" href="/teklif-al/">Tarama planlat</a></div>
-    </div>
-  </section>
+<Layout metadata={metadata}>
+  <StructuredData slot="structured-data" data={structuredData} />
+  <Hero
+    actions={[{ variant: 'primary', text: 'Tarama planlat', href: '/teklif-al/' }]}
+    image={{ src: 'https://images.unsplash.com/photo-1516841273335-e39b37888115?auto=format&fit=crop&w=1200&q=80', alt: 'Mobil sağlık taraması' }}
+  >
+    <Fragment slot="title">Sağlık taraması <span class="text-accent">işyerinize gelir</span></Fragment>
+    <Fragment slot="subtitle">
+      Periyodik muayene yükümlülüğünün en pahalı kısmı testin kendisi değil,
+      çalışanın işten ayrı geçirdiği zamandır. Mobil araç işyerinize geldiğinde
+      tarama üretim akışını durdurmadan tamamlanır.
+    </Fragment>
+  </Hero>
 
-  <section class="band">
-    <div class="wrap stack">
-      <h2>Araçta yapılabilenler</h2>
-      <div class="grid">
-        <div class="card"><h3>Odyometri</h3><p class="muted">Gürültülü ortamda çalışanlar için işitme testi.</p></div>
-        <div class="card"><h3>Solunum fonksiyon testi</h3><p class="muted">Toz, duman ve kimyasal maruziyetinde zorunlu takip.</p></div>
-        <div class="card"><h3>Akciğer grafisi</h3><p class="muted">Periyodik sağlık gözetiminin standart parçası.</p></div>
-        <div class="card"><h3>Laboratuvar örneklemesi</h3><p class="muted">Kan ve idrar örnekleri araçta alınır, laboratuvara iletilir.</p></div>
-      </div>
-    </div>
-  </section>
+  <Features
+    title="Araçta yapılabilenler"
+    columns={2}
+    items={[
+      { title: 'Odyometri', description: 'Gürültülü ortamda çalışanlar için işitme testi.', icon: 'tabler:ear' },
+      { title: 'Solunum fonksiyon testi', description: 'Toz, duman ve kimyasal maruziyetinde zorunlu takip.', icon: 'tabler:lungs' },
+      { title: 'Akciğer grafisi', description: 'Periyodik sağlık gözetiminin standart parçası.', icon: 'tabler:radioactive' },
+      { title: 'Laboratuvar örneklemesi', description: 'Kan ve idrar örnekleri araçta alınır, laboratuvara iletilir.', icon: 'tabler:test-pipe' },
+    ]}
+  />
 
-  <section class="band">
-    <div class="wrap stack">
-      <h2>Sık sorulanlar</h2>
-      <div class="stack">
-        {sss.map((q) => (<div class="card"><h3>{q.s}</h3><p class="muted">{q.c}</p></div>))}
-      </div>
-    </div>
-  </section>
-</Base>
+  <FAQs title="Sık sorulanlar" items={sss} />
+  <CallToAction title="Tarama gününüzü planlayalım" actions={[{ variant: 'primary', text: 'Teklif al', href: '/teklif-al/' }]} />
+</Layout>

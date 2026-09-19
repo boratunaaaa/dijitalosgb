@@ -1,33 +1,36 @@
 ---
-import Base from "../../layouts/Base.astro";
-import { rehberler } from "../../data/rehber";
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import StructuredData from '~/components/common/StructuredData.astro';
+import { rehberler } from '~/data/rehber';
 
 export function getStaticPaths() {
   return rehberler.map((r) => ({ params: { konu: r.slug }, props: { r } }));
 }
 const { r } = Astro.props;
+const metadata = { title: r.soru, description: r.ozet };
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
+const structuredData = [{
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
   mainEntity: [{
-    "@type": "Question",
+    '@type': 'Question',
     name: r.soru,
-    acceptedAnswer: { "@type": "Answer", text: `${r.cevap} ${r.detay.join(" ")}` },
+    acceptedAnswer: { '@type': 'Answer', text: `${r.cevap} ${r.detay.join(' ')}` },
   }],
-};
+}];
 ---
-<Base title={r.soru} description={r.ozet} schema={schema}>
-  <section class="band">
-    <div class="wrap stack">
-      <p class="eyebrow">Rehber</p>
-      <h1>{r.soru}</h1>
-      <p class="prose" style="font-size:1.08rem"><strong>{r.ozet}</strong></p>
-      <p class="prose">{r.cevap}</p>
-      <ul class="prose muted" style="padding-left:1.1em;display:flex;flex-direction:column;gap:8px">
-        {r.detay.map((d) => <li>{d}</li>)}
-      </ul>
-      <div style="margin-top:8px"><a class="btn ghost" href="/teklif-al/">Kendi durumumu sorayım</a></div>
-    </div>
-  </section>
-</Base>
+<Layout metadata={metadata}>
+  <StructuredData slot="structured-data" data={structuredData} />
+  <HeroText tagline="Rehber" title={r.soru} subtitle={r.ozet} />
+  <div class="mx-auto max-w-3xl px-4 sm:px-6 pb-8">
+    <p class="text-lg">{r.cevap}</p>
+  </div>
+  <Features
+    columns={1}
+    items={r.detay.map((d) => ({ title: d, icon: 'tabler:point' }))}
+  />
+  <CallToAction title="Kendi durumumu sorayım" actions={[{ variant: 'primary', text: 'Teklif al', href: '/teklif-al/' }]} />
+</Layout>

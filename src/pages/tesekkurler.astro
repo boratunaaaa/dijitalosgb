@@ -1,15 +1,12 @@
 ---
-import Base from "../layouts/Base.astro";
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+const metadata = { title: 'Talebiniz Alındı', robots: { index: false } };
 ---
-<Base title="Talebiniz Alındı" description="Teklif talebiniz bize ulaştı.">
-  <section class="band">
-    <div class="wrap stack">
-      <h1>Talebiniz ulaştı</h1>
-      <p class="prose">
-        Tehlike sınıfınızı ve yükümlülüğünüzü çıkarıp size dönüyoruz. Acil bir
-        durum varsa formda bıraktığınız numaradan doğrudan arayabilirsiniz.
-      </p>
-      <div><a class="btn ghost" href="/">Ana sayfaya dön</a></div>
-    </div>
-  </section>
-</Base>
+<Layout metadata={metadata}>
+  <HeroText
+    title="Talebiniz ulaştı"
+    subtitle="Tehlike sınıfınızı ve yükümlülüğünüzü çıkarıp size dönüyoruz."
+    actions={[{ text: 'Ana sayfaya dön', href: '/' }]}
+  />
+</Layout>

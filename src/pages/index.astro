@@ -1,101 +1,182 @@
 ---
-import Base from "../layouts/Base.astro";
-import { site, isOrtagi, egitimSureleri } from "../data/site";
-import { ilceler } from "../data/ilceler";
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import { site, isOrtagi, egitimSureleri } from '~/data/site';
+import { ilceler } from '~/data/ilceler';
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: site.name,
-  description: site.tagline,
-  url: site.url,
-  areaServed: site.hizmetIlleri.map((il) => ({ "@type": "AdministrativeArea", name: il })),
-  knowsAbout: ["İş sağlığı ve güvenliği", "İSG eğitimi", "Risk değerlendirmesi"],
+const metadata = {
+  title: 'OSGB Hizmeti ve Uzaktan İSG Eğitimi',
+  ignoreTitleTemplate: false,
 };
 ---
-<Base
-  title={site.name}
-  description="İstanbul, Kocaeli ve Tekirdağ'da OSGB hizmeti; Türkiye genelinde uzaktan İSG eğitimi. Yükümlülüğünüzü ve maliyetini önce net olarak öğrenin."
-  schema={schema}
->
-  <section class="band">
-    <div class="wrap stack">
-      <p class="eyebrow">6331 sayılı İş Sağlığı ve Güvenliği Kanunu</p>
-      <h1>İSG yükümlülüğünüz belli. Belirsiz olan, ne kadara ve nasıl kapanacağı.</h1>
-      <p class="prose" style="font-size:1.1rem">
-        Her işyerinin iş güvenliği uzmanı, işyeri hekimi ve çalışan eğitimi
-        yükümlülüğü tehlike sınıfına ve çalışan sayısına göre değişir. Aynı
-        başlıkları sayan tekliflerin arasındaki fark da genelde buradan çıkar.
-        Önce hangi yükümlülüğün size düştüğünü netleştiriyoruz.
-      </p>
-      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:8px">
-        <a class="btn" href="/teklif-al/">Yükümlülüğümü öğren</a>
-        <a class="btn ghost" href="/isg-egitimi/">Uzaktan İSG eğitimi</a>
-      </div>
-    </div>
-  </section>
 
-  <section class="band">
-    <div class="wrap stack">
-      <h2>Temel eğitim süresi tehlike sınıfına göre değişir</h2>
-      <p class="prose muted">
-        Süreler yönetmelikle sabittir; pazarlık konusu değildir. Uzaktan
-        verilebilecek kısım ise sınıfa göre daralır.
-      </p>
-      <div class="tbl">
-        <table>
-          <thead>
-            <tr><th>Tehlike sınıfı</th><th>Temel eğitim</th><th>Uzaktan verilebilirlik</th></tr>
-          </thead>
-          <tbody>
-            {egitimSureleri.map((e) => (
-              <tr>
-                <td>{e.sinif}</td>
-                <td class="num">{e.saat} ders saati</td>
-                <td>{e.uzaktan}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
+<Layout metadata={metadata}>
+  <Hero
+    actions={[
+      { variant: 'primary', text: 'Yükümlülüğümü öğren', href: '/teklif-al/' },
+      { text: 'Uzaktan İSG eğitimi', href: '/isg-egitimi/' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=80',
+      alt: 'İş güvenliği ekipmanıyla saha denetimi',
+    }}
+  >
+    <Fragment slot="title">
+      İSG yükümlülüğünüz belli.<br />
+      <span class="text-accent dark:text-white highlight">Belirsiz olan, ne kadara kapanacağı.</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      Her işyerinin iş güvenliği uzmanı, işyeri hekimi ve çalışan eğitimi yükümlülüğü
+      tehlike sınıfına ve çalışan sayısına göre değişir. Aynı başlıkları sayan
+      tekliflerin arasındaki fark da genelde buradan çıkar. Önce hangi yükümlülüğün
+      size düştüğünü netleştiriyoruz.
+    </Fragment>
+  </Hero>
 
-  <section class="band">
-    <div class="wrap stack">
-      <h2>Saha hizmeti verdiğimiz ilçeler</h2>
-      <p class="prose muted">
-        OSGB'ler kurulu oldukları il ve sınır komşusu illerde hizmet verebilir.
-        Bu yüzden saha hizmetimiz {site.hizmetIlleri.join(", ")} ile sınırlı —
-        hizmet veremeyeceğimiz yerden talep toplamıyoruz. Eğitim tarafında
-        böyle bir sınır yok.
-      </p>
-      <div class="grid">
-        {ilceler.map((i) => (
-          <a class="card" href={`/osgb/${i.slug}/`} style="text-decoration:none;color:inherit">
-            <h3>{i.ad} OSGB</h3>
-            <p class="muted" style="font-size:.95rem">{i.il}</p>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
+  <Stats
+    title="Yükümlülüğün üç sayısı"
+    subtitle="Temel eğitim süreleri yönetmelikle sabittir; pazarlık konusu değildir."
+    stats={egitimSureleri.map((e) => ({
+      title: `${e.saat} saat`,
+      amount: e.sinif,
+    }))}
+  />
 
-  <section class="band">
-    <div class="wrap stack">
-      <h2>Bu iş kimin üzerinden yürüyor</h2>
-      <p class="prose">
-        {site.name} bir OSGB değildir. Saha hizmetleri, Çalışma ve Sosyal
-        Güvenlik Bakanlığı'ndan yetkili iş ortağımız <strong>{isOrtagi.ad}</strong>
-        tarafından verilir. Eğitimleri İSG uzmanı olarak doğrudan biz veriyoruz.
+  <Features
+    id="hizmetler"
+    tagline="Üç hizmet hattı"
+    title="Ne yapıyoruz"
+    subtitle="Saha hizmeti il sınırlıdır, eğitim değildir. İkisini bilerek ayrı yürütüyoruz."
+    items={[
+      {
+        title: 'OSGB hizmeti',
+        description:
+          'İş güvenliği uzmanı ve işyeri hekimi görevlendirmesi, risk değerlendirmesi, acil durum planı ve ortam ölçümü. İstanbul, Kocaeli ve Tekirdağ.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Uzaktan İSG eğitimi',
+        description:
+          'Zorunlu temel eğitim ve yenileme, 81 ilde. Eğitimde coğrafi sınır yoktur; katılım tutanağı ve Ek-2 belgesi düzenlenir.',
+        icon: 'tabler:device-laptop',
+      },
+      {
+        title: 'Mobil sağlık taraması',
+        description:
+          'İşe giriş ve periyodik muayeneler işyerinizde. Odyometri, solunum fonksiyon testi, akciğer grafisi ve laboratuvar örneklemesi.',
+        icon: 'tabler:ambulance',
+      },
+    ]}
+  />
+
+  <Steps
+    title="Nasıl ilerliyor"
+    items={[
+      {
+        title: 'Tehlike sınıfınızı çıkarıyoruz',
+        description:
+          'Sınıfı işveren seçmez; işyerinin NACE kodu belirler. Yükümlülüklerin neredeyse tamamı buna bağlı olduğu için ilk netleşmesi gereken şey budur.',
+        icon: 'tabler:list-search',
+      },
+      {
+        title: 'Yükümlülüğü ve maliyeti yazıyoruz',
+        description:
+          'Kaç saat uzman, kaç saat hekim, kaç saat eğitim. Kalem kalem, sonradan çıkan başlık olmadan.',
+        icon: 'tabler:file-description',
+      },
+      {
+        title: 'Sözleşme ve İSG-KATİP',
+        description:
+          'Görevlendirmeler İSG-KATİP üzerinden kayda geçer. Denetimde sorulan ilk şey budur.',
+        icon: 'tabler:writing-sign',
+      },
+      {
+        title: 'Saha ve eğitim takvimi',
+        description:
+          'Periyodik ziyaretler, mobil sağlık taraması ve çalışan eğitimleri planlanır.',
+        icon: 'tabler:calendar-check',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80',
+      alt: 'Şantiyede iş güvenliği planlaması',
+    }}
+  />
+
+  <Content
+    isReversed
+    title="Saha hizmetini kim veriyor"
+    items={[
+      { title: isOrtagi.ad, description: isOrtagi.adres, icon: 'tabler:building' },
+      {
+        title: 'Eğitimler doğrudan bizden',
+        description: 'Uzaktan İSG eğitimlerini İSG uzmanı olarak doğrudan veriyoruz; bu hatta aracı yoktur.',
+        icon: 'tabler:certificate',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80',
+      alt: 'İşyerinde değerlendirme toplantısı',
+    }}
+  >
+    <Fragment slot="content">
+      <p>
+        <strong>{site.name} bir OSGB değildir.</strong> OSGB, Çalışma ve Sosyal Güvenlik
+        Bakanlığı tarafından yetkilendirilen bir yapıdır. Saha hizmetleri yetkili iş
+        ortağımız tarafından verilir; süreci biz kurar ve yürütürüz.
       </p>
-      <div class="card" style="max-width:64ch">
-        <h3>{isOrtagi.ad}</h3>
-        <p class="muted" style="font-size:.95rem">{isOrtagi.adres}</p>
-        {isOrtagi.yetkiBelgeNo && (
-          <p style="font-size:.95rem">Yetki belgesi no: <strong>{isOrtagi.yetkiBelgeNo}</strong></p>
-        )}
-      </div>
-    </div>
-  </section>
-</Base>
+    </Fragment>
+  </Content>
+
+  <Features
+    id="bolgeler"
+    tagline="Saha kapsamı"
+    title="Hizmet verdiğimiz ilçeler"
+    subtitle="OSGB'ler kurulu oldukları il ve sınır komşusu illerde hizmet verebilir. Hizmet veremeyeceğimiz yerden talep toplamıyoruz."
+    columns={3}
+    items={ilceler.map((i) => ({
+      title: `${i.ad} OSGB`,
+      description: i.il,
+      icon: 'tabler:map-pin',
+      callToAction: { text: 'İlçe sayfası', href: `/osgb/${i.slug}/` },
+    }))}
+  />
+
+  <FAQs
+    title="Sık sorulanlar"
+    items={[
+      {
+        title: 'OSGB hizmeti almak zorunlu mu?',
+        description:
+          'Zorunlu olan OSGB’den hizmet almak değil, iş güvenliği uzmanı ve işyeri hekimi görevlendirmektir. Bunları kendi bünyesinde istihdam edemeyen işyerleri hizmeti OSGB’den alır.',
+      },
+      {
+        title: 'İSG eğitimi uzaktan verilebilir mi?',
+        description:
+          'Verilebilir, ama tamamı değil. Ek-1’in dördüncü konu başlığı tehlikeli ve çok tehlikeli işyerlerinde yüz yüze zorunludur; az tehlikeli sınıfta eğitimin tamamı uzaktan tamamlanabilir.',
+      },
+      {
+        title: 'Başka şehirdeki çalışanlarıma eğitim verebilir misiniz?',
+        description:
+          'Evet. Saha OSGB hizmetinde il sınırı vardır, eğitimde yoktur. Türkiye’nin 81 ilindeki çalışanlara uzaktan eğitim verilebilir.',
+      },
+      {
+        title: 'Tehlike sınıfımı nasıl öğrenirim?',
+        description:
+          'İşyerinin asıl faaliyetine karşılık gelen NACE kodu belirler. Teklif formunu doldurun, sınıfı ve buna bağlı yükümlülüğü biz çıkaralım.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Teklif al', href: '/teklif-al/' }]}
+    title="Önce yükümlülüğünüzü öğrenin"
+    subtitle="Ne iş yaptığınızı, kaç kişi çalıştığınızı ve nerede olduğunuzu bilmemiz yeterli."
+  />
+</Layout>

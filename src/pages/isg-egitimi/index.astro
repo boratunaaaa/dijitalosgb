@@ -1,127 +1,84 @@
 ---
-import Base from "../../layouts/Base.astro";
-import { site, egitimSureleri } from "../../data/site";
-import { illerSayfali, tumIller } from "../../data/iller";
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Features from '~/components/widgets/Features.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import StructuredData from '~/components/common/StructuredData.astro';
+import { site, egitimSureleri } from '~/data/site';
+import { illerSayfali, tumIller } from '~/data/iller';
+
+const metadata = {
+  title: 'Uzaktan İSG Eğitimi — Türkiye Geneli',
+  description: "Çalışanların zorunlu temel İSG eğitimi, 81 ilde uzaktan. Az tehlikeli 8, tehlikeli 12, çok tehlikeli 16 ders saati.",
+};
 
 const sss = [
-  {
-    s: "Uzaktan İSG eğitimi geçerli mi?",
-    c: "Evet. Çalışanların İSG Eğitimleri Yönetmeliği uzaktan eğitimi tanıyor. Sınır konu başlığında: Ek-1'deki ilk üç konu başlığı her işyerinde uzaktan verilebilir; dördüncü başlık tehlikeli ve çok tehlikeli işyerlerinde yüz yüze zorunludur.",
-  },
-  {
-    s: "Eğitim kaç saat olmak zorunda?",
-    c: "Tehlike sınıfına göre: az tehlikeli 8, tehlikeli 12, çok tehlikeli 16 ders saati. Bu süreler yönetmelikle sabittir.",
-  },
-  {
-    s: "Eğitim sonunda hangi belge düzenleniyor?",
-    c: "Katılım tutanağı ve yönetmeliğin Ek-2'sindeki forma uygun temel eğitim belgesi. Belgeler çalışanın özlük dosyasında saklanır.",
-  },
-  {
-    s: "Başka şehirdeki çalışanlarıma eğitim verebilir misiniz?",
-    c: "Evet. Saha OSGB hizmetinde il sınırı vardır, eğitimde yoktur. Türkiye'nin 81 ilindeki çalışanlara uzaktan eğitim verilebilir.",
-  },
-  {
-    s: "Eğitimi kim veriyor?",
-    c: "Eğitimler İSG uzmanı tarafından doğrudan verilir. Saha OSGB hizmetlerinden farklı olarak bu hizmette aracı yoktur.",
-  },
+  { title: 'Uzaktan İSG eğitimi geçerli mi?', description: 'Evet. Yönetmelik uzaktan eğitimi tanıyor. Ek-1’deki ilk üç konu başlığı her işyerinde uzaktan verilebilir; dördüncü başlık tehlikeli ve çok tehlikeli işyerlerinde yüz yüze zorunludur.' },
+  { title: 'Eğitim kaç saat olmak zorunda?', description: 'Tehlike sınıfına göre: az tehlikeli 8, tehlikeli 12, çok tehlikeli 16 ders saati. Bu süreler yönetmelikle sabittir.' },
+  { title: 'Eğitim sonunda hangi belge düzenleniyor?', description: 'Katılım tutanağı ve yönetmeliğin Ek-2’sindeki forma uygun temel eğitim belgesi. Belgeler çalışanın özlük dosyasında saklanır.' },
+  { title: 'Başka şehirdeki çalışanlarıma eğitim verebilir misiniz?', description: 'Evet. Saha OSGB hizmetinde il sınırı vardır, eğitimde yoktur. 81 ildeki çalışanlara uzaktan eğitim verilebilir.' },
+  { title: 'Eğitimi kim veriyor?', description: 'Eğitimler İSG uzmanı tarafından doğrudan verilir. Bu hizmette aracı yoktur.' },
 ];
 
-const schema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Course",
-      name: "Çalışanların Temel İş Sağlığı ve Güvenliği Eğitimi",
-      description:
-        "6331 sayılı Kanun kapsamında zorunlu temel İSG eğitimi. Tehlike sınıfına göre 8, 12 veya 16 ders saati; uygun sınıfta tamamı uzaktan verilebilir.",
-      inLanguage: "tr",
-      provider: { "@type": "Organization", name: site.name, url: site.url },
-      hasCourseInstance: egitimSureleri.map((e) => ({
-        "@type": "CourseInstance",
-        name: `${e.sinif} işyerleri için temel İSG eğitimi`,
-        courseMode: "online",
-        courseWorkload: `PT${e.saat}H`,
-      })),
-    },
-    {
-      "@type": "FAQPage",
-      mainEntity: sss.map((q) => ({
-        "@type": "Question",
-        name: q.s,
-        acceptedAnswer: { "@type": "Answer", text: q.c },
-      })),
-    },
-  ],
-};
+const structuredData = [{
+  '@context': 'https://schema.org',
+  '@type': 'Course',
+  name: 'Çalışanların Temel İş Sağlığı ve Güvenliği Eğitimi',
+  description: '6331 sayılı Kanun kapsamında zorunlu temel İSG eğitimi.',
+  inLanguage: 'tr',
+  provider: { '@type': 'Organization', name: site.name, url: site.url },
+  hasCourseInstance: egitimSureleri.map((e) => ({
+    '@type': 'CourseInstance',
+    name: `${e.sinif} işyerleri için temel İSG eğitimi`,
+    courseMode: 'online',
+    courseWorkload: `PT${e.saat}H`,
+  })),
+}];
 ---
-<Base
-  title="Uzaktan İSG Eğitimi — Türkiye Geneli"
-  description="Çalışanların zorunlu temel İSG eğitimi, 81 ilde uzaktan. Az tehlikeli 8, tehlikeli 12, çok tehlikeli 16 ders saati. Katılım tutanağı ve Ek-2 belgesi düzenlenir."
-  schema={schema}
->
-  <section class="band">
-    <div class="wrap stack">
-      <p class="eyebrow">81 ilde geçerli</p>
-      <h1>Uzaktan İSG eğitimi</h1>
-      <p class="prose" style="font-size:1.08rem">
-        Saha OSGB hizmetinde il sınırı vardır; eğitimde yoktur. Çalışanlarınız
-        Türkiye'nin neresinde olursa olsun zorunlu temel eğitimi uzaktan
-        tamamlayabilir, belgeleri özlük dosyasına işlenmek üzere size ulaşır.
-      </p>
-      <div><a class="btn" href="/teklif-al/">Eğitim teklifi al</a></div>
-    </div>
-  </section>
+<Layout metadata={metadata}>
+  <StructuredData slot="structured-data" data={structuredData} />
+  <HeroText
+    tagline="81 ilde geçerli"
+    title="Uzaktan İSG eğitimi"
+    subtitle="Saha OSGB hizmetinde il sınırı vardır; eğitimde yoktur. Çalışanlarınız Türkiye'nin neresinde olursa olsun zorunlu temel eğitimi uzaktan tamamlayabilir."
+    actions={[{ variant: 'primary', text: 'Eğitim teklifi al', href: '/teklif-al/' }]}
+  />
 
-  <section class="band">
-    <div class="wrap stack">
-      <h2>Neyin uzaktan verilebildiği tehlike sınıfına bağlı</h2>
-      <div class="tbl">
-        <table>
-          <thead><tr><th>Tehlike sınıfı</th><th>Temel eğitim</th><th>Uzaktan</th></tr></thead>
-          <tbody>
-            {egitimSureleri.map((e) => (
-              <tr><td>{e.sinif}</td><td class="num">{e.saat} ders saati</td><td>{e.uzaktan}</td></tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <p class="prose muted" style="font-size:.95rem">
-        Dördüncü konu başlığı tehlikeli ve çok tehlikeli işyerlerinde yüz yüze
-        yapılır. Bu sınıflarda karma bir takvim kurarız: uzaktan bölüm
-        çalışanın kendi hızında, yüz yüze bölüm planlı bir günde.
-      </p>
-    </div>
-  </section>
+  <Stats
+    title="Temel eğitim süreleri"
+    subtitle="Yönetmelikle sabit; pazarlık konusu değildir."
+    stats={egitimSureleri.map((e) => ({ title: `${e.saat} saat`, amount: e.sinif }))}
+  />
 
-  <section class="band">
-    <div class="wrap stack">
-      <h2>Sık sorulanlar</h2>
-      <div class="stack">
-        {sss.map((q) => (
-          <div class="card">
-            <h3>{q.s}</h3>
-            <p class="muted">{q.c}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <Features
+    title="Neyin uzaktan verilebildiği sınıfa bağlı"
+    columns={3}
+    items={egitimSureleri.map((e) => ({
+      title: e.sinif,
+      description: `${e.saat} ders saati. ${e.uzaktan}.`,
+      icon: 'tabler:device-laptop',
+    }))}
+  />
 
-  <section class="band">
-    <div class="wrap stack">
-      <h2>İllere göre</h2>
-      <div class="grid">
-        {illerSayfali.map((i) => (
-          <a class="card" href={`/isg-egitimi/${i.slug}/`} style="text-decoration:none;color:inherit">
-            <h3>{i.ad}</h3>
-            <p class="muted" style="font-size:.93rem">{i.sektor.slice(0, 80)}…</p>
-          </a>
-        ))}
-      </div>
-      <details style="margin-top:8px">
-        <summary style="cursor:pointer">Hizmet verilen 81 ilin tamamı</summary>
-        <p class="muted" style="font-size:.93rem;margin-top:10px">{tumIller.join(" · ")}</p>
-      </details>
-    </div>
-  </section>
-</Base>
+  <FAQs title="Sık sorulanlar" items={sss} />
+
+  <Features
+    title="İllere göre"
+    subtitle="Aşağıdaki iller için ayrı sayfa var; eğitim hizmetimiz 81 ilin tamamını kapsıyor."
+    columns={3}
+    items={illerSayfali.map((i) => ({
+      title: i.ad,
+      description: i.sektor.slice(0, 90) + '…',
+      icon: 'tabler:map-pin',
+      callToAction: { text: 'Detay', href: `/isg-egitimi/${i.slug}/` },
+    }))}
+  />
+
+  <CallToAction
+    title="Hizmet verilen iller"
+    subtitle={tumIller.join(' · ')}
+    actions={[{ variant: 'primary', text: 'Teklif al', href: '/teklif-al/' }]}
+  />
+</Layout>

@@ -1,58 +1,51 @@
 ---
-import Base from "../layouts/Base.astro";
-import { site } from "../data/site";
-import { ilceler } from "../data/ilceler";
----
-<Base
-  title="Teklif Al"
-  description="Tehlike sınıfınızı ve çalışan sayınızı bildirin; yükümlülüğünüzü ve maliyetini net olarak çıkaralım."
->
-  <section class="band">
-    <div class="wrap stack">
-      <h1>Teklif al</h1>
-      <p class="prose muted">
-        Teklifi doğru verebilmek için üç şey yeterli: işin ne olduğu, kaç kişi
-        çalıştığı ve nerede olduğu. Tehlike sınıfını NACE koduna göre biz
-        çıkarırız.
-      </p>
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import { site } from '~/data/site';
+import { ilceler } from '~/data/ilceler';
 
-      <form class="stack" style="max-width:52ch;margin-top:8px" method="post" action="/api/teklif">
-        <div class="stack" style="gap:6px">
-          <label for="firma">Firma adı</label>
-          <input id="firma" name="firma" type="text" required
-                 style="padding:11px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit" />
-        </div>
-        <div class="stack" style="gap:6px">
-          <label for="faaliyet">Ne iş yapıyorsunuz?</label>
-          <input id="faaliyet" name="faaliyet" type="text" required
-                 placeholder="örn. tekstil üretimi, muhasebe ofisi"
-                 style="padding:11px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit" />
-        </div>
-        <div class="stack" style="gap:6px">
-          <label for="calisan">Çalışan sayısı</label>
-          <input id="calisan" name="calisan" type="number" min="1" required
-                 style="padding:11px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit" />
-        </div>
-        <div class="stack" style="gap:6px">
-          <label for="konum">Konum</label>
-          <select id="konum" name="konum" required
-                  style="padding:11px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit">
-            {ilceler.map((i) => <option value={i.slug}>{i.ad} ({i.il})</option>)}
-            <option value="diger">Başka il — yalnız uzaktan eğitim</option>
-          </select>
-        </div>
-        <div class="stack" style="gap:6px">
-          <label for="iletisim">Size nasıl dönelim?</label>
-          <input id="iletisim" name="iletisim" type="text" required
-                 placeholder="telefon veya e-posta"
-                 style="padding:11px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit" />
-        </div>
-        <button class="btn" type="submit">Gönder</button>
-        <p class="muted" style="font-size:.85rem">
-          Bilgileriniz yalnız teklif hazırlamak için kullanılır.
-          {site.name} bir OSGB değildir; saha hizmeti yetkili iş ortağı tarafından verilir.
-        </p>
-      </form>
-    </div>
+const metadata = {
+  title: 'Teklif Al',
+  description: 'Tehlike sınıfınızı ve çalışan sayınızı bildirin; yükümlülüğünüzü ve maliyetini net olarak çıkaralım.',
+};
+const alan = 'w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-base text-gray-900 focus:border-primary focus:ring-1 focus:ring-primary';
+---
+<Layout metadata={metadata}>
+  <HeroText
+    title="Teklif al"
+    subtitle="Teklifi doğru verebilmek için üç şey yeterli: işin ne olduğu, kaç kişi çalıştığı ve nerede olduğu. Tehlike sınıfını NACE koduna göre biz çıkarırız."
+  />
+
+  <section class="mx-auto max-w-2xl px-4 sm:px-6 pb-16">
+    <form method="post" action="/api/teklif" class="flex flex-col gap-5">
+      <div class="flex flex-col gap-2">
+        <label for="firma" class="font-medium">Firma adı</label>
+        <input id="firma" name="firma" type="text" required class={alan} />
+      </div>
+      <div class="flex flex-col gap-2">
+        <label for="faaliyet" class="font-medium">Ne iş yapıyorsunuz?</label>
+        <input id="faaliyet" name="faaliyet" type="text" required placeholder="örn. tekstil üretimi, muhasebe ofisi" class={alan} />
+      </div>
+      <div class="flex flex-col gap-2">
+        <label for="calisan" class="font-medium">Çalışan sayısı</label>
+        <input id="calisan" name="calisan" type="number" min="1" required class={alan} />
+      </div>
+      <div class="flex flex-col gap-2">
+        <label for="konum" class="font-medium">Konum</label>
+        <select id="konum" name="konum" required class={alan}>
+          {ilceler.map((i) => <option value={i.slug}>{i.ad} ({i.il})</option>)}
+          <option value="diger">Başka il — yalnız uzaktan eğitim</option>
+        </select>
+      </div>
+      <div class="flex flex-col gap-2">
+        <label for="iletisim" class="font-medium">Size nasıl dönelim?</label>
+        <input id="iletisim" name="iletisim" type="text" required placeholder="telefon veya e-posta" class={alan} />
+      </div>
+      <button type="submit" class="btn btn-primary w-full sm:w-auto">Gönder</button>
+      <p class="text-sm text-muted">
+        Bilgileriniz yalnız teklif hazırlamak için kullanılır.
+        {site.name} bir OSGB değildir; saha hizmeti yetkili iş ortağı tarafından verilir.
+      </p>
+    </form>
   </section>
-</Base>
+</Layout>

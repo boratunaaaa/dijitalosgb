@@ -1,58 +1,47 @@
 ---
-import Base from "../../layouts/Base.astro";
-import { site, egitimSureleri } from "../../data/site";
-import { illerSayfali } from "../../data/iller";
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import StructuredData from '~/components/common/StructuredData.astro';
+import { site, egitimSureleri } from '~/data/site';
+import { illerSayfali } from '~/data/iller';
 
 export function getStaticPaths() {
   return illerSayfali.map((i) => ({ params: { il: i.slug }, props: { il: i } }));
 }
 const { il } = Astro.props;
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "Course",
-  name: `${il.ad} için uzaktan İSG eğitimi`,
-  description: `${il.ad} işyerleri için zorunlu temel iş sağlığı ve güvenliği eğitimi, uzaktan.`,
-  inLanguage: "tr",
-  provider: { "@type": "Organization", name: site.name, url: site.url },
-  hasCourseInstance: {
-    "@type": "CourseInstance",
-    courseMode: "online",
-    location: { "@type": "AdministrativeArea", name: il.ad },
-  },
+const metadata = {
+  title: `${il.ad} Uzaktan İSG Eğitimi`,
+  description: `${il.ad} işyerleri için zorunlu temel İSG eğitimi, uzaktan.`,
 };
----
-<Base
-  title={`${il.ad} Uzaktan İSG Eğitimi`}
-  description={`${il.ad} işyerleri için zorunlu temel İSG eğitimi, uzaktan. Tehlike sınıfına göre 8, 12 veya 16 ders saati; katılım tutanağı ve Ek-2 belgesi düzenlenir.`}
-  schema={schema}
->
-  <section class="band">
-    <div class="wrap stack">
-      <p class="eyebrow">Uzaktan eğitim</p>
-      <h1>{il.ad} için İSG eğitimi</h1>
-      <p class="prose" style="font-size:1.08rem">{il.sektor}</p>
-      <div><a class="btn" href="/teklif-al/">{il.ad} için teklif al</a></div>
-    </div>
-  </section>
 
-  <section class="band">
-    <div class="wrap stack">
-      <h2>Süre ve uzaktan verilebilirlik</h2>
-      <div class="tbl">
-        <table>
-          <thead><tr><th>Tehlike sınıfı</th><th>Temel eğitim</th><th>Uzaktan</th></tr></thead>
-          <tbody>
-            {egitimSureleri.map((e) => (
-              <tr><td>{e.sinif}</td><td class="num">{e.saat} ders saati</td><td>{e.uzaktan}</td></tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <p class="prose muted" style="font-size:.95rem">
-        Eğitimde il sınırı yoktur; {il.ad}'daki çalışanlarınız için saha
-        hizmeti kapsamımız dışında olsak bile eğitim verebiliriz.
-      </p>
-    </div>
-  </section>
-</Base>
+const structuredData = [{
+  '@context': 'https://schema.org',
+  '@type': 'Course',
+  name: `${il.ad} için uzaktan İSG eğitimi`,
+  inLanguage: 'tr',
+  provider: { '@type': 'Organization', name: site.name, url: site.url },
+  hasCourseInstance: { '@type': 'CourseInstance', courseMode: 'online', location: { '@type': 'AdministrativeArea', name: il.ad } },
+}];
+---
+<Layout metadata={metadata}>
+  <StructuredData slot="structured-data" data={structuredData} />
+  <HeroText
+    tagline="Uzaktan eğitim"
+    title={`${il.ad} için İSG eğitimi`}
+    subtitle={il.sektor}
+    actions={[{ variant: 'primary', text: `${il.ad} için teklif al`, href: '/teklif-al/' }]}
+  />
+  <Features
+    title="Süre ve uzaktan verilebilirlik"
+    columns={3}
+    items={egitimSureleri.map((e) => ({ title: e.sinif, description: `${e.saat} ders saati. ${e.uzaktan}.`, icon: 'tabler:clock' }))}
+  />
+  <CallToAction
+    title="Eğitimde il sınırı yok"
+    subtitle={`${il.ad} saha hizmeti kapsamımız dışında olsa bile çalışanlarınıza uzaktan eğitim verebiliriz.`}
+    actions={[{ variant: 'primary', text: 'Teklif al', href: '/teklif-al/' }]}
+  />
+</Layout>
