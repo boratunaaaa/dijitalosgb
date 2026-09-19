@@ -1,0 +1,8 @@
+name = "dijitalosgb"
+compatibility_date = "2026-09-19"
+
+# Çıktı klasörü BİLEREK burada sabit.
+# 2026-07-10'da İşletme Vitrini'nde `wrangler pages deploy` depo kökünü
+# yükledi ve `.env` sızdı. Bu satır, argümansız/dalgın bir çağrının bile
+# yalnız `dist/` yüklemesini garanti ediyor.
+pages_build_output_dir = "dist"
