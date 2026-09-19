@@ -2,57 +2,238 @@
 import mobilSaglikAraci from '~/assets/images/mobil-saglik-araci-isyeri-taramasi.jpg';
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
-import Features from '~/components/widgets/Features.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import StructuredData from '~/components/common/StructuredData.astro';
-import { site, isOrtagi } from '~/data/site';
+import { site } from '~/data/site';
 
 const metadata = {
-  title: 'Mobil Sağlık Taraması',
-  description: 'İşe giriş ve periyodik muayeneler işyerinizde. Odyometri, SFT, akciğer grafisi ve laboratuvar; vardiya kaybı olmadan.',
+  title: 'Mobil Sağlık Taraması — İşe Giriş ve Periyodik Muayeneler İşyerinizde',
+  description:
+    'İşe giriş ve periyodik muayeneler, tetkikleriyle birlikte işyerinizde. Odyometri, solunum fonksiyon testi, akciğer grafisi, EKG ve laboratuvar. İstanbul, Kocaeli ve Tekirdağ.',
 };
 
-const sss = [
-  { title: 'Mobil sağlık aracı ne yapar?', description: 'İşe giriş ve periyodik muayenelerin işyerinde yapılmasını sağlar. Odyometri, solunum fonksiyon testi, akciğer grafisi ve laboratuvar örneklemesi araçta yapılabilir.' },
-  { title: 'Neden işyerine gelen araç?', description: 'Çalışanların tek tek hastaneye gitmesi vardiya kaybı demektir. Araç işyerine geldiğinde aynı gün içinde çok sayıda çalışan taranır, üretim durmaz.' },
-  { title: 'Hangi illere geliyor?', description: `Saha hizmeti kapsamımızla aynı: ${site.hizmetIlleri.join(', ')}. OSGB'ler kurulu oldukları il ve sınır komşusu illerde hizmet verebilir.` },
+const sayfaUrl = `${site.url}/mobil-saglik-taramasi/`;
+
+/** Araçta yapılabilen tetkikler ve hangi maruziyet için gerektiği. */
+const tetkikler = [
+  {
+    ad: 'Odyometri',
+    ne: 'İşitme testi',
+    kim: 'Gürültülü ortamda çalışanlar: üretim hattı, taşlama, pres, jeneratör sahası.',
+    ikon: 'ear',
+  },
+  {
+    ad: 'Solunum fonksiyon testi',
+    ne: 'Akciğer kapasitesi ölçümü',
+    kim: 'Toz, duman ve kimyasal buharına maruz kalanlar: kaynak, ahşap, tekstil, boyahane.',
+    ikon: 'lung',
+  },
+  {
+    ad: 'Akciğer grafisi',
+    ne: 'Dijital göğüs röntgeni',
+    kim: 'Tozlu işlerde çalışanlar; pnömokonyoz taramasında esas tetkiktir.',
+    ikon: 'xray',
+  },
+  {
+    ad: 'EKG',
+    ne: 'Elektrokardiyografi',
+    kim: 'Ağır bedensel iş yapanlar, yüksekte çalışanlar ve belirli yaş üstü çalışanlar.',
+    ikon: 'heart',
+  },
+  {
+    ad: 'Laboratuvar tetkikleri',
+    ne: 'Kan ve idrar örneklemesi',
+    kim: 'Kurşun, çözücü ve ağır metal gibi kimyasallara maruz kalanlar.',
+    ikon: 'lab',
+  },
+  {
+    ad: 'Göz muayenesi',
+    ne: 'Görme keskinliği',
+    kim: 'Ekranlı araçla çalışanlar, araç ve iş makinesi kullananlar.',
+    ikon: 'eye',
+  },
 ];
 
-const structuredData = [{
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  name: 'Mobil sağlık taraması',
-  serviceType: 'İşyerinde periyodik sağlık muayenesi',
-  areaServed: site.hizmetIlleri.map((i) => ({ '@type': 'AdministrativeArea', name: i })),
-  provider: { '@type': 'Organization', name: isOrtagi.ad },
-}];
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Mobil sağlık taraması',
+    serviceType: 'İşyerinde işe giriş ve periyodik sağlık muayenesi',
+    description: metadata.description,
+    url: sayfaUrl,
+    areaServed: site.hizmetIlleri.map((i) => ({ '@type': 'AdministrativeArea', name: i })),
+    provider: { '@type': 'Organization', name: site.name, url: site.url },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'İşe giriş muayenesi zorunlu mu?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Evet. Çalışan işe başlamadan önce sağlık muayenesinden geçirilir ve yaptığı işe uygun olduğu rapora bağlanır. Rapor olmadan çalıştırma, denetimde doğrudan tespit doğurur ve bir iş kazası hâlinde işverenin sorumluluğunu ağırlaştırır.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Periyodik muayene ne sıklıkla yapılır?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Sağlık gözetimi aralığı tehlike sınıfına göre belirlenir: az tehlikeli işyerlerinde en geç beş yılda bir, tehlikeli işyerlerinde üç yılda bir, çok tehlikeli işyerlerinde yılda bir. İşyeri hekimi, işin niteliğine göre bu aralığı kısaltabilir.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Muayeneler işyerinde yapılabilir mi?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Evet. Mobil sağlık aracıyla muayene ve tetkikler işyerinizde yapılır. Çalışanların tek tek sağlık kuruluşuna gitmesi gerekmez; aynı gün içinde çok sayıda çalışan taranır ve üretim durmaz.',
+        },
+      },
+    ],
+  },
+];
 ---
+
 <Layout metadata={metadata}>
   <StructuredData slot="head" schema={structuredData} />
+
   <Hero
-    actions={[{ variant: 'primary', text: 'Tarama planlat', href: '/teklif-al/' }]}
-    image={{ src: mobilSaglikAraci, alt: 'Mobil sağlık taraması' }}
+    tagline="Mobil sağlık aracı"
+    actions={[
+      { variant: 'primary', text: 'Tarama planlat', href: '/teklif-al/' },
+      { text: 'Hangi tetkikler gerekli?', href: '#tetkikler' },
+    ]}
+    image={{ src: mobilSaglikAraci, alt: 'İşyerinde sağlık taraması' }}
   >
-    <Fragment slot="title">Sağlık taraması <span class="decoration-accent underline decoration-4 underline-offset-8">işyerinize gelir</span></Fragment>
+    <Fragment slot="title">
+      Muayeneler için çalışanınızı <span class="decoration-accent underline decoration-4 underline-offset-8"
+        >işten çıkarmayın</span
+      >
+    </Fragment>
     <Fragment slot="subtitle">
-      Periyodik muayene yükümlülüğünün en pahalı kısmı testin kendisi değil,
-      çalışanın işten ayrı geçirdiği zamandır. Mobil araç işyerinize geldiğinde
-      tarama üretim akışını durdurmadan tamamlanır.
+      İşyerinizdeki her çalışanın işe giriş muayenesi ve düzenli aralıklarla
+      periyodik muayenesi yaptırılmak zorundadır. <strong>Mobil sağlık aracı
+      işyerinize gelir; muayene ve tetkikler aynı gün, yerinde tamamlanır.</strong>
+    </Fragment>
+    <Fragment slot="trust">
+      <dl class="mt-9 grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-5 border-t border-gray-200 dark:border-slate-700 pt-6">
+        <div>
+          <dt class="text-xs font-semibold uppercase tracking-wider text-muted">Hizmet bölgesi</dt>
+          <dd class="mt-1 font-semibold text-heading">{site.hizmetIlleri.join(' · ')}</dd>
+        </div>
+        <div>
+          <dt class="text-xs font-semibold uppercase tracking-wider text-muted">Tetkikler</dt>
+          <dd class="mt-1 font-semibold text-heading">Araçta tamamlanır</dd>
+        </div>
+        <div>
+          <dt class="text-xs font-semibold uppercase tracking-wider text-muted">Üretim kaybı</dt>
+          <dd class="mt-1 font-semibold text-heading">Yok</dd>
+        </div>
+      </dl>
     </Fragment>
   </Hero>
 
-  <Features
-    title="Araçta yapılabilenler"
-    columns={2}
-    items={[
-      { title: 'Odyometri', description: 'Gürültülü ortamda çalışanlar için işitme testi.', icon: 'tabler:ear' },
-      { title: 'Solunum fonksiyon testi', description: 'Toz, duman ve kimyasal maruziyetinde zorunlu takip.', icon: 'tabler:lungs' },
-      { title: 'Akciğer grafisi', description: 'Periyodik sağlık gözetiminin standart parçası.', icon: 'tabler:radioactive' },
-      { title: 'Laboratuvar örneklemesi', description: 'Kan ve idrar örnekleri araçta alınır, laboratuvara iletilir.', icon: 'tabler:test-pipe' },
+  <!-- Yükümlülük: neden gerekli -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-10 md:py-14 border-t border-gray-200 dark:border-slate-800">
+    <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-3">
+      Her çalışan için iki muayene zorunlu
+    </h2>
+    <p class="text-muted max-w-3xl mb-8">
+      Sağlık gözetimi, iş sağlığı ve güvenliği yükümlülüklerinin en çok atlanan
+      kalemidir. Oysa denetimde ilk istenen belgeler arasındadır ve bir iş
+      kazası sonrasında eksikliği doğrudan işverenin aleyhine sonuç doğurur.
+    </p>
+
+    <div class="grid gap-5 md:grid-cols-2">
+      <div class="rounded-2xl ring-1 ring-gray-200 dark:ring-slate-700 bg-white dark:bg-slate-900 p-6">
+        <h3 class="text-lg font-bold font-heading text-heading mb-2">İşe giriş muayenesi</h3>
+        <p class="text-muted mb-4">
+          Çalışan işe başlamadan önce muayeneden geçirilir ve yapacağı işe uygun
+          olduğu rapora bağlanır. Rapor işyeri hekimi tarafından düzenlenir.
+        </p>
+        <p class="text-sm text-muted">
+          Raporsuz çalıştırma, eksik belge olmanın ötesinde bir risktir: çalışan
+          o işe sağlık yönünden uygun değilse, ortaya çıkan zararın sorumluluğu
+          işverende kalır.
+        </p>
+      </div>
+      <div class="rounded-2xl ring-1 ring-gray-200 dark:ring-slate-700 bg-white dark:bg-slate-900 p-6">
+        <h3 class="text-lg font-bold font-heading text-heading mb-2">Periyodik muayene</h3>
+        <p class="text-muted mb-4">Aralık, işyerinin tehlike sınıfına göre belirlenir:</p>
+        <ul class="space-y-2">
+          <li class="flex items-baseline justify-between gap-4 border-b border-gray-200 dark:border-slate-700 pb-2">
+            <span class="text-default">Az tehlikeli</span>
+            <span class="font-semibold text-heading whitespace-nowrap">en geç 5 yılda bir</span>
+          </li>
+          <li class="flex items-baseline justify-between gap-4 border-b border-gray-200 dark:border-slate-700 pb-2">
+            <span class="text-default">Tehlikeli</span>
+            <span class="font-semibold text-heading whitespace-nowrap">en geç 3 yılda bir</span>
+          </li>
+          <li class="flex items-baseline justify-between gap-4">
+            <span class="text-default">Çok tehlikeli</span>
+            <span class="font-semibold text-heading whitespace-nowrap">yılda bir</span>
+          </li>
+        </ul>
+        <p class="mt-4 text-sm text-muted">
+          İşyeri hekimi, işin niteliğine ve maruziyete göre bu aralığı kısaltabilir.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tetkikler -->
+  <section id="tetkikler" class="max-w-6xl mx-auto px-4 sm:px-6 py-10 md:py-14 border-t border-gray-200 dark:border-slate-800 scroll-mt-24">
+    <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-3">
+      Araçta yapılabilen tetkikler
+    </h2>
+    <p class="text-muted max-w-3xl mb-8">
+      Hangi çalışana hangi tetkikin gerektiğine işyeri hekimi, işin niteliğine ve
+      maruziyete bakarak karar verir. Aşağıdakiler en sık istenenlerdir.
+    </p>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        tetkikler.map((t) => (
+          <div class="rounded-2xl ring-1 ring-gray-200 dark:ring-slate-700 bg-white dark:bg-slate-900 p-5">
+            <h3 class="font-bold text-heading">{t.ad}</h3>
+            <div class="text-sm text-primary font-medium mt-0.5">{t.ne}</div>
+            <p class="mt-2 text-sm text-muted">{t.kim}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Nasıl işler -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-10 md:py-14 border-t border-gray-200 dark:border-slate-800">
+    <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-8">Nasıl ilerliyor</h2>
+    <ol class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        [
+          { n: 1, b: 'Çalışan listesi ve maruziyet', a: 'Kimin hangi işte çalıştığını çıkarıyoruz; tetkik listesi buradan belirleniyor.' },
+          { n: 2, b: 'Takvim', a: 'Vardiya düzeninize göre gün ve saat planlanıyor; üretim akışı bozulmuyor.' },
+          { n: 3, b: 'Araç işyerinde', a: 'Muayene ve tetkikler aynı gün, işyerinizde tamamlanıyor.' },
+          { n: 4, b: 'Rapor ve dosya', a: 'Sonuçlar değerlendirilip raporlanıyor ve İSG dosyanıza işleniyor.' },
+        ].map((s) => (
+          <li class="rounded-2xl bg-gray-50 dark:bg-slate-800/60 ring-1 ring-gray-200 dark:ring-slate-700 p-5">
+            <div class="text-primary font-bold text-2xl tabular-nums">{s.n}</div>
+            <h3 class="font-bold text-heading mt-1">{s.b}</h3>
+            <p class="mt-1.5 text-sm text-muted">{s.a}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <CallToAction
+    title="Çalışanlarınızın muayene takvimini çıkaralım"
+    subtitle={`Kaç çalışanınız olduğunu ve ne iş yaptığınızı söyleyin; hangi tetkiklerin gerektiğini ve tarama gününü planlayalım. Hizmet bölgemiz: ${site.hizmetIlleri.join(', ')}.`}
+    actions={[
+      { variant: 'primary', text: 'Tarama planlat', href: '/teklif-al/' },
+      { text: 'Sık sorulan sorular', href: '/sss/' },
     ]}
   />
-
-  <FAQs schema title="Sık sorulanlar" items={sss} />
-  <CallToAction title="Tarama gününüzü planlayalım" actions={[{ variant: 'primary', text: 'Teklif al', href: '/teklif-al/' }]} />
 </Layout>
