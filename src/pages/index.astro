@@ -1,6 +1,6 @@
 ---
+import sahaDenetim from '~/assets/images/saha-denetim-ekibi.jpg';
 import santiyePlanlama from '~/assets/images/santiye-is-guvenligi-planlama.jpg';
-import degerlendirmeToplantisi from '~/assets/images/isyerinde-isg-degerlendirme-toplantisi.jpg';
 import Layout from '~/layouts/PageLayout.astro';
 import { uzmanReferanslari, isOrtagiReferanslari, referansSayisi } from '~/data/referanslar';
 import Hero from '~/components/widgets/Hero.astro';
@@ -27,8 +27,8 @@ const metadata = {
       { text: 'Uzaktan İSG eğitimi', href: '/isg-egitimi/' },
     ]}
     image={{
-      src: santiyePlanlama,
-      alt: 'Şantiyede baret ve reflektif yelekle çalışan ekip',
+      src: sahaDenetim,
+      alt: 'Şantiyede baret ve reflektif yelekle saha denetimi yapan ekip',
     }}
   >
     <Fragment slot="title">
@@ -151,8 +151,8 @@ const metadata = {
       },
     ]}
     image={{
-      src: degerlendirmeToplantisi,
-      alt: 'Masa başında iş sağlığı ve güvenliği planlaması',
+      src: santiyePlanlama,
+      alt: 'Şantiyede iş güvenliği önlemleriyle yürüyen çalışma',
     }}
   />
 
