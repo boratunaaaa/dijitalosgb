@@ -62,4 +62,39 @@ const alan = 'w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-b
       </p>
     </form>
   </section>
+
+  {/* Hesaplayıcıdan gelindiyse orada girilen değerler burada hazır gelsin;
+      ziyaretçi aynı bilgiyi ikinci kez yazmak zorunda kalmasın. Değerler
+      yalnız URL'den okunur, hiçbir yere kaydedilmez. */}
+  <script>
+    const p = new URLSearchParams(location.search);
+    const calisan = p.get('calisan');
+    const sinif = p.get('sinif');
+
+    if (calisan) {
+      const el = document.getElementById('calisan') as HTMLInputElement | null;
+      if (el && /^\d{1,6}$/.test(calisan)) el.value = calisan;
+    }
+
+    if (sinif) {
+      const ADLAR: Record<string, string> = {
+        'az-tehlikeli': 'az tehlikeli',
+        tehlikeli: 'tehlikeli',
+        'cok-tehlikeli': 'çok tehlikeli',
+      };
+      const ad = ADLAR[sinif];
+      const faaliyet = document.getElementById('faaliyet') as HTMLInputElement | null;
+      if (ad && faaliyet && !faaliyet.value) {
+        faaliyet.placeholder = `örn. tekstil üretimi (${ad} sınıf)`;
+      }
+      if (ad) {
+        const form = document.querySelector('form');
+        const not = document.createElement('p');
+        not.className =
+          'text-sm rounded-lg bg-primary/10 text-primary px-4 py-3 font-medium';
+        not.textContent = `Hesaplamadan geldiniz: ${ad} sınıf${calisan ? `, ${calisan} çalışan` : ''}. Bilgileri kontrol edip gönderin.`;
+        form?.prepend(not);
+      }
+    }
+  </script>
 </Layout>

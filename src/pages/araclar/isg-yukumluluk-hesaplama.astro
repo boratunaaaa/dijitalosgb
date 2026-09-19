@@ -121,6 +121,7 @@ const veri = {
         değerlendirip yazılı planla dönüyoruz.
       </p>
       <a
+        id="teklif-baglantisi"
         href="/teklif-al/"
         class="inline-flex items-center rounded-full bg-primary px-6 py-3 font-semibold text-white hover:opacity-90 transition"
       >
@@ -241,6 +242,13 @@ const veri = {
         notlar.push('Çalışan sayısı 10’un altında olduğu için diğer sağlık personeli yükümlülüğü doğmuyor.');
       }
       notAlani.textContent = notlar.join(' ');
+
+      // Teklif bağlantısı girilen değerleri taşısın: ziyaretçi aynı iki
+      // bilgiyi formda tekrar yazmasın.
+      const baglanti = document.getElementById('teklif-baglantisi');
+      if (baglanti) {
+        baglanti.setAttribute('href', `/teklif-al/?sinif=${encodeURIComponent(sinif)}&calisan=${calisan}`);
+      }
     }
 
     form.addEventListener('input', hesapla);

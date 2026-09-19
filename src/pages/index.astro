@@ -2,17 +2,15 @@
 import sahaDenetim from '~/assets/images/saha-denetim-ekibi.jpg';
 import santiyePlanlama from '~/assets/images/santiye-is-guvenligi-planlama.jpg';
 import Layout from '~/layouts/PageLayout.astro';
-import { uzmanReferanslari, isOrtagiReferanslari, referansSayisi } from '~/data/referanslar';
+import ReferansSeridi from '~/components/ReferansSeridi.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import Content from '~/components/widgets/Content.astro';
-import { site, isOrtagi, egitimSureleri } from '~/data/site';
+import { site, egitimSureleri } from '~/data/site';
 import { hizmetler } from '~/data/hizmetler';
-import { ilceler } from '~/data/ilceler';
 
 const metadata = {
   title: 'OSGB Hizmeti ve Uzaktan İSG Eğitimi',
@@ -61,44 +59,23 @@ const metadata = {
     </Fragment>
   </Hero>
 
-  {/* Referans şeridi hero'nun hemen altında: ziyaretçinin ilk sorusu
-      "bu iş kimlerle yapılmış" ve cevabı aşağıda aranmamalı. İki küme
-      ayrı etiketle veriliyor; kimin portföyü olduğu gizlenmiyor. */}
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 py-8 border-y border-gray-200 dark:border-slate-700">
-    <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-5">
-      <h2 class="text-sm font-semibold uppercase tracking-wider text-muted">Görev alınan kurumlar</h2>
-      <a href="/referanslar/" class="text-sm font-semibold text-primary hover:underline">
-        {referansSayisi}+ referansın tamamı
-      </a>
-    </div>
-    <ul class="flex flex-wrap gap-2">
-      {uzmanReferanslari.map((ad) => (
-        <li class="rounded-full bg-primary/10 text-primary px-3.5 py-1.5 text-sm font-semibold">{ad}</li>
-      ))}
-      {isOrtagiReferanslari.filter((ad) => !uzmanReferanslari.includes(ad)).slice(0, 10).map((ad) => (
-        <li class="rounded-full bg-gray-100 dark:bg-slate-800 px-3.5 py-1.5 text-sm text-default">{ad}</li>
-      ))}
-    </ul>
-    <p class="mt-4 text-xs text-muted">
-      Renkli olanlar İSG uzmanı olarak doğrudan görev alınan kurumlar; diğerleri saha
-      hizmetini veren yetkili iş ortağımızın portföyündendir.
-    </p>
-  </section>
+  <ReferansSeridi />
+
 
   <Stats
-    title="Yükümlülüğün üç sayısı"
-    subtitle="Temel eğitim süreleri yönetmelikle sabittir; pazarlık konusu değildir."
+    title="Çalışan eğitimi kaç saat?"
+    subtitle="İşyerinizin tehlike sınıfı, her çalışanın alması gereken temel İSG eğitiminin süresini belirler. Bu süreler yönetmelikle sabittir."
     stats={egitimSureleri.map((e) => ({
-      title: `${e.saat} saat`,
-      amount: e.sinif,
+      amount: `${e.saat}`,
+      title: `${e.sinif} · ders saati`,
     }))}
   />
 
   <Features
     id="hizmetler"
-    tagline="Üç hizmet hattı"
+    tagline="Hizmetlerimiz"
     title="Ne yapıyoruz"
-    subtitle="Saha hizmeti il sınırlıdır; danışmanlık, dokümantasyon ve eğitim değildir. İkisini bilerek ayrı yürütüyoruz."
+    subtitle="İş sağlığı ve güvenliğinde ihtiyacınız olan her başlık tek elden. Saha ekibinden eğitime, ölçümden dokümantasyona."
     columns={3}
     items={[
       ...hizmetler.map((h) => ({
@@ -156,40 +133,7 @@ const metadata = {
     }}
   />
 
-  <Content
-    isReversed
-    title="Saha hizmetini kim veriyor"
-    items={[
-      { title: isOrtagi.ad, description: isOrtagi.adres, icon: 'tabler:building' },
-      {
-        title: 'Eğitimler doğrudan bizden',
-        description: 'Uzaktan İSG eğitimlerini İSG uzmanı olarak doğrudan veriyoruz; bu hatta aracı yoktur.',
-        icon: 'tabler:certificate',
-      },
-    ]}
-  >
-    <Fragment slot="content">
-      <p>
-        <strong>{site.name} bir OSGB değildir.</strong> OSGB, Çalışma ve Sosyal Güvenlik
-        Bakanlığı tarafından yetkilendirilen bir yapıdır. Saha hizmetleri yetkili iş
-        ortağımız tarafından verilir; süreci biz kurar ve yürütürüz.
-      </p>
-    </Fragment>
-  </Content>
 
-  <Features
-    id="bolgeler"
-    tagline="Saha kapsamı"
-    title="Hizmet verdiğimiz ilçeler"
-    subtitle="OSGB'ler kurulu oldukları il ve sınır komşusu illerde hizmet verebilir. Hizmet veremeyeceğimiz yerden talep toplamıyoruz."
-    columns={3}
-    items={ilceler.map((i) => ({
-      title: `${i.ad} OSGB`,
-      description: i.il,
-      icon: 'tabler:map-pin',
-      callToAction: { text: 'İlçe sayfası', href: `/osgb/${i.slug}/` },
-    }))}
-  />
 
   <FAQs
     schema
