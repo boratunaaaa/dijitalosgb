@@ -273,4 +273,178 @@ export const hizmetler: Hizmet[] = [
       { soru: 'Doküman ne zaman yenilenir?', cevap: 'İşyerinde, iş ekipmanında veya organizasyonda önemli bir değişiklik olduğunda gözden geçirilir ve gerekiyorsa güncellenir.' },
     ],
   },
+  {
+    slug: 'mesleki-yeterlilik-belgesi',
+    ad: 'Mesleki yeterlilik belgesi',
+    h1: 'Mesleki Yeterlilik Belgesi (MYK) Süreç Yönetimi',
+    ozet:
+      'Tehlikeli ve çok tehlikeli işlerde belgesiz çalıştırma yasak. Hangi personelin hangi belgeyi alması gerektiğini çıkarıp sınav ve belgelendirme sürecini yürütüyoruz.',
+    kapsam: 'ulusal',
+    giris:
+      '6645 sayılı Kanunu ile 5544 sayılı Mesleki Yeterlilik Kurumu Kanunu’na eklenen hüküm gereği; ' +
+      'tehlikeli ve çok tehlikeli işlerden olup Bakanlıkça yayımlanan tebliğlerde sayılan mesleklerde, ' +
+      'MYK Mesleki Yeterlilik Belgesi olmayan kişiler çalıştırılamaz. Bu, iş güvenliği eğitiminden ' +
+      'ayrı ve ona ek bir zorunluluktur: çalışanınız temel İSG eğitimini almış olsa bile, mesleği ' +
+      'tebliğ listesindeyse belgesi yoksa o işi yapamaz.',
+    onemliNot:
+      'Belgeyi biz vermiyoruz — veremeyiz. MYK belgesi yalnızca Mesleki Yeterlilik Kurumu tarafından ' +
+      'yetkilendirilmiş belgelendirme kuruluşlarınca, teorik ve uygulamalı sınav sonucunda düzenlenir. ' +
+      'Bizim yaptığımız iş şu: personelinizi meslek bazında listelemek, hangisinin belgeye tabi ' +
+      'olduğunu tebliğlerden çıkarmak, yetkili kuruluşla sınav organizasyonunu kurmak ve süreci ' +
+      'takip etmek. Belgesi çıkanların takibini de yapıyoruz, çünkü belgelerin geçerlilik süresi var.',
+    kapsamMaddeleri: [
+      { baslik: 'Personel–meslek eşleştirmesi', aciklama: 'Çalışan listeniz meslek kodlarıyla eşleştirilir; kimin belgeye tabi olduğu net biçimde çıkar.' },
+      { baslik: 'Tebliğ kontrolü', aciklama: 'Zorunlu meslekler listesi tebliğlerle genişliyor; liste her seferinde güncel hâliyle kontrol edilir.' },
+      { baslik: 'Sınav organizasyonu', aciklama: 'Yetkilendirilmiş belgelendirme kuruluşuyla teorik ve uygulamalı sınav planlaması.' },
+      { baslik: 'Teşvik takibi', aciklama: 'İşsizlik Sigortası Fonu’ndan karşılanan sınav ve belge ücreti iadesi süreci izlenir.' },
+      { baslik: 'Belge geçerlilik takvimi', aciklama: 'Belgelerin geçerlilik süresi ve yenileme tarihleri takip edilir; süresi dolan personel önceden bildirilir.' },
+    ],
+    sss: [
+      {
+        soru: 'Hangi mesleklerde mesleki yeterlilik belgesi zorunlu?',
+        cevap:
+          'Tehlikeli ve çok tehlikeli işlerden olup Bakanlıkça yayımlanan tebliğlerde sayılan meslekler. ' +
+          'Liste tebliğlerle kademeli olarak genişledi; inşaatta ahşap kalıpçı, betonarme demirci, ' +
+          'inşaat boyacısı, alçı levha uygulayıcısı, duvarcı, iskele kurulum elemanı; metal ve makinede ' +
+          'kaynakçı, CNC operatörü, makine bakımcı, endüstriyel boru montajcısı; elektrikte elektrik ' +
+          'tesisatçısı ve pano montajcısı sık karşılaşılan örnekler. Sizin personelinizin hangi ' +
+          'meslek koduna girdiğini listeyle birlikte kontrol ediyoruz.',
+      },
+      {
+        soru: 'Belgesiz çalıştırmanın yaptırımı ne?',
+        cevap:
+          'Belgesi olmayan her bir kişi için işverene idari para cezası uygulanır ve ceza kişi başına ' +
+          'hesaplandığı için birden fazla personelde hızla büyür. Denetim Çalışma ve Sosyal Güvenlik ' +
+          'Bakanlığı iş müfettişlerince yapılır.',
+      },
+      {
+        soru: 'Sınav ve belge ücretini kim ödüyor?',
+        cevap:
+          'Tehlikeli ve çok tehlikeli işlerdeki zorunlu mesleklerde sınav ve belge ücreti, şartları ' +
+          'sağlayan adaylar için İşsizlik Sigortası Fonu’ndan karşılanır. Yani belge çoğu durumda ' +
+          'işverene ek maliyet çıkarmaz; asıl maliyet süreç yönetilmediğinde ortaya çıkıyor.',
+      },
+      {
+        soru: 'Ustalık belgem var, MYK belgesi yerine geçer mi?',
+        cevap:
+          'Hayır. Ustalık belgesi Millî Eğitim Bakanlığı mevzuatına, MYK Mesleki Yeterlilik Belgesi ise ' +
+          '5544 sayılı Kanun’a dayanır; biri diğerinin yerine geçmez. Mesleğiniz tebliğ listesindeyse ' +
+          'MYK belgesi ayrıca gerekir.',
+      },
+      {
+        soru: 'Belge kaç yıl geçerli?',
+        cevap:
+          'Geçerlilik süresi ilgili ulusal yeterlilikte belirlenir ve mesleğe göre değişir; süre ' +
+          'dolduğunda yenileme sınavı veya kanıt değerlendirmesi gerekir. Bu yüzden belgeleri tek ' +
+          'seferlik iş gibi değil, takvimli bir takip işi olarak yürütüyoruz.',
+      },
+    ],
+  },
+  {
+    slug: 'yangin-egitimi-ve-tatbikat',
+    ad: 'Yangın eğitimi ve tatbikat',
+    h1: 'Yangın Eğitimi, Tahliye ve Acil Durum Tatbikatı',
+    ozet:
+      'Yılda en az bir kez zorunlu olan tatbikatın senaryosu, uygulaması ve raporu. Söndürme cihazı kullanımı uygulamalı anlatılır.',
+    kapsam: 'ulusal',
+    giris:
+      'Acil durumlar yönetmeliği, hazırlanan acil durum planının gerçekten işleyip işlemediğini ' +
+      'görmek için işyerlerinde yılda en az bir defa tatbikat yapılmasını zorunlu tutar. ' +
+      'Tatbikat, dosyaya konulacak bir tutanak üretmek için değil; alarm duyulduğunda kimin ne ' +
+      'yapacağının gerçekten bilindiğini ölçmek için yapılır. Tahliye süresini ölçmeyen bir ' +
+      'tatbikat, yapılmamış sayılır.',
+    onemliNot:
+      'Tatbikat ve yangın eğitimi, acil durum eylem planının yerine geçmez; planın sınanmasıdır. ' +
+      'Planı olmayan bir işyerinde tatbikat yapmak, sırayı ters çevirmek olur.',
+    kapsamMaddeleri: [
+      { baslik: 'Senaryo hazırlığı', aciklama: 'İşyerine özgü yangın, sızıntı veya deprem senaryosu; başlangıç noktası ve beklenen tepki belirlenir.' },
+      { baslik: 'Ekip eğitimi', aciklama: 'Söndürme, kurtarma, koruma ve ilk yardım ekiplerine görev bazında anlatım.' },
+      { baslik: 'Uygulamalı söndürme', aciklama: 'Yangın türüne göre doğru söndürücü seçimi ve cihazın gerçekten kullanılması.' },
+      { baslik: 'Tahliye ve süre ölçümü', aciklama: 'Toplanma bölgesine tahliye, sayım ve geçen sürenin kaydı.' },
+      { baslik: 'Tatbikat raporu', aciklama: 'Aksayan noktalar, düzeltici faaliyetler ve denetimde istenen kayıtların düzenlenmesi.' },
+    ],
+    sss: [
+      {
+        soru: 'Yangın tatbikatı yılda kaç kez yapılmalı?',
+        cevap:
+          'İşyerlerinde yılda en az bir defa tatbikat yapılması zorunludur. Binaların yangından ' +
+          'korunması mevzuatı da yıllık tatbikat öngörür. Riskin yüksek olduğu işyerlerinde yılda ' +
+          'bir kez alt sınırdır; uygulamada iki kez yapan işyerleri var.',
+      },
+      {
+        soru: 'Tatbikat kaydı tutmak zorunda mıyız?',
+        cevap:
+          'Evet. Tatbikatın tarihi, katılımcıları, senaryosu, tahliye süresi ve tespit edilen ' +
+          'aksaklıklar kayda geçirilir; bu kayıt denetimde ilk istenen belgelerdendir.',
+      },
+      {
+        soru: 'Küçük bir ofisiz, yine de gerekli mi?',
+        cevap:
+          'Evet. Yükümlülük çalışan sayısına değil, işyeri olmaya bağlıdır. Az tehlikeli sınıftaki ' +
+          'bir ofiste tatbikat daha kısa sürer ama yapılmamış olmaz.',
+      },
+      {
+        soru: 'Yangın söndürme cihazlarının kontrolü bu hizmete dahil mi?',
+        cevap:
+          'Söndürücülerin periyodik kontrolü ve dolumu ayrı bir iştir; yetkili firmalarca yapılır. ' +
+          'Tatbikat sırasında mevcut cihazların yerini, türünü ve son kontrol tarihini gözden ' +
+          'geçirip eksikleri raporluyoruz.',
+      },
+    ],
+  },
+  {
+    slug: 'ilk-yardim-egitimi',
+    ad: 'İlk yardım eğitimi',
+    h1: 'İşyerinde İlk Yardımcı Bulundurma ve İlk Yardım Eğitimi',
+    ozet:
+      'Az tehlikelide her 20, tehlikelide her 15, çok tehlikelide her 10 çalışan için bir ilk yardımcı zorunlu. Sertifikalı eğitim organizasyonu.',
+    kapsam: 'ulusal',
+    giris:
+      'İlk yardım yönetmeliği, işyerlerinde belirli sayıda sertifikalı ilk yardımcı bulundurulmasını ' +
+      'zorunlu kılar: az tehlikeli işyerlerinde her 20 çalışana, tehlikeli işyerlerinde her 15 ' +
+      'çalışana, çok tehlikeli işyerlerinde her 10 çalışana en az bir ilk yardımcı. Bu sayı ' +
+      'yuvarlanarak değil, yukarı doğru tamamlanarak hesaplanır — 12 çalışanı olan çok tehlikeli ' +
+      'bir işyerinde iki ilk yardımcı gerekir.',
+    onemliNot:
+      'İlk yardım sertifikası yalnızca Sağlık Bakanlığı’nca yetkilendirilmiş ilk yardım eğitim ' +
+      'merkezlerince düzenlenebilir; İSG eğitimi veren hiçbir kurum bu belgeyi kendi adına ' +
+      'veremez. Biz eğitimi yetkili merkezle organize ediyor, kontenjan ve takvimi yönetiyoruz. ' +
+      'Bunu açıkça yazıyoruz çünkü aksini ima eden teklifler sahada dolaşıyor ve sonunda ' +
+      'geçersiz belgeyle kalan işveren oluyor.',
+    kapsamMaddeleri: [
+      { baslik: 'İhtiyaç hesabı', aciklama: 'Çalışan sayısı ve tehlike sınıfına göre kaç ilk yardımcı gerektiği çıkarılır.' },
+      { baslik: 'Eğitim organizasyonu', aciklama: 'Yetkili ilk yardım eğitim merkeziyle tarih, kontenjan ve yer planlaması.' },
+      { baslik: 'Temel ilk yardım eğitimi', aciklama: 'Yönetmelikte öngörülen sürede teorik ve uygulamalı eğitim; sonunda sınav.' },
+      { baslik: 'Sertifika takibi', aciklama: 'Sertifikaların geçerlilik süresi izlenir, güncelleme eğitimi zamanı gelmeden hatırlatılır.' },
+      { baslik: 'İşyeri uyumu', aciklama: 'İlk yardım dolabı içeriği ve ilk yardımcı listesinin görünür şekilde ilanı.' },
+    ],
+    sss: [
+      {
+        soru: 'İşyerinde kaç ilk yardımcı bulundurmam gerekiyor?',
+        cevap:
+          'Az tehlikeli işyerlerinde her 20 çalışan için, tehlikeli işyerlerinde her 15 çalışan için, ' +
+          'çok tehlikeli işyerlerinde her 10 çalışan için en az bir sertifikalı ilk yardımcı. ' +
+          'Hesap yukarı yuvarlanır: 35 çalışanı olan tehlikeli sınıftaki bir işyerinde üç ilk yardımcı gerekir.',
+      },
+      {
+        soru: 'İlk yardım sertifikası kaç yıl geçerli?',
+        cevap:
+          'Sertifikanın geçerlilik süresi üç yıldır. Süre dolmadan güncelleme eğitimi alınmazsa ' +
+          'sertifika geçerliliğini yitirir ve baştan temel eğitim gerekir.',
+      },
+      {
+        soru: 'İlk yardım eğitimini İSG eğitimi yerine saydırabilir miyiz?',
+        cevap:
+          'Hayır. İkisi ayrı mevzuata dayanır ve birbirinin yerine geçmez. Çalışanın temel İSG ' +
+          'eğitimi almış olması, işyerinde ilk yardımcı bulundurma zorunluluğunu ortadan kaldırmaz.',
+      },
+      {
+        soru: 'Eğitimi siz mi veriyorsunuz?',
+        cevap:
+          'Eğitimi Sağlık Bakanlığı’nca yetkilendirilmiş ilk yardım eğitim merkezi veriyor; sertifikayı ' +
+          'da o düzenliyor. Biz ihtiyaç hesabını çıkarıyor, merkezle organizasyonu kuruyor ve ' +
+          'sertifika takvimini takip ediyoruz.',
+      },
+    ],
+  },
 ];

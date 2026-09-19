@@ -1,0 +1,126 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import StructuredData from '~/components/common/StructuredData.astro';
+import { site } from '~/data/site';
+import { levhalar, levhaSayisi, turAdlari, turAciklamalari, turRenkleri, type LevhaTuru } from '~/data/levhalar';
+
+const metadata = {
+  title: 'Ücretsiz İSG Levhaları — A4 PDF İndir',
+  description: `Baret tak, acil çıkış, yangın söndürücü ve ${levhaSayisi} güvenlik levhası. A4'e basılmaya hazır PDF, ücretsiz indirin.`,
+};
+
+const sayfaUrl = `${site.url}/isg-kutuphanesi/levhalar/`;
+const turSirasi: LevhaTuru[] = ['emredici', 'yasak', 'uyari', 'acil', 'yangin'];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Ana sayfa', item: `${site.url}/` },
+      { '@type': 'ListItem', position: 2, name: 'İSG kütüphanesi', item: `${site.url}/isg-kutuphanesi/` },
+      { '@type': 'ListItem', position: 3, name: 'Güvenlik levhaları', item: sayfaUrl },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: metadata.title,
+    description: metadata.description,
+    url: sayfaUrl,
+    inLanguage: 'tr-TR',
+  },
+];
+
+/** Levhanın işaret gövdesi — PDF üreticisiyle aynı düzen. */
+function isaretSvg(levha: (typeof levhalar)[number]) {
+  const { zemin, cizim } = turRenkleri[levha.tur];
+  const ikon = `<g fill="${cizim}" stroke="${cizim}" style="--zemin:${zemin};color:${cizim}" transform="translate(50 50) scale(0.62) translate(-50 -50)">${levha.ikon}</g>`;
+  if (levha.tur === 'yasak') {
+    return `<circle cx="50" cy="50" r="48" fill="#C8102E"/><circle cx="50" cy="50" r="38" fill="#ffffff"/>${ikon}<rect x="44" y="-2" width="12" height="104" fill="#C8102E" transform="rotate(45 50 50)"/>`;
+  }
+  if (levha.tur === 'uyari') {
+    return `<path d="M50 2 98 92H2Z" fill="#1a1a1a"/><path d="M50 16 86 84H14Z" fill="${zemin}"/><g transform="translate(0 12)">${ikon}</g>`;
+  }
+  if (levha.tur === 'emredici') {
+    return `<circle cx="50" cy="50" r="48" fill="${zemin}"/>${ikon}`;
+  }
+  return `<rect x="2" y="12" width="96" height="76" rx="4" fill="${zemin}"/>${ikon}`;
+}
+---
+
+<Layout metadata={metadata}>
+  <StructuredData slot="head" schema={schema} />
+
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-10 md:py-14">
+    <nav aria-label="Konum" class="text-sm text-muted mb-6">
+      <a href="/" class="hover:underline">Ana sayfa</a>
+      <span class="mx-1.5">/</span>
+      <a href="/isg-kutuphanesi/" class="hover:underline">İSG kütüphanesi</a>
+      <span class="mx-1.5">/</span>
+      <span class="text-default">Güvenlik levhaları</span>
+    </nav>
+
+    <h1 class="text-3xl md:text-4xl font-bold font-heading text-heading tracking-tight mb-4">
+      Ücretsiz güvenlik levhaları
+    </h1>
+    <p class="text-lg text-muted max-w-3xl mb-4">
+      {levhaSayisi} levha, A4'e basılmaya hazır PDF olarak. İndirin, çıktı alın, asın —
+      kayıt açmanıza, e-posta bırakmanıza gerek yok.
+    </p>
+    <p class="text-muted max-w-3xl mb-10">
+      Şekil ve renkler Sağlık ve Güvenlik İşaretleri Yönetmeliği'nin düzenine göre:
+      yasağı kırmızı daire, tehlikeyi sarı üçgen, zorunluluğu mavi daire,
+      kaçış ve ilk yardımı yeşil, yangın ekipmanını kırmızı dikdörtgen anlatır.
+      Renk ve şekli doğru seçmek, üzerindeki yazıdan daha önemli: uzaktan okunan şey renktir.
+    </p>
+
+    {
+      turSirasi.map((tur) => {
+        const grup = levhalar.filter((l) => l.tur === tur);
+        return (
+          <div class="mb-12">
+            <h2 class="text-2xl font-bold font-heading text-heading mb-1">{turAdlari[tur]} işaretler</h2>
+            <p class="text-sm text-muted mb-6 max-w-2xl">{turAciklamalari[tur]}</p>
+            <ul class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {grup.map((l) => (
+                <li class="rounded-2xl ring-1 ring-gray-200 dark:ring-slate-700 bg-white dark:bg-slate-900 p-5 flex flex-col">
+                  <svg
+                    viewBox="0 0 100 100"
+                    role="img"
+                    aria-label={l.baslik}
+                    class="w-full max-w-[140px] mx-auto mb-4"
+                    set:html={isaretSvg(l)}
+                  />
+                  <h3 class="font-semibold text-heading leading-snug mb-1">{l.baslik}</h3>
+                  <p class="text-xs text-muted flex-1 mb-4">{l.nerede}</p>
+                  <a
+                    href={`/levhalar/${l.slug}.pdf`}
+                    download
+                    class="inline-flex items-center justify-center gap-1.5 rounded-full bg-primary/10 text-primary px-4 py-2 text-sm font-semibold hover:bg-primary hover:text-white transition"
+                  >
+                    A4 PDF indir
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
+      })
+    }
+
+    <div class="rounded-2xl bg-primary/5 dark:bg-primary/10 ring-1 ring-primary/20 p-6 md:p-8">
+      <h2 class="text-xl font-bold font-heading text-heading mb-2">Aradığınız levha listede yok mu?</h2>
+      <p class="text-muted mb-5 max-w-2xl">
+        İş yerinize özgü bir uyarı gerekiyorsa (makine başı talimatı, bölge kısıtı, özel
+        mesafe uyarısı) söyleyin, aynı düzende hazırlayıp gönderelim.
+      </p>
+      <a
+        href="/teklif-al/"
+        class="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 font-semibold text-white hover:opacity-90 transition"
+      >
+        Levha talebi gönder
+      </a>
+    </div>
+  </section>
+</Layout>

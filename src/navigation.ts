@@ -43,6 +43,10 @@ export const headerData = {
       text: 'Rehber',
       href: getPermalink('/blog'),
       links: [
+        { text: 'İSG kütüphanesi', href: getPermalink('/isg-kutuphanesi') },
+        { text: 'Güvenlik levhaları (PDF)', href: getPermalink('/isg-kutuphanesi/levhalar') },
+        { text: 'Form şablonları (PDF)', href: getPermalink('/isg-kutuphanesi/formlar') },
+        { text: 'Mevzuat dizini', href: getPermalink('/isg-kutuphanesi/mevzuat') },
         { text: 'Tüm yazılar', href: getPermalink('/blog') },
         { text: 'Sıkça sorulan sorular', href: getPermalink('/sss') },
         { text: 'Referanslar', href: getPermalink('/referanslar') },
@@ -74,6 +78,10 @@ export const footerData = {
     {
       title: 'Rehber ve araçlar',
       links: [
+        { text: 'İSG kütüphanesi', href: getPermalink('/isg-kutuphanesi') },
+        { text: 'Güvenlik levhaları (PDF)', href: getPermalink('/isg-kutuphanesi/levhalar') },
+        { text: 'Form şablonları (PDF)', href: getPermalink('/isg-kutuphanesi/formlar') },
+        { text: 'Mevzuat dizini', href: getPermalink('/isg-kutuphanesi/mevzuat') },
         { text: 'İSG rehberi (blog)', href: getPermalink('/blog') },
         { text: 'Sıkça sorulan sorular', href: getPermalink('/sss') },
         { text: 'Tehlike sınıfı sorgulama', href: getPermalink('/araclar/tehlike-sinifi-sorgulama') },

@@ -1,0 +1,105 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import StructuredData from '~/components/common/StructuredData.astro';
+import { site } from '~/data/site';
+import { formlar, formSayisi } from '~/data/kutuphane';
+
+const metadata = {
+  title: 'İSG Form ve Tutanak Şablonları — Ücretsiz PDF',
+  description: `Ramak kala bildirimi, KKD zimmeti, eğitim tutanağı, tatbikat raporu ve ${formSayisi} hazır form şablonu. A4 PDF, ücretsiz indirin.`,
+};
+
+const sayfaUrl = `${site.url}/isg-kutuphanesi/formlar/`;
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Ana sayfa', item: `${site.url}/` },
+      { '@type': 'ListItem', position: 2, name: 'İSG kütüphanesi', item: `${site.url}/isg-kutuphanesi/` },
+      { '@type': 'ListItem', position: 3, name: 'Form şablonları', item: sayfaUrl },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: metadata.title,
+    description: metadata.description,
+    url: sayfaUrl,
+    inLanguage: 'tr-TR',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <StructuredData slot="head" schema={schema} />
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 py-10 md:py-14">
+    <nav aria-label="Konum" class="text-sm text-muted mb-6">
+      <a href="/" class="hover:underline">Ana sayfa</a>
+      <span class="mx-1.5">/</span>
+      <a href="/isg-kutuphanesi/" class="hover:underline">İSG kütüphanesi</a>
+      <span class="mx-1.5">/</span>
+      <span class="text-default">Form şablonları</span>
+    </nav>
+
+    <h1 class="text-3xl md:text-4xl font-bold font-heading text-heading tracking-tight mb-4">
+      Form ve tutanak şablonları
+    </h1>
+    <p class="text-lg text-muted max-w-3xl mb-4">
+      İş yerinde tutulması gereken kayıtların boş şablonları. İndirin, çıktı alın,
+      kendi iş yerinize göre doldurun.
+    </p>
+    <p class="text-muted max-w-3xl mb-10">
+      Bilerek boş bırakıyoruz. Doldurulmuş bir "örnek dosya" paylaşmak, başka bir
+      iş yerinin koşullarını sizinkine kopyalamak olur — denetimde ilk fark edilen
+      şey de budur. Formun ne işe yaradığını ve hangi yükümlülüğün kaydı olduğunu
+      her birinin yanında yazdık.
+    </p>
+
+    <ul class="grid gap-5 sm:grid-cols-2">
+      {
+        formlar.map((f) => (
+          <li class="rounded-2xl ring-1 ring-gray-200 dark:ring-slate-700 bg-white dark:bg-slate-900 p-6 flex flex-col">
+            <h2 class="text-lg font-bold font-heading text-heading mb-2 text-balance">{f.ad}</h2>
+            <p class="text-sm text-default mb-3">{f.ozet}</p>
+            <p class="text-xs text-muted leading-relaxed flex-1 mb-5 pl-3 border-l-2 border-primary/30">
+              {f.dayanak}
+            </p>
+            <a
+              href={`/formlar/${f.slug}.pdf`}
+              download
+              class="inline-flex items-center justify-center rounded-full bg-primary/10 text-primary px-5 py-2.5 text-sm font-semibold hover:bg-primary hover:text-white transition"
+            >
+              A4 PDF indir{f.yatay ? ' (yatay)' : ''}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="mt-12 rounded-2xl bg-primary/5 dark:bg-primary/10 ring-1 ring-primary/20 p-6 md:p-8">
+      <h2 class="text-xl font-bold font-heading text-heading mb-2">Formu doldurmak ayrı, sistemi kurmak ayrı</h2>
+      <p class="text-muted mb-5 max-w-2xl">
+        Bu şablonlar kaydı kolaylaştırır ama risk değerlendirmesinin, acil durum
+        planının ve eğitim takviminin yerine geçmez. Neyin zorunlu olduğunu
+        görmek isterseniz hesaplama aracı iki dakikada çıkarıyor.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a
+          href="/araclar/isg-yukumluluk-hesaplama/"
+          class="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 font-semibold text-white hover:opacity-90 transition"
+        >
+          Yükümlülüğümü hesapla
+        </a>
+        <a
+          href="/teklif-al/"
+          class="inline-flex items-center justify-center rounded-full ring-1 ring-gray-300 dark:ring-slate-600 px-6 py-3 font-semibold text-default hover:bg-gray-50 dark:hover:bg-slate-800 transition"
+        >
+          Teklif al
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

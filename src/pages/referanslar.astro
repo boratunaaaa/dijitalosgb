@@ -3,6 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import StructuredData from '~/components/common/StructuredData.astro';
 import { site, isOrtagi, uzman } from '~/data/site';
 import { isOrtagiReferanslari, uzmanReferanslari, referansSayisi } from '~/data/referanslar';
+import { katipReferanslari, katipReferansSayisi } from '~/data/katip-referanslar';
 
 const metadata = {
   title: 'Referanslar — Hizmet Verilen Kurumlar',
@@ -10,6 +11,20 @@ const metadata = {
 };
 
 const sayfaUrl = `${site.url}/referanslar/`;
+
+// Tehlike sınıfı rozetleri — listenin kuru bir isim yığını olmaması için.
+const sinifAdi = { az: 'Az tehlikeli', teh: 'Tehlikeli', cok: 'Çok tehlikeli', '': '' } as const;
+const sinifRengi = {
+  az: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300',
+  teh: 'bg-amber-50 text-amber-700 dark:bg-amber-500/10 dark:text-amber-300',
+  cok: 'bg-rose-50 text-rose-700 dark:bg-rose-500/10 dark:text-rose-300',
+  '': '',
+} as const;
+const sinifSayisi = {
+  cok: katipReferanslari.filter((k) => k.sinif === 'cok').length,
+  teh: katipReferanslari.filter((k) => k.sinif === 'teh').length,
+  az: katipReferanslari.filter((k) => k.sinif === 'az').length,
+};
 
 const breadcrumb = {
   '@context': 'https://schema.org',
@@ -33,7 +48,7 @@ const breadcrumb = {
 
     <h1 class="text-3xl md:text-4xl font-bold font-heading text-heading tracking-tight mb-4">Referanslar</h1>
     <p class="text-lg text-muted max-w-3xl mb-12">
-      Aşağıdaki iki liste bilerek ayrı duruyor. İSG eğitimlerini ve uzmanlık
+      Aşağıdaki listeler bilerek ayrı duruyor. İSG eğitimlerini ve uzmanlık
       hizmetini doğrudan veriyoruz; saha OSGB hizmetini yetkili iş ortağımız
       veriyor. Hangi işin kimin üzerinden yürüdüğünü listede de görebilmeniz için
       ayırdık.
@@ -52,6 +67,50 @@ const breadcrumb = {
           uzmanReferanslari.map((ad) => (
             <li class="rounded-xl ring-1 ring-gray-200 dark:ring-slate-700 bg-white dark:bg-slate-900 px-4 py-5 text-center font-semibold text-heading">
               {ad}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div class="mb-14">
+      <h2 class="text-2xl font-bold font-heading text-heading mb-2">
+        Sözleşmeyle hizmet verilen iş yerleri
+      </h2>
+      <p class="text-muted mb-5 max-w-3xl">
+        Bu liste beyan değil: İSG-KATİP'te — Çalışma ve Sosyal Güvenlik
+        Bakanlığı'nın kayıt sisteminde — adımıza tanımlanmış hizmet
+        sözleşmelerinden çıkarıldı. {katipReferansSayisi} ayrı iş yeri.
+        İnşaattan gıdaya, metalden lojistiğe her tehlike sınıfında saha
+        tecrübesi demek.
+      </p>
+
+      <dl class="grid grid-cols-3 gap-3 mb-6 max-w-lg">
+        <div class="rounded-xl bg-rose-50 dark:bg-rose-500/10 px-4 py-3">
+          <dt class="text-xs font-medium text-rose-700 dark:text-rose-300">Çok tehlikeli</dt>
+          <dd class="text-2xl font-bold text-rose-700 dark:text-rose-300 tabular-nums">{sinifSayisi.cok}</dd>
+        </div>
+        <div class="rounded-xl bg-amber-50 dark:bg-amber-500/10 px-4 py-3">
+          <dt class="text-xs font-medium text-amber-700 dark:text-amber-300">Tehlikeli</dt>
+          <dd class="text-2xl font-bold text-amber-700 dark:text-amber-300 tabular-nums">{sinifSayisi.teh}</dd>
+        </div>
+        <div class="rounded-xl bg-emerald-50 dark:bg-emerald-500/10 px-4 py-3">
+          <dt class="text-xs font-medium text-emerald-700 dark:text-emerald-300">Az tehlikeli</dt>
+          <dd class="text-2xl font-bold text-emerald-700 dark:text-emerald-300 tabular-nums">{sinifSayisi.az}</dd>
+        </div>
+      </dl>
+
+      <ul class="grid gap-x-6 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          katipReferanslari.map((k) => (
+            <li class="flex items-start gap-2 text-sm text-default leading-snug py-1 border-b border-gray-100 dark:border-slate-800">
+              <span
+                class:list={['mt-0.5 shrink-0 rounded px-1.5 py-0.5 text-[10px] font-semibold', sinifRengi[k.sinif]]}
+                title={sinifAdi[k.sinif]}
+              >
+                {k.sinif === 'cok' ? 'ÇT' : k.sinif === 'teh' ? 'T' : 'AT'}
+              </span>
+              <span>{k.ad}</span>
             </li>
           ))
         }

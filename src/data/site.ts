@@ -43,9 +43,9 @@ export const site = {
 export const isOrtagi = {
   ad: "Sahra OSGB",
   adres: "Talatpaşa Mah. Pazaryolu Cad. No:2 Sedai Plaza Kat:2/22, Esenyurt / İstanbul",
-  // TODO: Bakanlık yetki belgesi numarası. Alınınca buraya yazılacak;
-  // boş kaldığı sürece sayfada belge satırı hiç gösterilmez.
-  yetkiBelgeNo: "",
+  // Bakanlık yetki belgesi numarası. Kaynak: İSG-KATİP hizmet sözleşmesi
+  // dışa aktarımı (2026-09-19) — "Hizmet Veren İşyeri Yetki Belgesi No".
+  yetkiBelgeNo: "OSGB-1104",
 } as const;
 
 /**
