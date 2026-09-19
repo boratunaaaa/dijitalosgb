@@ -1,0 +1,201 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import StructuredData from '~/components/common/StructuredData.astro';
+import { site } from '~/data/site';
+
+const metadata = {
+  title: 'Tehlike Sınıfı Sorgulama — NACE Koduna Göre İSG Tehlike Sınıfı',
+  description:
+    'İşyerinizin NACE kodunu veya faaliyetinizi yazın; İşyeri Tehlike Sınıfları Tebliği Ek-1 listesindeki tehlike sınıfını görün. 2.114 faaliyet kodu, resmî listeden.',
+};
+
+const sayfaUrl = `${site.url}/araclar/tehlike-sinifi-sorgulama/`;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Tehlike Sınıfı Sorgulama',
+  url: sayfaUrl,
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'TRY' },
+  description: metadata.description,
+  inLanguage: 'tr-TR',
+  isAccessibleForFree: true,
+  provider: { '@type': 'Organization', name: site.name, url: site.url },
+};
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Ana sayfa', item: `${site.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Araçlar', item: `${site.url}/araclar/` },
+    { '@type': 'ListItem', position: 3, name: 'Tehlike sınıfı sorgulama', item: sayfaUrl },
+  ],
+};
+---
+
+<Layout metadata={metadata}>
+  <StructuredData slot="head" schema={schema} />
+  <StructuredData slot="head" schema={breadcrumb} />
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 py-10 md:py-14">
+    <nav aria-label="Konum" class="text-sm text-muted mb-6">
+      <a href="/" class="hover:underline">Ana sayfa</a>
+      <span class="mx-1.5">/</span>
+      <a href="/araclar/" class="hover:underline">Araçlar</a>
+      <span class="mx-1.5">/</span>
+      <span class="text-default">Tehlike sınıfı sorgulama</span>
+    </nav>
+
+    <h1 class="text-3xl md:text-4xl font-bold font-heading text-heading tracking-tight mb-4 text-balance">
+      Tehlike sınıfı sorgulama
+    </h1>
+    <p class="text-lg text-muted max-w-3xl mb-8">
+      NACE kodunuzu ya da yaptığınız işi yazın. Sonuçlar, İşyeri Tehlike Sınıfları
+      Tebliği'nin Ek-1 listesinden birebir gelir — 2.114 faaliyet kodu.
+    </p>
+
+    <div class="relative">
+      <label for="arama" class="sr-only">NACE kodu veya faaliyet ara</label>
+      <input
+        id="arama"
+        type="search"
+        autocomplete="off"
+        placeholder="Örn. 41.00.01, fırın, kaynak, market, hastane…"
+        class="w-full rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-900 px-4 py-3.5 text-lg text-default"
+      />
+    </div>
+
+    <p id="durum" class="mt-3 text-sm text-muted">Liste yükleniyor…</p>
+
+    <div id="sonuc" class="mt-6 space-y-2" aria-live="polite"></div>
+
+    <div class="mt-10 rounded-2xl bg-primary/5 dark:bg-primary/10 ring-1 ring-primary/20 p-6 md:p-8">
+      <h2 class="text-xl font-bold font-heading text-heading mb-2">Sınıfınızı öğrendiniz. Peki yükümlülüğünüz ne?</h2>
+      <p class="text-muted mb-5">
+        Tehlike sınıfı tek başına bir şey söylemez; asıl soru bu sınıfta ve sizin
+        çalışan sayınızda hangi sürelerin doğduğudur.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a
+          href="/araclar/isg-yukumluluk-hesaplama/"
+          class="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 font-semibold text-white hover:opacity-90 transition"
+        >
+          Yükümlülüğümü hesapla
+        </a>
+        <a
+          href="/teklif-al/"
+          class="inline-flex items-center justify-center rounded-full ring-1 ring-gray-300 dark:ring-slate-600 px-6 py-3 font-semibold text-default hover:bg-gray-50 dark:hover:bg-slate-800 transition"
+        >
+          Teklif al
+        </a>
+      </div>
+    </div>
+
+    <details class="mt-10">
+      <summary class="cursor-pointer font-semibold text-heading">Bu liste nereden geliyor, nasıl okunmalı?</summary>
+      <ul class="mt-4 space-y-2 text-sm text-muted list-disc pl-5">
+        <li>
+          Kaynak: İş Sağlığı ve Güvenliğine İlişkin İşyeri Tehlike Sınıfları Tebliği,
+          Ek-1 İşyeri Tehlike Sınıfları Listesi (NACE Rev.2.1). Liste
+          mevzuat.gov.tr'de yayımlanan resmî dosyadan alınmıştır.
+        </li>
+        <li>
+          Tehlike sınıfı, işyerinde yürütülen <strong>asıl işe</strong> göre belirlenir.
+          Birden fazla asıl iş varsa tehlike sınıfı yüksek olan esas alınır.
+        </li>
+        <li>
+          Bağlayıcı olan, işyerinizin Bakanlık tescil kaydındaki faaliyet kodudur.
+          Buradaki sonuç bilgilendirme amaçlıdır; tescil kaydınızla farklıysa esas olan
+          tescil kaydıdır.
+        </li>
+        <li>
+          Tehlike sınıfına itiraz Çalışma ve Sosyal Güvenlik Bakanlığınca değerlendirilir.
+          Sınıf değişirse gereken iş ve işlemler 90 gün içinde yerine getirilir.
+        </li>
+      </ul>
+    </details>
+  </section>
+
+  <script>
+    const arama = document.getElementById('arama') as HTMLInputElement;
+    const sonuc = document.getElementById('sonuc')!;
+    const durum = document.getElementById('durum')!;
+
+    type Kayit = [string, string, 'az' | 'teh' | 'cok'];
+    let veri: Kayit[] = [];
+
+    const ETIKET = {
+      az: { ad: 'Az tehlikeli', sinif: 'bg-emerald-100 text-emerald-900 dark:bg-emerald-900/40 dark:text-emerald-200' },
+      teh: { ad: 'Tehlikeli', sinif: 'bg-amber-100 text-amber-900 dark:bg-amber-900/40 dark:text-amber-200' },
+      cok: { ad: 'Çok tehlikeli', sinif: 'bg-red-100 text-red-900 dark:bg-red-900/40 dark:text-red-200' },
+    };
+
+    // Türkçe arama: büyük/küçük ve aksan farkları eşleşmeyi bozmamalı.
+    const sadelestir = (s: string) =>
+      s
+        .replace(/İ/g, 'i')
+        .replace(/I/g, 'ı')
+        .toLowerCase()
+        .replace(/ı/g, 'i')
+        .replace(/ş/g, 's')
+        .replace(/ğ/g, 'g')
+        .replace(/ü/g, 'u')
+        .replace(/ö/g, 'o')
+        .replace(/ç/g, 'c');
+
+    let dizin: string[] = [];
+
+    fetch('/veri/nace-tehlike-siniflari.json')
+      .then((r) => r.json())
+      .then((d: Kayit[]) => {
+        veri = d;
+        dizin = d.map((k) => sadelestir(k[0] + ' ' + k[1]));
+        durum.textContent = `${d.length.toLocaleString('tr-TR')} faaliyet kodu arasında arayabilirsiniz.`;
+        if (arama.value) ara();
+      })
+      .catch(() => {
+        durum.textContent = 'Liste yüklenemedi. Sayfayı yenileyip tekrar deneyin.';
+      });
+
+    function ara() {
+      const q = sadelestir(arama.value.trim());
+      if (q.length < 2) {
+        sonuc.innerHTML = '';
+        return;
+      }
+      const bulunan: Kayit[] = [];
+      for (let i = 0; i < dizin.length && bulunan.length < 50; i++) {
+        if (dizin[i].includes(q)) bulunan.push(veri[i]);
+      }
+
+      if (!bulunan.length) {
+        sonuc.innerHTML =
+          '<p class="text-muted">Eşleşme yok. Faaliyetinizi başka bir kelimeyle deneyin; listedeki tanımlar mevzuattaki ifadelerle yazılmıştır.</p>';
+        return;
+      }
+
+      sonuc.innerHTML = bulunan
+        .map((k) => {
+          const e = ETIKET[k[2]];
+          return `<div class="flex flex-wrap items-start justify-between gap-3 rounded-xl ring-1 ring-gray-200 dark:ring-slate-700 bg-white dark:bg-slate-900 p-4">
+            <div class="min-w-0 flex-1">
+              <div class="font-mono text-sm font-semibold text-heading tabular-nums">${k[0]}</div>
+              <div class="text-sm text-muted mt-0.5">${k[1]}</div>
+            </div>
+            <span class="shrink-0 rounded-full px-3 py-1 text-sm font-semibold ${e.sinif}">${e.ad}</span>
+          </div>`;
+        })
+        .join('');
+
+      if (bulunan.length === 50) {
+        sonuc.innerHTML +=
+          '<p class="text-sm text-muted pt-2">İlk 50 sonuç gösteriliyor. Aramanızı daraltın.</p>';
+      }
+    }
+
+    arama.addEventListener('input', ara);
+  </script>
+</Layout>

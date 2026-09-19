@@ -47,6 +47,7 @@ export const headerData = {
       href: getPermalink('/araclar'),
       links: [
         { text: 'Tüm araçlar', href: getPermalink('/araclar') },
+        { text: 'Tehlike sınıfı sorgulama', href: getPermalink('/araclar/tehlike-sinifi-sorgulama') },
         { text: 'İSG yükümlülük hesaplama', href: getPermalink('/araclar/isg-yukumluluk-hesaplama') },
       ],
     },
@@ -80,6 +81,7 @@ export const footerData = {
     {
       title: 'Rehber ve araçlar',
       links: [
+        { text: 'Tehlike sınıfı sorgulama', href: getPermalink('/araclar/tehlike-sinifi-sorgulama') },
         { text: 'İSG yükümlülük hesaplama', href: getPermalink('/araclar/isg-yukumluluk-hesaplama') },
         ...rehberler.map((r) => ({ text: r.soru, href: getPermalink(`/rehber/${r.slug}`) })),
       ],
