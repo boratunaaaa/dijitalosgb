@@ -1,5 +1,4 @@
 ---
-import isgUzmaniSaha from '~/assets/images/isg-uzmani-saha-denetimi.jpg';
 import santiyePlanlama from '~/assets/images/santiye-is-guvenligi-planlama.jpg';
 import degerlendirmeToplantisi from '~/assets/images/isyerinde-isg-degerlendirme-toplantisi.jpg';
 import Layout from '~/layouts/PageLayout.astro';
@@ -27,8 +26,8 @@ const metadata = {
       { text: 'Uzaktan İSG eğitimi', href: '/isg-egitimi/' },
     ]}
     image={{
-      src: isgUzmaniSaha,
-      alt: 'Baretli iş güvenliği uzmanı sahada denetim yaparken',
+      src: santiyePlanlama,
+      alt: 'Şantiyede baret ve reflektif yelekle çalışan ekip',
     }}
   >
     <Fragment slot="title">
@@ -36,15 +35,28 @@ const metadata = {
       <span class="decoration-accent underline decoration-4 underline-offset-8">Belirsiz olan, ne kadara kapanacağı.</span>
     </Fragment>
     <Fragment slot="subtitle">
-      <strong>İş güvenliği uzmanı ve işyeri hekimi görevlendirmesi, risk değerlendirmesi,
-      acil durum eylem planı, sağlık ve güvenlik planı, mobil sağlık aracı ile işyerinde
-      tarama ve uzaktan İSG eğitimleri.</strong> Saha hizmetleri İstanbul, Kocaeli ve
-      Tekirdağ'da; danışmanlık, dokümantasyon ve eğitim Türkiye genelinde.
-      <span class="block mt-3">
-        Yükümlülüğünüz tehlike sınıfına ve çalışan sayısına göre değişir; aynı başlıkları
-        sayan tekliflerin arasındaki fark da genelde buradan çıkar. Önce hangi
-        yükümlülüğün size düştüğünü netleştiriyoruz.
-      </span>
+      Yükümlülüğünüz tehlike sınıfına ve çalışan sayısına göre değişir; aynı başlıkları
+      sayan tekliflerin arasındaki fark da genelde buradan çıkar.{' '}
+      <strong>Önce hangi yükümlülüğün size düştüğünü netleştiriyoruz.</strong>
+    </Fragment>
+
+    {/* Güven şeridi: ilk ekranda cevaplanması gereken üç soru — kim veriyor,
+        nerede veriyor, hangi yetkiyle. Hepsi doğrulanabilir olgular. */}
+    <Fragment slot="trust">
+      <dl class="mt-9 grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-5 border-t border-gray-200 dark:border-slate-700 pt-6">
+        <div>
+          <dt class="text-xs font-semibold uppercase tracking-wider text-muted">Saha hizmeti</dt>
+          <dd class="mt-1 font-semibold text-heading">İstanbul · Kocaeli · Tekirdağ</dd>
+        </div>
+        <div>
+          <dt class="text-xs font-semibold uppercase tracking-wider text-muted">İSG eğitimi</dt>
+          <dd class="mt-1 font-semibold text-heading">81 ilde planlanabilir</dd>
+        </div>
+        <div>
+          <dt class="text-xs font-semibold uppercase tracking-wider text-muted">Eğitim veren</dt>
+          <dd class="mt-1 font-semibold text-heading">A sınıfı İSG uzmanı</dd>
+        </div>
+      </dl>
     </Fragment>
   </Hero>
 
@@ -114,8 +126,8 @@ const metadata = {
       },
     ]}
     image={{
-      src: santiyePlanlama,
-      alt: 'Şantiyede iş güvenliği planlaması yapan ekip',
+      src: degerlendirmeToplantisi,
+      alt: 'Masa başında iş sağlığı ve güvenliği planlaması',
     }}
   />
 
@@ -130,10 +142,6 @@ const metadata = {
         icon: 'tabler:certificate',
       },
     ]}
-    image={{
-      src: degerlendirmeToplantisi,
-      alt: 'İşyerinde iş sağlığı ve güvenliği değerlendirme toplantısı',
-    }}
   >
     <Fragment slot="content">
       <p>

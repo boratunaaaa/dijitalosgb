@@ -4,6 +4,15 @@ import Button from '~/components/ui/Button.astro';
 
 import type { Hero as Props } from '~/types';
 
+/**
+ * İki kolonlu hero: solda söz, sağda saha.
+ *
+ * Şablonun özgün hâli metni ortalayıp görseli ALTINA koyuyordu. Sonuç,
+ * ilk ekranda bir ekran dolusu ortalanmış gri metin ve görselin kadrajın
+ * dışında kalmasıydı — ziyaretçi ne yaptığımızı gösteren tek şeyi
+ * görmeden aşağı kaydırmak zorundaydı. B2B'de okuma sol kenardan başlar;
+ * düzen de ona göre.
+ */
 const {
   title = await Astro.slots.render('title'),
   subtitle = await Astro.slots.render('subtitle'),
@@ -18,62 +27,55 @@ const {
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
 
-// `image.aspect: 'auto'` shows the picture whole (transparent illustrations);
-// the default crops it to the hero frame.
 const { aspect: imageAspect, ...imageProps } = typeof image === 'object' && image ? image : { src: '', alt: '' };
 const imageWhole = imageAspect === 'auto';
+const hasImage = Boolean(image);
 ---
 
-<section class="relative md:-mt-[76px] not-prose" {...id ? { id } : {}}>
+<section class="relative not-prose" {...id ? { id } : {}}>
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
     <slot name="bg">
       {bg ? <Fragment set:html={bg} /> : null}
     </slot>
   </div>
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
-    <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
-    <div class="py-12 md:py-20">
-      <div class="text-center pb-10 md:pb-16 max-w-5xl mx-auto">
-        {
-          badge && (
-            <span class="inline-block mb-4 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary dark:bg-primary/25 dark:text-blue-200 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
-              {badge}
-            </span>
-          )
-        }
-        {
-          tagline && (
-            <p
-              class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
-              set:html={tagline}
-            />
-          )
-        }
-        {
-          title && (
-            <h1
-              class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading text-heading intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
-              set:html={title}
-            />
-          )
-        }
-        <div class="max-w-3xl mx-auto">
+    <div class="py-10 md:py-14 lg:py-16">
+      <div class:list={['grid items-center gap-10 lg:gap-14', hasImage ? 'lg:grid-cols-2' : '']}>
+        <div class="max-w-2xl">
           {
-            subtitle && (
+            badge && (
+              <span class="inline-block mb-4 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary dark:bg-primary/25 dark:text-blue-200">
+                {badge}
+              </span>
+            )
+          }
+          {
+            tagline && (
               <p
-                class="text-xl text-muted mb-6 dark:text-slate-300 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
-                set:html={subtitle}
+                class="mb-3 text-sm font-semibold uppercase tracking-[0.12em] text-secondary dark:text-blue-200"
+                set:html={tagline}
               />
             )
           }
           {
+            title && (
+              <h1
+                class="text-4xl md:text-5xl lg:text-[3.25rem] font-bold leading-[1.1] tracking-tight mb-5 font-heading text-heading text-balance"
+                set:html={title}
+              />
+            )
+          }
+          {
+            subtitle && (
+              <div class="text-lg md:text-xl text-muted dark:text-slate-300 mb-7 [&_strong]:text-default [&_strong]:font-semibold" set:html={subtitle} />
+            )
+          }
+          {
             actions && (
-              <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+              <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3">
                 {Array.isArray(actions) ? (
                   actions.map((action) => (
-                    <div class="flex w-full sm:w-auto">
-                      <Button {...(action || {})} class="w-full sm:mb-0" />
-                    </div>
+                    <Button {...(action || {})} class="w-full sm:w-auto whitespace-nowrap" />
                   ))
                 ) : (
                   <Fragment set:html={actions} />
@@ -81,28 +83,28 @@ const imageWhole = imageAspect === 'auto';
               </div>
             )
           }
+          {content && <Fragment set:html={content} />}
+          <slot name="trust" />
         </div>
-        {content && <Fragment set:html={content} />}
-      </div>
-      <div
-        class="intersect-once intersect-no-queue intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
-      >
+
         {
-          image && (
-            <div class="relative m-auto max-w-5xl">
+          hasImage && (
+            <div class="relative">
               {typeof image === 'string' ? (
                 <Fragment set:html={image} />
               ) : (
                 <Image
                   class:list={[
-                    'mx-auto',
-                    imageWhole ? 'w-auto max-h-[32rem] object-contain md:max-h-[44rem]' : 'rounded-md w-full',
+                    'w-full',
+                    imageWhole
+                      ? 'h-auto max-h-[28rem] object-contain'
+                      : 'rounded-2xl shadow-xl ring-1 ring-gray-900/5 aspect-4/3 object-cover',
                   ]}
-                  widths={[400, 768, 1024, 2040]}
-                  sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+                  widths={[400, 768, 1024]}
+                  sizes="(max-width: 1023px) 100vw, 560px"
                   loading="eager"
                   fetchpriority="high"
-                  {...(imageWhole ? { inferSize: true, layout: 'none' } : { width: 1024, height: 576 })}
+                  {...(imageWhole ? { inferSize: true, layout: 'none' } : { width: 1024, height: 768 })}
                   format="webp"
                   {...imageProps}
                 />
