@@ -1,0 +1,115 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Note from '~/components/widgets/Note.astro';
+import { site, veriSorumlusu } from '~/data/site';
+
+const metadata = {
+  title: 'KVKK Aydınlatma Metni',
+  description: '6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında veri sorumlusu aydınlatma metni.',
+};
+const guncelleme = '19 Eylül 2026';
+---
+<Layout metadata={metadata}>
+  <HeroText
+    tagline="6698 sayılı Kanun"
+    title="KVKK Aydınlatma Metni"
+    subtitle={`Son güncelleme: ${guncelleme}`}
+  />
+
+  {!veriSorumlusu.unvan && (
+    <Note
+      title="Tamamlanması gereken"
+      description="Veri sorumlusu unvanı ve tebligata elverişli adres henüz girilmedi. Bu metnin geçerli sayılabilmesi için bu iki bilgi zorunludur."
+    />
+  )}
+
+  <section class="mx-auto max-w-3xl px-4 sm:px-6 py-10 prose-like">
+    <h2>1. Veri sorumlusu</h2>
+    <p>
+      {veriSorumlusu.unvan
+        ? veriSorumlusu.unvan
+        : '(Veri sorumlusu unvanı girilecek)'} olarak, 6698 sayılı Kişisel Verilerin
+      Korunması Kanunu ("Kanun") uyarınca veri sorumlusu sıfatıyla hareket ediyoruz.
+    </p>
+    {veriSorumlusu.adres && <p>Adres: {veriSorumlusu.adres}</p>}
+    <p>İletişim: <a href={`mailto:${veriSorumlusu.eposta}`}>{veriSorumlusu.eposta}</a></p>
+
+    <h2>2. Hangi kişisel verileri işliyoruz</h2>
+    <p>
+      Bu internet sitesinde yalnızca teklif formu üzerinden ilettiğiniz veriler işlenir:
+    </p>
+    <ul>
+      <li><strong>Kimlik ve iletişim verisi:</strong> firma adı, ad-soyad, telefon numarası veya e-posta adresi.</li>
+      <li><strong>Müşteri işlem verisi:</strong> faaliyet konusu, çalışan sayısı, işyeri konumu ve talep ettiğiniz hizmet.</li>
+    </ul>
+    <p>
+      Sitemiz çerez kullanmamakta ve ziyaretçi davranışını izleyen üçüncü taraf
+      analiz veya reklam kodu barındırmamaktadır.
+    </p>
+
+    <h2>3. İşleme amaçları</h2>
+    <ul>
+      <li>Talebinize karşılık gelen iş sağlığı ve güvenliği hizmeti için teklif hazırlamak.</li>
+      <li>İşyerinizin tehlike sınıfına göre yükümlülüğünüzü değerlendirmek.</li>
+      <li>Sizinle iletişime geçmek ve sözleşme öncesi süreci yürütmek.</li>
+    </ul>
+
+    <h2>4. Hukuki sebep</h2>
+    <p>
+      Verileriniz, Kanun'un 5. maddesinde düzenlenen <em>"bir sözleşmenin kurulması veya
+      ifasıyla doğrudan doğruya ilgili olması"</em> ve <em>"veri sorumlusunun meşru
+      menfaati"</em> hukuki sebeplerine dayanılarak işlenir. Ticari elektronik ileti
+      gönderimi için ayrıca açık rızanız alınır; teklif talebiniz bu rıza yerine geçmez.
+    </p>
+
+    <h2>5. Aktarım</h2>
+    <p>
+      Talebiniz saha iş sağlığı ve güvenliği hizmetine ilişkinse, hizmetin fiilen
+      verilebilmesi için yetki belgeli iş ortağımızla paylaşılır. Bunun dışında
+      verileriniz üçüncü kişilere aktarılmaz, yurt dışına çıkarılmaz ve satılmaz.
+      Form iletimi ve e-posta altyapısı için kullanılan hizmet sağlayıcılar, yalnız
+      iletim amacıyla ve bu metinde belirtilen sınırlar içinde veri işler.
+    </p>
+
+    <h2>6. Saklama süresi</h2>
+    <p>
+      Teklif talepleri, teklif süreci sonuçlandıktan sonra en fazla iki yıl saklanır.
+      Sözleşme kurulması hâlinde, ilgili mevzuatın öngördüğü saklama süreleri geçerlidir.
+      Süre dolduğunda veriler silinir veya anonim hâle getirilir.
+    </p>
+
+    <h2>7. Haklarınız</h2>
+    <p>Kanun'un 11. maddesi uyarınca veri sorumlusuna başvurarak:</p>
+    <ul>
+      <li>kişisel verinizin işlenip işlenmediğini öğrenme,</li>
+      <li>işlenmişse buna ilişkin bilgi talep etme,</li>
+      <li>işleme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme,</li>
+      <li>eksik veya yanlış işlenmişse düzeltilmesini isteme,</li>
+      <li>şartları oluştuğunda silinmesini veya yok edilmesini isteme,</li>
+      <li>işlemenin münhasıran otomatik sistemlerle analizi sonucu aleyhinize bir sonuç
+        doğmasına itiraz etme,</li>
+      <li>kanuna aykırı işleme nedeniyle zarara uğramanız hâlinde zararın giderilmesini
+        talep etme</li>
+    </ul>
+    <p>
+      haklarına sahipsiniz. Başvurularınızı
+      <a href={`mailto:${veriSorumlusu.eposta}`}>{veriSorumlusu.eposta}</a> adresine
+      iletebilirsiniz. Başvurular en geç otuz gün içinde sonuçlandırılır.
+    </p>
+
+    <h2>8. Değişiklikler</h2>
+    <p>
+      Bu metin güncellenebilir. Güncel sürüm her zaman
+      <a href={`${site.url}/kvkk/`}>{site.url}/kvkk/</a> adresinde yayımlanır.
+    </p>
+  </section>
+</Layout>
+
+<style is:global>
+  .prose-like h2 { font-size: 1.35rem; font-weight: 700; margin-top: 2rem; margin-bottom: .6rem; }
+  .prose-like p, .prose-like ul { margin-bottom: 1rem; line-height: 1.75; }
+  .prose-like ul { padding-left: 1.25rem; list-style: disc; }
+  .prose-like li { margin-bottom: .4rem; }
+  .prose-like a { text-decoration: underline; }
+</style>

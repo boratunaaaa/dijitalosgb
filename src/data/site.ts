@@ -18,6 +18,12 @@ export const site = {
   eposta: "",
   whatsapp: "",
 
+  /**
+   * KVKK aydınlatma metninde "veri sorumlusu" olarak gösterilecek tüzel/gerçek
+   * kişi bilgileri. BOŞ OLANLAR YAYIMLANMIYOR — aydınlatma metninde uydurma
+   * unvan veya adres bulunması, metni geçersiz kılmanın yanında başlı başına
+   * bir ihlal olur.
+   */
   // İSG uzmanlığı belge sınıfı (A/B/C) — hangi tehlike sınıfına hizmet
   // verilebileceğini belirler, sayfa hedeflerini bu çizer.
   uzmanBelgeSinifi: "",
@@ -39,6 +45,17 @@ export const isOrtagi = {
   // TODO: Bakanlık yetki belgesi numarası. Alınınca buraya yazılacak;
   // boş kaldığı sürece sayfada belge satırı hiç gösterilmez.
   yetkiBelgeNo: "",
+} as const;
+
+/**
+ * Veri sorumlusu künyesi — KVKK m.10 aydınlatma yükümlülüğü için.
+ * Alanlar doldurulmadan aydınlatma metni "eksik" uyarısı gösterir.
+ */
+export const veriSorumlusu = {
+  unvan: "",     // ticari unvan veya ad soyad
+  adres: "",     // tebligata elverişli adres
+  eposta: "kvkk@dijitalosgb.com",
+  vkn: "",       // vergi/TC kimlik no (isteğe bağlı gösterim)
 } as const;
 
 /**

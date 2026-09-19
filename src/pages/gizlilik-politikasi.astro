@@ -1,0 +1,60 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import { site, veriSorumlusu } from '~/data/site';
+const metadata = { title: 'Gizlilik Politikası', description: 'Bu sitede hangi verilerin toplandığı, nasıl kullanıldığı ve korunduğu.' };
+---
+<Layout metadata={metadata}>
+  <HeroText title="Gizlilik Politikası" subtitle="Son güncelleme: 19 Eylül 2026" />
+  <section class="mx-auto max-w-3xl px-4 sm:px-6 py-10 prose-like">
+    <h2>Kısa özet</h2>
+    <p>
+      Bu sitede <strong>çerez kullanılmıyor</strong>, üçüncü taraf analiz veya reklam
+      kodu çalıştırılmıyor ve ziyaretçi davranışı izlenmiyor. Yalnızca teklif formunu
+      doldurduğunuzda ilettiğiniz bilgiler işleniyor.
+    </p>
+
+    <h2>Toplanan veriler</h2>
+    <p>
+      Teklif formu: firma adı, faaliyet konusu, çalışan sayısı, işyeri konumu ve
+      bize dönmemiz için bıraktığınız telefon veya e-posta.
+    </p>
+    <p>
+      Sunucu tarafında, her internet sitesinde olduğu gibi teknik erişim kayıtları
+      (IP adresi, tarayıcı bilgisi, istek zamanı) barındırma altyapısı tarafından
+      güvenlik ve hata takibi amacıyla kısa süreli tutulabilir.
+    </p>
+
+    <h2>Kullanım</h2>
+    <p>
+      Bu bilgiler yalnız talebinize karşılık gelen teklifi hazırlamak ve sizinle
+      iletişime geçmek için kullanılır. Pazarlama listesine eklenmezsiniz; ticari
+      elektronik ileti için ayrıca açık rızanız alınır.
+    </p>
+
+    <h2>Paylaşım</h2>
+    <p>
+      Saha hizmeti talepleri, hizmetin verilebilmesi için yetki belgeli iş ortağımızla
+      paylaşılır. Bunun dışında veriler kimseyle paylaşılmaz ve satılmaz.
+    </p>
+
+    <h2>Güvenlik</h2>
+    <p>
+      Site tamamen HTTPS üzerinden sunulur. Form verileri şifreli bağlantı üzerinden
+      iletilir ve e-posta olarak tarafımıza ulaşır; sitede bir veritabanında saklanmaz.
+    </p>
+
+    <h2>Haklarınız</h2>
+    <p>
+      Verilerinizle ilgili taleplerinizi
+      <a href={`mailto:${veriSorumlusu.eposta}`}>{veriSorumlusu.eposta}</a> adresine
+      iletebilirsiniz. Ayrıntı için <a href={`${site.url}/kvkk/`}>KVKK Aydınlatma Metni</a>.
+    </p>
+  </section>
+</Layout>
+<style is:global>
+  .prose-like h2 { font-size: 1.35rem; font-weight: 700; margin-top: 2rem; margin-bottom: .6rem; }
+  .prose-like p, .prose-like ul { margin-bottom: 1rem; line-height: 1.75; }
+  .prose-like ul { padding-left: 1.25rem; list-style: disc; }
+  .prose-like a { text-decoration: underline; }
+</style>

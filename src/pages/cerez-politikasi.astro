@@ -1,0 +1,42 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import { site, veriSorumlusu } from '~/data/site';
+const metadata = { title: 'Çerez Politikası', description: 'Bu sitede çerez kullanılmamaktadır.' };
+---
+<Layout metadata={metadata}>
+  <HeroText title="Çerez Politikası" subtitle="Son güncelleme: 19 Eylül 2026" />
+  <section class="mx-auto max-w-3xl px-4 sm:px-6 py-10 prose-like">
+    <h2>Bu sitede çerez kullanılmıyor</h2>
+    <p>
+      {site.name} sitesi ziyaretçi tarayıcısına çerez yerleştirmez. Reklam ağı,
+      sosyal medya izleyicisi veya davranışsal analiz kodu çalıştırılmaz. Bu nedenle
+      sitede çerez onay penceresi de bulunmaz.
+    </p>
+    <p>
+      Bu durum teknik bir tercih değil, bilinçli bir karardır: teklif almak için
+      siteye giren bir işverenin, hizmeti değerlendirirken izlenmesi gerekmiyor.
+    </p>
+
+    <h2>Zorunlu teknik kayıtlar</h2>
+    <p>
+      Barındırma altyapısı, saldırı önleme ve hata takibi amacıyla teknik erişim
+      kayıtları (IP adresi, istek zamanı, tarayıcı bilgisi) tutabilir. Bunlar çerez
+      değildir ve pazarlama amacıyla kullanılmaz.
+    </p>
+
+    <h2>İleride değişirse</h2>
+    <p>
+      Sitede ölçümleme veya çerez kullanımına geçilirse bu sayfa güncellenir ve
+      gerekli hâllerde açık rıza alınır.
+    </p>
+
+    <h2>İletişim</h2>
+    <p><a href={`mailto:${veriSorumlusu.eposta}`}>{veriSorumlusu.eposta}</a></p>
+  </section>
+</Layout>
+<style is:global>
+  .prose-like h2 { font-size: 1.35rem; font-weight: 700; margin-top: 2rem; margin-bottom: .6rem; }
+  .prose-like p { margin-bottom: 1rem; line-height: 1.75; }
+  .prose-like a { text-decoration: underline; }
+</style>

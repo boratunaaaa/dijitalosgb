@@ -41,9 +41,23 @@ const alan = 'w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-b
         <label for="iletisim" class="font-medium">Size nasıl dönelim?</label>
         <input id="iletisim" name="iletisim" type="text" required placeholder="telefon veya e-posta" class={alan} />
       </div>
-      <button type="submit" class="btn btn-primary w-full sm:w-auto">Gönder</button>
+      <label class="flex items-start gap-3 text-sm">
+        <input id="ticari-izin" name="ticari_izin" type="checkbox" value="evet" class="mt-1" />
+        <span class="text-muted">
+          İSG mevzuatındaki değişiklikler ve hizmetlerle ilgili bilgilendirme
+          e-postası almak istiyorum. <strong>İsteğe bağlıdır</strong>; teklif almak için
+          işaretlemeniz gerekmez.
+        </span>
+      </label>
+
+      <button type="submit" class="btn btn-primary w-full sm:w-auto">Ücretsiz ön değerlendirme al</button>
+
       <p class="text-sm text-muted">
-        Bilgileriniz yalnız teklif hazırlamak için kullanılır.
+        Formu göndererek <a href="/kvkk/" class="underline">KVKK Aydınlatma Metni</a>'ni
+        okuduğunuzu kabul edersiniz. Bilgileriniz yalnız teklif hazırlamak için
+        kullanılır, pazarlama listesine eklenmez.
+      </p>
+      <p class="text-sm text-muted">
         {site.name} bir OSGB değildir; saha hizmeti yetkili iş ortağı tarafından verilir.
       </p>
     </form>

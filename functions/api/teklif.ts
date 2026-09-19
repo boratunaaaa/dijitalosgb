@@ -41,7 +41,14 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
     return new Response("Form arka ucu yapılandırılmamış.", { status: 500 });
   }
 
-  const govde = ALANLAR.map((a) => `${a}: ${veri[a]}`).join("\n");
+    // Ticari ileti onayı ZORUNLU ALAN DEĞİL: işaretlenmemiş olması formu
+  // geçersiz kılmamalı. KVKK'da teklif talebi ile ticari ileti rızası ayrı
+  // şeylerdir; ikisini tek kutuya bağlamak rızayı sakatlar.
+  const ticariIzin = String(form.get("ticari_izin") ?? "") === "evet" ? "EVET" : "hayır";
+
+  const govde =
+    ALANLAR.map((a) => `${a}: ${veri[a]}`).join("\n") +
+    `\nticari ileti izni: ${ticariIzin}`;
 
   const yanit = await fetch("https://api.brevo.com/v3/smtp/email", {
     method: "POST",

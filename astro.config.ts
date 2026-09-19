@@ -53,7 +53,11 @@ export default defineConfig({
   ],
 
   integrations: [
-    sitemap(),
+    sitemap({
+      // noindex sayfalar sitemap'e girmemeli: Google'a "bunu dizine al" deyip
+      // sayfada "alma" demek çelişkili sinyal.
+      filter: (sayfa) => !sayfa.includes('/tesekkurler'),
+    }),
     mdx(),
     icon({
       // Local SVG icons (used as <Icon name="file-name" />) live next to the other assets.

@@ -68,10 +68,23 @@ export const footerData = {
       title: 'Rehber',
       links: rehberler.map((r) => ({ text: r.soru, href: getPermalink(`/rehber/${r.slug}`) })),
     },
+    {
+      title: 'Kurumsal',
+      links: [
+        { text: 'Hakkımızda', href: getPermalink('/hakkimizda') },
+        { text: 'Teklif al', href: getPermalink('/teklif-al') },
+        { text: 'KVKK Aydınlatma Metni', href: getPermalink('/kvkk') },
+        { text: 'Gizlilik Politikası', href: getPermalink('/gizlilik-politikasi') },
+        { text: 'Çerez Politikası', href: getPermalink('/cerez-politikasi') },
+      ],
+    },
   ],
   secondaryLinks: [
     { text: 'Hakkımızda', href: getPermalink('/hakkimizda') },
     { text: 'Teklif al', href: getPermalink('/teklif-al') },
+    { text: 'KVKK', href: getPermalink('/kvkk') },
+    { text: 'Gizlilik', href: getPermalink('/gizlilik-politikasi') },
+    { text: 'Çerez', href: getPermalink('/cerez-politikasi') },
   ],
   socialLinks: [],
   footNote: `
