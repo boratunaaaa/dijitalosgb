@@ -1,24 +1,45 @@
 ---
-import Layout from '~/layouts/Layout.astro';
-import { getHomePermalink } from '~/utils/permalinks';
+import Layout from '~/layouts/PageLayout.astro';
+import { getPermalink } from '~/utils/permalinks';
 
-const title = `Error 404`;
+// 404'te de header/footer olsun: kullanıcı kaybolduğunda menüye ve
+// hizmetlere erişebilmeli. Çıplak sayfa onu siteden koparıyor.
+const metadata = {
+  title: 'Sayfa bulunamadı',
+  description: 'Aradığınız sayfa bulunamadı. Hizmetlerimize ve İSG rehberine buradan ulaşabilirsiniz.',
+  robots: { index: false, follow: true },
+};
+
+const yollar = [
+  { ad: 'Hizmetler', yol: '/hizmetler/' },
+  { ad: 'Sektörler', yol: '/sektorler/' },
+  { ad: 'Uzaktan İSG eğitimi', yol: '/isg-egitimi/' },
+  { ad: 'Mobil sağlık aracı', yol: '/mobil-saglik-taramasi/' },
+  { ad: 'İSG rehberi', yol: '/rehber/' },
+  { ad: 'Teklif al', yol: '/teklif-al/' },
+];
 ---
+<Layout metadata={metadata}>
+  <section class="mx-auto max-w-3xl px-4 sm:px-6 py-16 sm:py-24 text-center">
+    <p class="text-7xl sm:text-8xl font-bold text-primary">404</p>
+    <h1 class="mt-6 text-3xl sm:text-4xl font-bold">Aradığınız sayfa bulunamadı</h1>
+    <p class="mt-4 text-lg text-muted">
+      Bağlantı değişmiş veya sayfa kaldırılmış olabilir. Aşağıdan devam edebilirsiniz.
+    </p>
 
-<Layout metadata={{ title }}>
-  <section class="flex items-center h-full p-16">
-    <div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
-      <div class="max-w-md text-center">
-        <h2 class="mb-8 font-bold text-9xl">
-          <span class="sr-only">Error</span>
-          <span class="text-primary">404</span>
-        </h2>
-        <p class="text-3xl font-semibold md:text-3xl">Sorry, we couldn't find this page.</p>
-        <p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400">
-          But don't worry, you can find plenty of other things on our homepage.
-        </p>
-        <a rel="noopener noreferrer" href={getHomePermalink()} class="btn ml-4">Back to homepage</a>
-      </div>
-    </div>
+    <ul class="mt-10 grid gap-3 sm:grid-cols-2 text-left">
+      {yollar.map((y) => (
+        <li>
+          <a
+            href={getPermalink(y.yol)}
+            class="block rounded-lg border border-gray-200 px-5 py-4 font-medium hover:border-primary hover:text-primary transition"
+          >
+            {y.ad}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <a href={getPermalink('/')} class="btn btn-primary mt-10 inline-block">Ana sayfaya dön</a>
   </section>
 </Layout>

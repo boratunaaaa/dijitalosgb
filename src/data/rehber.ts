@@ -18,7 +18,7 @@ export const rehberler: Rehber[] = [
   {
     slug: "osgb-zorunlu-mu",
     soru: "OSGB hizmeti almak zorunlu mu?",
-    ozet: "6331 sayılı Kanun kapsamındaki her işyeri iş güvenliği uzmanı ve işyeri hekimi görevlendirmek zorundadır. Bunu kendi bünyesinde yapamayan işyerleri OSGB'den hizmet alır.",
+    ozet: "Zorunlu olan OSGB değil, iş güvenliği uzmanı ve işyeri hekimi görevlendirmektir. Bunu kendi bünyesinde yapamayan işyerleri hizmeti OSGB'den alır.",
     cevap:
       "Zorunlu olan OSGB'den hizmet almak değil, iş güvenliği uzmanı ve işyeri hekimi görevlendirmektir. " +
       "İşyeri bu kişileri kendi bünyesinde istihdam edebiliyorsa OSGB'ye gerek yoktur. " +

@@ -30,7 +30,7 @@ export const hizmetler: Hizmet[] = [
   {
     slug: 'risk-degerlendirmesi',
     ad: 'Risk değerlendirmesi',
-    h1: 'Risk Değerlendirmesi ve Risk Analizi Hazırlama Desteği',
+    h1: 'Risk Değerlendirmesi ve Risk Analizi Desteği',
     ozet:
       'Saha incelemesi, tehlike tespiti ve risk değerlendirme sürecinin kurulması. İşveren ekibine uzman desteği.',
     kapsam: 'ulusal',
@@ -88,7 +88,7 @@ export const hizmetler: Hizmet[] = [
   {
     slug: 'saglik-ve-guvenlik-plani',
     ad: 'Sağlık ve güvenlik planı',
-    h1: 'Sağlık ve Güvenlik Planı Hazırlama — İnşaat ve Şantiyeler',
+    h1: 'Sağlık ve Güvenlik Planı Hazırlama',
     ozet:
       'Yapı işlerinde zorunlu sağlık ve güvenlik planı; şantiye özelinde risk, önlem ve koordinasyon.',
     kapsam: 'ulusal',

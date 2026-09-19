@@ -13,7 +13,13 @@ export function getStaticPaths() {
   return sektorler.map((s) => ({ params: { sektor: s.slug }, props: { s } }));
 }
 const { s } = Astro.props;
-const metadata = { title: s.h1, description: s.ozet };
+// Meta açıklama 160 karakter sınırında tutuluyor: Google fazlasını kesiyor
+// ve kesilen cümle arama sonucunda yarım görünüyor.
+const aciklama = `${s.ozet} ${s.tehlikeSinifi}`.slice(0, 155).trim();
+const metadata = {
+  title: s.h1,
+  description: aciklama.length < 152 ? aciklama : aciklama.replace(/\s+\S*$/, '') + '…',
+};
 const url = `${site.url}/sektorler/${s.slug}/`;
 const ilgili = hizmetler.filter((h) => s.odak.includes(h.slug));
 
