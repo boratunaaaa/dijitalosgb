@@ -5,15 +5,26 @@ import Features from '~/components/widgets/Features.astro';
 import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import StructuredData from '~/components/common/StructuredData.astro';
-import { site, isOrtagi, uzman } from '~/data/site';
+import { site, isOrtagi, ekip, uzman } from '~/data/site';
 
 const metadata = {
   title: 'Hakkımızda',
   description: `${site.name} kimdir, hizmeti kim veriyor ve yetki sınırları nedir.`,
 };
 
-// Person şeması yalnız uzman bilgisi DOLDURULMUŞSA basılır.
-// Boş bir Person nesnesi yayımlamak, olmayan bir uzmanlık iddiası olurdu.
+// Person şeması: Google'ın "bu içeriği kim yazıyor" sorusunun cevabı.
+// Yalnız DOĞRULANMIŞ alanlar basılıyor; belge sınıfı ve diploma teyit
+// edilmeden şemaya da sayfaya da girmiyor.
+const kisi: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: uzman.ad,
+  jobTitle: uzman.belgeSinifi ? `${uzman.belgeSinifi} Sınıfı ${uzman.unvan}` : uzman.unvan,
+  worksFor: { '@type': 'Organization', name: site.name, url: site.url },
+  knowsAbout: ['İş sağlığı ve güvenliği', 'Risk değerlendirmesi', 'Acil durum planlaması', 'İSG eğitimi'],
+};
+if (uzman.egitim.length) kisi.alumniOf = uzman.egitim;
+
 const structuredData = [
   {
     '@context': 'https://schema.org',
@@ -21,16 +32,7 @@ const structuredData = [
     name: 'Hakkımızda',
     url: `${site.url}/hakkimizda/`,
   },
-  ...(uzman.ad
-    ? [{
-        '@context': 'https://schema.org',
-        '@type': 'Person',
-        name: uzman.ad,
-        jobTitle: uzman.unvan,
-        worksFor: { '@type': 'Organization', name: site.name, url: site.url },
-        knowsAbout: ['İş sağlığı ve güvenliği', 'Risk değerlendirmesi', 'Acil durum planlaması'],
-      }]
-    : []),
+  kisi,
 ];
 ---
 <Layout metadata={metadata}>
@@ -74,22 +76,33 @@ const structuredData = [
     ]}
   />
 
-  {uzman.ad && (
-    <Content
-      isReversed
-      title="Uzman"
-      items={[
-        ...(uzman.unvan ? [{ title: uzman.unvan, icon: 'tabler:certificate' }] : []),
-        ...(uzman.belgeNo ? [{ title: `Belge no: ${uzman.belgeNo}`, icon: 'tabler:id-badge' }] : []),
-        ...uzman.egitim.map((e) => ({ title: e, icon: 'tabler:school' })),
-      ]}
-    >
-      <Fragment slot="content">
-        <h3 class="text-2xl font-bold">{uzman.ad}</h3>
-        {uzman.deneyim && <p class="mt-3">{uzman.deneyim}</p>}
-      </Fragment>
-    </Content>
-  )}
+  <Content
+    isReversed
+    title="Hizmeti kim yürütüyor"
+    items={[
+      ...(uzman.belgeSinifi
+        ? [{ title: `${uzman.belgeSinifi} Sınıfı ${uzman.unvan}`, icon: 'tabler:certificate' }]
+        : [{ title: uzman.unvan, icon: 'tabler:certificate' }]),
+      ...(uzman.belgeNo ? [{ title: `Belge no: ${uzman.belgeNo}`, icon: 'tabler:id-badge' }] : []),
+      ...uzman.egitim.map((e) => ({ title: e, icon: 'tabler:school' })),
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold">{uzman.ad}</h3>
+      <p class="mt-3">
+        İSG eğitimlerini ve danışmanlık süreçlerini doğrudan yürütür; saha
+        hizmetlerinde iş ortağıyla koordinasyonu sağlar.
+      </p>
+      {uzman.deneyim && <p class="mt-3">{uzman.deneyim}</p>}
+    </Fragment>
+  </Content>
+
+  <Features
+    title="Hizmet ekibi"
+    subtitle="Saha personeli yetki belgeli iş ortağımızın bünyesinde görev yapar; eğitim tarafını doğrudan biz yürütürüz."
+    columns={1}
+    items={ekip.map((e) => ({ title: e.baslik, description: e.aciklama, icon: 'tabler:users' }))}
+  />
 
   <Content title="İş ortağımız">
     <Fragment slot="content">

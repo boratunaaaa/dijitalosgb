@@ -38,8 +38,13 @@ if (site.eposta) kurum.email = site.eposta;
 if (isOrtagi.ad) {
   kurum.memberOf = { '@type': 'Organization', name: isOrtagi.ad, address: isOrtagi.adres };
 }
+
 if (uzman.ad) {
-  kurum.employee = { '@type': 'Person', name: uzman.ad, jobTitle: uzman.unvan };
+  kurum.employee = {
+    '@type': 'Person',
+    name: uzman.ad,
+    jobTitle: uzman.belgeSinifi ? `${uzman.belgeSinifi} Sınıfı ${uzman.unvan}` : uzman.unvan,
+  };
 }
 
 const websitesi = {

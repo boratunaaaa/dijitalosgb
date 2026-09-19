@@ -42,20 +42,58 @@ export const isOrtagi = {
 } as const;
 
 /**
- * Siteyi yazan/denetleyen uzman. Google'ın aradığı "gerçek deneyim ve
- * uzmanlık" kanıtı bu; yapay zekâ motorlarının siteyi güvenilir kaynak
- * sayması da buna bağlı.
+ * Hizmet ekibinin yapısı. İSİM YAZILMIYOR — kullanıcı tercihi.
  *
- * ALANLAR BİLEREK BOŞ: doğrulanmamış unvan ve diploma yayımlanmaz.
- * Kullanıcı teyit edince doldurulacak; boş kalan satır sayfada hiç basılmaz.
+ * Buradaki ifadeler doğrulanabilir olmak zorunda: yetkilendirilmiş bir OSGB,
+ * mevzuat gereği iş güvenliği uzmanı ve işyeri hekimi çalıştırmak
+ * durumundadır; uzmanın belge sınıfı da hangi tehlike sınıfına hizmet
+ * verebileceğini belirler. Yani aşağıdaki satırlar övünme değil, yapının
+ * kendisi.
+ *
+ * "Kadromuzda" yerine "hizmet ekibinde" deniyor: saha personeli yetki
+ * belgeli iş ortağının bünyesinde, eğitim tarafı doğrudan bizde. İkisini tek
+ * kadro gibi göstermek, baştan beri kaçındığımız yanıltıcı sunum olurdu.
+ */
+/**
+ * Siteyi yürüten uzman.
+ *
+ * DOLU ALANLAR = bu konuşmada kullanıcının kendisinin söylediği/doğruladığı
+ * bilgiler. BOŞ ALANLAR = doğrulanmadı, bu yüzden yayımlanmıyor ve sayfada
+ * hiç basılmıyor.
+ *
+ * Belge sınıfı, belge numarası ve diploma düzenlenmiş meslekî iddialardır;
+ * teyit edilmeden yazılırsa sitenin tüm güvenilirliğini götürür.
  */
 export const uzman = {
-  ad: "",                 // örn. "Mehmet Kadir Uğur"
-  unvan: "",              // örn. "A Sınıfı İş Güvenliği Uzmanı"
-  belgeNo: "",            // İSG uzmanlığı belge numarası
-  egitim: [] as string[], // örn. ["Kimya Lisans", "İSG Yüksek Lisans"]
-  deneyim: "",            // tek cümlelik gerçek saha deneyimi özeti
+  ad: "Mehmet Kadir Uğur",
+  unvan: "İş Güvenliği Uzmanı",
+  belgeSinifi: "A",  // kullanıcı 2026-09-19'da teyit etti
+  belgeNo: "",       // teyit bekliyor
+  egitim: [] as string[],
+  deneyim: "",
 } as const;
+
+export const ekip = [
+  {
+    baslik: "İş güvenliği uzmanları",
+    aciklama:
+      "İşyerinin tehlike sınıfına göre A, B veya C sınıfı belgeye sahip uzman görevlendirilir. " +
+      "C sınıfı az tehlikeli, B sınıfı az ve tehlikeli, A sınıfı bütün tehlike sınıflarındaki " +
+      "işyerlerinde görev yapabilir.",
+  },
+  {
+    baslik: "İşyeri hekimleri",
+    aciklama:
+      "İşe giriş ve periyodik muayeneler, sağlık gözetimi kayıtları ve işyeri ortamından " +
+      "kaynaklanan sağlık risklerinin değerlendirilmesi.",
+  },
+  {
+    baslik: "Diğer sağlık personeli",
+    aciklama:
+      "Mobil sağlık aracındaki tarama ve ölçümlerin yürütülmesi, numune alımı ve " +
+      "kayıtların tutulması.",
+  },
+] as const;
 
 /** Her sayfanın altbilgisinde görünen yasal not. */
 export const yasalNot =
