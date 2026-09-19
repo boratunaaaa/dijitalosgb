@@ -38,6 +38,14 @@ export const headerData = {
       ],
     },
     {
+      text: 'Araçlar',
+      href: getPermalink('/araclar'),
+      links: [
+        { text: 'Tüm araçlar', href: getPermalink('/araclar') },
+        { text: 'İSG yükümlülük hesaplama', href: getPermalink('/araclar/isg-yukumluluk-hesaplama') },
+      ],
+    },
+    {
       text: 'Rehber',
       href: getPermalink('/rehber'),
       links: rehberler.map((r) => ({ text: r.soru, href: getPermalink(`/rehber/${r.slug}`) })),
@@ -65,8 +73,11 @@ export const footerData = {
       links: sektorler.map((x) => ({ text: x.ad, href: getPermalink(`/sektorler/${x.slug}`) })),
     },
     {
-      title: 'Rehber',
-      links: rehberler.map((r) => ({ text: r.soru, href: getPermalink(`/rehber/${r.slug}`) })),
+      title: 'Rehber ve araçlar',
+      links: [
+        { text: 'İSG yükümlülük hesaplama', href: getPermalink('/araclar/isg-yukumluluk-hesaplama') },
+        ...rehberler.map((r) => ({ text: r.soru, href: getPermalink(`/rehber/${r.slug}`) })),
+      ],
     },
     {
       title: 'Kurumsal',
