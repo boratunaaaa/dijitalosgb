@@ -1,0 +1,33 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import { sektorler } from '~/data/sektorler';
+
+const metadata = {
+  title: 'Sektörler',
+  description: 'İnşaat, üretim, lojistik, ofis, gıda ve sağlık sektörlerinde iş güvenliği: her sektörün kendi riskleri ve yükümlülükleri.',
+};
+---
+<Layout metadata={metadata}>
+  <HeroText
+    title="Sektörler"
+    subtitle="Yükümlülük herkes için aynı kanundan doğuyor ama riskler aynı değil. Şantiyedeki öncelik yüksekten düşme, depodaki forklift trafiği, ofisteki tahliye düzeni."
+    actions={[{ variant: 'primary', text: 'Teklif al', href: '/teklif-al/' }]}
+  />
+  <Features
+    columns={2}
+    items={sektorler.map((s) => ({
+      title: s.ad,
+      description: s.ozet,
+      icon: 'tabler:building-factory-2',
+      callToAction: { text: 'Detay', href: `/sektorler/${s.slug}/` },
+    }))}
+  />
+  <CallToAction
+    title="Sektörünüz listede yok mu?"
+    subtitle="Ne iş yaptığınızı yazın; tehlike sınıfınızı ve yükümlülüğünüzü çıkaralım."
+    actions={[{ variant: 'primary', text: 'Ücretsiz ön değerlendirme', href: '/teklif-al/' }]}
+  />
+</Layout>

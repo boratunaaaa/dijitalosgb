@@ -1,0 +1,65 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features from '~/components/widgets/Features.astro';
+import Note from '~/components/widgets/Note.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import StructuredData from '~/components/common/StructuredData.astro';
+import { site } from '~/data/site';
+import { sektorler } from '~/data/sektorler';
+import { hizmetler } from '~/data/hizmetler';
+
+export function getStaticPaths() {
+  return sektorler.map((s) => ({ params: { sektor: s.slug }, props: { s } }));
+}
+const { s } = Astro.props;
+const metadata = { title: s.h1, description: s.ozet };
+const url = `${site.url}/sektorler/${s.slug}/`;
+const ilgili = hizmetler.filter((h) => s.odak.includes(h.slug));
+
+const structuredData = [{
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Ana sayfa', item: `${site.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Sektörler', item: `${site.url}/sektorler/` },
+    { '@type': 'ListItem', position: 3, name: s.ad, item: url },
+  ],
+}];
+---
+<Layout metadata={metadata}>
+  <StructuredData slot="head" schema={structuredData} />
+
+  <HeroText
+    tagline="Sektör"
+    title={s.h1}
+    subtitle={s.ozet}
+    actions={[{ variant: 'primary', text: 'Teklif al', href: '/teklif-al/' }]}
+  />
+
+  <Note title="Tehlike sınıfı" description={`${s.tehlikeSinifi} Kesin sınıf işyerinin NACE koduna göre belirlenir; teklif aşamasında bunu birlikte netleştiriyoruz.`} />
+
+  <Features
+    title="Bu sektörde öne çıkan riskler"
+    columns={2}
+    items={s.riskler.map((r) => ({ title: r.baslik, description: r.aciklama, icon: 'tabler:alert-triangle' }))}
+  />
+
+  <Features
+    title="Öncelikli hizmetler"
+    subtitle="Bu sektörde en çok ihtiyaç duyulan başlıklar."
+    columns={2}
+    items={ilgili.map((h) => ({
+      title: h.ad,
+      description: h.ozet,
+      icon: 'tabler:circle-check',
+      callToAction: { text: 'Detay', href: `/hizmetler/${h.slug}/` },
+    }))}
+  />
+
+  <CallToAction
+    title={`${s.ad} için teklif`}
+    subtitle="Çalışan sayınızı ve faaliyetinizi yazın; yükümlülüğünüzü kalem kalem çıkaralım."
+    actions={[{ variant: 'primary', text: 'Ücretsiz ön değerlendirme', href: '/teklif-al/' }]}
+  />
+</Layout>

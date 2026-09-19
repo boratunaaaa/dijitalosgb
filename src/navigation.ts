@@ -3,6 +3,7 @@ import { ilceler } from './data/ilceler';
 import { illerSayfali } from './data/iller';
 import { rehberler } from './data/rehber';
 import { hizmetler } from './data/hizmetler';
+import { sektorler } from './data/sektorler';
 
 export const headerData = {
   links: [
@@ -15,6 +16,11 @@ export const headerData = {
         { text: 'Mobil sağlık aracı', href: getPermalink('/mobil-saglik-taramasi') },
         { text: 'Uzaktan İSG eğitimi', href: getPermalink('/isg-egitimi') },
       ],
+    },
+    {
+      text: 'Sektörler',
+      href: getPermalink('/sektorler'),
+      links: sektorler.map((x) => ({ text: x.ad, href: getPermalink(`/sektorler/${x.slug}`) })),
     },
     {
       text: 'OSGB bölgeleri',
@@ -53,6 +59,10 @@ export const footerData = {
     {
       title: 'Saha hizmeti bölgeleri',
       links: ilceler.map((i) => ({ text: `${i.ad} (${i.il})`, href: getPermalink(`/osgb/${i.slug}`) })),
+    },
+    {
+      title: 'Sektörler',
+      links: sektorler.map((x) => ({ text: x.ad, href: getPermalink(`/sektorler/${x.slug}`) })),
     },
     {
       title: 'Rehber',
