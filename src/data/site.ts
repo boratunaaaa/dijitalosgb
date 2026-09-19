@@ -14,10 +14,10 @@ export const site = {
   tagline: "İş sağlığı ve güvenliğinde dijital çözüm ortağınız",
 
   // Boş kalanlar sayfada gösterilmez.
-  telefon: "+90 542 523 47 23",      // görünen biçim
-  telefonHref: "+905425234723",      // tel: ve wa.me için ham biçim
+  telefon: "+90 532 200 46 23",      // görünen biçim
+  telefonHref: "+905322004623",      // tel: ve wa.me için ham biçim
   eposta: "info@dijitalosgb.com",
-  whatsapp: "905425234723",
+  whatsapp: "905322004623",
 
   /**
    * KVKK aydınlatma metninde "veri sorumlusu" olarak gösterilecek tüzel/gerçek
