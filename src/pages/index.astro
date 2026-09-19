@@ -1,0 +1,101 @@
+---
+import Base from "../layouts/Base.astro";
+import { site, isOrtagi, egitimSureleri } from "../data/site";
+import { ilceler } from "../data/ilceler";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: site.name,
+  description: site.tagline,
+  url: site.url,
+  areaServed: site.hizmetIlleri.map((il) => ({ "@type": "AdministrativeArea", name: il })),
+  knowsAbout: ["İş sağlığı ve güvenliği", "İSG eğitimi", "Risk değerlendirmesi"],
+};
+---
+<Base
+  title={site.name}
+  description="İstanbul, Kocaeli ve Tekirdağ'da OSGB hizmeti; Türkiye genelinde uzaktan İSG eğitimi. Yükümlülüğünüzü ve maliyetini önce net olarak öğrenin."
+  schema={schema}
+>
+  <section class="band">
+    <div class="wrap stack">
+      <p class="eyebrow">6331 sayılı İş Sağlığı ve Güvenliği Kanunu</p>
+      <h1>İSG yükümlülüğünüz belli. Belirsiz olan, ne kadara ve nasıl kapanacağı.</h1>
+      <p class="prose" style="font-size:1.1rem">
+        Her işyerinin iş güvenliği uzmanı, işyeri hekimi ve çalışan eğitimi
+        yükümlülüğü tehlike sınıfına ve çalışan sayısına göre değişir. Aynı
+        başlıkları sayan tekliflerin arasındaki fark da genelde buradan çıkar.
+        Önce hangi yükümlülüğün size düştüğünü netleştiriyoruz.
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:8px">
+        <a class="btn" href="/teklif-al/">Yükümlülüğümü öğren</a>
+        <a class="btn ghost" href="/isg-egitimi/">Uzaktan İSG eğitimi</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap stack">
+      <h2>Temel eğitim süresi tehlike sınıfına göre değişir</h2>
+      <p class="prose muted">
+        Süreler yönetmelikle sabittir; pazarlık konusu değildir. Uzaktan
+        verilebilecek kısım ise sınıfa göre daralır.
+      </p>
+      <div class="tbl">
+        <table>
+          <thead>
+            <tr><th>Tehlike sınıfı</th><th>Temel eğitim</th><th>Uzaktan verilebilirlik</th></tr>
+          </thead>
+          <tbody>
+            {egitimSureleri.map((e) => (
+              <tr>
+                <td>{e.sinif}</td>
+                <td class="num">{e.saat} ders saati</td>
+                <td>{e.uzaktan}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap stack">
+      <h2>Saha hizmeti verdiğimiz ilçeler</h2>
+      <p class="prose muted">
+        OSGB'ler kurulu oldukları il ve sınır komşusu illerde hizmet verebilir.
+        Bu yüzden saha hizmetimiz {site.hizmetIlleri.join(", ")} ile sınırlı —
+        hizmet veremeyeceğimiz yerden talep toplamıyoruz. Eğitim tarafında
+        böyle bir sınır yok.
+      </p>
+      <div class="grid">
+        {ilceler.map((i) => (
+          <a class="card" href={`/osgb/${i.slug}/`} style="text-decoration:none;color:inherit">
+            <h3>{i.ad} OSGB</h3>
+            <p class="muted" style="font-size:.95rem">{i.il}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap stack">
+      <h2>Bu iş kimin üzerinden yürüyor</h2>
+      <p class="prose">
+        {site.name} bir OSGB değildir. Saha hizmetleri, Çalışma ve Sosyal
+        Güvenlik Bakanlığı'ndan yetkili iş ortağımız <strong>{isOrtagi.ad}</strong>
+        tarafından verilir. Eğitimleri İSG uzmanı olarak doğrudan biz veriyoruz.
+      </p>
+      <div class="card" style="max-width:64ch">
+        <h3>{isOrtagi.ad}</h3>
+        <p class="muted" style="font-size:.95rem">{isOrtagi.adres}</p>
+        {isOrtagi.yetkiBelgeNo && (
+          <p style="font-size:.95rem">Yetki belgesi no: <strong>{isOrtagi.yetkiBelgeNo}</strong></p>
+        )}
+      </div>
+    </div>
+  </section>
+</Base>

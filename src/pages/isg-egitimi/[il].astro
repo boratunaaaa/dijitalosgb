@@ -1,0 +1,58 @@
+---
+import Base from "../../layouts/Base.astro";
+import { site, egitimSureleri } from "../../data/site";
+import { illerSayfali } from "../../data/iller";
+
+export function getStaticPaths() {
+  return illerSayfali.map((i) => ({ params: { il: i.slug }, props: { il: i } }));
+}
+const { il } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  name: `${il.ad} için uzaktan İSG eğitimi`,
+  description: `${il.ad} işyerleri için zorunlu temel iş sağlığı ve güvenliği eğitimi, uzaktan.`,
+  inLanguage: "tr",
+  provider: { "@type": "Organization", name: site.name, url: site.url },
+  hasCourseInstance: {
+    "@type": "CourseInstance",
+    courseMode: "online",
+    location: { "@type": "AdministrativeArea", name: il.ad },
+  },
+};
+---
+<Base
+  title={`${il.ad} Uzaktan İSG Eğitimi`}
+  description={`${il.ad} işyerleri için zorunlu temel İSG eğitimi, uzaktan. Tehlike sınıfına göre 8, 12 veya 16 ders saati; katılım tutanağı ve Ek-2 belgesi düzenlenir.`}
+  schema={schema}
+>
+  <section class="band">
+    <div class="wrap stack">
+      <p class="eyebrow">Uzaktan eğitim</p>
+      <h1>{il.ad} için İSG eğitimi</h1>
+      <p class="prose" style="font-size:1.08rem">{il.sektor}</p>
+      <div><a class="btn" href="/teklif-al/">{il.ad} için teklif al</a></div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap stack">
+      <h2>Süre ve uzaktan verilebilirlik</h2>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Tehlike sınıfı</th><th>Temel eğitim</th><th>Uzaktan</th></tr></thead>
+          <tbody>
+            {egitimSureleri.map((e) => (
+              <tr><td>{e.sinif}</td><td class="num">{e.saat} ders saati</td><td>{e.uzaktan}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="prose muted" style="font-size:.95rem">
+        Eğitimde il sınırı yoktur; {il.ad}'daki çalışanlarınız için saha
+        hizmeti kapsamımız dışında olsak bile eğitim verebiliriz.
+      </p>
+    </div>
+  </section>
+</Base>

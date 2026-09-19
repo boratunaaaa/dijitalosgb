@@ -1,0 +1,23 @@
+---
+import Base from "../../layouts/Base.astro";
+import { rehberler } from "../../data/rehber";
+---
+<Base
+  title="İSG Rehberi"
+  description="OSGB zorunluluğu, tehlike sınıfı ve uzaktan eğitim kuralları — yönetmeliğe dayalı kısa ve net cevaplar."
+>
+  <section class="band">
+    <div class="wrap stack">
+      <h1>İSG rehberi</h1>
+      <p class="prose muted">Sık sorulan üç soruya yönetmeliğe dayalı net cevaplar.</p>
+      <div class="stack" style="margin-top:8px">
+        {rehberler.map((r) => (
+          <a class="card" href={`/rehber/${r.slug}/`} style="text-decoration:none;color:inherit">
+            <h3>{r.soru}</h3>
+            <p class="muted">{r.ozet}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

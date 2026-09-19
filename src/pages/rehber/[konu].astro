@@ -1,0 +1,33 @@
+---
+import Base from "../../layouts/Base.astro";
+import { rehberler } from "../../data/rehber";
+
+export function getStaticPaths() {
+  return rehberler.map((r) => ({ params: { konu: r.slug }, props: { r } }));
+}
+const { r } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [{
+    "@type": "Question",
+    name: r.soru,
+    acceptedAnswer: { "@type": "Answer", text: `${r.cevap} ${r.detay.join(" ")}` },
+  }],
+};
+---
+<Base title={r.soru} description={r.ozet} schema={schema}>
+  <section class="band">
+    <div class="wrap stack">
+      <p class="eyebrow">Rehber</p>
+      <h1>{r.soru}</h1>
+      <p class="prose" style="font-size:1.08rem"><strong>{r.ozet}</strong></p>
+      <p class="prose">{r.cevap}</p>
+      <ul class="prose muted" style="padding-left:1.1em;display:flex;flex-direction:column;gap:8px">
+        {r.detay.map((d) => <li>{d}</li>)}
+      </ul>
+      <div style="margin-top:8px"><a class="btn ghost" href="/teklif-al/">Kendi durumumu sorayım</a></div>
+    </div>
+  </section>
+</Base>

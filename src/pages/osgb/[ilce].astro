@@ -1,0 +1,66 @@
+---
+import Base from "../../layouts/Base.astro";
+import { site, isOrtagi } from "../../data/site";
+import { ilceler } from "../../data/ilceler";
+
+export function getStaticPaths() {
+  return ilceler.map((i) => ({ params: { ilce: i.slug }, props: { ilce: i } }));
+}
+const { ilce } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: `${site.name} — ${ilce.ad} OSGB hizmeti`,
+  url: new URL(`/osgb/${ilce.slug}/`, site.url).href,
+  areaServed: { "@type": "AdministrativeArea", name: `${ilce.ad}, ${ilce.il}` },
+  provider: { "@type": "Organization", name: isOrtagi.ad, address: isOrtagi.adres },
+};
+---
+<Base
+  title={`${ilce.ad} OSGB ve İş Güvenliği Hizmeti`}
+  description={`${ilce.ad} (${ilce.il}) için iş güvenliği uzmanı, işyeri hekimi ve çalışan eğitimi. Yükümlülüğünüzü ve tehlike sınıfınızı netleştirip teklif veriyoruz.`}
+  schema={schema}
+>
+  <section class="band">
+    <div class="wrap stack">
+      <p class="eyebrow">{ilce.il}</p>
+      <h1>{ilce.ad} OSGB ve iş güvenliği hizmeti</h1>
+      <p class="prose" style="font-size:1.08rem">{ilce.vurgu}</p>
+      <div style="margin-top:8px">
+        <a class="btn" href="/teklif-al/">{ilce.ad} için teklif al</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap stack">
+      <h2>{ilce.ad}'de neyi kapsıyoruz</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>İş güvenliği uzmanı</h3>
+          <p class="muted">Görevlendirme, risk değerlendirmesi, acil durum planı ve saha denetimleri.</p>
+        </div>
+        <div class="card">
+          <h3>İşyeri hekimi</h3>
+          <p class="muted">İşe giriş ve periyodik muayeneler, sağlık gözetimi kayıtları.</p>
+        </div>
+        <div class="card">
+          <h3>Çalışan eğitimi</h3>
+          <p class="muted">Temel eğitim ve yenileme; uygun sınıfta tamamı uzaktan verilebilir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap stack">
+      <h2>Hizmeti kim veriyor</h2>
+      <p class="prose">
+        Saha hizmetleri yetki belgeli iş ortağımız <strong>{isOrtagi.ad}</strong>
+        tarafından verilir. {site.name} bir OSGB değildir; süreci kurar, yürütür
+        ve eğitimleri doğrudan verir.
+      </p>
+    </div>
+  </section>
+</Base>
