@@ -26,6 +26,7 @@ export type Sektor = {
 export const sektorler: Sektor[] = [
   {
     slug: 'insaat',
+    gorsel: 'sektor-insaat.jpg',
     ad: 'İnşaat ve şantiye',
     h1: 'İnşaat ve Şantiyelerde İş Güvenliği',
     ozet: 'Yapı işlerinde sağlık ve güvenlik planı, yüksekte çalışma, iskele ve kazı güvenliği.',
@@ -41,6 +42,7 @@ export const sektorler: Sektor[] = [
   },
   {
     slug: 'fabrika-uretim',
+    gorsel: 'sektor-fabrika-uretim.jpg',
     ad: 'Fabrika ve üretim',
     h1: 'Fabrika ve Üretim Tesislerinde İş Güvenliği',
     ozet: 'Makine güvenliği, ortam ölçümü, periyodik kontroller ve vardiyalı çalışma düzeni.',
@@ -56,6 +58,7 @@ export const sektorler: Sektor[] = [
   },
   {
     slug: 'lojistik-depo',
+    gorsel: 'sektor-lojistik-depo.jpg',
     ad: 'Lojistik ve depo',
     h1: 'Lojistik ve Depolarda İş Güvenliği',
     ozet: 'Forklift trafiği, raf sistemleri, yükleme-boşaltma ve ergonomi.',
@@ -70,6 +73,7 @@ export const sektorler: Sektor[] = [
   },
   {
     slug: 'ofis-hizmet',
+    gorsel: 'sektor-ofis-hizmet.jpg',
     ad: 'Ofis ve hizmet',
     h1: 'Ofis ve Hizmet İşletmelerinde İş Güvenliği',
     ozet: 'Az tehlikeli sınıfta yükümlülük, ergonomi ve acil durum düzeni. Eğitimin tamamı uzaktan verilebilir.',
