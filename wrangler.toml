@@ -6,3 +6,11 @@ compatibility_date = "2026-09-19"
 # yükledi ve `.env` sızdı. Bu satır, argümansız/dalgın bir çağrının bile
 # yalnız `dist/` yüklemesini garanti ediyor.
 pages_build_output_dir = "dist"
+
+# Teklif formunun Pages Function'ı için düz metin değişkenler.
+# Cloudflare bu projede vars'ı wrangler.toml'dan yönetiyor; Dashboard yalnız
+# Secret kabul ediyor. Bu yüzden gizli olmayan iki değer burada, BREVO_API_KEY
+# ise Secret olarak Dashboard'da duruyor — API anahtarı bu dosyaya ASLA yazılmaz.
+[vars]
+TEKLIF_GONDEREN = "teklif@dijitalosgb.com"
+TEKLIF_ALICI = "mehmetkadirugur@gmail.com"
