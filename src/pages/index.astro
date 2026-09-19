@@ -8,6 +8,7 @@ import FAQs from '~/components/widgets/FAQs.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Content from '~/components/widgets/Content.astro';
 import { site, isOrtagi, egitimSureleri } from '~/data/site';
+import { hizmetler } from '~/data/hizmetler';
 import { ilceler } from '~/data/ilceler';
 
 const metadata = {
@@ -32,10 +33,15 @@ const metadata = {
       <span class="decoration-accent underline decoration-4 underline-offset-8">Belirsiz olan, ne kadara kapanacağı.</span>
     </Fragment>
     <Fragment slot="subtitle">
-      Her işyerinin iş güvenliği uzmanı, işyeri hekimi ve çalışan eğitimi yükümlülüğü
-      tehlike sınıfına ve çalışan sayısına göre değişir. Aynı başlıkları sayan
-      tekliflerin arasındaki fark da genelde buradan çıkar. Önce hangi yükümlülüğün
-      size düştüğünü netleştiriyoruz.
+      <strong>İş güvenliği uzmanı ve işyeri hekimi görevlendirmesi, risk değerlendirmesi,
+      acil durum eylem planı, sağlık ve güvenlik planı, mobil sağlık aracı ile işyerinde
+      tarama ve uzaktan İSG eğitimleri.</strong> Saha hizmetleri İstanbul, Kocaeli ve
+      Tekirdağ'da; danışmanlık, dokümantasyon ve eğitim Türkiye genelinde.
+      <span class="block mt-3">
+        Yükümlülüğünüz tehlike sınıfına ve çalışan sayısına göre değişir; aynı başlıkları
+        sayan tekliflerin arasındaki fark da genelde buradan çıkar. Önce hangi
+        yükümlülüğün size düştüğünü netleştiriyoruz.
+      </span>
     </Fragment>
   </Hero>
 
@@ -52,25 +58,26 @@ const metadata = {
     id="hizmetler"
     tagline="Üç hizmet hattı"
     title="Ne yapıyoruz"
-    subtitle="Saha hizmeti il sınırlıdır, eğitim değildir. İkisini bilerek ayrı yürütüyoruz."
+    subtitle="Saha hizmeti il sınırlıdır; danışmanlık, dokümantasyon ve eğitim değildir. İkisini bilerek ayrı yürütüyoruz."
+    columns={3}
     items={[
+      ...hizmetler.map((h) => ({
+        title: h.ad,
+        description: h.ozet,
+        icon: h.kapsam === 'saha' ? 'tabler:shield-check' : 'tabler:file-text',
+        callToAction: { text: 'Detay', href: `/hizmetler/${h.slug}/` },
+      })),
       {
-        title: 'OSGB hizmeti',
-        description:
-          'İş güvenliği uzmanı ve işyeri hekimi görevlendirmesi, risk değerlendirmesi, acil durum planı ve ortam ölçümü. İstanbul, Kocaeli ve Tekirdağ.',
-        icon: 'tabler:shield-check',
+        title: 'Mobil sağlık aracı',
+        description: 'İşe giriş ve periyodik muayeneler işyerinizde; odyometri, SFT, akciğer grafisi, EKG ve laboratuvar.',
+        icon: 'tabler:ambulance',
+        callToAction: { text: 'Detay', href: '/mobil-saglik-taramasi/' },
       },
       {
         title: 'Uzaktan İSG eğitimi',
-        description:
-          'Zorunlu temel eğitim ve yenileme, 81 ilde. Eğitimde coğrafi sınır yoktur; katılım tutanağı ve Ek-2 belgesi düzenlenir.',
+        description: 'Zorunlu temel eğitim ve yenileme, 81 ilde. Katılım tutanağı ve Ek-2 belgesi.',
         icon: 'tabler:device-laptop',
-      },
-      {
-        title: 'Mobil sağlık taraması',
-        description:
-          'İşe giriş ve periyodik muayeneler işyerinizde. Odyometri, solunum fonksiyon testi, akciğer grafisi ve laboratuvar örneklemesi.',
-        icon: 'tabler:ambulance',
+        callToAction: { text: 'Detay', href: '/isg-egitimi/' },
       },
     ]}
   />
@@ -149,6 +156,7 @@ const metadata = {
   />
 
   <FAQs
+    schema
     title="Sık sorulanlar"
     items={[
       {

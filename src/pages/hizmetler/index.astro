@@ -1,0 +1,68 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import { site } from '~/data/site';
+import { hizmetler } from '~/data/hizmetler';
+
+const metadata = {
+  title: 'Hizmetler',
+  description: 'Risk değerlendirmesi, acil durum eylem planı, sağlık ve güvenlik planı, iş güvenliği uzmanlığı, işyeri hekimliği, mobil sağlık aracı ve İSG eğitimleri.',
+};
+const saha = hizmetler.filter((h) => h.kapsam === 'saha');
+const ulusal = hizmetler.filter((h) => h.kapsam === 'ulusal');
+---
+<Layout metadata={metadata}>
+  <HeroText
+    title="Hizmetler"
+    subtitle="Hangi hizmeti nerede verebildiğimiz bir pazarlama tercihi değil, mevzuatın sonucu. Aşağıdaki ayrım tam olarak bunu gösteriyor."
+    actions={[{ variant: 'primary', text: 'Teklif al', href: '/teklif-al/' }]}
+  />
+
+  <Features
+    title="Saha hizmetleri"
+    subtitle={`OSGB görevlendirmesi gerektirir. Kapsam: ${site.hizmetIlleri.join(', ')}.`}
+    columns={2}
+    items={[
+      ...saha.map((h) => ({
+        title: h.ad,
+        description: h.ozet,
+        icon: 'tabler:shield-check',
+        callToAction: { text: 'Detay', href: `/hizmetler/${h.slug}/` },
+      })),
+      {
+        title: 'Mobil sağlık aracı',
+        description: 'İşe giriş ve periyodik muayeneler işyerinizde; odyometri, SFT, akciğer grafisi, EKG ve laboratuvar.',
+        icon: 'tabler:ambulance',
+        callToAction: { text: 'Detay', href: '/mobil-saglik-taramasi/' },
+      },
+    ]}
+  />
+
+  <Features
+    title="Türkiye geneli hizmetler"
+    subtitle="Danışmanlık, dokümantasyon ve eğitimde coğrafi sınır yoktur. 81 il."
+    columns={2}
+    items={[
+      ...ulusal.map((h) => ({
+        title: h.ad,
+        description: h.ozet,
+        icon: 'tabler:file-text',
+        callToAction: { text: 'Detay', href: `/hizmetler/${h.slug}/` },
+      })),
+      {
+        title: 'Uzaktan İSG eğitimi',
+        description: 'Zorunlu temel eğitim ve yenileme; katılım tutanağı ve Ek-2 belgesi düzenlenir.',
+        icon: 'tabler:device-laptop',
+        callToAction: { text: 'Detay', href: '/isg-egitimi/' },
+      },
+    ]}
+  />
+
+  <CallToAction
+    title="Hangi hizmete ihtiyacınız olduğundan emin değil misiniz?"
+    subtitle="Ne iş yaptığınızı ve kaç kişi çalıştığınızı söyleyin; yükümlülüğünüzü biz çıkaralım."
+    actions={[{ variant: 'primary', text: 'Ücretsiz ön değerlendirme', href: '/teklif-al/' }]}
+  />
+</Layout>

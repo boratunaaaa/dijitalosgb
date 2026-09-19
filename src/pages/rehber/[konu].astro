@@ -23,7 +23,7 @@ const structuredData = [{
 }];
 ---
 <Layout metadata={metadata}>
-  <StructuredData slot="structured-data" data={structuredData} />
+  <StructuredData slot="head" schema={structuredData} />
   <HeroText tagline="Rehber" title={r.soru} subtitle={r.ozet} />
   <div class="mx-auto max-w-3xl px-4 sm:px-6 pb-8">
     <p class="text-lg">{r.cevap}</p>

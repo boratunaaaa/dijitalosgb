@@ -38,7 +38,7 @@ const structuredData = [{
 }];
 ---
 <Layout metadata={metadata}>
-  <StructuredData slot="structured-data" data={structuredData} />
+  <StructuredData slot="head" schema={structuredData} />
   <HeroText
     tagline="81 ilde geçerli"
     title="Uzaktan İSG eğitimi"
@@ -62,7 +62,7 @@ const structuredData = [{
     }))}
   />
 
-  <FAQs title="Sık sorulanlar" items={sss} />
+  <FAQs schema title="Sık sorulanlar" items={sss} />
 
   <Features
     title="İllere göre"

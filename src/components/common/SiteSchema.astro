@@ -1,0 +1,56 @@
+---
+/**
+ * Her sayfada duran kurum ve site kimliği.
+ *
+ * Google kuruluşu ad, logo, URL, telefon ve hizmet alanı gibi alanlardan
+ * tanıyor. Yapay zekâ özetlerinin "bu bir OSGB mi" sorusunu sayfa metninden
+ * tahmin etmesini değil buradan okumasını istiyoruz.
+ *
+ * BOŞ ALAN BASILMAZ: telefon veya e-posta doldurulmadıysa şemaya hiç
+ * girmiyor. Uydurma iletişim bilgisi yayımlamak, düzeltmesi en pahalı hata.
+ */
+import { site, isOrtagi, yasalNot, uzman } from '~/data/site';
+import logo from '~/assets/images/amblem.png';
+
+const kurum: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': `${site.url}/#organization`,
+  name: site.name,
+  url: site.url,
+  description: yasalNot,
+  logo: new URL(logo.src, site.url).href,
+  areaServed: [
+    ...site.hizmetIlleri.map((il) => ({ '@type': 'AdministrativeArea', name: il })),
+    { '@type': 'Country', name: 'Türkiye' },
+  ],
+  knowsAbout: [
+    'İş sağlığı ve güvenliği',
+    'Risk değerlendirmesi',
+    'Acil durum eylem planı',
+    'Sağlık ve güvenlik planı',
+    'İSG eğitimi',
+    'İşyeri hekimliği',
+  ],
+};
+if (site.telefon) kurum.telephone = site.telefon;
+if (site.eposta) kurum.email = site.eposta;
+if (isOrtagi.ad) {
+  kurum.memberOf = { '@type': 'Organization', name: isOrtagi.ad, address: isOrtagi.adres };
+}
+if (uzman.ad) {
+  kurum.employee = { '@type': 'Person', name: uzman.ad, jobTitle: uzman.unvan };
+}
+
+const websitesi = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${site.url}/#website`,
+  name: site.name,
+  url: site.url,
+  inLanguage: 'tr',
+  publisher: { '@id': `${site.url}/#organization` },
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(kurum)} />
+<script type="application/ld+json" set:html={JSON.stringify(websitesi)} />

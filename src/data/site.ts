@@ -41,6 +41,22 @@ export const isOrtagi = {
   yetkiBelgeNo: "",
 } as const;
 
+/**
+ * Siteyi yazan/denetleyen uzman. Google'ın aradığı "gerçek deneyim ve
+ * uzmanlık" kanıtı bu; yapay zekâ motorlarının siteyi güvenilir kaynak
+ * sayması da buna bağlı.
+ *
+ * ALANLAR BİLEREK BOŞ: doğrulanmamış unvan ve diploma yayımlanmaz.
+ * Kullanıcı teyit edince doldurulacak; boş kalan satır sayfada hiç basılmaz.
+ */
+export const uzman = {
+  ad: "",                 // örn. "Mehmet Kadir Uğur"
+  unvan: "",              // örn. "A Sınıfı İş Güvenliği Uzmanı"
+  belgeNo: "",            // İSG uzmanlığı belge numarası
+  egitim: [] as string[], // örn. ["Kimya Lisans", "İSG Yüksek Lisans"]
+  deneyim: "",            // tek cümlelik gerçek saha deneyimi özeti
+} as const;
+
 /** Her sayfanın altbilgisinde görünen yasal not. */
 export const yasalNot =
   "Dijital OSGB bir OSGB değildir. Saha iş sağlığı ve güvenliği hizmetleri, " +

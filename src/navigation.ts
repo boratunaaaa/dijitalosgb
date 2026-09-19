@@ -2,11 +2,22 @@ import { getPermalink } from './utils/permalinks';
 import { ilceler } from './data/ilceler';
 import { illerSayfali } from './data/iller';
 import { rehberler } from './data/rehber';
+import { hizmetler } from './data/hizmetler';
 
 export const headerData = {
   links: [
     {
-      text: 'OSGB hizmeti',
+      text: 'Hizmetler',
+      href: getPermalink('/hizmetler'),
+      links: [
+        { text: 'Tüm hizmetler', href: getPermalink('/hizmetler') },
+        ...hizmetler.map((h) => ({ text: h.ad, href: getPermalink(`/hizmetler/${h.slug}`) })),
+        { text: 'Mobil sağlık aracı', href: getPermalink('/mobil-saglik-taramasi') },
+        { text: 'Uzaktan İSG eğitimi', href: getPermalink('/isg-egitimi') },
+      ],
+    },
+    {
+      text: 'OSGB bölgeleri',
       href: getPermalink('/osgb-hizmeti'),
       // Saha hizmeti il sınırlı olduğu için menüde de yalnız hizmet
       // verebildiğimiz ilçeler var.
@@ -20,7 +31,6 @@ export const headerData = {
         ...illerSayfali.slice(0, 8).map((i) => ({ text: i.ad, href: getPermalink(`/isg-egitimi/${i.slug}`) })),
       ],
     },
-    { text: 'Mobil sağlık', href: getPermalink('/mobil-saglik-taramasi') },
     {
       text: 'Rehber',
       href: getPermalink('/rehber'),
@@ -35,9 +45,9 @@ export const footerData = {
     {
       title: 'Hizmetler',
       links: [
-        { text: 'OSGB hizmeti', href: getPermalink('/osgb-hizmeti') },
+        ...hizmetler.map((h) => ({ text: h.ad, href: getPermalink(`/hizmetler/${h.slug}`) })),
+        { text: 'Mobil sağlık aracı', href: getPermalink('/mobil-saglik-taramasi') },
         { text: 'Uzaktan İSG eğitimi', href: getPermalink('/isg-egitimi') },
-        { text: 'Mobil sağlık taraması', href: getPermalink('/mobil-saglik-taramasi') },
       ],
     },
     {
@@ -49,7 +59,10 @@ export const footerData = {
       links: rehberler.map((r) => ({ text: r.soru, href: getPermalink(`/rehber/${r.slug}`) })),
     },
   ],
-  secondaryLinks: [{ text: 'Teklif al', href: getPermalink('/teklif-al') }],
+  secondaryLinks: [
+    { text: 'Hakkımızda', href: getPermalink('/hakkimizda') },
+    { text: 'Teklif al', href: getPermalink('/teklif-al') },
+  ],
   socialLinks: [],
   footNote: `
     Dijital OSGB bir OSGB değildir. Saha iş sağlığı ve güvenliği hizmetleri,

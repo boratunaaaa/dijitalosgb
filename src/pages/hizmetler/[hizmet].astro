@@ -1,0 +1,80 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features from '~/components/widgets/Features.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Note from '~/components/widgets/Note.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import StructuredData from '~/components/common/StructuredData.astro';
+import { site, isOrtagi } from '~/data/site';
+import { hizmetler } from '~/data/hizmetler';
+
+export function getStaticPaths() {
+  return hizmetler.map((h) => ({ params: { hizmet: h.slug }, props: { h } }));
+}
+const { h } = Astro.props;
+
+const metadata = { title: h.h1, description: h.ozet };
+const url = `${site.url}/hizmetler/${h.slug}/`;
+
+const alan =
+  h.kapsam === 'saha'
+    ? site.hizmetIlleri.map((i) => ({ '@type': 'AdministrativeArea', name: i }))
+    : [{ '@type': 'Country', name: 'Türkiye' }];
+
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: h.ad,
+    description: h.ozet,
+    serviceType: h.ad,
+    url,
+    areaServed: alan,
+    provider: h.kapsam === 'saha'
+      ? { '@type': 'Organization', name: isOrtagi.ad, address: isOrtagi.adres }
+      : { '@type': 'Organization', name: site.name, url: site.url },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Ana sayfa', item: `${site.url}/` },
+      { '@type': 'ListItem', position: 2, name: 'Hizmetler', item: `${site.url}/hizmetler/` },
+      { '@type': 'ListItem', position: 3, name: h.ad, item: url },
+    ],
+  },
+];
+---
+<Layout metadata={metadata}>
+  <StructuredData slot="head" schema={structuredData} />
+
+  <HeroText
+    tagline={h.kapsam === 'saha' ? site.hizmetIlleri.join(' · ') : 'Türkiye geneli · 81 il'}
+    title={h.h1}
+    subtitle={h.giris}
+    actions={[{ variant: 'primary', text: 'Fiyat teklifi al', href: '/teklif-al/' }]}
+  />
+
+  {h.onemliNot && (
+    <Note title="Dikkat" description={h.onemliNot} />
+  )}
+
+  <Features
+    title="Neyi kapsıyor"
+    columns={2}
+    items={h.kapsamMaddeleri.map((m) => ({ title: m.baslik, description: m.aciklama, icon: 'tabler:circle-check' }))}
+  />
+
+  <FAQs
+    schema
+    title="Sık sorulanlar"
+    items={h.sss.map((q) => ({ title: q.soru, description: q.cevap }))}
+  />
+
+  <CallToAction
+    title="Ücretsiz ön değerlendirme"
+    subtitle="Tehlike sınıfınızı ve yükümlülüğünüzü çıkarıp size yazılı dönüyoruz."
+    actions={[{ variant: 'primary', text: 'Teklif al', href: '/teklif-al/' }]}
+  />
+</Layout>
