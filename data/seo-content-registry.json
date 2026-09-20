@@ -13,7 +13,7 @@
       "status": "published",
       "createdAt": "2026-09-20T13:45:58+00:00",
       "publishedAt": "2026-09-20T13:49:55+00:00",
-      "updatedAt": "2026-09-20T17:14:23+00:00",
+      "updatedAt": "2026-09-20T19:45:20+00:00",
       "qualityScore": 88,
       "similarityMax": 0.008,
       "wordCount": 733,
@@ -30,7 +30,7 @@
         "/araclar/ilk-yardimci-sayisi-hesaplama/",
         "/isg-egitimi/"
       ],
-      "commit": "6c16f0ad56ef",
+      "commit": "1935458c78d3",
       "deployment": "cloudflare-pages",
       "rejectionReason": "",
       "indexable": true,
@@ -46,6 +46,7 @@
       "llmsEligible": false,
       "llmsPriority": 0,
       "inboundInternalLinks": [
+        "/bilgi-merkezi/",
         "/osgb-hizmeti/",
         "/sektorler/ofis-hizmet/"
       ],
@@ -74,7 +75,7 @@
       "status": "published",
       "createdAt": "2026-09-20T13:45:58+00:00",
       "publishedAt": "2026-09-20T13:49:55+00:00",
-      "updatedAt": "2026-09-20T17:14:23+00:00",
+      "updatedAt": "2026-09-20T19:45:20+00:00",
       "qualityScore": 87,
       "similarityMax": 0.011,
       "wordCount": 793,
@@ -91,7 +92,7 @@
         "/hizmetler/risk-degerlendirmesi/",
         "/isg-kutuphanesi/formlar/"
       ],
-      "commit": "6c16f0ad56ef",
+      "commit": "1935458c78d3",
       "deployment": "cloudflare-pages",
       "rejectionReason": "",
       "indexable": true,
@@ -107,6 +108,7 @@
       "llmsEligible": false,
       "llmsPriority": 0,
       "inboundInternalLinks": [
+        "/bilgi-merkezi/",
         "/osgb/basaksehir/",
         "/osgb-hizmeti/",
         "/sektorler/metal-kaynak/"
@@ -136,7 +138,7 @@
       "status": "published",
       "createdAt": "2026-09-20T13:45:58+00:00",
       "publishedAt": "2026-09-20T13:49:55+00:00",
-      "updatedAt": "2026-09-20T17:14:23+00:00",
+      "updatedAt": "2026-09-20T19:45:20+00:00",
       "qualityScore": 91,
       "similarityMax": 0.009,
       "wordCount": 719,
@@ -153,7 +155,7 @@
         "/araclar/acil-durum-ekip-sayisi-hesaplama/",
         "/isg-kutuphanesi/formlar/"
       ],
-      "commit": "6c16f0ad56ef",
+      "commit": "1935458c78d3",
       "deployment": "cloudflare-pages",
       "rejectionReason": "",
       "indexable": true,
@@ -169,6 +171,7 @@
       "llmsEligible": true,
       "llmsPriority": 4,
       "inboundInternalLinks": [
+        "/bilgi-merkezi/",
         "/osgb-hizmeti/",
         "/sektorler/lojistik-depo/"
       ],
@@ -197,7 +200,7 @@
       "status": "published",
       "createdAt": "2026-09-20T13:45:58+00:00",
       "publishedAt": "2026-09-20T13:49:55+00:00",
-      "updatedAt": "2026-09-20T17:14:23+00:00",
+      "updatedAt": "2026-09-20T19:45:20+00:00",
       "qualityScore": 91,
       "similarityMax": 0.011,
       "wordCount": 751,
@@ -215,7 +218,7 @@
         "/araclar/egitim-yenileme-tarihi-hesaplama/",
         "/araclar/tehlike-sinifi-sorgulama/"
       ],
-      "commit": "6c16f0ad56ef",
+      "commit": "1935458c78d3",
       "deployment": "cloudflare-pages",
       "rejectionReason": "",
       "indexable": true,
@@ -231,6 +234,7 @@
       "llmsEligible": true,
       "llmsPriority": 4,
       "inboundInternalLinks": [
+        "/bilgi-merkezi/",
         "/osgb/esenyurt/",
         "/osgb-hizmeti/",
         "/sektorler/tekstil-konfeksiyon/"
@@ -261,7 +265,7 @@
       "status": "published",
       "createdAt": "2026-09-20T13:45:58+00:00",
       "publishedAt": "2026-09-20T13:49:55+00:00",
-      "updatedAt": "2026-09-20T17:14:23+00:00",
+      "updatedAt": "2026-09-20T19:45:20+00:00",
       "qualityScore": 95,
       "similarityMax": 0.0,
       "wordCount": 920,
@@ -279,7 +283,7 @@
         "/isg-kutuphanesi/formlar/",
         "/hizmetler/mesleki-yeterlilik-belgesi/"
       ],
-      "commit": "6c16f0ad56ef",
+      "commit": "1935458c78d3",
       "deployment": "cloudflare-pages",
       "rejectionReason": "",
       "indexable": true,
@@ -295,6 +299,7 @@
       "llmsEligible": true,
       "llmsPriority": 4,
       "inboundInternalLinks": [
+        "/bilgi-merkezi/",
         "/osgb-hizmeti/",
         "/sektorler/metal-kaynak/"
       ],
