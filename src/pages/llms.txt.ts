@@ -13,6 +13,21 @@ import type { APIRoute } from "astro";
 import { site, isOrtagi, egitimSureleri } from "../data/site";
 import { ilceler } from "../data/ilceler";
 import { rehberler } from "../data/rehber";
+import { bolgeSektorSayfalari } from "../data/bolge-sektor";
+import { hizmetler } from "../data/hizmetler";
+
+/**
+ * llms.txt'ye girecek programatik sayfalar.
+ *
+ * KURAL: dosya bir URL çöplüğü olmayacak. Üretilen her bölge/sektör sayfası
+ * buraya OTOMATİK GİRMEZ; yalnız kalite puanı eşiği geçen ve indekslenebilir
+ * olanlar girer, en fazla 20 tanesi. Öncelik daima pillar sayfalarda.
+ */
+const LLMS_PUAN_ESIGI = 90;
+const secilmisBolgeler = bolgeSektorSayfalari
+  .filter((b) => !b.indexDisi && b.uretim.kalitePuani >= LLMS_PUAN_ESIGI)
+  .sort((a, b) => b.uretim.kalitePuani - a.uretim.kalitePuani)
+  .slice(0, 20);
 
 export const GET: APIRoute = () => {
   const satirlar = [
@@ -47,12 +62,30 @@ export const GET: APIRoute = () => {
     `- OSGB hizmeti: ${site.url}/osgb-hizmeti/`,
     `- Uzaktan İSG eğitimi: ${site.url}/isg-egitimi/`,
     `- Mobil sağlık taraması: ${site.url}/mobil-saglik-taramasi/`,
-    `- Teklif: ${site.url}/teklif-al/`,
+    `- Ücretsiz ön değerlendirme: ${site.url}/teklif-al/`,
+    `- İletişim: ${site.url}/iletisim/`,
+    `- Hazır hizmet paketleri: ${site.url}/paketler/`,
+    `- Hesaplama araçları: ${site.url}/araclar/`,
+    `- İSG kütüphanesi (form ve levha şablonları): ${site.url}/isg-kutuphanesi/`,
+    "",
+    "### Ana hizmetler",
+    "",
+    ...hizmetler
+      .slice(0, 8)
+      .map((h) => `- ${h.ad}: ${site.url}/hizmetler/${h.slug}/`),
     "",
     "### Saha hizmeti verilen ilçeler",
     "",
     ...ilceler.map((i) => `- ${i.ad} (${i.il}): ${site.url}/osgb/${i.slug}/`),
     "",
+    ...(secilmisBolgeler.length > 0
+      ? [
+          "### Bölge ve sektör rehberleri",
+          "",
+          ...secilmisBolgeler.map((b) => `- ${b.h1}: ${site.url}/bolge/${b.slug}/`),
+          "",
+        ]
+      : []),
   ];
   return new Response(satirlar.join("\n"), {
     headers: { "Content-Type": "text/plain; charset=utf-8" },
