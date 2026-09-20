@@ -119,7 +119,7 @@ export const yazilar: BlogYazisi[] = [
     baslik: 'Risk Değerlendirmesi Yapmamanın Cezası Nedir?',
     ozet:
       'İşyerinde risk değerlendirmesi yapmamanın cezası ilk ay için tespit edildiğinde temel ceza kesilirken, eksikliğin giderilmediği her ay için bu ceza katlanarak artmaya devam eder.',
-    tarih: '2026-09-20',
+    tarih: '2026-09-19',
     kategori: 'mevzuat',
     sure: 4,
     govde: [
@@ -152,45 +152,11 @@ export const yazilar: BlogYazisi[] = [
     ],
   },
   {
-    slug: 'patlamadan-korunma-dokumani-pkd-nedir',
-    baslik: 'Patlamadan Korunma Dokümanı (PKD) Hangi İşyerleri İçin Gereklidir?',
-    ozet:
-      'Yanıcı, parlayıcı veya patlayıcı gaz, toz ve sıvıların bulunduğu; örneğin akaryakıt istasyonları, un fabrikaları ve kimya tesisleri gibi işyerlerinde PKD hazırlanması yasal bir zorunluluktur.',
-    tarih: '2026-09-20',
-    kategori: 'mevzuat',
-    sure: 5,
-    govde: [
-      {
-        tip: 'p',
-        metin:
-          'Kısaca: Çalışanların Patlayıcı Ortamların Tehlikelerinden Korunması Hakkında Yönetmelik gereği, işverenler patlama riski olan ortamları sınıflandırmalı ve bir Patlamadan Korunma Dokümanı hazırlamalıdır.',
-      },
-      { tip: 'h2', metin: 'PKD Zorunluluğu Olan Başlıca Sektörler' },
-      {
-        tip: 'liste',
-        maddeler: [
-          'Akaryakıt İstasyonları ve LPG dolum tesisleri.',
-          'Un, yem ve şeker fabrikaları (Toz patlaması riski).',
-          'Ahşap işleme tesisleri (Talaş tozu patlaması riski).',
-          'Kimya, boya ve tiner üretimi / depolaması yapan tesisler.',
-        ],
-      },
-      {
-        tip: 'not',
-        metin:
-          'Sıkça atlanan nokta: mobilya atölyelerinde zımpara tozu da patlayıcı ortam oluşturur. PKD yalnız kimyasal sıvılar için değil, organik tozlar için de gereklidir.',
-      },
-    ],
-    baglantilar: [
-      { metin: 'Fabrika İSG', href: '/sektorler/fabrika-uretim/' },
-    ],
-  },
-  {
     slug: 'meslek-hastaliklari-isverenin-sorumluluklari',
     baslik: 'Meslek Hastalıkları ve İşverenin Sorumlulukları',
     ozet:
       'Meslek hastalığı, çalışanın işin niteliğine göre tekrarlanan bir sebeple veya işin yürütüm şartları yüzünden uğradığı geçici veya sürekli hastalık durumudur. İşveren, riskleri kaynağında yok etmekle yükümlüdür.',
-    tarih: '2026-09-20',
+    tarih: '2026-09-19',
     kategori: 'uygulama',
     sure: 6,
     govde: [
@@ -220,45 +186,11 @@ export const yazilar: BlogYazisi[] = [
     ],
   },
   {
-    slug: 'periyodik-kontroller-ekipman-listesi',
-    baslik: 'Periyodik Kontroller: Hangi Ekipman Kaç Ayda Bir Kontrol Edilmeli?',
-    ozet:
-      'İş Ekipmanlarının Kullanımında Sağlık ve Güvenlik Şartları Yönetmeliği uyarınca; kompresörler, kazanlar, vinçler, forkliftler ve asansörler standartlarda aksi belirtilmediği sürece yılda en az 1 kez periyodik kontrole tabi tutulmalıdır.',
-    tarih: '2026-09-20',
-    kategori: 'mevzuat',
-    sure: 5,
-    govde: [
-      {
-        tip: 'p',
-        metin:
-          'Kısaca: İşyerindeki basınçlı kaplar, kaldırma/iletme ekipmanları ve elektrik tesisatları zamanla aşınır veya deforme olur. Bu deformasyonların iş kazasına dönüşmeden tespit edilmesi için periyodik muayeneler zorunludur.',
-      },
-      { tip: 'h2', metin: 'Sık Kullanılan Ekipmanların Kontrol Periyotları' },
-      {
-        tip: 'liste',
-        maddeler: [
-          'Kaldırma ve İletme Makinaları (Vinç, Forklift, Transpalet): Yılda en az 1 kez.',
-          'Basınçlı Kaplar (Kompresör, Kalorifer Kazanı, Otoklav): Yılda en az 1 kez.',
-          'Elektrik Tesisatı ve Topraklama Ölçümü: Yılda en az 1 kez.',
-          'İş Makinaları (Ekskavatör, Loder): Yılda en az 1 kez.',
-        ],
-      },
-      {
-        tip: 'not',
-        metin:
-          'Dikkat: Denetimde yalnız raporun varlığına değil, raporu düzenleyen kişinin yetkisine de bakılır. Periyodik kontrolü yapacak kişiler yönetmelikte sayılmıştır ve EKİPNET (İş Ekipmanları Periyodik Kontrol Uzmanları Kayıt Programı) üzerinden kayıtlıdır. Yetkisiz kişiden alınan rapor geçerli sayılmaz.',
-      },
-    ],
-    baglantilar: [
-      { metin: 'Periyodik Kontroller Hizmeti', href: '/hizmetler/periyodik-kontroller/' },
-    ],
-  },
-  {
     slug: 'is-guvenligi-uzmani-calistirma-yukumlulugu',
     baslik: 'İş Güvenliği Uzmanı Çalıştırma Yükümlülüğü Ne Zaman Başlar?',
     ozet:
       '6331 sayılı İSG Kanunu kapsamında her işyeri, tehlike sınıfı ve çalışan sayısı ne olursa olsun iş güvenliği uzmanı görevlendirmek zorundadır. Yükümlülük, işyerinin ilk çalışanını işe aldığı anda başlar.',
-    tarih: '2026-09-20',
+    tarih: '2026-09-18',
     kategori: 'mevzuat',
     sure: 4,
     govde: [
@@ -291,7 +223,7 @@ export const yazilar: BlogYazisi[] = [
     baslik: 'İş Sağlığı ve Güvenliği Kurulları Nasıl Kurulur?',
     ozet:
       '50 ve daha fazla çalışanın bulunduğu ve 6 aydan fazla süren işlerin yapıldığı işyerlerinde işveren, İş Sağlığı ve Güvenliği Kurulu kurmakla yükümlüdür.',
-    tarih: '2026-09-20',
+    tarih: '2026-09-18',
     kategori: 'uygulama',
     sure: 5,
     govde: [
@@ -319,7 +251,7 @@ export const yazilar: BlogYazisi[] = [
       {
         tip: 'not',
         metin:
-          'Saha Tecrübesi: Denetimlerde ve uygulamalarda, yasal mevzuatın sadece evrak üzerinde değil, sahada fiilen uygulandığının kanıtlanması en kritik aşamadır. Tüm süreçlerin resmi olarak belgelendirilmesi olası idari para cezalarını engeller.',
+          'Uzman notu: Kurul tutanağı, kararın kendisinden çok kararın akıbetini kaydettiği için değerlidir. Her maddeye bir sorumlu ve bir termin tarihi yazılmadığında tutanak, alınmış ama uygulanmamış önlemlerin listesine dönüşür. Bir kaza incelemesinde bu liste, riskin bilindiğini gösteren en güçlü belgedir.',
       },
     ],
     baglantilar: [
@@ -327,45 +259,11 @@ export const yazilar: BlogYazisi[] = [
     ],
   },
   {
-    slug: 'kkd-seciminde-dikkat-edilmesi-gerekenler',
-    baslik: 'Kişisel Koruyucu Donanım (KKD) Seçiminde Dikkat Edilmesi Gerekenler',
-    ozet:
-      'Kişisel Koruyucu Donanım (KKD), kaynağında önlenemeyen riskler için son çaredir. KKD seçimi mutlaka risk değerlendirmesine göre yapılmalı ve CE işaretine sahip olmalıdır.',
-    tarih: '2026-09-20',
-    kategori: 'uygulama',
-    sure: 5,
-    govde: [
-      {
-        tip: 'p',
-        metin:
-          'Kısaca: Baret, iş ayakkabısı veya maske almak yeterli değildir. Önemli olan, o donanımın çalışma ortamındaki spesifik riske uygun olup olmadığıdır. (Örneğin; elektrikçi ayakkabısında çelik burun yerine kompozit burun olması gibi).',
-      },
-      { tip: 'h2', metin: 'KKD Sürecindeki Yasal Adımlar' },
-      {
-        tip: 'liste',
-        maddeler: [
-          'Doğru Ürün Seçimi: İSG Uzmanı ve İşyeri hekimi tavsiyesi ile standartlara (EN normları) uygun seçim yapılmalıdır.',
-          'Eğitim: İşçiye o donanımın nasıl kullanılacağı ve neden takması gerektiği anlatılmalıdır.',
-          'Zimmet: Teslim edilen her KKD için yazılı ve imzalı "KKD Zimmet Tutanağı" tutulmalıdır.',
-          'Denetim: İşveren, KKD\'nin kullanımını sahada aktif olarak denetlemelidir.',
-        ],
-      },
-      {
-        tip: 'not',
-        metin:
-          'Kritik ayrım: İşveren, KKD\'yi işçiye verdiğini imzalı zimmet tutanağıyla kanıtlar. Satın alma faturası tek başına kanıt değildir; ürünün o çalışana teslim edildiğini göstermez.',
-      },
-    ],
-    baglantilar: [
-      { metin: 'Fabrika İSG Hizmetleri', href: '/sektorler/fabrika-uretim/' },
-    ],
-  },
-  {
     slug: 'osgb-firmasi-secerken-dikkat-edilmesi-gereken-5-madde',
     baslik: 'OSGB Firması Seçerken Dikkat Edilmesi Gereken 5 Kritik Madde',
     ozet:
       'İşyeriniz için Ortak Sağlık ve Güvenlik Birimi (OSGB) seçerken sadece fiyata değil; firmanın referanslarına, uzman kadrosuna, dijital altyapısına ve bakanlık yetki belgelerine dikkat etmelisiniz.',
-    tarih: '2026-09-20',
+    tarih: '2026-09-17',
     kategori: 'sektorel',
     sure: 6,
     govde: [
@@ -397,83 +295,11 @@ export const yazilar: BlogYazisi[] = [
     ],
   },
   {
-    slug: 'acil-durum-eylem-plani-nasil-hazirlanir-isveren-rehberi',
-    baslik: 'Acil Durum Eylem Planı Nasıl Hazırlanır? İşverenler İçin 5 Adım',
-    ozet:
-      'İşyerlerinde Acil Durumlar Hakkında Yönetmelik gereğince, her işletmenin tehlike sınıfına bakılmaksızın yangın, deprem ve tahliye senaryolarını içeren bir acil durum planı hazırlaması zorunludur.',
-    tarih: '2026-09-20',
-    kategori: 'mevzuat',
-    sure: 4,
-    govde: [
-      {
-        tip: 'p',
-        metin:
-          'Kısaca: Sadece kâğıt üzerinde kalan bir plan, olası bir yangında veya depremde hayat kurtarmaz. İşyerlerinde Acil Durumlar Hakkında Yönetmelik madde 7 uyarınca, acil durum planı 5 temel aşamadan oluşur: Belirleme, önleyici tedbirler, görevlendirme, müdahale planı ve tatbikat.',
-      },
-      { tip: 'h2', metin: '1. Acil Durumların Belirlenmesi' },
-      {
-        tip: 'p',
-        metin:
-          'İşyerinin konumu, kullanılan kimyasallar ve binanın yaşı göz önüne alınarak yangın, deprem, sel, kimyasal sızıntı veya sabotaj gibi riskler belirlenir.',
-      },
-      { tip: 'h2', metin: '2. Acil Durum Ekiplerinin Kurulması' },
-      {
-        tip: 'p',
-        metin:
-          'Çok tehlikeli sınıfta her 30 çalışana 1, tehlikeli sınıfta 40 çalışana 1, az tehlikeli sınıfta ise 50 çalışana 1 "Arama, Kurtarma, Tahliye ve Yangınla Mücadele" personeli görevlendirilmesi yasal zorunluluktur.',
-      },
-      { tip: 'h2', metin: '3. Tatbikatların Gerçekleştirilmesi' },
-      {
-        tip: 'not',
-        metin:
-          'Uygulama Notu: Hazırlanan acil durum planı, yılda en az 1 defa tüm çalışanların katılımıyla fiili olarak tatbik edilmeli ve raporlanmalıdır. Denetimlerde sadece plana değil, en son yapılan tatbikatın fotoğraflı raporuna da bakılır.',
-      },
-    ],
-    baglantilar: [
-      { metin: 'Acil Durum Eylem Planı Hizmeti', href: '/hizmetler/acil-durum-eylem-plani/' },
-      { metin: 'İş Güvenliği Uzmanlığı', href: '/hizmetler/is-guvenligi-uzmanligi/' },
-    ],
-  },
-  {
-    slug: 'ofislerde-is-guvenligi-masa-basi-calisan-tehlikeleri',
-    baslik: 'Ofislerde İş Güvenliği: Masa Başı Çalışanları Bekleyen 3 Gizli Tehlike',
-    ozet:
-      'Ofis ortamları "az tehlikeli" sınıfta yer alsa da; ergonomik riskler, kapalı alan hava kalitesi ve elektrik tesisatı sorunları nedeniyle ciddi meslek hastalıkları ve iş kazalarına zemin hazırlayabilir.',
-    tarih: '2026-09-20',
-    kategori: 'sektorel',
-    sure: 5,
-    govde: [
-      {
-        tip: 'p',
-        metin:
-          'Kısaca: Plazalarda veya ofislerde çalışanlar için risk görünmezdir. Gürültülü makineler veya ağır yükler yoktur ancak ergonomik hasarlar yavaş ve kalıcıdır. Ekranlı Araçlarla Çalışmalarda Sağlık ve Güvenlik Önlemleri Hakkında Yönetmelik, ofis ortamlarını sıkı kurallara bağlar.',
-      },
-      { tip: 'h2', metin: 'En Sık Karşılaşılan Ofis Riskleri' },
-      {
-        tip: 'liste',
-        maddeler: [
-          'Ergonomik Sorunlar: Yanlış koltuk seçimi ve monitör yüksekliği nedeniyle oluşan boyun fıtığı ve karpal tünel sendromu.',
-          'Kablo Karmaşası: Yerde dağınık duran uzatma kabloları nedeniyle takılma ve düşmeler.',
-          'İklimlendirme ve Hava Kalitesi: Düzenli bakımı yapılmayan klimalardan yayılan Lejyoner hastalığı riski.',
-        ],
-      },
-      {
-        tip: 'not',
-        metin:
-          'Ofiste en ucuz çözülen risk genellikle aydınlatmadır: ekrana vuran gün ışığı yansıması baş ağrısı ve göz yorgunluğunun sık görülen nedenidir ve çoğu zaman perde, monitör açısı veya masa yerleşimi değiştirilerek giderilir. Ekranlı Araçlarla Çalışmalarda Sağlık ve Güvenlik Önlemleri Hakkında Yönetmelik bu düzenlemeleri işverenin yükümlülüğü sayar.',
-      },
-    ],
-    baglantilar: [
-      { metin: 'Risk Değerlendirmesi', href: '/hizmetler/risk-degerlendirmesi/' },
-      { metin: 'Ofislerde İSG Çözümleri', href: '/sektorler/ofis-hizmet/' },
-    ],
-  },
-  {
     slug: 'bakanlik-denetimlerinde-en-cok-kesilen-isg-cezalari',
     baslik: 'Bakanlık İSG Denetimlerinde En Çok Kesilen Cezalar ve Nedenleri',
     ozet:
       'İş Müfettişleri tarafından yapılan saha denetimlerinde en sık kesilen idari para cezalarının başında; onaylı defter eksikliği, yapılmamış periyodik kontroller ve mesleki yeterlilik belgesi olmayan çalışanlar geliyor.',
-    tarih: '2026-09-20',
+    tarih: '2026-09-17',
     kategori: 'uygulama',
     sure: 5,
     govde: [
@@ -517,7 +343,7 @@ export const yazilar: BlogYazisi[] = [
     baslik: 'İş Kazası Sonrası İşverenin Hukuki Sorumlulukları Nelerdir?',
     ozet:
       'İş kazası sonrasında işverenin SGK\'ya 3 iş günü içinde bildirim yapması zorunludur. Ayrıca işverenin kusur oranı; risk analizi, eğitim tutanakları ve KKD zimmet formlarının eksiksiz olmasına göre belirlenir.',
-    tarih: '2026-09-20',
+    tarih: '2026-09-16',
     kategori: 'mevzuat',
     sure: 6,
     govde: [
@@ -563,7 +389,7 @@ export const yazilar: BlogYazisi[] = [
     baslik: 'İSG Eğitim Yönetmeliği 2026’da Değişti: İşvereni Ne Bekliyor?',
     ozet:
       'Çalışanların İSG eğitimleri 2 Nisan 2026’da yeniden düzenlendi ve önceki yönetmelik tamamen yürürlükten kaldırıldı. Süreler aynı kaldı, ama planlama ve belgelendirme değişti.',
-    tarih: '2026-09-19',
+    tarih: '2026-09-16',
     kategori: 'mevzuat',
     sure: 6,
     govde: [
@@ -635,7 +461,7 @@ export const yazilar: BlogYazisi[] = [
     baslik: 'Tehlike Sınıfı Nasıl Belirlenir? NACE Kodu ve İtiraz Yolu',
     ozet:
       'Tehlike sınıfını işveren seçmez; işyerinin NACE kodu belirler. Yükümlülüklerin neredeyse tamamı bu sınıfa bağlı olduğu için ilk netleşmesi gereken şey budur.',
-    tarih: '2026-09-19',
+    tarih: '2026-09-15',
     kategori: 'mevzuat',
     sure: 5,
     govde: [
@@ -686,7 +512,7 @@ export const yazilar: BlogYazisi[] = [
     baslik: 'İş Güvenliği Uzmanı Ayda Kaç Saat Gelmeli?',
     ozet:
       'Süre pazarlıkla değil, yönetmelikle belirlenir: çalışan başına ayda 10, 20 veya 40 dakika. Tekliflerin arasındaki fark çoğu zaman buradan çıkar.',
-    tarih: '2026-09-19',
+    tarih: '2026-09-15',
     kategori: 'mevzuat',
     sure: 4,
     govde: [
@@ -739,7 +565,7 @@ export const yazilar: BlogYazisi[] = [
     baslik: 'Risk Değerlendirmesini Kim Yapar? Hazır Dosya Neden İşe Yaramaz?',
     ozet:
       'Risk değerlendirmesi dışarıdan satın alınan bir dosya değil, işverenin liderliğinde yürütülen bir süreçtir. Şablon dosya denetimde de kazada da işverenin yanında durmaz.',
-    tarih: '2026-09-19',
+    tarih: '2026-09-14',
     kategori: 'uygulama',
     sure: 5,
     govde: [
@@ -785,7 +611,7 @@ export const yazilar: BlogYazisi[] = [
       {
         tip: 'not',
         metin:
-          'Saha Tecrübesi: Denetimlerde ve uygulamalarda, yasal mevzuatın sadece evrak üzerinde değil, sahada fiilen uygulandığının kanıtlanması en kritik aşamadır. Tüm süreçlerin resmi olarak belgelendirilmesi olası idari para cezalarını engeller.',
+          'Uzman notu: Ekibe o işi fiilen yapan çalışan alınmadan yapılan analiz, neredeyse her seferinde gerçek adımı atlar. Operatörün makineyi hızlandırmak için koruyucuyu kaldırdığı, bakımcının panoyu enerjili açtığı gibi alışkanlıklar hiçbir prosedürde yazmaz; yalnız sahada, işi yapana sorarak çıkar.',
       },
     ],
     baglantilar: [
@@ -800,7 +626,7 @@ export const yazilar: BlogYazisi[] = [
     baslik: 'İşe Giriş Muayenesi ve Periyodik Muayene: Kim, Ne Zaman, Hangi Tetkik?',
     ozet:
       'Sağlık gözetimi, İSG yükümlülüklerinin en çok atlanan kalemi. Oysa denetimde ilk istenen belgeler arasında ve bir kaza sonrası doğrudan işverenin aleyhine sonuç doğuruyor.',
-    tarih: '2026-09-19',
+    tarih: '2026-09-14',
     kategori: 'uygulama',
     sure: 5,
     govde: [
@@ -858,7 +684,7 @@ export const yazilar: BlogYazisi[] = [
     baslik: 'İSG-KATİP Nedir? Görevlendirme Neden Sistemde Görünmeli?',
     ozet:
       'Kâğıt üzerinde yapılmış bir görevlendirme, İSG-KATİP’te görünmüyorsa geçerli sayılmaz. Denetimde ilk bakılan kayıtlardan biridir.',
-    tarih: '2026-09-19',
+    tarih: '2026-09-13',
     kategori: 'uygulama',
     sure: 4,
     govde: [
@@ -892,7 +718,7 @@ export const yazilar: BlogYazisi[] = [
       {
         tip: 'not',
         metin:
-          'Saha Tecrübesi: Denetimlerde ve uygulamalarda, yasal mevzuatın sadece evrak üzerinde değil, sahada fiilen uygulandığının kanıtlanması en kritik aşamadır. Tüm süreçlerin resmi olarak belgelendirilmesi olası idari para cezalarını engeller.',
+          'Uzman notu: Hizmet sözleşmesinin imza tarihi ile yükümlülüğün başladığı tarih aynı değildir. Görevlendirme İSG-KATİP üzerinden onaylanana kadar işyeri, kâğıt üzerinde anlaşmış olsa bile hizmet almamış sayılır. Sözleşme imzalandıktan sonra sistemdeki atamanın onaylandığını mutlaka teyit edin.',
       },
     ],
     baglantilar: [
@@ -906,7 +732,7 @@ export const yazilar: BlogYazisi[] = [
     baslik: 'İş Kazası Olduğunda: Bildirim Süresi ve Sonrasında Yapılacaklar',
     ozet:
       'İş kazası kazadan sonraki üç iş günü içinde SGK’ya bildirilir. Bildirim tek başına yeterli değil; risk değerlendirmesi ve eğitim kayıtları da devreye girer.',
-    tarih: '2026-09-19',
+    tarih: '2026-09-13',
     kategori: 'uygulama',
     sure: 4,
     govde: [
@@ -955,7 +781,7 @@ export const yazilar: BlogYazisi[] = [
     baslik: 'Acil Durum Eylem Planı Nasıl Hazırlanır? Tatbikat Zorunlu mu?',
     ozet:
       'Acil durum planı, alarm çaldığında kimin ne yapacağını önceden yazmaktır. Tatbikat yapılmamışsa plan kâğıt üzerinde kalır.',
-    tarih: '2026-09-18',
+    tarih: '2026-09-12',
     kategori: 'uygulama',
     sure: 5,
     govde: [
@@ -979,7 +805,7 @@ export const yazilar: BlogYazisi[] = [
       {
         tip: 'p',
         metin:
-          'Ekiplerde görevlendirilecek çalışan sayısı, işyerinin tehlike sınıfına ve çalışan sayısına göre belirlenir. Görevlendirilen çalışanlara görevleriyle ilgili eğitim verilir. Buradaki en sık hata, ekibi kâğıt üzerinde kurup çalışana haber vermemektir.',
+          'Ekiplerde görevlendirilecek çalışan sayısı, işyerinin tehlike sınıfına ve çalışan sayısına göre belirlenir: arama, kurtarma ve tahliye ile yangınla mücadele için ayrı ayrı olmak üzere çok tehlikeli sınıfta her 30 çalışana, tehlikeli sınıfta her 40 çalışana, az tehlikeli sınıfta her 50 çalışana en az bir kişi. Görevlendirilen çalışanlara görevleriyle ilgili eğitim verilir. Buradaki en sık hata, ekibi kâğıt üzerinde kurup çalışana haber vermemektir.',
       },
       { tip: 'h2', metin: 'Tatbikat' },
       {
@@ -996,7 +822,7 @@ export const yazilar: BlogYazisi[] = [
       {
         tip: 'not',
         metin:
-          'Saha Tecrübesi: Denetimlerde ve uygulamalarda, yasal mevzuatın sadece evrak üzerinde değil, sahada fiilen uygulandığının kanıtlanması en kritik aşamadır. Tüm süreçlerin resmi olarak belgelendirilmesi olası idari para cezalarını engeller.',
+          'Uzman notu: Tatbikatın kaydında tarih ve katılımcı listesinden fazlası olmalı: ölçülen tahliye süresi, hangi kaçış yolunun tıkandığı ve planda buna göre ne değiştirildiği. Süre ölçülmemiş bir tatbikat, planın işleyip işlemediği hakkında hiçbir şey söylemez ve bir sonraki yıl aynı aksaklık tekrar eder.',
       },
     ],
     baglantilar: [
@@ -1009,7 +835,7 @@ export const yazilar: BlogYazisi[] = [
     baslik: 'İş Ekipmanlarının Periyodik Kontrolü: Hangi Ekipman, Ne Sıklıkla?',
     ozet:
       'Vinç, kompresör, forklift, topraklama... Kontrol aralığı ekipmana göre değişir ve üretici daha kısa bir süre öngörmüşse üreticinin süresi geçerlidir.',
-    tarih: '2026-09-18',
+    tarih: '2026-09-12',
     kategori: 'uygulama',
     sure: 5,
     govde: [
@@ -1046,10 +872,16 @@ export const yazilar: BlogYazisi[] = [
         metin:
           'İbraz edilemeyen rapor, yapılmamış kontrol gibi değerlendirilir. Raporları ekipman bazında dosyalamak ve bir sonraki kontrol tarihini takvime bağlamak bu riski ortadan kaldırır.',
       },
+      { tip: 'h2', metin: 'Süresi dolmuş rapor da rapor sayılmaz' },
+      {
+        tip: 'p',
+        metin:
+          'Uygulamada en sık rastlanan eksiklik raporun hiç olmaması değil, alınmış raporun geçerlilik süresinin dolmuş olmasıdır. Süresi geçmiş ekipman, hiç kontrol edilmemiş kabul edilir. Kontrolü yapan kişilerin kaydı EKİPNET (İş Ekipmanları Periyodik Kontrol Uzmanları Kayıt Programı) üzerinden tutulur; raporu düzenleyenin bu kayda sahip olup olmadığı raporun geçerliliğini belirler.',
+      },
       {
         tip: 'not',
         metin:
-          'Saha Tecrübesi: Denetimlerde ve uygulamalarda, yasal mevzuatın sadece evrak üzerinde değil, sahada fiilen uygulandığının kanıtlanması en kritik aşamadır. Tüm süreçlerin resmi olarak belgelendirilmesi olası idari para cezalarını engeller.',
+          'Uzman notu: Kiralık ekipmanda sorumluluk sık sık karıştırılır. Kiralanan forklift, platform veya jeneratörün işyerinde güvenli kullanılmasından kullanan işveren sorumludur; kira sözleşmesi bu sorumluluğu kiralayana devretmez. Ekipman sahaya girmeden geçerli kontrol raporunu isteyin ve süresini kendi takviminize işleyin.',
       },
     ],
     baglantilar: [{ metin: 'Periyodik kontroller hizmeti', href: '/hizmetler/periyodik-kontroller/' }],
@@ -1059,7 +891,7 @@ export const yazilar: BlogYazisi[] = [
     baslik: 'İş Hijyeni Ölçümleri Ne Zaman Gerekir?',
     ozet:
       'Risk değerlendirmesinde "gürültü yüksek" demek yetmez. Maruziyetin sınır değerin altında olduğu ölçümle gösterilir; ölçümü de yalnız yetkili laboratuvarlar yapabilir.',
-    tarih: '2026-09-18',
+    tarih: '2026-09-11',
     kategori: 'uygulama',
     sure: 4,
     govde: [
@@ -1100,7 +932,7 @@ export const yazilar: BlogYazisi[] = [
       {
         tip: 'not',
         metin:
-          'Saha Tecrübesi: Denetimlerde ve uygulamalarda, yasal mevzuatın sadece evrak üzerinde değil, sahada fiilen uygulandığının kanıtlanması en kritik aşamadır. Tüm süreçlerin resmi olarak belgelendirilmesi olası idari para cezalarını engeller.',
+          'Uzman notu: Ortam ölçümü ile kişisel maruziyet ölçümü aynı şey değildir. Gürültü ve tozda belirleyici olan, çalışanın vardiya boyunca fiilen maruz kaldığı değerdir; duvara asılan bir cihazın okuduğu ortalama, gürültülü makinenin başında duran kişinin maruziyetini göstermez. Ölçümün kime ve nasıl yapıldığı, sonucun kendisi kadar önemlidir.',
       },
     ],
     baglantilar: [{ metin: 'İş hijyeni ölçümleri', href: '/hizmetler/is-hijyeni-olcumleri/' }],
@@ -1110,7 +942,7 @@ export const yazilar: BlogYazisi[] = [
     baslik: 'Patlamadan Korunma Dokümanı Kimler İçin Zorunlu?',
     ozet:
       'Yanıcı gaz, buhar veya toz bulutu oluşabilen her işyerinde zorunlu. Boyahane, un ve yem tesisi, ahşap atölyesi ve akaryakıt istasyonu en sık örnekler.',
-    tarih: '2026-09-18',
+    tarih: '2026-09-11',
     kategori: 'mevzuat',
     sure: 4,
     govde: [
@@ -1123,7 +955,12 @@ export const yazilar: BlogYazisi[] = [
       {
         tip: 'p',
         metin:
-          'Yanıcı gaz, buhar, sis veya yanıcı toz bulutunun oluşabildiği her işyeri kapsamdadır. Uygulamada en sık karşılaşılanlar: boyahaneler, un ve yem tesisleri, ahşap işleme atölyeleri, akaryakıt ve LPG istasyonları, kimyasal depoları, tahıl siloları ve solvent kullanılan üretim hatları.',
+          'Yanıcı gaz, buhar, sis veya yanıcı toz bulutunun oluşabildiği her işyeri kapsamdadır. Uygulamada en sık karşılaşılanlar: boyahaneler, un, yem ve şeker fabrikaları, ahşap işleme ve mobilya atölyeleri, akaryakıt istasyonları ile LPG dolum tesisleri, kimyasal, boya ve tiner depoları, tahıl siloları ve solvent kullanılan üretim hatları.',
+      },
+      {
+        tip: 'p',
+        metin:
+          'Listenin sürprizi genellikle tozdur: patlayıcı ortam denince akla önce kimyasal sıvı gelir, oysa un, şeker, yem ve zımpara tozu da uygun yoğunlukta patlayıcı bulut oluşturur. Mobilya atölyeleri bu yüzden sık sık kapsam dışı sanılır.',
       },
       { tip: 'h2', metin: 'Dokümanda ne bulunur?' },
       {
@@ -1145,7 +982,7 @@ export const yazilar: BlogYazisi[] = [
       {
         tip: 'not',
         metin:
-          'Saha Tecrübesi: Denetimlerde ve uygulamalarda, yasal mevzuatın sadece evrak üzerinde değil, sahada fiilen uygulandığının kanıtlanması en kritik aşamadır. Tüm süreçlerin resmi olarak belgelendirilmesi olası idari para cezalarını engeller.',
+          'Uzman notu: Doküman bir kez hazırlanıp rafa kaldırılan bir belge değildir. Hatta eklenen tek bir makine, değiştirilen bir solvent ya da kapatılan bir havalandırma menfezi bölge sınıflandırmasını değiştirebilir; sınıflandırma değişince o bölgedeki ekipmanın uygunluğu da yeniden bakılmak zorundadır. Tesiste değişiklik yaptıysanız dokümanı güncelleyin.',
       },
     ],
     baglantilar: [
@@ -1158,7 +995,7 @@ export const yazilar: BlogYazisi[] = [
     baslik: 'Kişisel Koruyucu Donanım: Son Halka, İlk Çözüm Değil',
     ozet:
       'KKD, önlem sıralamasının en sonundaki halkadır. Önce tehlikeyi kaynağında yok etmek, sonra ortamda kontrol etmek, en son kişiyi korumak gerekir.',
-    tarih: '2026-09-17',
+    tarih: '2026-09-10',
     kategori: 'uygulama',
     sure: 4,
     govde: [
@@ -1183,6 +1020,12 @@ export const yazilar: BlogYazisi[] = [
         metin:
           'Sıralamanın anlamı şu: tozu kaynağında emen bir sistem kurulabiliyorsa, maske dağıtmak yeterli bir çözüm sayılmaz.',
       },
+      { tip: 'h2', metin: 'Doğru donanım, riske göre seçilir' },
+      {
+        tip: 'p',
+        metin:
+          'Aynı isimde iki donanım aynı işi görmez. Elektrik işinde çalışana çelik burunlu ayakkabı değil kompozit burunlu ayakkabı gerekir; çelik iletkendir. Tozlu ortamda maskenin filtre sınıfı, gürültülü ortamda kulaklığın zayıflatma değeri ölçülen maruziyete göre seçilir. Bu yüzden seçim risk değerlendirmesine ve gerekiyorsa ortam ölçümüne dayanır; katalogdan değil.',
+      },
       { tip: 'h2', metin: 'İşverenin yükümlülükleri' },
       {
         tip: 'liste',
@@ -1199,10 +1042,16 @@ export const yazilar: BlogYazisi[] = [
         metin:
           'Donanımın alınması ile kullanılması aynı şey değildir. Dolapta duran bir KKD kimseyi korumaz. Kullanım denetimi ve doğru beden seçimi, satın almanın kendisi kadar önemlidir.',
       },
+      { tip: 'h2', metin: 'Fatura kanıt değildir' },
+      {
+        tip: 'p',
+        metin:
+          'İşveren, donanımı çalışana verdiğini imzalı zimmet tutanağıyla kanıtlar. Satın alma faturası yalnız ürünün alındığını gösterir; o ürünün o çalışana teslim edildiğini göstermez. Bir iş kazası incelemesinde aranan belge tutanaktır.',
+      },
       {
         tip: 'not',
         metin:
-          'Saha Tecrübesi: Denetimlerde ve uygulamalarda, yasal mevzuatın sadece evrak üzerinde değil, sahada fiilen uygulandığının kanıtlanması en kritik aşamadır. Tüm süreçlerin resmi olarak belgelendirilmesi olası idari para cezalarını engeller.',
+          'Uzman notu: Donanımın kullanım ömrü gözle anlaşılmaz. Baret ve paraşüt tipi emniyet kemeri gibi ürünlerde üreticinin belirlediği bir kullanım süresi vardır; bir kez ciddi darbe almış baret ya da düşme durdurmuş kemer, dışarıdan sağlam görünse bile kullanımdan çıkarılır. Zimmet kaydına teslim tarihini yazmak, bu takibi mümkün kılan en basit yöntemdir.',
       },
     ],
     baglantilar: [{ metin: 'Risk değerlendirmesi', href: '/hizmetler/risk-degerlendirmesi/' }],
@@ -1212,7 +1061,7 @@ export const yazilar: BlogYazisi[] = [
     baslik: 'İSG Kurulu ve Çalışan Temsilcisi: Kimler, Kaç Kişi?',
     ozet:
       'Elli ve daha fazla çalışanı olan ve altı aydan uzun süren işlerde İSG kurulu kurulur. Çalışan temsilcisi sayısı ise çalışan sayısına göre belirlenir.',
-    tarih: '2026-09-17',
+    tarih: '2026-09-10',
     kategori: 'mevzuat',
     sure: 4,
     govde: [
@@ -1248,7 +1097,7 @@ export const yazilar: BlogYazisi[] = [
       {
         tip: 'not',
         metin:
-          'Saha Tecrübesi: Denetimlerde ve uygulamalarda, yasal mevzuatın sadece evrak üzerinde değil, sahada fiilen uygulandığının kanıtlanması en kritik aşamadır. Tüm süreçlerin resmi olarak belgelendirilmesi olası idari para cezalarını engeller.',
+          'Uzman notu: Çalışan temsilcisi, işverenin uygun gördüğü kişiyi ataması değil, çalışanların kendi aralarında yapacağı seçim yoluyla belirlenir; seçimle belirlenemediği durumda atamaya geçilir. Temsilcinin görevi nedeniyle hak kaybına uğratılamaması da yükümlülüğün parçasıdır. Uygulamada en sık atlanan nokta, seçimin yapıldığına dair kaydın hiç tutulmamasıdır.',
       },
     ],
     baglantilar: [
@@ -1261,7 +1110,7 @@ export const yazilar: BlogYazisi[] = [
     baslik: 'Tehlikeli İşlerde Mesleki Eğitim Belgesi Zorunluluğu',
     ozet:
       'Tehlikeli ve çok tehlikeli işlerde çalışacakların, yaptıkları işe ilişkin mesleki eğitim aldığını belgelemesi gerekir. Temel İSG eğitimi bu belgenin yerine geçmez.',
-    tarih: '2026-09-17',
+    tarih: '2026-09-09',
     kategori: 'mevzuat',
     sure: 3,
     govde: [
@@ -1299,7 +1148,7 @@ export const yazilar: BlogYazisi[] = [
     baslik: 'İSG Teklifleri Nasıl Karşılaştırılır? Fiyat Farkı Nereden Çıkar?',
     ozet:
       'Aynı başlıkları sayan iki teklif arasındaki fark genellikle sürelerden ve kapsam dışı bırakılan kalemlerden doğar. Karşılaştırmayı mümkün kılan birkaç soru var.',
-    tarih: '2026-09-16',
+    tarih: '2026-09-09',
     kategori: 'uygulama',
     sure: 5,
     govde: [
@@ -1335,7 +1184,7 @@ export const yazilar: BlogYazisi[] = [
       {
         tip: 'not',
         metin:
-          'Saha Tecrübesi: Denetimlerde ve uygulamalarda, yasal mevzuatın sadece evrak üzerinde değil, sahada fiilen uygulandığının kanıtlanması en kritik aşamadır. Tüm süreçlerin resmi olarak belgelendirilmesi olası idari para cezalarını engeller.',
+          'Uzman notu: İki teklifi karşılaştırmanın tek ortak paydası, yönetmelikteki asgari süredir. Her teklifi "ayda kaç saat uzman, kaç saat hekim" sorusuna indirgeyin; aylık tutarı bu saate bölünce fiyatlar birden kıyaslanabilir hâle gelir. Ayrıca ortam ölçümü, periyodik kontrol ve eğitimlerin fiyata dahil mi yoksa ayrı kalem mi olduğunu yazılı olarak sorun — fark çoğu zaman buradan çıkar.',
       },
     ],
     baglantilar: [
@@ -1348,7 +1197,7 @@ export const yazilar: BlogYazisi[] = [
     baslik: 'İnşaat Şantiyelerinde İş Güvenliği: En Kritik Beş Başlık',
     ozet:
       'Yapı işlerinde ölümlü kazaların başlıca nedeni yüksekten düşme. Sağlık ve güvenlik planı, şantiye açılmadan önce hazırlanması gereken bir belgedir.',
-    tarih: '2026-09-16',
+    tarih: '2026-09-08',
     kategori: 'sektorel',
     sure: 5,
     govde: [
@@ -1403,7 +1252,7 @@ export const yazilar: BlogYazisi[] = [
     baslik: 'Ofiste İSG: "Bizde Risk Yok" Demeden Önce',
     ozet:
       'Az tehlikeli sınıftaki bir ofis de risk değerlendirmesi, eğitim, acil durum planı ve sağlık gözetimi yükümlülüğü altındadır. Riskler farklıdır, yok değildir.',
-    tarih: '2026-09-15',
+    tarih: '2026-09-08',
     kategori: 'sektorel',
     sure: 4,
     govde: [
@@ -1416,7 +1265,9 @@ export const yazilar: BlogYazisi[] = [
       {
         tip: 'liste',
         maddeler: [
-          'Ekranlı araçlarla çalışma: boyun, sırt ve göz şikâyetleri',
+          'Ekranlı araçlarla çalışma: boyun, sırt ve göz şikâyetleri; bilek desteksiz klavye kullanımında karpal tünel',
+          'Aydınlatma: ekrana vuran gün ışığı yansıması, baş ağrısı ve göz yorgunluğunun en ucuz çözülen nedeni',
+          'İklimlendirme: bakımı yapılmayan klima ve nemlendiricilerde Lejyoner riski',
           'Elektrik tesisatı: çoklu priz yükleme, eski tesisat, topraklama',
           'Yangın ve tahliye: kaçış yollarının dolap veya koliyle kapatılması',
           'Kayma ve düşme: ıslak zemin, serbest kablo',
@@ -1445,7 +1296,7 @@ export const yazilar: BlogYazisi[] = [
     baslik: 'Küçük İşletmeler İçin İSG Devlet Desteği',
     ozet:
       'Ondan az çalışanı olan tehlikeli ve çok tehlikeli sınıftaki işyerleri, İSG hizmet bedelleri için devlet desteğinden yararlanabilir.',
-    tarih: '2026-09-15',
+    tarih: '2026-09-07',
     kategori: 'mevzuat',
     sure: 3,
     govde: [
@@ -1479,7 +1330,7 @@ export const yazilar: BlogYazisi[] = [
     baslik: 'Yeni İşyeri Açarken İSG Kontrol Listesi',
     ozet:
       'İlk çalışanı işe almadan önce tamamlanması gereken adımlar. Sonradan toparlamak, baştan kurmaktan hem zor hem pahalı.',
-    tarih: '2026-09-14',
+    tarih: '2026-09-07',
     kategori: 'uygulama',
     sure: 4,
     govde: [
@@ -1532,7 +1383,7 @@ export const yazilar: BlogYazisi[] = [
       {
         tip: 'not',
         metin:
-          'Saha Tecrübesi: Denetimlerde ve uygulamalarda, yasal mevzuatın sadece evrak üzerinde değil, sahada fiilen uygulandığının kanıtlanması en kritik aşamadır. Tüm süreçlerin resmi olarak belgelendirilmesi olası idari para cezalarını engeller.',
+          'Uzman notu: Yükümlülük işyerinin açılış tarihinde değil, ilk sigortalı çalışanın işe girişiyle başlar. Bu yüzden risk değerlendirmesi, görevlendirme ve işe başlama eğitimi için "birkaç ay sonra hallederiz" alanı yoktur. Sıralama da önemlidir: işe giriş muayenesi ve işe başlama eğitimi, çalışan sahaya inmeden tamamlanır.',
       },
     ],
     baglantilar: [
@@ -1545,7 +1396,7 @@ export const yazilar: BlogYazisi[] = [
     baslik: 'Denetimde Hangi Belgeler İstenir?',
     ozet:
       'Denetimde sorulan şey işin yapılıp yapılmadığı değil, yapıldığının nasıl belgelendiğidir. İstenen belgelerin listesi ve sık görülen eksikler.',
-    tarih: '2026-09-14',
+    tarih: '2026-09-06',
     kategori: 'uygulama',
     sure: 4,
     govde: [

@@ -3,3 +3,13 @@
 # üretiyordu; arama motoru sitemap yerine HTML görüyordu. Cloudflare Pages
 # `_redirects` dosyasını sunucu tarafında işler, gerçek 301 döner.
 /sitemap.xml  /sitemap-index.xml  301
+
+# Birleştirilen blog yazıları.
+# Aynı arama niyetini hedefleyen iki yazı birbirinin sıralamasını zayıflatıyordu.
+# Zayıf olanın özgün içeriği güçlü olana taşındı; eski URL 404 olmasın diye
+# kalıcı olarak hedefine yönlendiriliyor.
+/blog/patlamadan-korunma-dokumani-pkd-nedir/                  /blog/patlamadan-korunma-dokumani-kimler-icin/  301
+/blog/kkd-seciminde-dikkat-edilmesi-gerekenler/               /blog/kisisel-koruyucu-donanim-secimi/          301
+/blog/periyodik-kontroller-ekipman-listesi/                   /blog/periyodik-kontrol-sureleri/               301
+/blog/ofislerde-is-guvenligi-masa-basi-calisan-tehlikeleri/   /blog/ofis-calisanlari-icin-isg/                301
+/blog/acil-durum-eylem-plani-nasil-hazirlanir-isveren-rehberi/ /blog/acil-durum-eylem-plani-nasil-hazirlanir/  301
