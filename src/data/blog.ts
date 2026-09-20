@@ -2078,6 +2078,135 @@ export const yazilar: BlogYazisi[] = [
       { metin: "Sık sorulan sorular", href: "/sss/" },
     ],
   },
+  {
+    slug: "isyerinde-ilkyardim-cantasi-standartlari",
+    baslik: "İş Yerinde İlkyardım Çantası Standartları Nelerdir?",
+    ozet: "İşyerlerinde bulunması zorunlu olan ilkyardım çantasının içeriği, çalışan sayısına ve işin tehlike sınıfına göre değişiklik gösterir. İlaç bulundurmak yasaktır.",
+    tarih: "2026-09-21",
+    kategori: "uygulama",
+    sure: 3,
+    govde: [
+      {
+        tip: "p",
+        metin:
+          "Kısaca: Her işyerinde, acil durumlarda kullanılmak üzere standartlara uygun bir ilkyardım çantası bulundurulması zorunludur. Çantanın içeriği periyodik olarak kontrol edilmeli ve son kullanma tarihi geçen malzemeler yenilenmelidir.",
+      },
+      { tip: "h2", metin: "İlkyardım Çantasında Neler Olmalı?" },
+      {
+        tip: "liste",
+        maddeler: [
+          "Sargı bezi, steril hidrofil gaz bezi, üçgen sargı bezi.",
+          "Antiseptik solüsyon, plaster, yara bandı.",
+          "Makas, çengelli iğne, tıbbi eldiven.",
+          "Sunni solunum maskesi veya ağızlığı.",
+        ],
+      },
+      {
+        tip: "not",
+        metin:
+          "Önemli Uyarı: İlkyardım çantasında kesinlikle ağrı kesici, yanık kremi veya herhangi bir ilaç bulundurulmamalıdır. İlkyardımcı, doktor olmadığı için ilaçla müdahale yetkisine sahip değildir.",
+      },
+    ],
+  },
+  {
+    slug: "osgb-hizmeti-alirken-dikkat-edilmesi-gerekenler",
+    baslik: "OSGB Hizmeti Alırken Nelere Dikkat Edilmelidir?",
+    ozet: "Ortak Sağlık ve Güvenlik Birimi (OSGB) seçimi, sadece yasal bir zorunluluğu yerine getirmek değil, işyerinizin ve çalışanlarınızın geleceğini güvence altına almaktır.",
+    tarih: "2026-09-21",
+    kategori: "uygulama",
+    sure: 4,
+    govde: [
+      {
+        tip: "p",
+        metin:
+          "Kısaca: OSGB hizmeti almak, yasal yükümlülüklerinizi profesyonel ellere teslim etmeniz anlamına gelir. Ancak doğru OSGB'yi seçmemek, olası bir kazada sorumluluğun tamamen üzerinizde kalmasına neden olabilir.",
+      },
+      { tip: "h2", metin: "Seçim Kriterleri" },
+      {
+        tip: "liste",
+        maddeler: [
+          "Bakanlık Yetkisi: OSGB'nin Çalışma ve Sosyal Güvenlik Bakanlığı tarafından yetkilendirilmiş güncel bir belgesi olduğundan emin olun.",
+          "Uzman Kadro: İşyerinizin tehlike sınıfına uygun (A, B veya C sınıfı) uzman ve tecrübeli işyeri hekimleri sağladığını kontrol edin.",
+          "Sektörel Tecrübe: Sizin sektörünüzdeki risklere aşina olan, daha önce benzer firmalarla çalışmış OSGB'leri tercih edin.",
+        ],
+      },
+      {
+        tip: "not",
+        metin:
+          "İSG-Katip onayı olmadan dışarıdan aldığınız hizmetin yasal hiçbir geçerliliği yoktur.",
+      },
+    ],
+  },
+  {
+    slug: "isyerinde-aydinlatma-olcumu-neden-yapilir",
+    baslik: "İşyerinde Aydınlatma Ölçümü Neden ve Nasıl Yapılır?",
+    ozet: "Yetersiz aydınlatma göz yorgunluğuna, dikkat dağınıklığına ve iş kazalarına yol açar. İşyerlerinde ortam aydınlatmasının yönetmelikteki lüks değerlerine uyması yasal zorunluluktur.",
+    tarih: "2026-09-21",
+    kategori: "mevzuat",
+    sure: 4,
+    govde: [
+      {
+        tip: "p",
+        metin:
+          "Kısaca: İş Ekipmanlarının Periyodik Kontrolleri Yönetmeliği uyarınca çalışma ortamlarındaki aydınlatma şiddeti, çalışanın işini güvenle yapabileceği seviyede olmalıdır. Bu seviyeler standartlarla (EN 12464-1) belirlenmiştir.",
+      },
+      { tip: "h2", metin: "Ölçüm Nasıl Gerçekleştirilir?" },
+      {
+        tip: "p",
+        metin:
+          "Aydınlatma ölçümleri, akredite laboratuvarlar tarafından lüksmetre adı verilen kalibre edilmiş cihazlarla yapılır. Gece ve gündüz çalışmaları için ayrı ölçümler alınarak raporlanır ve risk değerlendirmesine eklenir.",
+      },
+    ],
+  },
+  {
+    slug: "gida-sektorunde-is-sagligi-ve-guvenligi",
+    baslik: "Gıda Sektöründe İş Sağlığı ve Güvenliği: Hijyen ve Kazalar",
+    ozet: "Gıda üretim tesislerinde kesici alet yaralanmaları, kaygan zemin kaynaklı düşmeler ve kimyasal yanıklar en sık görülen İSG riskleridir.",
+    tarih: "2026-09-21",
+    kategori: "sektorel",
+    sure: 5,
+    govde: [
+      {
+        tip: "p",
+        metin:
+          "Kısaca: Gıda sektörü, hem gıda güvenliğinin (HACCP) hem de iş sağlığı ve güvenliğinin (İSG) bir arada yürütülmesi gereken kritik bir alandır. Kaygan zeminler, sıcak yüzeyler ve basınçlı kaplar öncelikli tehlikelerdir.",
+      },
+      { tip: "h2", metin: "Sık Görülen Tehlikeler ve Önlemler" },
+      {
+        tip: "liste",
+        maddeler: [
+          "Kaymalar ve Düşmeler: Sürekli yıkanan zeminler için kaydırmaz bantlar, ızgara sistemleri ve kaymaz tabanlı iş ayakkabıları (S2/S3 sınıfı) kullanılmalıdır.",
+          "Kesici Aletler: Et veya sebze işleme bölümlerinde çelik örgü eldiven kullanılması zorunludur.",
+          "Yanıklar: Sıcak su veya buharla çalışan personelin ısıya dayanıklı koruyucu giysi kullanması şarttır.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "lojistik-ve-depo-alanlarinda-forklift-kazalari",
+    baslik: "Lojistik ve Depo Alanlarında Forklift Kazaları ve Önlemler",
+    ozet: "Depolarda meydana gelen iş kazalarının büyük bölümü forklift ve benzeri iş makinelerinin yaya çalışanlara çarpmasıyla sonuçlanır.",
+    tarih: "2026-09-21",
+    kategori: "sektorel",
+    sure: 4,
+    govde: [
+      {
+        tip: "p",
+        metin:
+          "Kısaca: Forkliftler ağır tonajlı araçlardır ve manevra alanlarındaki kör noktalar yayalar için ölümcül risk taşır. İşletmelerde yaya yolları ile araç yollarının fiziksel olarak ayrılması en etkili çözümdür.",
+      },
+      { tip: "h2", metin: "Güvenlik Kuralları" },
+      {
+        tip: "liste",
+        maddeler: [
+          "Sertifika Zorunluluğu: Forkliftleri sadece MYK veya MEB onaylı operatör belgesine sahip kişiler kullanabilir.",
+          "Fiziksel Ayırma: Yaya yolları bariyerlerle çevrilmeli veya net çizgilerle ayrılmalıdır.",
+          "Hız Limitleri: Depo içi alanlarda hız limiti belirlenmeli (genellikle 5 km/s) ve araçlara hız sınırlayıcı takılmalıdır.",
+          "Görsel ve İşitsel İkaz: Geri vites sireni ve mavi spot (blue spot) ışık sistemlerinin çalışır durumda olması şarttır.",
+        ],
+      },
+    ],
+  },
 ];
 
 export const yaziSayisi = yazilar.length;
