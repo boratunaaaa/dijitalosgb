@@ -56,10 +56,16 @@ const structuredData = [
         yürütülür. Süreci biz kurar ve takip ederiz; görevlendirme yetkili kuruluş
         adına kayda geçer.
       </p>
+      <p class="mt-4 font-medium text-heading">Yetkili OSGB altyapısıyla saha hizmeti</p>
+      <p class="mt-2 text-muted">
+        İş güvenliği uzmanı ve işyeri hekimi görevlendirmeleri, Bakanlıkça yetkilendirilmiş
+        çözüm ortağımız <strong>{isOrtagi.ad}</strong> üzerinden yürütülür. Eğitim, danışmanlık
+        ve dokümantasyon süreçleri {site.name} tarafından yönetilir. Böylece yetki gerektiren
+        işler yetkili kuruluşta kalırken, süreci tek bir muhatapla yürütürsünüz.
+      </p>
       <p class="mt-3 text-sm text-muted">
         {site.name} bir OSGB değildir; OSGB, Çalışma ve Sosyal Güvenlik Bakanlığınca
-        yetkilendirilen ve belirli şartları sağlaması gereken bir yapıdır. Saha
-        hizmetleri bu nedenle yetkili çözüm ortağı üzerinden verilir.
+        yetkilendirilen ve belirli şartları sağlaması gereken bir yapıdır.
       </p>
     </Fragment>
   </Content>
@@ -83,7 +89,7 @@ const structuredData = [
 
   <Content
     isReversed
-    title="Hizmeti kim yürütüyor"
+    title="Uzmanlık altyapımız"
     items={[
       ...(uzman.belgeSinifi
         ? [{ title: `${uzman.belgeSinifi} Sınıfı ${uzman.unvan}`, icon: 'tabler:certificate' }]
@@ -94,17 +100,21 @@ const structuredData = [
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold">{uzman.ad}</h3>
+      <p class="mt-1 text-sm font-medium uppercase tracking-wider text-muted">
+        {uzman.belgeSinifi ? `${uzman.belgeSinifi} sınıfı ${uzman.unvan.toLocaleLowerCase('tr-TR')}` : uzman.unvan}
+      </p>
       <p class="mt-3">
-        İSG eğitimlerini ve danışmanlık süreçlerini doğrudan yürütür; saha
-        hizmetlerinde iş ortağıyla koordinasyonu sağlar.
+        Eğitim ve danışmanlık süreçlerinin teknik sorumlusu. Dosyayı kuran, eğitimi veren ve
+        saha tarafında iş ortağıyla koordinasyonu yürüten kişi aynı — talebiniz elden ele
+        dolaşmıyor.
       </p>
       {uzman.deneyim && <p class="mt-3">{uzman.deneyim}</p>}
     </Fragment>
   </Content>
 
   <Features
-    title="Hizmet ekibi"
-    subtitle="Saha personeli yetki belgeli iş ortağımızın bünyesinde görev yapar; eğitim tarafını doğrudan biz yürütürüz."
+    title="Çözüm ağımız"
+    subtitle="Yetki gerektiren her başlık, o yetkiye sahip kişi veya kuruluş tarafından yürütülür. Koordinasyonu tek merkezden biz sağlarız."
     columns={1}
     items={ekip.map((e) => ({ title: e.baslik, description: e.aciklama, icon: 'tabler:users' }))}
   />

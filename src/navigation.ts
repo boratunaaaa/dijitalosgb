@@ -105,6 +105,7 @@ export const footerData = {
       links: [
         { text: 'Hakkımızda', href: getPermalink('/hakkimizda') },
         { text: 'Referanslar', href: getPermalink('/referanslar') },
+        { text: 'İletişim', href: getPermalink('/iletisim') },
         { text: 'Teklif al', href: getPermalink('/teklif-al') },
         { text: 'KVKK Aydınlatma Metni', href: getPermalink('/kvkk') },
         { text: 'Gizlilik Politikası', href: getPermalink('/gizlilik-politikasi') },

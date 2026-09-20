@@ -228,6 +228,46 @@ const structuredData = [
     </ol>
   </section>
 
+  {/*
+    Üretim planına dokunmadan tarama — mobil sağlıkta satın alma kararını
+    veren asıl şey bu. Aşağıdaki maddeler taahhüt değil, çalışma biçimi:
+    hepsi araç ve ekip kapasitesiyle sınırlı olduğu için sayı verilmiyor.
+  */}
+  <section class="mx-auto max-w-5xl px-4 pb-4 sm:px-6">
+    <h2 class="text-2xl font-bold text-heading md:text-3xl">Üretim durmadan tarama</h2>
+    <p class="mt-3 max-w-3xl text-muted">
+      Sağlık taramasının işletmeye asıl maliyeti muayene ücreti değil, duran üretimdir.
+      Planlama bunun üzerine kuruluyor.
+    </p>
+    <ul class="mt-6 grid gap-4 sm:grid-cols-2">
+      {
+        [
+          {
+            b: 'Aynı gün yüksek sayıda çalışan',
+            a: 'Tarama iş yerinde yapıldığı için sevk, yol ve bekleme süresi ortadan kalkıyor; çalışan muayene için kurumdan çıkmıyor.',
+          },
+          {
+            b: 'Vardiya ve üretim planına göre sıra',
+            a: 'Çalışanlar hat ve vardiya bazında gruplanıyor; üretim planınızı bize verin, sırayı ona göre kuralım.',
+          },
+          {
+            b: 'Sonuçların dijital teslimi',
+            a: 'Raporlar dijital olarak teslim ediliyor ve İSG dosyanıza işleniyor; bir sonraki periyodik muayene tarihi takvime bağlanıyor.',
+          },
+          {
+            b: 'Maruziyete göre tetkik',
+            a: 'Gürültü, toz ve kimyasal maruziyeti olan bölümlerde tetkik listesi işyeri hekimince ayrıca belirleniyor; herkese aynı paket uygulanmıyor.',
+          },
+        ].map((k) => (
+          <li class="rounded-xl border border-gray-200 p-5 dark:border-slate-700">
+            <h3 class="font-semibold text-heading">{k.b}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted">{k.a}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
   <CallToAction
     title="Çalışanlarınızın muayene takvimini çıkaralım"
     subtitle={`Kaç çalışanınız olduğunu ve ne iş yaptığınızı söyleyin; hangi tetkiklerin gerektiğini ve tarama gününü planlayalım. Hizmet bölgemiz: ${site.hizmetIlleri.join(', ')}.`}

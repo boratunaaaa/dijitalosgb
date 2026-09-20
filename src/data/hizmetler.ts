@@ -44,8 +44,8 @@ export const hizmetler: Hizmet[] = [
       'veya vekili, iş güvenliği uzmanı ve işyeri hekimi, çalışan temsilcisi ve destek ' +
       'elemanı yer alır. Mevzuat bu sürece dışarıdan uzman desteği alınmasına izin verir. ' +
       'Bu nedenle biz "dosyanızı hazırlayıp teslim ediyoruz" demiyoruz: süreci kurar, saha ' +
-      'incelemesini yapar ve ekibe uzman desteği veririz. Aksini vaat eden bir hizmet, ' +
-      'denetimde işverenin elinde kalır.',
+      'incelemesini yapar ve ekibe uzman desteği veririz. Yerinde inceleme yapılmadan ' +
+      'hazırlanan bir dosya, denetimde ve kaza sonrasında işvereni koruyamaz.',
     kapsamMaddeleri: [
       { baslik: 'Saha incelemesi', aciklama: 'Üretim akışı, makine parkı, kimyasallar ve çalışma ortamı yerinde görülür.' },
       { baslik: 'Tehlike tespiti', aciklama: 'Her bölüm ve görev için tehlike kaynakları listelenir.' },

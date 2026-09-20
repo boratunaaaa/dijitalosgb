@@ -1,0 +1,145 @@
+---
+/**
+ * İletişim sayfası.
+ *
+ * NEDEN AYRI SAYFA: İletişim bilgisi footer'a dağılmış durumdaydı; kurumsal
+ * bir muhatap arayan işveren "kiminle, nasıl, hangi saatte" sorusunun
+ * cevabını tek yerde bulamıyordu.
+ *
+ * BOŞ ALAN GÖSTERİLMEZ: KVKK'daki tebligat adresi gibi henüz doldurulmamış
+ * alanlar sayfada hiç görünmüyor. Uydurma unvan veya adres yazmak, sayfayı
+ * güvenilir yapmaz — tersini yapar.
+ */
+import Layout from '~/layouts/PageLayout.astro';
+import StructuredData from '~/components/common/StructuredData.astro';
+import { site, isOrtagi, uzman } from '~/data/site';
+
+const metadata = {
+  title: 'İletişim',
+  description:
+    'Dijital OSGB iletişim bilgileri: telefon, WhatsApp, e-posta, hizmet bölgeleri ve yetkili çözüm ortağı. Ücretsiz İSG ön değerlendirmesi için ulaşın.',
+};
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: metadata.title,
+  url: `${site.url}/iletisim/`,
+  inLanguage: 'tr-TR',
+  mainEntity: {
+    '@type': 'Organization',
+    name: site.name,
+    url: site.url,
+    email: site.eposta,
+    telephone: site.telefonHref,
+    areaServed: site.hizmetIlleri.map((i) => ({ '@type': 'AdministrativeArea', name: i })),
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        contactType: 'customer service',
+        telephone: site.telefonHref,
+        email: site.eposta,
+        availableLanguage: 'Turkish',
+        areaServed: 'TR',
+      },
+    ],
+  },
+};
+
+const kanallar = [
+  { etiket: 'Telefon', deger: site.telefon, href: `tel:${site.telefonHref}` },
+  { etiket: 'WhatsApp', deger: 'Mesaj gönderin', href: `https://wa.me/${site.whatsapp}`, dis: true },
+  { etiket: 'E-posta', deger: site.eposta, href: `mailto:${site.eposta}` },
+];
+---
+
+<Layout metadata={metadata}>
+  <StructuredData slot="head" schema={schema} />
+
+  <section class="mx-auto max-w-5xl px-4 py-10 sm:px-6 md:py-14">
+    <nav aria-label="Konum" class="mb-6 text-sm text-muted">
+      <a href="/" class="hover:underline">Ana sayfa</a>
+      <span class="mx-1.5">/</span>
+      <span class="text-default">İletişim</span>
+    </nav>
+
+    <h1 class="mb-4 text-balance text-3xl font-bold font-heading tracking-tight text-heading md:text-4xl">
+      İletişim
+    </h1>
+    <p class="mb-10 max-w-3xl text-lg text-muted">
+      İş yerinizin yükümlülüğünü çıkarmak için ücretsiz ön değerlendirme yeterli.
+      Aşağıdaki kanallardan hangisi size uyuyorsa ondan ulaşın.
+    </p>
+
+    <div class="grid gap-4 sm:grid-cols-3">
+      {
+        kanallar.map((k) => (
+          <a
+            href={k.href}
+            target={k.dis ? '_blank' : undefined}
+            rel={k.dis ? 'noopener' : undefined}
+            class="rounded-xl border border-gray-200 p-5 transition hover:border-primary dark:border-slate-700"
+          >
+            <p class="text-xs font-semibold uppercase tracking-wider text-muted">{k.etiket}</p>
+            <p class="mt-2 font-semibold text-heading">{k.deger}</p>
+          </a>
+        ))
+      }
+    </div>
+
+    <div class="mt-6">
+      <a
+        href="/teklif-al/"
+        class="inline-flex items-center rounded-full bg-primary px-6 py-3 font-semibold text-white transition hover:opacity-90"
+      >
+        Ücretsiz ön değerlendirme formu
+      </a>
+    </div>
+
+    <div class="mt-12 grid gap-8 md:grid-cols-2">
+      <div>
+        <h2 class="text-xl font-bold text-heading">Hizmet bölgeleri</h2>
+        <p class="mt-3 text-muted">
+          <strong>Saha hizmeti:</strong> {site.hizmetIlleri.join(', ')}. OSGB'ler kurulu
+          oldukları il ve sınır komşusu illerde saha hizmeti verebilir; bu liste onun sonucu.
+        </p>
+        <p class="mt-3 text-muted">
+          <strong>Eğitim ve danışmanlık:</strong> 81 ilde planlanabilir. Az tehlikeli sınıfta
+          temel eğitimin tamamı uzaktan verilebiliyor.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-bold text-heading">Kim, neyi yürütüyor</h2>
+        <p class="mt-3 text-muted">
+          <strong>{site.name}</strong> — eğitim, danışmanlık, risk değerlendirmesi ve
+          dokümantasyon. Yürüten: {uzman.unvan}
+          {uzman.belgeSinifi ? ` (${uzman.belgeSinifi} sınıfı iş güvenliği uzmanı)` : ''}.
+        </p>
+        <p class="mt-3 text-muted">
+          <strong>{isOrtagi.ad}</strong> — Bakanlıkça yetkilendirilmiş çözüm ortağı. İş
+          güvenliği uzmanı ve işyeri hekimi görevlendirmeleri bu kuruluş üzerinden İSG-KATİP'e
+          kaydedilir.
+          {isOrtagi.adres && <span class="block mt-1 text-sm">{isOrtagi.adres}</span>}
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-12 rounded-2xl bg-gray-50 p-6 dark:bg-slate-800/60 md:p-8">
+      <h2 class="text-xl font-bold text-heading">Ulaşmadan önce hazırlarsanız hızlanır</h2>
+      <ul class="mt-4 list-disc space-y-2 pl-5 text-muted">
+        <li>Faaliyet alanınız veya NACE kodunuz (SGK tescil belgenizde yazar)</li>
+        <li>Toplam çalışan sayınız</li>
+        <li>İş yerinin bulunduğu il ve ilçe</li>
+        <li>Varsa mevcut risk değerlendirmesi ve son eğitim tarihleri</li>
+      </ul>
+      <p class="mt-4 text-sm text-muted">
+        Tehlike sınıfınızı bilmiyorsanız
+        <a class="underline underline-offset-4 hover:no-underline" href="/araclar/tehlike-sinifi-sorgulama/">
+          sorgulama aracından</a> bulabilir,
+        <a class="underline underline-offset-4 hover:no-underline" href="/araclar/isg-yukumluluk-hesaplama/">
+          yükümlülüğünüzü</a> kendiniz de çıkarabilirsiniz.
+      </p>
+    </div>
+  </section>
+</Layout>

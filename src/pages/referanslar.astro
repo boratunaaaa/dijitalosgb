@@ -61,11 +61,18 @@ const breadcrumb = {
 
     <div class="mb-14">
       <h2 class="text-2xl font-bold font-heading text-heading mb-2">
-        İSG uzmanı olarak görev alınan kurumlar
+        Saha deneyimimizden bazı projeler
       </h2>
-      <p class="text-muted mb-6">
-        {uzman.unvan}{uzman.belgeSinifi ? ` (${uzman.belgeSinifi} sınıfı)` : ''} olarak
-        görev alınan kurum ve projeler.
+      <p class="text-muted mb-2">
+        Ekibimizin geçmiş saha ve uzmanlık deneyiminde Türkiye'nin önde gelen kurum ve
+        yüklenicilerinin projeleri bulunuyor. {uzman.unvan}
+        {uzman.belgeSinifi ? ` (${uzman.belgeSinifi} sınıfı)` : ''} olarak bu projelerde
+        iş güvenliği uzmanı görevi üstlenildi.
+      </p>
+      <p class="text-sm text-muted mb-6">
+        Bu kurumlar {site.name}'in müşterisi olarak değil, görev alınan projelerin işvereni
+        veya yüklenicisi olarak listeleniyor. Marka adları yalnız bu bağlamı göstermek için
+        düz metin olarak veriliyor; logo kullanılmıyor.
       </p>
       <ul class="grid grid-cols-2 sm:grid-cols-4 gap-3">
         {
@@ -83,7 +90,7 @@ const breadcrumb = {
         Sözleşmeyle hizmet verilen iş yerleri
       </h2>
       <p class="text-muted mb-5 max-w-3xl">
-        Bu liste beyan değil: İSG-KATİP'te — Çalışma ve Sosyal Güvenlik
+        Liste, İSG-KATİP'te — Çalışma ve Sosyal Güvenlik
         Bakanlığı'nın kayıt sisteminde — adımıza tanımlanmış hizmet
         sözleşmelerinden çıkarıldı. {katipReferansSayisi} hizmet sözleşmesi, {benzersizSayisi} ayrı iş yeri.
         İnşaattan gıdaya, metalden lojistiğe her tehlike sınıfında saha

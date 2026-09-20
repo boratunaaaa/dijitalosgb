@@ -47,8 +47,8 @@ const sektorGorseli = (dosya?: string) =>
 <Layout metadata={metadata}>
   <Hero
     actions={[
-      { variant: 'primary', text: 'Yükümlülüğümü hesapla', href: '/araclar/isg-yukumluluk-hesaplama/' },
-      { text: 'Teklif al', href: '/teklif-al/' },
+      { variant: 'primary', text: 'Ücretsiz İSG ön değerlendirmesi al', href: '/teklif-al/' },
+      { text: "WhatsApp'tan uzmanla görüşün", href: `https://wa.me/${site.whatsapp}`, target: '_blank' },
     ]}
     image={{
       src: sahaDenetim,
@@ -56,21 +56,29 @@ const sektorGorseli = (dosya?: string) =>
     }}
   >
     <Fragment slot="title">
-      İş güvenliği hizmeti artık<br />
-      <span class="decoration-accent underline decoration-4 underline-offset-8">her iş yeri için zorunlu.</span>
+      İş sağlığı ve güvenliğinde<br />
+      <span class="decoration-accent underline decoration-4 underline-offset-8">uçtan uca çözüm ortağınız.</span>
     </Fragment>
     <Fragment slot="subtitle">
-      Kamu kurumlarına ve az tehlikeli sınıftaki küçük iş yerlerine tanınan süre
-      31 Aralık 2024'te doldu. Bugün bir çalışanı olan her iş yeri iş güvenliği uzmanı
-      ve işyeri hekimi görevlendirmek zorunda.{' '}
-      <strong>Soru artık "zorunlu mu" değil: size kaç saat ve hangi hizmet düşüyor?</strong>
-      {' '}İki dakikada çıkaralım.
+      Uzmanlık, işyeri hekimliği, risk değerlendirmesi, sağlık ve güvenlik planı, mobil sağlık,
+      çalışan eğitimleri, periyodik kontroller ve İSG dokümantasyonu tek noktadan yönetilsin.{' '}
+      <strong>
+        Kamu kurumlarına ve az tehlikeli sınıftaki küçük iş yerlerine tanınan süre 31 Aralık
+        2024'te doldu; bugün bir çalışanı olan her iş yeri kapsamda.
+      </strong>{' '}
+      Size kaç saat ve hangi hizmet düştüğünü
+      <a class="underline underline-offset-4 hover:no-underline" href="/araclar/isg-yukumluluk-hesaplama/">
+        iki dakikada çıkaralım</a>.
     </Fragment>
 
     {/* Güven şeridi: ilk ekranda cevaplanması gereken üç soru — kim veriyor,
         nerede veriyor, hangi yetkiyle. Hepsi doğrulanabilir olgular. */}
     <Fragment slot="trust">
-      <dl class="mt-9 grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-5 border-t border-gray-200 dark:border-slate-700 pt-6">
+      <dl class="mt-9 grid grid-cols-2 gap-x-6 gap-y-5 border-t border-gray-200 dark:border-slate-700 pt-6 sm:grid-cols-4">
+        <div>
+          <dt class="text-xs font-semibold uppercase tracking-wider text-muted">Saha deneyimi</dt>
+          <dd class="mt-1 font-semibold text-heading">{katipReferansSayisi} hizmet sözleşmesi</dd>
+        </div>
         <div>
           <dt class="text-xs font-semibold uppercase tracking-wider text-muted">Saha hizmeti</dt>
           <dd class="mt-1 font-semibold text-heading">İstanbul · Kocaeli · Tekirdağ</dd>
@@ -93,14 +101,14 @@ const sektorGorseli = (dosya?: string) =>
     Saha tecrübesi rakamları. Bu sitenin en güçlü güven unsuru buydu ama
     yalnız referanslar sayfasının içinde duruyordu; ana sayfaya gelen
     "bu firma benim ölçeğimi kaldırır mı" sorusu cevapsız kalıyordu.
-    Rakamlar İSG-KATİP sözleşme kaydından üretiliyor, beyan değil.
+    Rakamlar İSG-KATİP sözleşme kaydından üretiliyor.
   */}
   <section class="border-y border-gray-200 bg-gray-50 dark:border-slate-800 dark:bg-slate-900/40">
     <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-12">
       <h2 class="text-center text-2xl font-bold text-heading md:text-3xl">Rakamlarla saha tecrübesi</h2>
       <p class="mx-auto mt-3 max-w-2xl text-center text-muted">
-        Aşağıdaki sayılar beyan değil: Çalışma ve Sosyal Güvenlik Bakanlığı'nın kayıt sistemi
-        İSG-KATİP'te adımıza tanımlanmış hizmet sözleşmelerinden çıkarıldı.
+        Aşağıdaki sayılar, Çalışma ve Sosyal Güvenlik Bakanlığı'nın kayıt sistemi İSG-KATİP'te
+        adımıza tanımlanmış hizmet sözleşmelerinden çıkarılmıştır.
       </p>
       <dl class="mt-8 grid grid-cols-2 gap-6 text-center md:grid-cols-4">
         <div>
@@ -265,9 +273,9 @@ const sektorGorseli = (dosya?: string) =>
             metin: `İSG-KATİP kaydına göre ${cokTehlikeli} çok tehlikeli ve ${tehlikeli} tehlikeli sınıf iş yeri. Ofisten madene aynı mevzuat, farklı uygulama.`,
           },
           {
-            baslik: 'Yetki sınırları açık',
+            baslik: 'Yetkili hizmet ağı',
             metin:
-              'Saha OSGB hizmeti yetki belgeli iş ortağımız üzerinden yürüyor ve bunu sayfalarda açıkça yazıyoruz. Veremeyeceğimiz hizmeti taahhüt etmiyoruz.',
+              'Yetki gerektiren saha hizmetleri Bakanlıkça yetkilendirilmiş çözüm ortağımız üzerinden yürütülür; eğitim, danışmanlık ve dokümantasyon bizde kalır. Tek muhatap, net yetki sınırı.',
           },
           {
             baslik: 'Mevzuat takibi',
