@@ -169,3 +169,5 @@ export const mevzuatListesi: MevzuatKaydi[] = [
     konu: "Hayati tehlike arz eden durumlarda iş müfettişleri tarafından işin nasıl durdurulacağı ve eksiklerin giderilip mühürün açılma süreci.",
   },
 ];
+
+export const mevzuatSayisi = mevzuatListesi.length;

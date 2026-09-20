@@ -15,6 +15,7 @@ import { hizmetler } from '~/data/hizmetler';
 import { sektorler } from '~/data/sektorler';
 import { levhaSayisi } from '~/data/levhalar';
 import { formSayisi } from '~/data/kutuphane';
+import { mevzuatSayisi } from '~/data/mevzuat-listesi';
 import { sahaTecrubesi, sozlesmeGosterimi } from '~/data/katip-referanslar';
 import { paketler } from '~/data/paketler';
 
@@ -449,7 +450,7 @@ const sektorGorseli = (dosya?: string) =>
         </li>
         <li>
           <a href="/isg-kutuphanesi/mevzuat/" class="group block h-full rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-gray-200 dark:ring-slate-700 p-5 transition hover:ring-primary/40">
-            <span class="block text-2xl font-bold text-heading tabular-nums">15</span>
+            <span class="block text-2xl font-bold text-heading tabular-nums">{mevzuatSayisi}</span>
             <span class="block font-semibold text-heading mt-0.5 group-hover:text-primary transition">Mevzuat başlığı</span>
             <span class="block text-sm text-muted mt-1">Hangi kural nerede yazıyor.</span>
           </a>
