@@ -15,15 +15,19 @@ const metadata = {
 // Person şeması: Google'ın "bu içeriği kim yazıyor" sorusunun cevabı.
 // Yalnız DOĞRULANMIŞ alanlar basılıyor; belge sınıfı ve diploma teyit
 // edilmeden şemaya da sayfaya da girmiyor.
-const kisi: Record<string, unknown> = {
+// Ad boşsa Person şeması HİÇ üretilmiyor: adsız bir Person düğümü hem
+// şema açısından geçersiz hem de "kim" sorusuna cevap vermiyor.
+const kisi: Record<string, unknown> | null = uzman.ad
+  ? {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: uzman.ad,
   jobTitle: uzman.belgeSinifi ? `${uzman.belgeSinifi} Sınıfı ${uzman.unvan}` : uzman.unvan,
   worksFor: { '@type': 'Organization', name: site.name, url: site.url },
   knowsAbout: ['İş sağlığı ve güvenliği', 'Risk değerlendirmesi', 'Acil durum planlaması', 'İSG eğitimi'],
-};
-if (uzman.egitim.length) kisi.alumniOf = uzman.egitim;
+    }
+  : null;
+if (kisi && uzman.egitim.length) kisi.alumniOf = uzman.egitim;
 
 const structuredData = [
   {
@@ -32,7 +36,7 @@ const structuredData = [
     name: 'Hakkımızda',
     url: `${site.url}/hakkimizda/`,
   },
-  kisi,
+  ...(kisi ? [kisi] : []),
 ];
 ---
 <Layout metadata={metadata}>
@@ -107,7 +111,7 @@ const structuredData = [
     ]}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold">{uzman.ad}</h3>
+      {uzman.ad && <h3 class="text-2xl font-bold">{uzman.ad}</h3>}
       <p class="mt-1 text-sm font-medium uppercase tracking-wider text-muted">
         {uzman.belgeSinifi ? `${uzman.belgeSinifi} sınıfı ${uzman.unvan.toLocaleLowerCase('tr-TR')}` : uzman.unvan}
       </p>

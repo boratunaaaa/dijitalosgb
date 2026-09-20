@@ -96,21 +96,30 @@ export const veriSorumlusuEksikleri = ([
  * teyit edilmeden yazılırsa sitenin tüm güvenilirliğini götürür.
  */
 export const uzman = {
-  ad: "Mehmet Kadir Uğur",
+  /**
+   * Kişi adı. KULLANICI TERCİHİYLE BOŞ (2026-09-20) — sitede şahsî kimlik
+   * gösterilmiyor; yetki ve belge sınıfı gösteriliyor.
+   *
+   * Boşken: hakkımızda sayfasında Person şeması hiç üretilmez, ad başlıkları
+   * basılmaz, blog yazısı altındaki uzman kutusu unvanla gösterilir.
+   *
+   * NOT: KVKK aydınlatma metnindeki `veriSorumlusu.unvan` AYRI bir alandır ve
+   * mevzuat gereği (KVKK m.10) orada kimlik gösterilmek zorundadır; bu yüzden
+   * o alan boşaltılmadı.
+   */
+  ad: "",
   unvan: "İş Güvenliği Uzmanı",
   belgeSinifi: "A",  // kullanıcı 2026-09-19'da teyit etti
   belgeNo: "",       // BELGE NUMARASI UYDURULMAZ — teyit bekliyor, boşken hiç basılmıyor
   /**
-   * Öğrenim. Kullanıcı 2026-09-20'de bildirdi.
-   * Lisans için üniversite adı teyitli olduğu için yazıldı; yüksek lisansın
-   * yapıldığı üniversite TEYİT EDİLMEDİĞİ için kurum adı YAZILMADI.
-   * Diploma iddiası düzenlenmiş meslekî bir beyandır; doğrulanmadan yazılırsa
-   * sitenin tüm güvenilirliğini götürür.
+   * Öğrenim. KULLANICI TERCİHİYLE BOŞ — 2026-09-20'de "şahsi bilgilerimi
+   * kaldır, o kadar detaya gerek yok" talimatı geldi. Üniversite adı ve
+   * diploma satırları siteden çıkarıldı.
+   *
+   * Boş bırakıldığında hiçbir sayfada basılmaz; Person şemasının alumniOf
+   * alanı da üretilmez. Doldurulursa eski davranış aynen geri gelir.
    */
-  egitim: [
-    "Balıkesir Üniversitesi, Kimya (lisans)",
-    "İş Sağlığı ve Güvenliği (yüksek lisans)",
-  ] as string[],
+  egitim: [] as string[],
   deneyim:
     "Yaklaşık beş yıllık saha deneyimi. Çalışılan sektörler: inşaat, tersane, hastane ve " +
     "sağlık kurumları, lojistik, metal, plastik, tekstil, otomotiv, kimya ve gıda.",

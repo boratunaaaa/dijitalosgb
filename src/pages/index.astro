@@ -15,7 +15,7 @@ import { hizmetler } from '~/data/hizmetler';
 import { sektorler } from '~/data/sektorler';
 import { levhaSayisi } from '~/data/levhalar';
 import { formSayisi } from '~/data/kutuphane';
-import { katipReferanslari, sozlesmeGosterimi } from '~/data/katip-referanslar';
+import { sahaTecrubesi, sozlesmeGosterimi } from '~/data/katip-referanslar';
 import { paketler } from '~/data/paketler';
 
 // Ana sayfada gösterilecek altı hizmet. Tam liste hizmetler sayfasında;
@@ -35,9 +35,6 @@ const anaHizmetler = ANA_HIZMET_SLUG.map((sl) => hizmetler.find((h) => h.slug ==
 // Saha tecrübesi rakamları BURADA ÜRETİLİYOR, elle yazılmıyor: kaynak
 // İSG-KATİP sözleşme listesinin kendisi. Liste değişince ana sayfa da
 // değişir; "300+" gibi zamanla yalan olacak yuvarlak bir sayı yazılmıyor.
-const benzersizIsYeri = new Set(katipReferanslari.map((k) => k.ad)).size;
-const cokTehlikeli = katipReferanslari.filter((k) => k.sinif === 'cok').length;
-const tehlikeli = katipReferanslari.filter((k) => k.sinif === 'teh').length;
 
 const metadata = {
   /*
@@ -148,27 +145,19 @@ const sektorGorseli = (dosya?: string) =>
     <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-12">
       <h2 class="text-center text-2xl font-bold text-heading md:text-3xl">Rakamlarla saha tecrübesi</h2>
       <p class="mx-auto mt-3 max-w-2xl text-center text-muted">
-        Bugüne kadar {sozlesmeGosterimi} hizmet sözleşmesi. Aşağıdaki sayılar, Çalışma ve Sosyal
-        Güvenlik Bakanlığı'nın kayıt sistemi İSG-KATİP'te adımıza tanımlanmış sözleşmelerden
-        çıkarılan, iş yeri adıyla listelenebilen bölümdür.
+        Bugüne kadar {sozlesmeGosterimi} hizmet sözleşmesi — Çalışma ve Sosyal Güvenlik
+        Bakanlığı'nın kayıt sistemi İSG-KATİP üzerinden. Sözleşmeli iş yerlerinin adıyla
+        listelenebilen bölümünü referanslar sayfasında görebilirsiniz.
       </p>
       <dl class="mt-8 grid grid-cols-2 gap-6 text-center md:grid-cols-4">
-        <div>
-          <dt class="text-3xl font-bold tabular-nums text-heading md:text-4xl">{benzersizIsYeri}</dt>
-          <dd class="mt-1 text-sm text-muted">ayrı iş yeri</dd>
-        </div>
-        <div>
-          <dt class="text-3xl font-bold tabular-nums text-heading md:text-4xl">{cokTehlikeli}</dt>
-          <dd class="mt-1 text-sm text-muted">çok tehlikeli sınıf</dd>
-        </div>
-        <div>
-          <dt class="text-3xl font-bold tabular-nums text-heading md:text-4xl">{tehlikeli}</dt>
-          <dd class="mt-1 text-sm text-muted">tehlikeli sınıf</dd>
-        </div>
-        <div>
-          <dt class="text-3xl font-bold text-heading md:text-4xl">A</dt>
-          <dd class="mt-1 text-sm text-muted">sınıfı İSG uzmanı</dd>
-        </div>
+        {
+          sahaTecrubesi.map((x) => (
+            <div>
+              <dt class="text-3xl font-bold tabular-nums text-heading md:text-4xl">{x.sayi}</dt>
+              <dd class="mt-1 text-sm text-muted">{x.etiket}</dd>
+            </div>
+          ))
+        }
       </dl>
       <p class="mt-6 text-center text-sm">
         <a class="font-medium underline underline-offset-4 hover:no-underline" href="/referanslar/">
@@ -245,7 +234,7 @@ const sektorGorseli = (dosya?: string) =>
           },
           {
             baslik: 'Her tehlike sınıfında saha',
-            metin: `İSG-KATİP kaydına göre ${cokTehlikeli} çok tehlikeli ve ${tehlikeli} tehlikeli sınıf iş yeri. Ofisten madene aynı mevzuat, farklı uygulama.`,
+            metin: 'Az tehlikeliden çok tehlikeliye üç sınıfta da sözleşmeli iş yeri deneyimi. Ofisten madene aynı mevzuat, farklı uygulama.',
           },
           {
             baslik: 'Yetkili hizmet ağı',

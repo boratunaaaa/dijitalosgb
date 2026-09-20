@@ -157,16 +157,16 @@ const tarihYaz = (t: string) =>
     </div>
 
     {
-      uzman.ad && (
+      uzman.unvan && (
         <div class="mt-12 p-6 md:p-8 rounded-2xl bg-gray-50 dark:bg-slate-800 ring-1 ring-gray-200 dark:ring-slate-700 flex flex-col md:flex-row items-center md:items-start gap-6">
           <div class="shrink-0">
             <div class="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-2xl font-heading">
-              {uzman.ad.split(' ').map(n => n[0]).join('')}
+              {uzman.belgeSinifi || 'İSG'}
             </div>
           </div>
           <div class="text-center md:text-left">
             <p class="text-xs font-semibold uppercase tracking-wider text-muted mb-1">Siteyi yürüten uzman</p>
-            <h3 class="text-xl font-bold font-heading text-heading">{uzman.ad}</h3>
+            {uzman.ad && <h3 class="text-xl font-bold font-heading text-heading">{uzman.ad}</h3>}
             <p class="text-primary font-semibold text-sm mb-2">{uzman.unvan} {uzman.belgeSinifi && `(${uzman.belgeSinifi} Sınıfı)`}</p>
             <p class="text-muted text-sm">{uzman.ozet}</p>
             <p class="text-muted text-sm mt-2">

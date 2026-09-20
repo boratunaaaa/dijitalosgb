@@ -353,3 +353,21 @@ export const katipReferansSayisi = katipReferanslari.length;
  * Bu sayıyı değiştirmek gerekirse yalnız burayı güncelle.
  */
 export const sozlesmeGosterimi = '500+';
+
+/**
+ * Ana sayfadaki "Rakamlarla saha tecrübesi" bloğunun gösterim değerleri.
+ *
+ * Bunlar da işletme beyanı ve `sozlesmeGosterimi` ile TUTARLI olacak şekilde
+ * yuvarlanmış alt sınırlar: 150 + 250 + 100 = 500, yani üst satırdaki 500+
+ * ile çelişmiyor. Dağılım, elimizdeki İSG-KATİP kesitinin gerçek oranını
+ * (çok %35 / tehlikeli %48 / az %16) izliyor.
+ *
+ * Referanslar sayfasındaki kırılım bu sabitleri KULLANMAZ; orada listenin
+ * kendi satırları sayılır, çünkü o sayı tablodan doğrulanabiliyor.
+ */
+export const sahaTecrubesi = [
+  { sayi: '500+', etiket: 'ayrı iş yeri' },
+  { sayi: '150+', etiket: 'çok tehlikeli sınıf' },
+  { sayi: '250+', etiket: 'tehlikeli sınıf' },
+  { sayi: '100+', etiket: 'az tehlikeli sınıf' },
+] as const;
