@@ -1,10 +1,19 @@
 ---
 // Favicon markanın kask amblemi. SVG sürüm yok: logo raster olarak geldi,
 // vektöre çevirmek amblemin degrade ve gölgelerini bozuyordu.
-import favIcon from '~/assets/favicons/favicon.ico';
+//
+// DİKKAT — birincil ikon BİLEREK `/favicon.ico` sabit yolu:
+// Google arama sonucundaki site ikonunu ayrı bir tarayıcıyla çeker ve önce
+// alan adının kökündeki /favicon.ico dosyasına bakar. Astro, içe aktarılan
+// ikonu `/_astro/favicon.<hash>.ico` diye adlandırıyor; kökte dosya olmadığı
+// sürece Google orada ne bulursa onu gösterir. Bu sitede kökte AstroWind
+// şablonundan kalma Astro logosu duruyordu ve aramada o görünüyordu.
+// Bu yüzden ikon public/favicon.ico olarak kökte duruyor ve buradan sabit,
+// hash'siz yolla bağlanıyor. Dosya 16'dan 256 piksele kadar altı boy taşır.
 import appleTouchIcon from '~/assets/favicons/apple-touch-icon.png';
 ---
 
-<link rel="shortcut icon" href={favIcon} />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="shortcut icon" href="/favicon.ico" />
 <link rel="icon" type="image/png" sizes="180x180" href={appleTouchIcon.src} />
 <link rel="apple-touch-icon" sizes="180x180" href={appleTouchIcon.src} />

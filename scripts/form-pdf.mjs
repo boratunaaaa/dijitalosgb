@@ -54,7 +54,17 @@ function alanHtml(a) {
   if (a.tip === 'tablo') {
     const bas = a.basliklar.map((b) => `<th>${kac(b)}</th>`).join('');
     const bosSatir = `<tr>${a.basliklar.map(() => '<td></td>').join('')}</tr>`;
-    return `<table><thead><tr>${bas}</tr></thead><tbody>${bosSatir.repeat(a.satirSayisi)}</tbody></table>`;
+    // Dolu satırlar: ilk sütunda madde yazılı, kalan sütunlar işaretlenmek üzere boş.
+    const doluSatirlar = (a.satirlar ?? [])
+      .map(
+        (m) =>
+          `<tr><td class="madde">${kac(m)}</td>${a.basliklar
+            .slice(1)
+            .map(() => '<td></td>')
+            .join('')}</tr>`
+      )
+      .join('');
+    return `<table><thead><tr>${bas}</tr></thead><tbody>${doluSatirlar}${bosSatir.repeat(a.satirSayisi)}</tbody></table>`;
   }
   if (a.tip === 'not') {
     return `<p class="not">${kac(a.metin)}</p>`;
@@ -68,7 +78,10 @@ function sayfaHtml(form) {
   return `<!doctype html><html lang="tr"><head><meta charset="utf-8"><style>
   @page { size: A4 ${form.yatay ? 'landscape' : 'portrait'}; margin: 12mm 12mm 14mm; }
   * { box-sizing: border-box; }
-  body { margin:0; font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; color:#111; font-size:9pt; }
+  /* padding-bottom BİLEREK: altbilgi position:fixed ve içerik akışının dışında.
+     Sayfayı dolduran bir formda imza kutuları altbilginin üstüne biniyordu;
+     bu boşluk akan içeriğin altbilgi bandına girmesini engelliyor. */
+  body { margin:0; padding-bottom:10mm; font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; color:#111; font-size:9pt; }
   header { border-bottom: 1.2pt solid #111; padding-bottom: 3mm; margin-bottom: 5mm;
            display:flex; justify-content:space-between; align-items:flex-end; gap:10mm; }
   h1 { font-size: 14pt; margin:0; letter-spacing:-.01em; }
@@ -83,6 +96,8 @@ function sayfaHtml(form) {
   th,td { border:.5pt solid #999; padding:1.5mm 2mm; font-size:8pt; text-align:left; }
   th { background:#f1f1f1; font-size:7.5pt; text-transform:uppercase; letter-spacing:.03em; }
   td { height:7mm; }
+  /* Baskıda dolu gelen kontrol maddesi: normal hücreden biraz dar ve sola dayalı. */
+  td.madde { height:auto; line-height:1.25; padding:1.8mm 2mm; }
   .not { border:.5pt solid #999; background:#fafafa; padding:3mm; font-size:8pt; line-height:1.45; margin:0 0 5mm; }
   .imzalar { display:flex; gap:8mm; margin-top:4mm; }
   .imza { flex:1; display:flex; flex-direction:column; gap:1.5mm; font-size:8pt; color:#444; }

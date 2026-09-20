@@ -12,7 +12,18 @@
 
 export type FormAlani =
   | { tip: 'satir'; etiket: string; genislik?: 'tam' | 'yarim' | 'ucte' }
-  | { tip: 'tablo'; basliklar: string[]; satirSayisi: number }
+  | {
+      tip: 'tablo';
+      basliklar: string[];
+      /** Boş bırakılacak satır sayısı. `satirlar` verildiyse ONUN ARDINA eklenir. */
+      satirSayisi: number;
+      /**
+       * İlk sütunu baskıda dolu gelen satırlar — kontrol listeleri için.
+       * İzin formunda maddeler formun kendi içeriğidir; bunları nota yazıp
+       * kullanıcıya tabloya elle geçirtmek formu yarım bırakıyordu.
+       */
+      satirlar?: string[];
+    }
   | { tip: 'metin'; etiket: string; satir: number }
   | { tip: 'imza'; roller: string[] }
   | { tip: 'not'; metin: string };
@@ -141,7 +152,7 @@ export const formlar: Form[] = [
           'Kontrolü yapan',
           'Sonuç',
         ],
-        satirSayisi: 16,
+        satirSayisi: 14,
       },
       { tip: 'imza', roller: ['Hazırlayan', 'İşveren / vekili'] },
     ],
@@ -207,9 +218,450 @@ export const formlar: Form[] = [
       {
         tip: 'tablo',
         basliklar: ['Kontrol konusu', 'Uygun', 'Uygun değil', 'Bulgu / açıklama', 'Sorumlu', 'Termin'],
-        satirSayisi: 18,
+        satirSayisi: 14,
       },
       { tip: 'imza', roller: ['Denetimi yapan', 'Bölüm sorumlusu'] },
+    ],
+  },
+  {
+    slug: 'calisan-temsilcisi-secim-tutanagi',
+    ad: 'Çalışan temsilcisi seçim tutanağı',
+    ozet: 'Temsilcinin seçimle belirlendiğini gösteren kayıt. Uygulamada en sık atlanan belgelerden biri.',
+    dayanak:
+      '6331 sayılı Kanun, iş yerinde çalışan temsilcisi görevlendirilmesini; bunun çalışanlar arasında yapılacak seçimle, seçimle belirlenemediği durumda atama yoluyla yapılmasını öngörür.',
+    alanlar: [
+      { tip: 'satir', etiket: 'İş yeri unvanı', genislik: 'yarim' },
+      { tip: 'satir', etiket: 'SGK iş yeri sicil no', genislik: 'yarim' },
+      { tip: 'satir', etiket: 'Toplam çalışan sayısı', genislik: 'ucte' },
+      { tip: 'satir', etiket: 'Belirlenecek temsilci sayısı', genislik: 'ucte' },
+      { tip: 'satir', etiket: 'Seçim tarihi', genislik: 'ucte' },
+      { tip: 'satir', etiket: 'Belirleme yöntemi (seçim / atama)', genislik: 'tam' },
+      {
+        tip: 'tablo',
+        basliklar: ['Aday adı soyadı', 'Bölümü', 'Aldığı oy', 'Sonuç'],
+        satirSayisi: 6,
+      },
+      { tip: 'metin', etiket: 'Seçimin nasıl yapıldığı (duyuru, oylama biçimi, katılım)', satir: 4 },
+      {
+        tip: 'tablo',
+        basliklar: ['Seçilen temsilci', 'Temsil ettiği bölüm', 'İletişim', 'İmza'],
+        satirSayisi: 3,
+      },
+      {
+        tip: 'not',
+        metin:
+          'Çalışan temsilcisi, görevini yürütmesi nedeniyle hakları kısıtlanamaz. Temsilcinin adı ve iletişim bilgisi çalışanların görebileceği bir yerde ilan edilir.',
+      },
+      { tip: 'imza', roller: ['Seçim kurulu / gözlemci', 'Çalışan temsilcisi', 'İşveren / vekili'] },
+    ],
+  },
+  {
+    slug: 'acil-durum-ekipleri-gorevlendirme-tutanagi',
+    ad: 'Acil durum ekipleri görevlendirme tutanağı',
+    ozet: 'Söndürme, kurtarma, koruma ve ilk yardım ekiplerinin kim olduğunu yazıya döker.',
+    dayanak:
+      'İş yerlerinde acil durumlar hakkındaki yönetmelik, tehlike sınıfı ve çalışan sayısına göre arama-kurtarma-tahliye ve yangınla mücadele ekiplerinin oluşturulmasını, görevlendirilenlere eğitim verilmesini zorunlu tutar.',
+    alanlar: [
+      { tip: 'satir', etiket: 'İş yeri unvanı', genislik: 'yarim' },
+      { tip: 'satir', etiket: 'Tehlike sınıfı', genislik: 'ucte' },
+      { tip: 'satir', etiket: 'Çalışan sayısı', genislik: 'ucte' },
+      {
+        tip: 'not',
+        metin:
+          'Ekip sayısı hesabı: arama-kurtarma-tahliye ile yangınla mücadele için AYRI AYRI olmak üzere, çok tehlikeli sınıfta her 30 çalışana, tehlikeli sınıfta her 40 çalışana, az tehlikeli sınıfta her 50 çalışana en az bir çalışan görevlendirilir.',
+      },
+      {
+        tip: 'tablo',
+        basliklar: ['Ekip', 'Adı soyadı', 'Görevi / bölümü', 'Eğitim tarihi', 'İmza'],
+        satirSayisi: 12,
+      },
+      { tip: 'satir', etiket: 'Toplanma yeri', genislik: 'yarim' },
+      { tip: 'satir', etiket: 'Acil durumda aranacak ilk kişi / telefon', genislik: 'yarim' },
+      {
+        tip: 'not',
+        metin:
+          'Görevlendirilen çalışana görevi yazılı olarak tebliğ edilir. Ekibi kâğıt üzerinde kurup çalışana haber vermemek, bu kaydı geçersiz kılar.',
+      },
+      { tip: 'imza', roller: ['İş güvenliği uzmanı', 'İşveren / vekili'] },
+    ],
+  },
+  {
+    slug: 'isg-yillik-calisma-plani',
+    ad: 'İSG yıllık çalışma planı',
+    ozet: 'Uzman ve hekimin yıl boyunca ne zaman ne yapacağı. Denetimde ilk istenen belgelerden.',
+    dayanak:
+      'İş güvenliği uzmanı ve işyeri hekimi, yürütecekleri hizmetlere ilişkin yıllık çalışma planını hazırlayıp işverene sunmakla yükümlüdür.',
+    yatay: true,
+    alanlar: [
+      { tip: 'satir', etiket: 'İş yeri unvanı', genislik: 'yarim' },
+      { tip: 'satir', etiket: 'Plan yılı', genislik: 'ucte' },
+      { tip: 'satir', etiket: 'Tehlike sınıfı', genislik: 'ucte' },
+      {
+        tip: 'tablo',
+        basliklar: ['Faaliyet', 'Sorumlu', 'Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz', 'Tem', 'Ağu', 'Eyl', 'Eki', 'Kas', 'Ara'],
+        satirSayisi: 10,
+      },
+      {
+        tip: 'not',
+        metin:
+          'Plana en az şunlar girer: risk değerlendirmesinin gözden geçirilmesi, temel ve yenileme eğitimleri, işe giriş ve periyodik muayeneler, ortam ölçümleri, ekipman periyodik kontrolleri, acil durum tatbikatı, saha denetimleri ve kurul toplantıları.',
+      },
+      { tip: 'imza', roller: ['İş güvenliği uzmanı', 'İşyeri hekimi', 'İşveren / vekili'] },
+    ],
+  },
+  {
+    slug: 'isg-yillik-degerlendirme-raporu',
+    ad: 'İSG yıllık değerlendirme raporu',
+    ozet: 'Yıl sonunda planın ne kadarının gerçekleştiğini ve rakamları gösteren rapor.',
+    dayanak:
+      'İş güvenliği uzmanı ve işyeri hekimi, yıllık çalışma planında yer alan konuların gerçekleşme durumunu yıllık değerlendirme raporuyla kayıt altına alır.',
+    alanlar: [
+      { tip: 'satir', etiket: 'İş yeri unvanı', genislik: 'yarim' },
+      { tip: 'satir', etiket: 'Rapor yılı', genislik: 'yarim' },
+      {
+        tip: 'tablo',
+        basliklar: ['Konu', 'Planlanan', 'Gerçekleşen', 'Gerçekleşmediyse nedeni'],
+        satirSayisi: 7,
+      },
+      {
+        tip: 'tablo',
+        basliklar: ['Sayısal veriler', 'Adet'],
+        satirlar: [
+          'İş kazası sayısı',
+          'Kayıp gün sayısı',
+          'Ramak kala bildirimi sayısı',
+          'Meslek hastalığı şüphesiyle sevk sayısı',
+          'Eğitim verilen çalışan sayısı',
+          'Yapılan periyodik muayene sayısı',
+          'Tamamlanan ekipman periyodik kontrolü sayısı',
+          'Yapılan saha denetimi sayısı',
+        ],
+        satirSayisi: 2,
+      },
+      { tip: 'metin', etiket: 'Gelecek yıl için öneriler', satir: 6 },
+      { tip: 'imza', roller: ['İş güvenliği uzmanı', 'İşyeri hekimi', 'İşveren / vekili'] },
+    ],
+  },
+  {
+    slug: 'sicak-calisma-izin-formu',
+    ad: 'Sıcak çalışma izin formu',
+    ozet: 'Kaynak, kesme, taşlama gibi kıvılcım çıkaran işler için izin belgesi. Yangının en sık nedeni.',
+    dayanak:
+      'İşveren, risk değerlendirmesi sonucunda tespit edilen yüksek riskli işler için çalışma öncesinde güvenli çalışma koşullarını sağlamak ve denetlemekle yükümlüdür. Kıvılcım çıkaran işler bu kapsamda izinle yürütülür.',
+    alanlar: [
+      { tip: 'satir', etiket: 'İzin no', genislik: 'ucte' },
+      { tip: 'satir', etiket: 'Tarih', genislik: 'ucte' },
+      { tip: 'satir', etiket: 'Geçerlilik saati (başlangıç - bitiş)', genislik: 'ucte' },
+      { tip: 'satir', etiket: 'Çalışma yeri', genislik: 'yarim' },
+      { tip: 'satir', etiket: 'Yapılacak iş (kaynak / kesme / taşlama)', genislik: 'yarim' },
+      { tip: 'satir', etiket: 'İşi yapacak kişi(ler)', genislik: 'yarim' },
+      { tip: 'satir', etiket: 'Yangın gözcüsü', genislik: 'yarim' },
+      {
+        tip: 'tablo',
+        basliklar: ['Çalışma öncesi kontrol', 'Evet', 'Hayır', 'Uygun değil'],
+        satirlar: [
+          'Yanıcı malzeme 11 metre yarıçapındaki alandan uzaklaştırıldı',
+          'Uzaklaştırılamayan malzeme yanmaz örtüyle kapatıldı',
+          'Zemin ve duvardaki delik, çatlak ve boşluklar kapatıldı',
+          'Uygun tip ve sayıda yangın söndürücü çalışma noktasında hazır',
+          'Ortamda gaz ölçümü yapıldı, patlayıcı ortam yok',
+          'Yanıcı sıvı/gaz hattı boşaltıldı, temizlendi veya kör tapalandı',
+          'Havalandırma sağlandı, duman tahliyesi planlandı',
+          'Ekipman kabloları, hortumları ve topraklama bağlantısı sağlam',
+          'Yangın algılama sistemi gerekiyorsa devre dışı bırakıldı ve not edildi',
+          'İşi yapacak kişinin mesleki yeterlilik / kaynakçı belgesi geçerli',
+          'Kaynak maskesi, eldiven, önlük ve gözlük dahil KKD eksiksiz',
+          'Çalışma bitiminde en az 60 dakika gözetim planlandı',
+        ],
+        satirSayisi: 3,
+      },
+      { tip: 'metin', etiket: 'İlave önlemler', satir: 3 },
+      {
+        tip: 'not',
+        metin:
+          'Çalışma bittikten sonra alan en az 60 dakika gözetlenir. Kor hâlindeki kıvılcımın alev almasına kadar geçen süre bu yüzden izinden sayılır.',
+      },
+      { tip: 'imza', roller: ['İzni isteyen', 'Yangın gözcüsü', 'İş güvenliği uzmanı', 'İzni veren'] },
+    ],
+  },
+  {
+    slug: 'yuksekte-calisma-izin-formu',
+    ad: 'Yüksekte çalışma izin formu',
+    ozet: 'Ölümlü kazaların başlıca nedeni. Çalışma öncesi ankraj ve toplu korumanın kontrolü.',
+    dayanak:
+      'Yapı işlerinde iş sağlığı ve güvenliği yönetmeliği, seviye farkı bulunan ve düşme riski olan yerlerde önce toplu koruma önlemlerinin alınmasını, bunun mümkün olmadığı hâllerde kişisel düşme durdurma sistemi kullanılmasını öngörür.',
+    alanlar: [
+      { tip: 'satir', etiket: 'İzin no', genislik: 'ucte' },
+      { tip: 'satir', etiket: 'Tarih', genislik: 'ucte' },
+      { tip: 'satir', etiket: 'Geçerlilik saati', genislik: 'ucte' },
+      { tip: 'satir', etiket: 'Çalışma yeri ve yüksekliği', genislik: 'yarim' },
+      { tip: 'satir', etiket: 'Yapılacak iş', genislik: 'yarim' },
+      {
+        tip: 'tablo',
+        basliklar: ['Çalışan adı soyadı', 'Yüksekte çalışma eğitimi', 'Sağlık raporu uygun', 'İmza'],
+        satirSayisi: 5,
+      },
+      {
+        tip: 'tablo',
+        basliklar: ['Çalışma öncesi kontrol', 'Evet', 'Hayır', 'Uygun değil'],
+        satirlar: [
+          'Önce toplu koruma: kenar koruyucu (korkuluk) veya güvenlik ağı kuruldu',
+          'İskele yetkili kişice kuruldu, kontrol edildi ve etiketlendi',
+          'Uygun ankraj noktası veya yaşam hattı mevcut ve taşıma kapasitesi yeterli',
+          'Paraşüt tipi emniyet kemeri ve bağlantı elemanı gözle kontrol edildi',
+          'Merdiven / seyyar platform sağlam, sabitlendi, devrilme riski yok',
+          'Altındaki bölge kapatıldı, uyarı levhası ve bariyer kondu',
+          'Düşebilecek alet ve malzeme bağlandı veya emniyete alındı',
+          'Hava koşulları uygun (rüzgâr, buzlanma, yağış)',
+          'Enerjili elektrik hatlarına güvenli mesafe sağlandı',
+          'Askıda kalma için kurtarma planı yapıldı, ekipmanı hazır',
+        ],
+        satirSayisi: 3,
+      },
+      {
+        tip: 'not',
+        metin:
+          'Emniyet kemeri tek başına önlem değildir: bağlanacak uygun bir ankraj noktası yoksa kemer koruma sağlamaz. Askıda kalma travmasına karşı kurtarma planı önceden yapılır.',
+      },
+      { tip: 'imza', roller: ['İzni isteyen', 'İş güvenliği uzmanı', 'İzni veren'] },
+    ],
+  },
+  {
+    slug: 'kapali-alan-calisma-izin-formu',
+    ad: 'Kapalı (dar) alan çalışma izin formu',
+    ozet: 'Tank, silo, rögar, kazan. Ölçüm yapılmadan girilen kapalı alan en ölümcül iş.',
+    dayanak:
+      'İşveren, boğucu veya parlayıcı ortam oluşabilen, girişi ve çıkışı sınırlı alanlarda çalışma öncesinde ölçüm yaptırmak, havalandırmayı sağlamak ve gözetim düzenini kurmakla yükümlüdür.',
+    alanlar: [
+      { tip: 'satir', etiket: 'İzin no', genislik: 'ucte' },
+      { tip: 'satir', etiket: 'Tarih', genislik: 'ucte' },
+      { tip: 'satir', etiket: 'Geçerlilik saati', genislik: 'ucte' },
+      { tip: 'satir', etiket: 'Kapalı alanın tanımı (tank / silo / rögar / kazan)', genislik: 'yarim' },
+      { tip: 'satir', etiket: 'Yapılacak iş', genislik: 'yarim' },
+      { tip: 'satir', etiket: 'Girecek kişi(ler)', genislik: 'yarim' },
+      { tip: 'satir', etiket: 'Dışarıda bekleyen gözcü', genislik: 'yarim' },
+      {
+        tip: 'tablo',
+        basliklar: ['Gaz ölçümü', 'Sınır', 'Giriş öncesi', 'Ara ölçüm 1', 'Ara ölçüm 2'],
+        satirlar: ['Oksijen (%)', 'Patlayıcı gaz (LEL %)', 'Karbon monoksit (ppm)', 'Hidrojen sülfür (ppm)'],
+        satirSayisi: 2,
+      },
+      {
+        tip: 'tablo',
+        basliklar: ['Çalışma öncesi kontrol', 'Evet', 'Hayır', 'Uygun değil'],
+        satirlar: [
+          'Alan boşaltıldı, temizlendi ve kalıntı giderildi',
+          'Besleme hatları ayrıldı veya kör tapalandı',
+          'Enerji kesildi ve kilitlendi (LOTO formu dolduruldu)',
+          'Zorlamalı havalandırma kuruldu ve çalışıyor',
+          'Aydınlatma güvenli gerilimde, ekipman patlamaya karşı korumalı',
+          'Giriş ve çıkış yolu açık, engel yok',
+          'Gözcü ile haberleşme yöntemi belirlendi ve denendi',
+          'Kurtarma ekipmanı hazır (üçayak, halat, solunum cihazı)',
+          'Gözcü görevlendirildi ve sürekli dışarıda kalacağı tebliğ edildi',
+          'Acil durumda aranacak kişi ve numara belirlendi',
+        ],
+        satirSayisi: 2,
+      },
+      {
+        tip: 'not',
+        metin:
+          'Gözcü hiçbir koşulda içeri girmez. Kapalı alan ölümlerinin büyük bölümü, kurtarmak için içeri giren ikinci kişidir.',
+      },
+      { tip: 'imza', roller: ['Girecek çalışan', 'Gözcü', 'İş güvenliği uzmanı', 'İzni veren'] },
+    ],
+  },
+  {
+    slug: 'enerji-kesme-kilitleme-loto-formu',
+    ad: 'Enerji kesme ve kilitleme (LOTO) formu',
+    ozet: 'Bakım sırasında makinenin beklenmedik şekilde çalışmasını önleyen kayıt.',
+    dayanak:
+      'İş ekipmanlarının kullanımında sağlık ve güvenlik şartları yönetmeliği, bakım ve onarım işlerinde ekipmanın enerjisinin kesilmesini ve çalışma süresince güvenliğin sağlanmasını öngörür.',
+    alanlar: [
+      { tip: 'satir', etiket: 'Ekipman / hat', genislik: 'yarim' },
+      { tip: 'satir', etiket: 'Yapılacak bakım', genislik: 'yarim' },
+      { tip: 'satir', etiket: 'Tarih', genislik: 'ucte' },
+      { tip: 'satir', etiket: 'Başlangıç saati', genislik: 'ucte' },
+      { tip: 'satir', etiket: 'Bitiş saati', genislik: 'ucte' },
+      {
+        tip: 'tablo',
+        basliklar: ['Enerji türü', 'Kesme noktası', 'Kilit no', 'Kilitleyen', 'Açan', 'Saat'],
+        satirSayisi: 7,
+      },
+      {
+        tip: 'not',
+        metin:
+          'Enerji türleri yalnız elektrik değildir: basınçlı hava, hidrolik, buhar, gaz, su, yay gerilimi ve yer çekimiyle düşebilecek asılı parça da enerjidir. Her biri ayrı ayrı emniyete alınır.',
+      },
+      {
+        tip: 'tablo',
+        basliklar: ['Doğrulama adımı', 'Yapan', 'Saat'],
+        satirSayisi: 4,
+      },
+      {
+        tip: 'not',
+        metin:
+          'Kilitlemeden sonra makinenin gerçekten durduğu, çalıştırma düğmesine basılarak doğrulanır. Kilidi takan kişi dışında kimse o kilidi açamaz.',
+      },
+      { tip: 'imza', roller: ['Bakımı yapan', 'Onaylayan'] },
+    ],
+  },
+  {
+    slug: 'talimat-teblig-tutanagi',
+    ad: 'İSG talimatı tebliğ tutanağı',
+    ozet: 'Makine veya iş talimatının çalışana okutulup imzalatıldığını gösterir.',
+    dayanak:
+      '6331 sayılı Kanun, işverene çalışanları iş yerindeki riskler ve alınan tedbirler hakkında bilgilendirme yükümlülüğü getirir; bilgilendirmenin yapıldığı kayıtla ispatlanır.',
+    alanlar: [
+      { tip: 'satir', etiket: 'İş yeri / bölüm', genislik: 'yarim' },
+      { tip: 'satir', etiket: 'Tebliğ tarihi', genislik: 'yarim' },
+      { tip: 'satir', etiket: 'Talimatın adı ve numarası', genislik: 'tam' },
+      { tip: 'metin', etiket: 'Talimatın konusu (özet)', satir: 4 },
+      {
+        tip: 'not',
+        metin:
+          'Aşağıda imzası bulunan çalışanlara yukarıda belirtilen talimat okunmuş, anlatılmış ve bir örneği verilmiştir. Talimata uymamanın doğurabileceği sonuçlar hakkında bilgilendirilmişlerdir.',
+      },
+      {
+        tip: 'tablo',
+        basliklar: ['Sıra', 'Adı soyadı', 'Görevi', 'Tarih', 'İmza'],
+        satirSayisi: 16,
+      },
+      { tip: 'imza', roller: ['Tebliğ eden', 'İş güvenliği uzmanı'] },
+    ],
+  },
+  {
+    slug: 'ziyaretci-alt-isveren-isg-bilgilendirme',
+    ad: 'Ziyaretçi ve alt işveren İSG bilgilendirme formu',
+    ozet: 'Sahaya giren taşeron ve ziyaretçinin kurallardan haberdar edildiğinin kaydı.',
+    dayanak:
+      '6331 sayılı Kanun, aynı çalışma alanını paylaşan işverenlere iş sağlığı ve güvenliği önlemlerinde koordinasyon ve karşılıklı bilgilendirme yükümlülüğü getirir.',
+    alanlar: [
+      { tip: 'satir', etiket: 'Ana iş yeri', genislik: 'yarim' },
+      { tip: 'satir', etiket: 'Tarih', genislik: 'yarim' },
+      { tip: 'satir', etiket: 'Firma / ziyaretçi', genislik: 'yarim' },
+      { tip: 'satir', etiket: 'Giriş amacı ve çalışılacak bölge', genislik: 'yarim' },
+      {
+        tip: 'metin',
+        etiket: 'Bölgeye özgü riskler ve uyulacak kurallar',
+        satir: 5,
+      },
+      {
+        tip: 'tablo',
+        basliklar: ['Alt işverenden istenen belge', 'Var', 'Yok', 'Geçerlilik tarihi'],
+        satirlar: [
+          'SGK iş yeri tescil belgesi',
+          'İSG-KATİP uzman ve hekim görevlendirmeleri',
+          'Çalışanların İSG eğitim kayıtları',
+          'Çalışanların sağlık raporları',
+          'Tehlikeli işlerde mesleki yeterlilik belgeleri',
+          'KKD zimmet kayıtları',
+          'Kullanılacak ekipmanın periyodik kontrol raporları',
+          'Risk değerlendirmesi (kendi faaliyeti için)',
+        ],
+        satirSayisi: 2,
+      },
+      {
+        tip: 'tablo',
+        basliklar: ['Adı soyadı', 'Firma', 'Giriş saati', 'Çıkış saati', 'İmza'],
+        satirSayisi: 6,
+      },
+      { tip: 'imza', roller: ['Bilgilendiren', 'Alt işveren yetkilisi'] },
+    ],
+  },
+  {
+    slug: 'kimyasal-envanteri-ve-msds-listesi',
+    ad: 'Kimyasal envanteri ve güvenlik bilgi formu listesi',
+    ozet: 'İş yerindeki her kimyasalın ve güvenlik bilgi formunun kaydı.',
+    dayanak:
+      'Kimyasal maddelerle çalışmalarda sağlık ve güvenlik önlemleri hakkındaki yönetmelik, işverene kullanılan kimyasalların envanterini çıkarma ve güvenlik bilgi formlarını temin edip bulundurma yükümlülüğü getirir.',
+    yatay: true,
+    alanlar: [
+      { tip: 'satir', etiket: 'İş yeri / bölüm', genislik: 'yarim' },
+      { tip: 'satir', etiket: 'Güncelleme tarihi', genislik: 'yarim' },
+      {
+        tip: 'tablo',
+        basliklar: ['Ürün adı', 'Üretici / tedarikçi', 'Kullanım yeri', 'Yıllık miktar', 'Depolama yeri', 'Zararlılık işareti', 'GBF var mı', 'GBF tarihi'],
+        satirSayisi: 12,
+      },
+      {
+        tip: 'not',
+        metin:
+          'Güvenlik bilgi formu (GBF) Türkçe olmak zorundadır ve tedarikçiden ücretsiz istenir. Form, kimyasalın kullanıldığı yerde çalışanın ulaşabileceği bir noktada bulundurulur; klasörde kilitli durması yeterli değildir.',
+      },
+      { tip: 'imza', roller: ['Hazırlayan', 'İş güvenliği uzmanı'] },
+    ],
+  },
+  {
+    slug: 'saglik-gozetimi-takip-cizelgesi',
+    ad: 'Sağlık gözetimi takip çizelgesi',
+    ozet: 'Kimin muayenesi ne zaman doluyor? Periyodik muayenenin kaçırılmasını önler.',
+    dayanak:
+      'İşyeri hekimi ve diğer sağlık personelinin görevleri hakkındaki yönetmelik, çalışanların işe giriş ve periyodik muayenelerinin yapılmasını ve kayıtlarının tutulmasını öngörür.',
+    yatay: true,
+    alanlar: [
+      { tip: 'satir', etiket: 'İş yeri unvanı', genislik: 'yarim' },
+      { tip: 'satir', etiket: 'Tehlike sınıfı', genislik: 'ucte' },
+      { tip: 'satir', etiket: 'Çizelge tarihi', genislik: 'ucte' },
+      {
+        tip: 'tablo',
+        basliklar: ['Adı soyadı', 'Görevi', 'İşe giriş tarihi', 'İşe giriş muayenesi', 'Maruziyet (gürültü/toz/kimyasal)', 'Son periyodik muayene', 'İstenen tetkikler', 'Sonraki muayene'],
+        satirSayisi: 9,
+      },
+      {
+        tip: 'not',
+        metin:
+          'Periyodik muayene aralığı tehlike sınıfına göre belirlenir: az tehlikeli sınıfta en geç beş, tehlikeli sınıfta en geç üç, çok tehlikeli sınıfta en geç bir yılda bir. İşyeri hekimi, maruziyete göre daha kısa bir aralık belirleyebilir.',
+      },
+      { tip: 'imza', roller: ['İşyeri hekimi', 'İşveren / vekili'] },
+    ],
+  },
+  {
+    slug: 'yangin-sondurucu-kontrol-cizelgesi',
+    ad: 'Yangın söndürücü ve yangın ekipmanı kontrol çizelgesi',
+    ozet: 'Söndürücülerin yerinde, dolu ve erişilebilir olduğunun aylık kaydı.',
+    dayanak:
+      'Binaların yangından korunması hakkındaki yönetmelik, yangın söndürme cihazlarının periyodik kontrol ve bakımının yaptırılmasını ve kolay görülebilir, erişilebilir yerlerde bulundurulmasını öngörür.',
+    yatay: true,
+    alanlar: [
+      { tip: 'satir', etiket: 'İş yeri / bina', genislik: 'yarim' },
+      { tip: 'satir', etiket: 'Yıl', genislik: 'ucte' },
+      { tip: 'satir', etiket: 'Kontrolü yapan', genislik: 'ucte' },
+      {
+        tip: 'tablo',
+        basliklar: ['Cihaz no / yeri', 'Tür', 'Kg', 'Son dolum', 'Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz', 'Tem', 'Ağu', 'Eyl', 'Eki', 'Kas', 'Ara'],
+        satirSayisi: 9,
+      },
+      {
+        tip: 'not',
+        metin:
+          'Aylık kontrol: cihaz yerinde ve görünür mü, önü kapalı mı, basınç göstergesi yeşil bölgede mi, mühür ve pim sağlam mı, hortum çatlak mı, etiket okunur mu, askı aparatı sağlam mı. Uygun aya imza, uygunsuza çarpı atılır ve arkaya not düşülür.',
+      },
+      { tip: 'imza', roller: ['Kontrolü yapan', 'İş güvenliği uzmanı'] },
+    ],
+  },
+  {
+    slug: 'arac-is-makinasi-gunluk-kontrol-formu',
+    ad: 'Araç ve iş makinası günlük kontrol formu',
+    ozet: 'Forklift, platform, ekskavatör için vardiya öncesi operatör kontrolü.',
+    dayanak:
+      'İş ekipmanlarının kullanımında sağlık ve güvenlik şartları yönetmeliği, ekipmanın günlük kullanım öncesi kontrolünü ve kullanacak kişinin yetkili ve eğitimli olmasını öngörür.',
+    yatay: true,
+    alanlar: [
+      { tip: 'satir', etiket: 'Ekipman / plaka - seri no', genislik: 'yarim' },
+      { tip: 'satir', etiket: 'Ay / yıl', genislik: 'ucte' },
+      { tip: 'satir', etiket: 'Operatör (belge no)', genislik: 'ucte' },
+      {
+        tip: 'tablo',
+        basliklar: ['Gün', 'Fren', 'Direksiyon', 'Korna', 'Far / flaşör', 'Lastik', 'Hidrolik kaçak', 'Emniyet kemeri', 'Devrilme koruması', 'Yangın söndürücü', 'Çatal / bom', 'Operatör imza'],
+        satirSayisi: 10,
+      },
+      {
+        tip: 'not',
+        metin:
+          'Uygun olana işaret, uygun olmayana çarpı konur. Çarpı işaretlenen ekipman arıza giderilene kadar kullanılmaz ve anahtarı teslim alınır. Kiralık ekipmanda da bu kontrol, kullanan iş yerinin sorumluluğundadır.',
+      },
+      { tip: 'imza', roller: ['Bölüm sorumlusu', 'İş güvenliği uzmanı'] },
     ],
   },
 ];
