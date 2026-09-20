@@ -1,0 +1,35 @@
+---
+import HesapSayfasi from '~/components/HesapSayfasi.astro';
+import { acilDurumEkibiBasinaCalisan, acilDurumGorevleri } from '~/data/mevzuat';
+---
+
+<HesapSayfasi
+  slug="acil-durum-ekip-sayisi-hesaplama"
+  h1="Acil durum ekip sayısı hesaplama"
+  baslik="Acil Durum Ekip Sayısı Hesaplama — Arama Kurtarma ve Yangın Ekibi"
+  aciklama="Tehlike sınıfınızı ve çalışan sayınızı girin; arama-kurtarma-tahliye ile yangınla mücadele ekipleri için görevlendirmeniz gereken asgari çalışan sayısını hesaplayın."
+  giris="Acil durum ekipleri <strong>ayrı ayrı</strong> kurulur: arama-kurtarma-tahliye için bir ekip, yangınla mücadele için ayrı bir ekip. Tek ekip kurup iki yükümlülüğü birden karşılamak olmaz."
+  girdiler={[
+    { tip: 'sayi', ad: 'calisan', etiket: 'Çalışan sayısı', varsayilan: '60' },
+  ]}
+  veri={{ oran: acilDurumEkibiBasinaCalisan, gorevler: acilDurumGorevleri }}
+  hesapJs={`(function(){
+    var n = Math.max(1, parseInt(alan.calisan || '1', 10) || 1);
+    var basina = v.oran[sinif];
+    var kisi = Math.ceil(n / basina);
+    var kutular = v.gorevler.map(function(g){
+      return { ust: g, buyuk: kisi, alt: 'En az bu kadar görevlendirilmiş çalışan.' };
+    });
+    kutular.push({ ust: 'Toplam görevlendirme', buyuk: kisi * v.gorevler.length, alt: 'İki ekip ayrı ayrı sayılır.' });
+    kutular.push({ ust: 'Yönetmelikteki oran', buyuk: 'her ' + basina + ' çalışana 1', alt: 'Her görev için ayrı uygulanır.' });
+    return {
+      kutular: kutular,
+      not: 'Görevlendirilen çalışanlara görevleriyle ilgili eğitim verilir ve görev yazılı olarak tebliğ edilir. Uygulamada en sık yapılan hata, ekibi kâğıt üzerinde kurup çalışana haber vermemektir. İlk yardımcı sayısı bu hesaba dahil değildir, ayrı yükümlülüktür.'
+    };
+  })()`}
+  dayanaklar={[
+    'İşyerlerinde Acil Durumlar Hakkında Yönetmelik: arama, kurtarma ve tahliye ile yangınla mücadele için ayrı ayrı ekip oluşturulur.',
+    'Görevlendirilecek çalışan sayısı tehlike sınıfına ve toplam çalışan sayısına göre belirlenir.',
+    'Acil durum planı ve tatbikat yükümlülüğü bu görevlendirmenin devamıdır; tatbikat yılda en az bir kez yapılır ve kayıt altına alınır.',
+  ]}
+/>

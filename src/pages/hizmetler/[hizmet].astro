@@ -54,8 +54,33 @@ const structuredData = [
     tagline={h.kapsam === 'saha' ? site.hizmetIlleri.join(' · ') : 'Türkiye geneli · 81 il'}
     title={h.h1}
     subtitle={h.giris}
-    actions={[{ variant: 'primary', text: 'Fiyat teklifi al', href: '/teklif-al/' }]}
+    actions={[{ variant: 'primary', text: 'Ücretsiz ön değerlendirme', href: `/teklif-al/?hizmet=${h.slug}` }]}
   />
+
+  {/*
+    Güven şeridi. Hizmet sayfaları doğrudan mevzuat anlatımına giriyordu;
+    ziyaretçi "bu firma bunu nasıl yapıyor" sorusunun cevabını sayfanın
+    sonuna kadar inmeden alamıyordu. Buradaki dört madde sıfat değil,
+    çalışma biçiminin kendisi: hazır şablon kullanılmaması, yükümlülüğün
+    veriyle çıkarılması, dosyanın teslim edilmesi, yetki sınırının açıklığı.
+  */}
+  <section class="mx-auto max-w-6xl px-4 sm:px-6">
+    <ul class="grid gap-3 rounded-2xl bg-gray-50 p-5 dark:bg-slate-800/60 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        [
+          'Hazır şablon değil, iş yerinde inceleme',
+          'Yükümlülük yönetmelikteki sayılarla çıkarılır',
+          'Dosya ve kayıtlar düzeniyle teslim edilir',
+          h.kapsam === 'saha' ? 'Yetki belgeli iş ortağıyla sahada' : 'Uzaktan da yürütülebilir',
+        ].map((m) => (
+          <li class="flex items-start gap-2 text-sm text-default">
+            <span aria-hidden="true" class="mt-0.5 font-bold text-primary">✓</span>
+            <span>{m}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 
   {h.onemliNot && (
     <Note title="Dikkat" description={h.onemliNot} />

@@ -5,16 +5,41 @@ import { site } from '~/data/site';
 import { ilceler } from '~/data/ilceler';
 
 const metadata = {
-  title: 'Teklif Al',
-  description: 'Tehlike sınıfınızı ve çalışan sayınızı bildirin; yükümlülüğünüzü ve maliyetini net olarak çıkaralım.',
+  title: 'Ücretsiz İSG Ön Değerlendirmesi',
+  description:
+    'Faaliyet alanınızı, çalışan sayınızı ve konumunuzu bildirin; tehlike sınıfınızı çıkarıp yasal yükümlülüğünüzü ve kapsamı yazılı olarak iletelim. Ücretsiz ve bağlayıcı değil.',
 };
 const alan = 'w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-base text-gray-900 focus:border-primary focus:ring-1 focus:ring-primary';
 ---
 <Layout metadata={metadata}>
   <HeroText
-    title="Teklif al"
-    subtitle="Teklifi doğru verebilmek için üç şey yeterli: işin ne olduğu, kaç kişi çalıştığı ve nerede olduğu. Tehlike sınıfını NACE koduna göre biz çıkarırız."
+    title="Ücretsiz İSG ön değerlendirmesi"
+    subtitle="Faaliyet alanınız, çalışan sayınız ve konumunuza göre yasal yükümlülüğünüzü çıkaralım. Üç şey yeterli: işin ne olduğu, kaç kişi çalıştığı ve nerede olduğu — tehlike sınıfını NACE koduna göre biz buluruz."
   />
+
+  {/*
+    Söz veriyoruz, o yüzden sınırını da yazıyoruz. Aşağıdaki dört madde
+    tutulabilir olduğu için burada: değerlendirme gerçekten ücretsiz,
+    zorunlu olmayan hizmet önerilmiyor, kapsam yazılı veriliyor ve formu
+    okuyan gerçek bir uzman. Tutulamayacak bir süre taahhüdü yazılmadı.
+  */}
+  <section class="mx-auto max-w-2xl px-4 sm:px-6 pb-4">
+    <ul class="grid gap-3 rounded-2xl bg-gray-50 p-5 text-sm dark:bg-slate-800/60 sm:grid-cols-2">
+      {
+        [
+          'Ücretsiz ve bağlayıcı değil',
+          'Zorunlu olmayan hizmet önerilmez',
+          'Kapsam yazılı olarak verilir',
+          'Formu A sınıfı İSG uzmanı değerlendirir',
+        ].map((m) => (
+          <li class="flex items-start gap-2">
+            <span aria-hidden="true" class="mt-0.5 font-bold text-primary">✓</span>
+            <span>{m}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 
   <section class="mx-auto max-w-2xl px-4 sm:px-6 pb-16">
     <form method="post" action="/api/teklif" class="flex flex-col gap-5">
@@ -38,6 +63,10 @@ const alan = 'w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-b
         </select>
       </div>
       <div class="flex flex-col gap-2">
+        <label for="ilgi" class="font-medium">Neyle ilgileniyorsunuz? <span class="font-normal text-muted">(isteğe bağlı)</span></label>
+        <input id="ilgi" name="ilgi" type="text" placeholder="örn. risk değerlendirmesi, şantiye paketi" class={alan} />
+      </div>
+      <div class="flex flex-col gap-2">
         <label for="iletisim" class="font-medium">Size nasıl dönelim?</label>
         <input id="iletisim" name="iletisim" type="text" required placeholder="telefon veya e-posta" class={alan} />
       </div>
@@ -58,7 +87,9 @@ const alan = 'w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-b
         kullanılır, pazarlama listesine eklenmez.
       </p>
       <p class="text-sm text-muted">
-        {site.name} bir OSGB değildir; saha hizmeti yetkili iş ortağı tarafından verilir.
+        Uzmanlık ve hekimlik görevlendirmeleri, Bakanlıkça yetkilendirilmiş çözüm ortağımız
+        üzerinden yürütülür; eğitim, danışmanlık ve dokümantasyon {site.name} tarafından
+        yönetilir. ({site.name} bir OSGB değildir.)
       </p>
     </form>
   </section>
@@ -70,6 +101,20 @@ const alan = 'w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-b
     const p = new URLSearchParams(location.search);
     const calisan = p.get('calisan');
     const sinif = p.get('sinif');
+
+    // Hizmet veya paket sayfasından gelindiyse ne istediğini tekrar yazmasın.
+    const ETIKET: Record<string, string> = {
+      isletme: 'İşletme paketi',
+      santiye: 'Şantiye paketi',
+      uretim: 'Üretim tesisi paketi',
+    };
+    const paket = p.get('paket');
+    const hizmet = p.get('hizmet');
+    const ilgi = document.getElementById('ilgi') as HTMLInputElement | null;
+    if (ilgi && !ilgi.value) {
+      if (paket && ETIKET[paket]) ilgi.value = ETIKET[paket];
+      else if (hizmet && /^[a-z0-9-]{3,60}$/.test(hizmet)) ilgi.value = hizmet.replace(/-/g, ' ');
+    }
 
     if (calisan) {
       const el = document.getElementById('calisan') as HTMLInputElement | null;

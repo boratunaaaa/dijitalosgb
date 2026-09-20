@@ -128,3 +128,32 @@ export function dakikayiOkunurYap(dakika: number): string {
   if (kalan === 0) return `${saat} saat`;
   return `${saat} saat ${kalan} dakika`;
 }
+
+/**
+ * İlk yardımcı: kaç çalışana en az bir temel ilk yardımcı.
+ *
+ * Kaynak: İlk Yardım Yönetmeliği. Sayı "her N çalışan için en az 1" biçiminde
+ * verilir; N'e bölüp yukarı yuvarlamak doğru sonucu verir.
+ */
+export const ilkYardimciBasinaCalisan: Record<TehlikeSinifi, number> = {
+  'az-tehlikeli': 20,
+  tehlikeli: 15,
+  'cok-tehlikeli': 10,
+};
+
+/**
+ * Acil durum ekipleri: kaç çalışana en az bir görevli.
+ *
+ * Kaynak: İşyerlerinde Acil Durumlar Hakkında Yönetmelik. DİKKAT — bu sayı
+ * "arama, kurtarma ve tahliye" ile "yangınla mücadele" için AYRI AYRI
+ * uygulanır; tek bir ekip kurup iki yükümlülüğü birden karşılamak olmaz.
+ */
+export const acilDurumEkibiBasinaCalisan: Record<TehlikeSinifi, number> = {
+  'az-tehlikeli': 50,
+  tehlikeli: 40,
+  'cok-tehlikeli': 30,
+};
+
+/** Acil durum yönetmeliğinin ayrı ayrı ekip istediği görevler. */
+export const acilDurumGorevleri = ['Arama, kurtarma ve tahliye', 'Yangınla mücadele'];
+

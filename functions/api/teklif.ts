@@ -29,6 +29,11 @@ interface Env {
 
 const ALANLAR = ["firma", "faaliyet", "calisan", "konum", "iletisim"] as const;
 
+// İsteğe bağlı alanlar: boş gelmeleri formu geçersiz kılmaz ama doluysa
+// e-postaya girer. "ilgi" hizmet ve paket sayfalarından otomatik doluyor;
+// talebin hangi sayfadan geldiğini göstermesi teklifi hızlandırıyor.
+const ISTEGE_BAGLI = ["ilgi"] as const;
+
 export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   const form = await request.formData();
 
@@ -58,9 +63,16 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   // şeylerdir; ikisini tek kutuya bağlamak rızayı sakatlar.
   const ticariIzin = String(form.get("ticari_izin") ?? "") === "evet" ? "EVET" : "hayır";
 
+  for (const alan of ISTEGE_BAGLI) {
+    const deger = String(form.get(alan) ?? "").trim();
+    if (deger) veri[alan] = deger.slice(0, 500);
+  }
+
   const govde =
-    ALANLAR.map((a) => `${a}: ${veri[a]}`).join("\n") +
-    `\nticari ileti izni: ${ticariIzin}`;
+    [...ALANLAR, ...ISTEGE_BAGLI]
+      .filter((a) => veri[a])
+      .map((a) => `${a}: ${veri[a]}`)
+      .join("\n") + `\nticari ileti izni: ${ticariIzin}`;
 
   const yanit = await fetch("https://api.brevo.com/v3/smtp/email", {
     method: "POST",

@@ -1,0 +1,170 @@
+---
+/**
+ * Hesaplama araçlarının ortak iskeleti.
+ *
+ * NEDEN ORTAK: Dört ayrı araç sayfası (ilk yardımcı, acil durum ekibi, eğitim
+ * yenileme, risk değerlendirmesi yenileme) aynı işi yapıyor — tehlike sınıfı
+ * ve bir sayı/tarih alıp yönetmelikteki kuralı uyguluyor. Şablonu kopyalamak
+ * yerine tek yerde tutmak, bir yönetmelik değiştiğinde dört sayfayı ayrı ayrı
+ * gözden geçirme zorunluluğunu kaldırıyor.
+ *
+ * Hesap TARAYICIDA yapılır; girilen çalışan sayısı veya tarih sunucuya
+ * gitmez. Ziyaretçinin verisi, teklif formunu doldurmayı kendi seçmediği
+ * sürece tarayıcısından çıkmaz.
+ */
+import Layout from '~/layouts/PageLayout.astro';
+import StructuredData from '~/components/common/StructuredData.astro';
+import { site } from '~/data/site';
+import { tehlikeSiniflari } from '~/data/mevzuat';
+
+type Girdi = { tip: 'sayi' | 'tarih'; ad: string; etiket: string; varsayilan?: string; ipucu?: string };
+
+interface Props {
+  slug: string;
+  h1: string;
+  baslik: string;
+  aciklama: string;
+  giris: string;
+  girdiler: Girdi[];
+  /** Tarayıcıya geçecek veri; hesap fonksiyonu bunu `v` adıyla görür. */
+  veri: unknown;
+  /** Gövdesi `v` (veri), `sinif`, `alan` (girdi değerleri) alan JS ifadesi.
+      Dönüşü: { kutular: [{buyuk,ust,alt}], not?: string } */
+  hesapJs: string;
+  dayanaklar: string[];
+}
+
+const { slug, h1, baslik, aciklama, giris, girdiler, veri, hesapJs, dayanaklar } = Astro.props;
+
+const metadata = { title: baslik, description: aciklama };
+const sayfaUrl = `${site.url}/araclar/${slug}/`;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: h1,
+  url: sayfaUrl,
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'TRY' },
+  description: aciklama,
+  inLanguage: 'tr-TR',
+  isAccessibleForFree: true,
+  provider: { '@type': 'Organization', name: site.name, url: site.url },
+};
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Ana sayfa', item: `${site.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Araçlar', item: `${site.url}/araclar/` },
+    { '@type': 'ListItem', position: 3, name: h1, item: sayfaUrl },
+  ],
+};
+---
+
+<Layout metadata={metadata}>
+  <StructuredData slot="head" schema={schema} />
+  <StructuredData slot="head" schema={breadcrumb} />
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 py-10 md:py-14">
+    <nav aria-label="Konum" class="text-sm text-muted mb-6">
+      <a href="/" class="hover:underline">Ana sayfa</a>
+      <span class="mx-1.5">/</span>
+      <a href="/araclar/" class="hover:underline">Araçlar</a>
+      <span class="mx-1.5">/</span>
+      <span class="text-default">{h1}</span>
+    </nav>
+
+    <h1 class="text-3xl md:text-4xl font-bold font-heading text-heading tracking-tight mb-4 text-balance">{h1}</h1>
+    <p class="text-lg text-muted max-w-3xl mb-8" set:html={giris} />
+
+    <form id="hesap-formu" class="grid sm:grid-cols-2 gap-5 p-6 rounded-2xl bg-gray-50 dark:bg-slate-800/60 ring-1 ring-gray-200 dark:ring-slate-700">
+      <div>
+        <label for="sinif" class="block text-sm font-semibold text-heading mb-2">Tehlike sınıfı</label>
+        <select id="sinif" name="sinif" class="w-full rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-900 px-3 py-2.5 text-default">
+          {tehlikeSiniflari.map((s) => <option value={s.id}>{s.ad}</option>)}
+        </select>
+      </div>
+      {
+        girdiler.map((g) => (
+          <div>
+            <label for={g.ad} class="block text-sm font-semibold text-heading mb-2">{g.etiket}</label>
+            <input
+              id={g.ad}
+              name={g.ad}
+              type={g.tip === 'sayi' ? 'number' : 'date'}
+              min={g.tip === 'sayi' ? '1' : undefined}
+              max={g.tip === 'sayi' ? '100000' : undefined}
+              step={g.tip === 'sayi' ? '1' : undefined}
+              inputmode={g.tip === 'sayi' ? 'numeric' : undefined}
+              value={g.varsayilan}
+              class="w-full rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-900 px-3 py-2.5 text-default"
+            />
+            {g.ipucu && <p class="mt-1.5 text-xs text-muted">{g.ipucu}</p>}
+          </div>
+        ))
+      }
+    </form>
+
+    <div id="sonuc" class="mt-8 grid gap-4 sm:grid-cols-2" aria-live="polite"></div>
+    <p id="not-alani" class="mt-6 text-sm text-muted"></p>
+
+    <div class="mt-10 rounded-2xl bg-primary/5 dark:bg-primary/10 ring-1 ring-primary/20 p-6 md:p-8">
+      <h2 class="text-xl font-bold font-heading text-heading mb-2">Hesap asgariyi verir, planı vermez</h2>
+      <p class="text-muted mb-5">
+        Buradaki sayı yönetmeliğin aradığı alt sınırdır. Kimin görevlendirileceği, eğitimin
+        ne zaman planlanacağı ve kaydın nasıl tutulacağı işyerinize göre değişir. İsterseniz
+        bu sonucu işyerinizin gerçek durumuyla birlikte değerlendirip yazılı planla dönelim.
+      </p>
+      <a href="/teklif-al/" class="inline-flex items-center rounded-full bg-primary px-6 py-3 font-semibold text-white hover:opacity-90 transition">
+        Ücretsiz ön değerlendirme iste
+      </a>
+    </div>
+
+    <details class="mt-10">
+      <summary class="cursor-pointer font-semibold text-heading">Hesap hangi düzenlemeye dayanıyor?</summary>
+      <ul class="mt-4 space-y-2 text-sm text-muted list-disc pl-5">
+        {dayanaklar.map((d) => <li>{d}</li>)}
+      </ul>
+    </details>
+  </section>
+</Layout>
+
+<script is:inline define:vars={{ veri, hesapJs }}>
+  (() => {
+    const form = document.getElementById('hesap-formu');
+    const sonuc = document.getElementById('sonuc');
+    const notAlani = document.getElementById('not-alani');
+    if (!form || !sonuc) return;
+    const hesapla = new Function('v', 'sinif', 'alan', `return (${hesapJs});`);
+
+    function ciz() {
+      const alan = {};
+      form.querySelectorAll('input').forEach((i) => (alan[i.name] = i.value));
+      const sinif = form.querySelector('#sinif').value;
+      let r;
+      try {
+        r = hesapla(veri, sinif, alan);
+      } catch {
+        return;
+      }
+      if (!r) return;
+      sonuc.innerHTML = r.kutular
+        .map(
+          (k) =>
+            `<div class="rounded-xl border border-gray-200 dark:border-slate-700 p-5">
+               <p class="text-sm text-muted">${k.ust}</p>
+               <p class="mt-1 text-3xl font-bold tabular-nums text-heading">${k.buyuk}</p>
+               ${k.alt ? `<p class="mt-2 text-sm text-muted">${k.alt}</p>` : ''}
+             </div>`
+        )
+        .join('');
+      notAlani.textContent = r.not || '';
+    }
+    form.addEventListener('input', ciz);
+    form.addEventListener('change', ciz);
+    ciz();
+  })();
+</script>

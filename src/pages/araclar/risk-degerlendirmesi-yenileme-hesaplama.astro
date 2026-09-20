@@ -1,0 +1,42 @@
+---
+import HesapSayfasi from '~/components/HesapSayfasi.astro';
+import { riskDegerlendirmeYil } from '~/data/mevzuat';
+---
+
+<HesapSayfasi
+  slug="risk-degerlendirmesi-yenileme-hesaplama"
+  h1="Risk değerlendirmesi yenileme tarihi hesaplama"
+  baslik="Risk Değerlendirmesi Kaç Yılda Bir Yenilenir? — Tarih Hesaplama"
+  aciklama="Mevcut risk değerlendirmenizin tarihini ve tehlike sınıfınızı girin; en geç ne zaman yenilenmesi gerektiğini hesaplayın."
+  giris="Risk değerlendirmesinin bir <strong>son kullanma tarihi</strong> vardır ve bu tarih tehlike sınıfına göre değişir. Süresi dolmuş değerlendirme, yapılmamış sayılır."
+  girdiler={[
+    { tip: 'tarih', ad: 'sonTarih', etiket: 'Mevcut risk değerlendirmesinin tarihi', ipucu: 'Dokümanın üzerindeki hazırlanma tarihi.' },
+  ]}
+  veri={{ yil: riskDegerlendirmeYil }}
+  hesapJs={`(function(){
+    var y = v.yil[sinif];
+    var kutular = [{ ust: 'Yenileme aralığı', buyuk: y + ' yıl', alt: 'Tehlike sınıfına göre en geç bu sürede yenilenir.' }];
+    var notu = 'Süre dolmasa bile şu hâllerde yenilenir: işyerinin taşınması veya binada değişiklik, yeni teknoloji ya da yeni üretim yöntemi, iş kazası veya meslek hastalığı, ramak kala olay, ortam ölçümü veya sağlık gözetimi sonuçlarında değişiklik. Yani tarih bir üst sınırdır, tek ölçüt değildir.';
+    if (alan.sonTarih) {
+      var d = new Date(alan.sonTarih + 'T00:00:00');
+      if (!isNaN(d)) {
+        var s = new Date(d); s.setFullYear(s.getFullYear() + y);
+        var bugun = new Date(); bugun.setHours(0,0,0,0);
+        var gun = Math.round((s - bugun) / 86400000);
+        var tr = s.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
+        kutular.unshift({
+          ust: 'Yenileme son tarihi',
+          buyuk: tr,
+          alt: gun < 0 ? (-gun) + ' gün GECİKTİ' : (gun === 0 ? 'Bugün doluyor.' : gun + ' gün kaldı.')
+        });
+        if (gun < 0) notu = 'Yenileme tarihi geçmiş. Risk değerlendirmesi bulunmayan veya süresi dolmuş bir işyerinde iş kazası yaşanırsa, işverenin kusur oranı bilirkişi incelemesinde bu eksiklik üzerinden belirlenir. ' + notu;
+      }
+    }
+    return { kutular: kutular, not: notu };
+  })()`}
+  dayanaklar={[
+    'İş Sağlığı ve Güvenliği Risk Değerlendirmesi Yönetmeliği: yenileme aralığı çok tehlikeli sınıfta en geç 2, tehlikeli sınıfta 4, az tehlikeli sınıfta 6 yıldır.',
+    'Aynı yönetmelik, işyerindeki değişiklik ve olaylar hâlinde sürenin beklenmeden yenilenmesini öngörür.',
+    'Risk değerlendirmesi, işveren veya işveren vekilinin başkanlığında; iş güvenliği uzmanı ve işyeri hekimi, çalışan temsilcileri ve destek elemanlarının katılımıyla oluşturulan ekipçe yapılır.',
+  ]}
+/>

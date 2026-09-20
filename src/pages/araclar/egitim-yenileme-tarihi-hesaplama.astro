@@ -1,0 +1,47 @@
+---
+import HesapSayfasi from '~/components/HesapSayfasi.astro';
+import { temelEgitim } from '~/data/mevzuat';
+---
+
+<HesapSayfasi
+  slug="egitim-yenileme-tarihi-hesaplama"
+  h1="İSG eğitimi yenileme tarihi hesaplama"
+  baslik="İSG Eğitimi Yenileme Tarihi Hesaplama — Kaç Yılda Bir Tekrarlanır?"
+  aciklama="Son temel İSG eğitiminin tarihini ve tehlike sınıfınızı girin; eğitimin ne zaman yenilenmesi gerektiğini ve yenileme eğitiminin asgari süresini hesaplayın."
+  giris="Temel İSG eğitimi bir kez verilip bitmez; tehlike sınıfına göre belirli aralıklarla <strong>yenilenir</strong>. Süresi dolmuş eğitim, denetimde eğitim verilmemiş sayılır."
+  girdiler={[
+    { tip: 'tarih', ad: 'sonEgitim', etiket: 'Son temel eğitim tarihi', ipucu: 'Katılım tutanağındaki tarih.' },
+  ]}
+  veri={{ egitim: temelEgitim }}
+  hesapJs={`(function(){
+    var e = v.egitim[sinif];
+    var ham = alan.sonEgitim;
+    var kutular = [
+      { ust: 'Temel eğitim süresi', buyuk: e.saat + ' ders saati', alt: 'Bunun en az ' + e.ozguRiskSaat + ' ders saati işe ve işyerine özgü risklere ayrılır.' },
+      { ust: 'Yenileme aralığı', buyuk: e.yenilemeYil + ' yıl', alt: 'Yenileme eğitimi en az 8 ders saatidir.' }
+    ];
+    var notu = 'Bir ders saati 45 dakika eğitim ve 15 dakika aradan oluşur. İşe yeni başlayan çalışana en az 2 ders saatlik işe başlama eğitimi verilir; bu süre temel eğitimden sayılmaz ve temel eğitim işe girişten itibaren en geç 3 ay içinde tamamlanır.';
+    if (ham) {
+      var d = new Date(ham + 'T00:00:00');
+      if (!isNaN(d)) {
+        var s = new Date(d); s.setFullYear(s.getFullYear() + e.yenilemeYil);
+        var bugun = new Date(); bugun.setHours(0,0,0,0);
+        var gun = Math.round((s - bugun) / 86400000);
+        var tr = s.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
+        kutular.unshift({
+          ust: 'Yenileme son tarihi',
+          buyuk: tr,
+          alt: gun < 0 ? (-gun) + ' gün GECİKTİ' : (gun === 0 ? 'Bugün doluyor.' : gun + ' gün kaldı.')
+        });
+        if (gun < 0) notu = 'Yenileme tarihi geçmiş. Süresi dolmuş eğitim denetimde eğitim verilmemiş sayılır ve kaza sonrası işverenin kusur değerlendirmesinde aleyhe okunur. ' + notu;
+      }
+    }
+    return { kutular: kutular, not: notu };
+  })()`}
+  dayanaklar={[
+    '2 Nisan 2026 tarihli ve 33212 sayılı Resmî Gazete’de yayımlanan Çalışanların İş Sağlığı ve Güvenliği Eğitimlerinin Usul ve Esasları Hakkında Yönetmelik. Bu yönetmelik 2013 tarihli olanı tamamen yürürlükten kaldırmıştır.',
+    'Temel eğitim süreleri (8 / 12 / 16 ders saati) değişmemiştir; yenileme aralıkları tehlike sınıfına göre 3, 2 ve 1 yıldır.',
+    'Yeni gelen kurallar: bir ders saatinin 45 dakika eğitim ve 15 dakika ara olarak tanımlanması, işe başlama eğitimi için asgari 2 ders saati, işe ve işyerine özgü riskler başlığına ayrılacak asgari süre ve yenileme eğitiminde asgari 8 ders saati.',
+    'İşyerinde iş kazası, meslek hastalığı veya teknoloji değişikliği olduğunda süre beklenmeden ilave eğitim verilir.',
+  ]}
+/>

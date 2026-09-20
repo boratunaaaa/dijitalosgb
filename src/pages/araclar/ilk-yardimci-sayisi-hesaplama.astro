@@ -1,0 +1,33 @@
+---
+import HesapSayfasi from '~/components/HesapSayfasi.astro';
+import { ilkYardimciBasinaCalisan } from '~/data/mevzuat';
+---
+
+<HesapSayfasi
+  slug="ilk-yardimci-sayisi-hesaplama"
+  h1="İlk yardımcı sayısı hesaplama"
+  baslik="İlk Yardımcı Sayısı Hesaplama — Kaç Çalışana Kaç İlk Yardımcı?"
+  aciklama="Tehlike sınıfınızı ve çalışan sayınızı girin; iş yerinizde bulundurmanız gereken asgari temel ilk yardımcı sayısını İlk Yardım Yönetmeliği'ndeki orana göre hesaplayın."
+  giris="Çalışan sayısı ve tehlike sınıfı, iş yerinde belgeli <strong>temel ilk yardımcı</strong> bulundurma yükümlülüğünü belirler. Oran yönetmelikte sabittir; aşağıdaki sayı alt sınırdır."
+  girdiler={[
+    { tip: 'sayi', ad: 'calisan', etiket: 'Çalışan sayısı', varsayilan: '25' },
+  ]}
+  veri={{ oran: ilkYardimciBasinaCalisan }}
+  hesapJs={`(function(){
+    var n = Math.max(1, parseInt(alan.calisan || '1', 10) || 1);
+    var basina = v.oran[sinif];
+    var gerekli = Math.ceil(n / basina);
+    return {
+      kutular: [
+        { ust: 'En az bu kadar temel ilk yardımcı', buyuk: gerekli, alt: 'Belgeli ve belgesi geçerli olmak zorunda.' },
+        { ust: 'Yönetmelikteki oran', buyuk: 'her ' + basina + ' çalışana 1', alt: n + ' çalışan için ' + gerekli + ' kişi.' }
+      ],
+      not: 'İlk yardımcı belgesinin geçerlilik süresi dolduğunda güncelleme eğitimi alınması gerekir; süresi geçmiş belge, belgesiz sayılır. Ayrıca ilk yardımcı ile acil durum ekipleri farklı yükümlülüklerdir, biri diğerinin yerine geçmez.'
+    };
+  })()`}
+  dayanaklar={[
+    'İlk Yardım Yönetmeliği: iş yerlerinde bulundurulacak temel ilk yardımcı sayısı, çalışan sayısı ve tehlike sınıfına göre belirlenir.',
+    'İlk yardımcı belgesi, yetkilendirilmiş ilk yardım eğitim merkezlerince verilir ve belirli aralıklarla güncellenir.',
+    'Bu hesap yalnız temel ilk yardımcı sayısını verir; acil durum ekipleri ayrı yükümlülüktür.',
+  ]}
+/>
