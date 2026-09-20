@@ -6,6 +6,18 @@ import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import { site, isOrtagi } from '~/data/site';
 import { ilceler } from '~/data/ilceler';
+import { bolgeSektorSayfalari } from '~/data/bolge-sektor';
+
+// Hizmet bölgeleri hub'ı, üretilen bölge-sektör rehberlerinin de giriş
+// noktası. Bu liste olmadan yeni içerik yalnız kendi sektör sayfasından
+// bağlantı alıyor ve tek inbound link'le orphan page sınırında kalıyordu.
+// Liste il bazında gruplanıyor; yüzlerce sayfayı tek ekrana dökmemek için
+// ileride ile göre sayfalanabilir.
+const bolgeRehberleri = bolgeSektorSayfalari.filter((b) => !b.indexDisi);
+const illereGore = [...new Set(bolgeRehberleri.map((b) => b.il))].map((il) => ({
+  il,
+  sayfalar: bolgeRehberleri.filter((b) => b.il === il),
+}));
 
 const metadata = { title: 'OSGB Hizmeti — İstanbul, Kocaeli, Tekirdağ' };
 ---
@@ -56,6 +68,37 @@ const metadata = { title: 'OSGB Hizmeti — İstanbul, Kocaeli, Tekirdağ' };
       callToAction: { text: 'Detay', href: `/osgb/${i.slug}/` },
     }))}
   />
+
+  {
+    illereGore.length > 0 && (
+      <section class="mx-auto max-w-5xl px-4 py-8 sm:px-6 md:py-12">
+        <h2 class="text-2xl font-bold text-heading md:text-3xl">Bölge ve sektör rehberleri</h2>
+        <p class="mt-3 max-w-3xl text-muted">
+          Aynı ilçede farklı iş kolları farklı risk profilleri taşıyor. Aşağıdaki rehberler
+          o bölgedeki iş yapış biçimine göre yazıldı; her biri kendi sektörünün öne çıkan
+          riskleri ve öncelikli dokümanları üzerine kurulu.
+        </p>
+        {illereGore.map((g) => (
+          <div class="mt-7">
+            <h3 class="text-sm font-semibold uppercase tracking-wider text-muted">{g.il}</h3>
+            <ul class="mt-3 grid gap-3 sm:grid-cols-2">
+              {g.sayfalar.map((b) => (
+                <li>
+                  <a
+                    href={`/bolge/${b.slug}/`}
+                    class="block rounded-xl border border-gray-200 p-4 transition hover:border-primary dark:border-slate-700"
+                  >
+                    <span class="font-semibold text-heading">{b.h1}</span>
+                    <span class="mt-1 block text-sm text-muted">{b.ilce}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </section>
+    )
+  }
 
   <CallToAction
     actions={[{ variant: 'primary', text: 'Teklif al', href: '/teklif-al/' }]}
