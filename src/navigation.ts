@@ -1,10 +1,45 @@
 import { getPermalink } from './utils/permalinks';
 import { ilceler } from './data/ilceler';
-import { rehberler } from './data/rehber';
 import { hizmetler } from './data/hizmetler';
 import { sektorler } from './data/sektorler';
-import { referansSayisi } from './data/referanslar';
-import { yazilar } from './data/blog';
+
+/**
+ * Site gezinmesi.
+ *
+ * SADELEŞTİRME GEREKÇESİ: Menü, sitedeki her içeriği tek tek listeleyecek
+ * kadar büyümüştü — 14 hizmet, 18 sektör, altı araç, altı blog yazısı ve
+ * yedi ilçe. Ziyaretçiye portal hissi veriyordu; kurumsal bir sitenin ana
+ * menüsü içerik akışı gibi davranmamalı. İçerikler silinmedi, kendi hub
+ * sayfalarından erişiliyor ve site haritasında duruyor.
+ *
+ * BLOG YAZILARI MENÜDEN ÇIKARILDI: `yazilar.slice(0, 6)` ile son yazılar
+ * doğrudan açılır menüye basılıyordu. Menü, içerik yayımlandıkça değişmemeli.
+ */
+
+/** Ana sayfada ve menüde öne çıkan hizmetler. Tam liste /hizmetler'de. */
+const ANA_HIZMET_SLUG = [
+  'is-guvenligi-uzmanligi',
+  'isyeri-hekimligi',
+  'risk-degerlendirmesi',
+  'acil-durum-eylem-plani',
+  'saglik-ve-guvenlik-plani',
+  'periyodik-kontroller',
+];
+const anaHizmetler = ANA_HIZMET_SLUG.map((s) => hizmetler.find((h) => h.slug === s)).filter(
+  (h): h is NonNullable<typeof h> => Boolean(h)
+);
+
+/** Menüde gösterilen sektörler; tamamı /sektorler'de. */
+const oneCikanSektorler = [
+  'insaat',
+  'fabrika-uretim',
+  'lojistik-depo',
+  'kimya-boya',
+  'metal-kaynak',
+  'ofis-hizmet',
+]
+  .map((s) => sektorler.find((x) => x.slug === s))
+  .filter((x): x is NonNullable<typeof x> => Boolean(x));
 
 export const headerData = {
   links: [
@@ -12,55 +47,42 @@ export const headerData = {
       text: 'Hizmetler',
       href: getPermalink('/hizmetler'),
       links: [
-        { text: 'Tüm hizmetler', href: getPermalink('/hizmetler') },
+        ...anaHizmetler.map((h) => ({ text: h.ad, href: getPermalink(`/hizmetler/${h.slug}`) })),
+        { text: 'Mobil sağlık taraması', href: getPermalink('/mobil-saglik-taramasi') },
         { text: 'Hazır paketler', href: getPermalink('/paketler') },
-        ...hizmetler.map((h) => ({ text: h.ad, href: getPermalink(`/hizmetler/${h.slug}`) })),
-        { text: 'Mobil sağlık aracı', href: getPermalink('/mobil-saglik-taramasi') },
-        { text: 'Uzaktan İSG eğitimi', href: getPermalink('/isg-egitimi') },
+        { text: 'Tüm hizmetler →', href: getPermalink('/hizmetler') },
       ],
     },
     {
       text: 'Sektörler',
       href: getPermalink('/sektorler'),
-      links: sektorler.map((x) => ({ text: x.ad, href: getPermalink(`/sektorler/${x.slug}`) })),
+      links: [
+        ...oneCikanSektorler.map((x) => ({ text: x.ad, href: getPermalink(`/sektorler/${x.slug}`) })),
+        { text: 'Tüm sektörler →', href: getPermalink('/sektorler') },
+      ],
     },
     {
-      text: 'Eğitim',
+      text: 'Eğitimler',
       href: getPermalink('/isg-egitimi'),
-      links: [
-        { text: 'İSG eğitimi', href: getPermalink('/isg-egitimi') },
-      ],
     },
     {
-      text: 'Araçlar',
-      href: getPermalink('/araclar'),
+      text: 'Kaynaklar',
+      href: getPermalink('/isg-kutuphanesi'),
       links: [
-        { text: 'Tüm araçlar', href: getPermalink('/araclar') },
-        { text: 'Tehlike sınıfı sorgulama', href: getPermalink('/araclar/tehlike-sinifi-sorgulama') },
-        { text: 'İSG yükümlülük hesaplama', href: getPermalink('/araclar/isg-yukumluluk-hesaplama') },
-        { text: 'İlk yardımcı sayısı hesaplama', href: getPermalink('/araclar/ilk-yardimci-sayisi-hesaplama') },
-        { text: 'Acil durum ekip sayısı hesaplama', href: getPermalink('/araclar/acil-durum-ekip-sayisi-hesaplama') },
-        { text: 'Eğitim yenileme tarihi', href: getPermalink('/araclar/egitim-yenileme-tarihi-hesaplama') },
-        { text: 'Risk değerlendirmesi yenileme tarihi', href: getPermalink('/araclar/risk-degerlendirmesi-yenileme-hesaplama') },
-      ],
-    },
-    {
-      text: 'Rehber',
-      href: getPermalink('/blog'),
-      links: [
+        { text: 'Hesaplama araçları', href: getPermalink('/araclar') },
         { text: 'İSG kütüphanesi', href: getPermalink('/isg-kutuphanesi') },
-        { text: 'Güvenlik levhaları (PDF)', href: getPermalink('/isg-kutuphanesi/levhalar') },
         { text: 'Form şablonları (PDF)', href: getPermalink('/isg-kutuphanesi/formlar') },
-        { text: 'Örnek risk analizi ve ADEP', href: getPermalink('/isg-kutuphanesi/ornek-dokumanlar') },
+        { text: 'Güvenlik levhaları (PDF)', href: getPermalink('/isg-kutuphanesi/levhalar') },
         { text: 'Mevzuat dizini', href: getPermalink('/isg-kutuphanesi/mevzuat') },
-        { text: 'Tüm yazılar', href: getPermalink('/blog') },
+        { text: 'İSG rehberi', href: getPermalink('/blog') },
         { text: 'Sıkça sorulan sorular', href: getPermalink('/sss') },
-        { text: 'Referanslar', href: getPermalink('/referanslar') },
-        ...yazilar.slice(0, 6).map((y) => ({ text: y.baslik, href: getPermalink(`/blog/${y.slug}`) })),
       ],
     },
+    { text: 'Hakkımızda', href: getPermalink('/hakkimizda') },
+    { text: 'Referanslar', href: getPermalink('/referanslar') },
+    { text: 'İletişim', href: getPermalink('/iletisim') },
   ],
-  actions: [{ text: 'Teklif al', href: getPermalink('/teklif-al'), variant: 'primary' }],
+  actions: [{ text: 'Ücretsiz Ön Değerlendirme', href: getPermalink('/teklif-al'), variant: 'primary' }],
 };
 
 export const footerData = {
@@ -68,36 +90,29 @@ export const footerData = {
     {
       title: 'Hizmetler',
       links: [
-        ...hizmetler.map((h) => ({ text: h.ad, href: getPermalink(`/hizmetler/${h.slug}`) })),
-        { text: 'Mobil sağlık aracı', href: getPermalink('/mobil-saglik-taramasi') },
-        { text: 'Uzaktan İSG eğitimi', href: getPermalink('/isg-egitimi') },
+        ...anaHizmetler.map((h) => ({ text: h.ad, href: getPermalink(`/hizmetler/${h.slug}`) })),
+        { text: 'Mobil sağlık taraması', href: getPermalink('/mobil-saglik-taramasi') },
+        { text: 'İSG eğitimleri', href: getPermalink('/isg-egitimi') },
+        { text: 'Tüm hizmetler', href: getPermalink('/hizmetler') },
       ],
     },
     {
-      title: 'Saha hizmeti bölgeleri',
-      links: ilceler.map((i) => ({ text: `${i.ad} (${i.il})`, href: getPermalink(`/osgb/${i.slug}`) })),
-    },
-    {
       title: 'Sektörler',
-      links: sektorler.map((x) => ({ text: x.ad, href: getPermalink(`/sektorler/${x.slug}`) })),
+      links: [
+        ...oneCikanSektorler.map((x) => ({ text: x.ad, href: getPermalink(`/sektorler/${x.slug}`) })),
+        { text: 'Tüm sektörler', href: getPermalink('/sektorler') },
+      ],
     },
     {
-      title: 'Rehber ve araçlar',
+      title: 'Kaynaklar',
       links: [
+        { text: 'Hesaplama araçları', href: getPermalink('/araclar') },
         { text: 'İSG kütüphanesi', href: getPermalink('/isg-kutuphanesi') },
-        { text: 'Güvenlik levhaları (PDF)', href: getPermalink('/isg-kutuphanesi/levhalar') },
         { text: 'Form şablonları (PDF)', href: getPermalink('/isg-kutuphanesi/formlar') },
-        { text: 'Örnek risk analizi ve ADEP', href: getPermalink('/isg-kutuphanesi/ornek-dokumanlar') },
+        { text: 'Güvenlik levhaları (PDF)', href: getPermalink('/isg-kutuphanesi/levhalar') },
         { text: 'Mevzuat dizini', href: getPermalink('/isg-kutuphanesi/mevzuat') },
-        { text: 'İSG rehberi (blog)', href: getPermalink('/blog') },
+        { text: 'İSG rehberi', href: getPermalink('/blog') },
         { text: 'Sıkça sorulan sorular', href: getPermalink('/sss') },
-        { text: 'Tehlike sınıfı sorgulama', href: getPermalink('/araclar/tehlike-sinifi-sorgulama') },
-        { text: 'İSG yükümlülük hesaplama', href: getPermalink('/araclar/isg-yukumluluk-hesaplama') },
-        { text: 'İlk yardımcı sayısı hesaplama', href: getPermalink('/araclar/ilk-yardimci-sayisi-hesaplama') },
-        { text: 'Acil durum ekip sayısı hesaplama', href: getPermalink('/araclar/acil-durum-ekip-sayisi-hesaplama') },
-        { text: 'Eğitim yenileme tarihi', href: getPermalink('/araclar/egitim-yenileme-tarihi-hesaplama') },
-        { text: 'Risk değerlendirmesi yenileme tarihi', href: getPermalink('/araclar/risk-degerlendirmesi-yenileme-hesaplama') },
-        ...rehberler.map((r) => ({ text: r.soru, href: getPermalink(`/rehber/${r.slug}`) })),
       ],
     },
     {
@@ -106,7 +121,7 @@ export const footerData = {
         { text: 'Hakkımızda', href: getPermalink('/hakkimizda') },
         { text: 'Referanslar', href: getPermalink('/referanslar') },
         { text: 'İletişim', href: getPermalink('/iletisim') },
-        { text: 'Teklif al', href: getPermalink('/teklif-al') },
+        { text: 'Hizmet bölgeleri', href: getPermalink('/osgb-hizmeti') },
         { text: 'KVKK Aydınlatma Metni', href: getPermalink('/kvkk') },
         { text: 'Gizlilik Politikası', href: getPermalink('/gizlilik-politikasi') },
         { text: 'Çerez Politikası', href: getPermalink('/cerez-politikasi') },
@@ -115,15 +130,17 @@ export const footerData = {
   ],
   secondaryLinks: [
     { text: 'Hakkımızda', href: getPermalink('/hakkimizda') },
-    { text: 'Teklif al', href: getPermalink('/teklif-al') },
+    { text: 'İletişim', href: getPermalink('/iletisim') },
     { text: 'KVKK', href: getPermalink('/kvkk') },
     { text: 'Gizlilik', href: getPermalink('/gizlilik-politikasi') },
     { text: 'Çerez', href: getPermalink('/cerez-politikasi') },
   ],
   socialLinks: [],
+  /** Saha hizmeti illeri. İlçelerin tamamı /osgb-hizmeti sayfasında listeleniyor. */
+  hizmetIlceleri: ilceler,
   footNote: `
     İş sağlığı ve güvenliğinde ihtiyaç duyduğunuz her başlık tek elden:
     uzman ve hekim görevlendirmesinden eğitime, ölçümden dokümantasyona.
-    Saha hizmetleri yetkili çözüm ortaklarımızla yürütülür.
+    Saha hizmetleri yetkili çözüm ortağımızla yürütülür.
   `,
 };

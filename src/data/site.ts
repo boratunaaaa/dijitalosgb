@@ -54,10 +54,23 @@ export const isOrtagi = {
  */
 export const veriSorumlusu = {
   unvan: "Mehmet Kadir Uğur",   // kullanıcı 2026-09-19'da veri sorumlusu olarak kendini bildirdi
-  adres: "",     // TODO: tebligata elverişli adres — kullanıcıdan bekleniyor
+  adres: "",     // BEKLENİYOR: tebligata elverişli adres — kullanıcıdan istendi
   eposta: "kvkk@dijitalosgb.com",
   vkn: "",       // vergi/TC kimlik no (isteğe bağlı gösterim)
 } as const;
+
+/**
+ * Aydınlatma metninde hangi bilginin eksik olduğunu SAYFADA DEĞİL burada
+ * tutuyoruz. Ziyaretçiye "bu metin eksik" kutusu göstermek, metni geçerli
+ * yapmadığı gibi siteyi amatör gösteriyordu; eksik olan bilginin kendisi
+ * tamamlanmalı. Eksikler derleme sırasında uyarı olarak basılıyor.
+ */
+export const veriSorumlusuEksikleri = ([
+  ["unvan", veriSorumlusu.unvan],
+  ["tebligata elverişli adres", veriSorumlusu.adres],
+] as const)
+  .filter(([, deger]) => !deger)
+  .map(([ad]) => ad);
 
 /**
  * Hizmet ekibinin yapısı. İSİM YAZILMIYOR — kullanıcı tercihi.
@@ -86,9 +99,23 @@ export const uzman = {
   ad: "Mehmet Kadir Uğur",
   unvan: "İş Güvenliği Uzmanı",
   belgeSinifi: "A",  // kullanıcı 2026-09-19'da teyit etti
-  belgeNo: "",       // teyit bekliyor
-  egitim: [] as string[],
-  deneyim: "",
+  belgeNo: "",       // BELGE NUMARASI UYDURULMAZ — teyit bekliyor, boşken hiç basılmıyor
+  /**
+   * Öğrenim. Kullanıcı 2026-09-20'de bildirdi.
+   * Lisans için üniversite adı teyitli olduğu için yazıldı; yüksek lisansın
+   * yapıldığı üniversite TEYİT EDİLMEDİĞİ için kurum adı YAZILMADI.
+   * Diploma iddiası düzenlenmiş meslekî bir beyandır; doğrulanmadan yazılırsa
+   * sitenin tüm güvenilirliğini götürür.
+   */
+  egitim: [
+    "Balıkesir Üniversitesi, Kimya (lisans)",
+    "İş Sağlığı ve Güvenliği (yüksek lisans)",
+  ] as string[],
+  deneyim:
+    "Yaklaşık beş yıllık saha deneyimi. Çalışılan sektörler: inşaat, tersane, hastane ve " +
+    "sağlık kurumları, lojistik, metal, plastik, tekstil, otomotiv, kimya ve gıda.",
+  /** Ana sayfadaki kısa güven kartı için — üç satırdan uzun olmamalı. */
+  ozet: "A sınıfı uzmanlık ve çok sektörlü saha deneyimi",
 } as const;
 
 export const ekip = [

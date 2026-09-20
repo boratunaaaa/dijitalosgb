@@ -1,124 +1,49 @@
 ---
-import { isOrtagiReferanslari, uzmanReferanslari, referansSayisi } from '~/data/referanslar';
-
 /**
- * Kayan referans şeridi.
+ * Ana sayfadaki deneyim kanıtı.
  *
- * Logo yerine ad: marka logoları hak sahibinin izniyle kullanılır ve o izinler
- * henüz yok. Ücretsiz logo servisleri de ya kapandı ya da 16 piksele kadar
- * düşen favicon veriyor; karışık çözünürlükte amblem dizmek şeridi ucuz
- * gösterirdi. Tipografiyle kurulan şerit hem tutarlı hem hızlı. İzinli logo
- * dosyaları geldiğinde aynı şeride görsel olarak yerleşebilir.
+ * ÖNCEDEN NE YANLIŞTI: Şerit "Görev alınan kurumlar" başlığı altında hem bizim
+ * görev aldığımız projeleri hem de yetkili çözüm ortağımızın kendi müşteri
+ * portföyünü (89 kurum) karıştırıp gösteriyordu. Ziyaretçi bunların hepsini
+ * Dijital OSGB'nin doğrudan deneyimi sanabilirdi. Bu, sitenin baştan beri
+ * uyguladığı "kimin işi olduğu yazılsın" kuralının ihlaliydi.
  *
- * Şerit iki kez basılır: ilk kopya bitip ikincisi aynı noktaya geldiğinde
- * animasyon başa sarar ve kesinti görünmez. İkinci kopya ekran okuyuculardan
- * gizli, yoksa bütün adlar iki kez okunur.
+ * ŞİMDİ: Ana sayfada YALNIZ gerçekten görev alınan projeler var. Çözüm
+ * ortağının portföyü referanslar sayfasında, kendi başlığı altında duruyor.
+ * Dört güçlü ad, bize ait olmayan kırk addan daha çok iş görür.
+ *
+ * Kayan şerit de bu yüzden kaldırıldı: dört ad için animasyon gereksiz ve
+ * az sayıda adı sürekli döndürmek listeyi olduğundan kalabalık göstermeye
+ * çalışmak gibi durur.
  */
-interface Props {
-  baslik?: string;
-}
-const { baslik = 'Görev alınan kurumlar' } = Astro.props;
-
-// Tanınırlığı yüksek olanlar öne; şeridin ilk saniyesinde görülen isimler bunlar.
-const one = [
-  'TOKİ', 'Emlak Konut', 'MESA', 'Rönesans', 'TEİAŞ', 'İSTAÇ', 'Shell', 'OPET',
-  'Kuveyt Türk', 'Daikin', 'Continental', 'A101', 'Teknosa', 'Mavi', 'Damat',
-  'Kahve Dünyası', 'Eren Holding', 'Oyak Sigorta', 'Vatan Bilgisayar', 'Intersport',
-  'Caritas Türkiye', 'Kızılay Esenyurt', 'Esenyurt Belediyesi', 'Beylikdüzü Belediyesi',
-  'Ulusoy Lojistik', 'Çolakoğlu Beton', 'Sendeo', 'EAE Elektrik', 'Üntes Mühendislik',
-  'Tessan Madencilik',
-];
-const kalan = isOrtagiReferanslari.filter((a) => !one.includes(a)).slice(0, 12);
-const liste = [...one, ...kalan];
-const vurgulu = new Set<string>(uzmanReferanslari);
+import { uzmanReferanslari } from '~/data/referanslar';
 ---
 
-<section class="py-10 border-y border-gray-200 dark:border-slate-800 overflow-hidden">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-6 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-    <h2 class="text-sm font-semibold uppercase tracking-wider text-muted">{baslik}</h2>
-    <a href="/referanslar/" class="text-sm font-semibold text-primary hover:underline">
-      {referansSayisi}+ kurumun tamamı
-    </a>
-  </div>
+<section class="border-y border-gray-200 py-10 dark:border-slate-800">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-muted">
+        Saha deneyimimizden bazı projeler
+      </h2>
+      <a href="/referanslar/" class="text-sm font-semibold text-primary hover:underline">
+        Referans ve deneyim detayları →
+      </a>
+    </div>
 
-  <div class="serit-kapsayici">
-    <div class="serit">
+    <ul class="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
       {
-        [0, 1].map((kopya) => (
-          <ul class="serit-liste" aria-hidden={kopya === 1 ? 'true' : undefined}>
-            {liste.map((ad) => (
-              <li
-                class:list={[
-                  'serit-oge',
-                  vurgulu.has(ad) ? 'text-primary font-bold' : 'text-gray-500 dark:text-slate-400',
-                ]}
-              >
-                {ad}
-              </li>
-            ))}
-          </ul>
+        uzmanReferanslari.map((ad) => (
+          <li class="rounded-xl bg-gray-50 px-4 py-5 text-center text-lg font-semibold text-heading dark:bg-slate-800/60">
+            {ad}
+          </li>
         ))
       }
-    </div>
+    </ul>
+
+    <p class="mt-4 text-sm text-muted">
+      İş güvenliği uzmanı olarak görev alınan projelerin işveren ve yüklenicileri.
+      Bu kurumlar Dijital OSGB'nin müşterisi olarak değil, görev alınan projelerin
+      tarafı olarak listeleniyor.
+    </p>
   </div>
 </section>
-
-<style>
-  .serit-kapsayici {
-    /* Kenarlarda yumuşak geçiş: adlar ekranın dışına sertçe çarpmasın. */
-    mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
-  }
-
-  .serit {
-    display: flex;
-    width: max-content;
-    animation: kaydir 70s linear infinite;
-  }
-
-  .serit:hover {
-    animation-play-state: paused;
-  }
-
-  .serit-liste {
-    display: flex;
-    align-items: center;
-    gap: 2.75rem;
-    padding-right: 2.75rem;
-    margin: 0;
-    list-style: none;
-  }
-
-  .serit-oge {
-    white-space: nowrap;
-    font-size: 1.0625rem;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-  }
-
-  @keyframes kaydir {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      /* Tam bir kopya kadar kay; ikinci kopya aynı yere oturunca sıfırla. */
-      transform: translateX(-50%);
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .serit {
-      animation: none;
-      flex-wrap: wrap;
-      width: 100%;
-    }
-    .serit-liste:nth-child(2) {
-      display: none;
-    }
-    .serit-liste {
-      flex-wrap: wrap;
-      gap: 1rem 2rem;
-      padding: 0 1rem;
-    }
-  }
-</style>

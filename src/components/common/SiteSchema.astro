@@ -9,7 +9,7 @@
  * BOŞ ALAN BASILMAZ: telefon veya e-posta doldurulmadıysa şemaya hiç
  * girmiyor. Uydurma iletişim bilgisi yayımlamak, düzeltmesi en pahalı hata.
  */
-import { site, isOrtagi, yasalNot, uzman } from '~/data/site';
+import { site, yasalNot } from '~/data/site';
 import logo from '~/assets/images/amblem.png';
 
 const kurum: Record<string, unknown> = {
@@ -35,17 +35,21 @@ const kurum: Record<string, unknown> = {
 };
 if (site.telefon) kurum.telephone = site.telefon;
 if (site.eposta) kurum.email = site.eposta;
-if (isOrtagi.ad) {
-  kurum.memberOf = { '@type': 'Organization', name: isOrtagi.ad, address: isOrtagi.adres };
-}
-
-if (uzman.ad) {
-  kurum.employee = {
-    '@type': 'Person',
-    name: uzman.ad,
-    jobTitle: uzman.belgeSinifi ? `${uzman.belgeSinifi} Sınıfı ${uzman.unvan}` : uzman.unvan,
-  };
-}
+/*
+ * `memberOf` ve `employee` BİLEREK KALDIRILDI.
+ *
+ * memberOf: Sahra OSGB ile ilişki bir üyelik değil, iş ortaklığıdır. Schema.org'da
+ * bu ilişkiyi doğru anlatan bir property yok; memberOf yazmak arama motoruna ve
+ * yapay zekâ sistemlerine gerçekte var olmayan bir kurumsal bağ bildirmek olurdu.
+ * İlişki sayfa metninde zaten açıkça anlatılıyor ("yetkili çözüm ortağımız").
+ *
+ * employee: Dijital OSGB ayrı bir tüzel kişilik değil, bir ticari ad. Veri
+ * sorumlusu gerçek kişinin kendisi. Dolayısıyla şirket-çalışan ilişkisi kurmak
+ * yanlış bir varlık (entity) üretir. Uzmanın kimliği, ait olduğu yerde —
+ * Hakkımızda sayfasının kendi Person şemasında — veriliyor.
+ *
+ * Kural: doğrulanamayan bir ilişkiyi şemaya koyma. Şema gerçeği yansıtmalı.
+ */
 
 const websitesi = {
   '@context': 'https://schema.org',

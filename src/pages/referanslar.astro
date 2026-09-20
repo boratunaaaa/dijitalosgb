@@ -112,10 +112,44 @@ const breadcrumb = {
         </div>
       </dl>
 
-      <ul class="grid gap-x-6 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
+      {/*
+        318 firmayı ilk açılışta yığmak veri dökümü gibi duruyordu. Liste
+        aranabilir ve tehlike sınıfına göre süzülebilir hâle getirildi;
+        JavaScript kapalıysa tamamı görünür kalıyor (filtre arayüzü gizli).
+      */}
+      <div id="referans-filtre" class="mb-6 hidden flex-wrap items-center gap-3">
+        <label class="sr-only" for="referans-ara">Kurum ara</label>
+        <input
+          id="referans-ara"
+          type="search"
+          placeholder="Kurum adında ara…"
+          class="w-full max-w-xs rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-900"
+        />
+        <div class="flex flex-wrap gap-2">
+          {
+            [
+              { d: 'hepsi', a: 'Tümü' },
+              { d: 'cok', a: 'Çok tehlikeli' },
+              { d: 'teh', a: 'Tehlikeli' },
+              { d: 'az', a: 'Az tehlikeli' },
+            ].map((f) => (
+              <button
+                type="button"
+                data-sinif={f.d}
+                class="referans-suz rounded-full border border-gray-300 px-3 py-1.5 text-sm transition hover:border-primary dark:border-slate-600"
+              >
+                {f.a}
+              </button>
+            ))
+          }
+        </div>
+        <p id="referans-sayac" class="text-sm text-muted" aria-live="polite"></p>
+      </div>
+
+      <ul id="referans-listesi" class="grid gap-x-6 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
         {
           katipReferanslari.map((k) => (
-            <li class="flex items-start gap-2 text-sm text-default leading-snug py-1 border-b border-gray-100 dark:border-slate-800">
+            <li data-sinif={k.sinif} data-ad={k.ad.toLocaleLowerCase('tr-TR')} class="flex items-start gap-2 text-sm text-default leading-snug py-1 border-b border-gray-100 dark:border-slate-800">
               <span
                 class:list={['mt-0.5 shrink-0 rounded px-1.5 py-0.5 text-[10px] font-semibold', sinifRengi[k.sinif]]}
                 title={sinifAdi[k.sinif]}
@@ -171,7 +205,7 @@ const breadcrumb = {
           href="/teklif-al/"
           class="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 font-semibold text-white hover:opacity-90 transition"
         >
-          Teklif al
+          Ücretsiz ön değerlendirme
         </a>
         <a
           href="/araclar/isg-yukumluluk-hesaplama/"
@@ -182,4 +216,43 @@ const breadcrumb = {
       </div>
     </div>
   </section>
+
+<script>
+  // Filtre yalnız JavaScript çalışıyorsa görünür: kapalıyken liste eksiksiz
+  // kalmalı, süzülemeyen bir arayüzle karşılaşılmamalı.
+  const kutu = document.getElementById('referans-filtre');
+  const liste = document.getElementById('referans-listesi');
+  const sayac = document.getElementById('referans-sayac');
+  if (kutu && liste && sayac) {
+    kutu.classList.remove('hidden');
+    kutu.classList.add('flex');
+    const ogeler = Array.from(liste.querySelectorAll<HTMLLIElement>('li[data-ad]'));
+    const ara = document.getElementById('referans-ara') as HTMLInputElement;
+    const dugmeler = Array.from(document.querySelectorAll<HTMLButtonElement>('.referans-suz'));
+    let sinif = 'hepsi';
+
+    const ciz = () => {
+      const q = (ara.value || '').toLocaleLowerCase('tr-TR').trim();
+      let n = 0;
+      for (const o of ogeler) {
+        const uydu =
+          (sinif === 'hepsi' || o.dataset.sinif === sinif) &&
+          (!q || (o.dataset.ad || '').includes(q));
+        o.hidden = !uydu;
+        if (uydu) n++;
+      }
+      sayac.textContent = `${n} kurum gösteriliyor`;
+    };
+
+    ara.addEventListener('input', ciz);
+    for (const d of dugmeler) {
+      d.addEventListener('click', () => {
+        sinif = d.dataset.sinif || 'hepsi';
+        for (const x of dugmeler) x.classList.toggle('border-primary', x === d);
+        ciz();
+      });
+    }
+    ciz();
+  }
+</script>
 </Layout>

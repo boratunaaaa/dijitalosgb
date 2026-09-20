@@ -4,19 +4,33 @@ import santiyePlanlama from '~/assets/images/santiye-is-guvenligi-planlama.jpg';
 import { Image } from 'astro:assets';
 import Layout from '~/layouts/PageLayout.astro';
 import ReferansSeridi from '~/components/ReferansSeridi.astro';
+import SosyalKanit from '~/components/SosyalKanit.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Steps from '~/components/widgets/Steps.astro';
-import Stats from '~/components/widgets/Stats.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import { site, egitimSureleri } from '~/data/site';
+import { site, uzman } from '~/data/site';
 import { hizmetler } from '~/data/hizmetler';
 import { sektorler } from '~/data/sektorler';
 import { levhaSayisi } from '~/data/levhalar';
 import { formSayisi } from '~/data/kutuphane';
 import { katipReferanslari, katipReferansSayisi } from '~/data/katip-referanslar';
 import { paketler } from '~/data/paketler';
+
+// Ana sayfada gösterilecek altı hizmet. Tam liste hizmetler sayfasında;
+// burada en sık talep edilen ve satışa dönüşen başlıklar var.
+const ANA_HIZMET_SLUG = [
+  'is-guvenligi-uzmanligi',
+  'isyeri-hekimligi',
+  'risk-degerlendirmesi',
+  'acil-durum-eylem-plani',
+  'saglik-ve-guvenlik-plani',
+  'periyodik-kontroller',
+];
+const anaHizmetler = ANA_HIZMET_SLUG.map((sl) => hizmetler.find((h) => h.slug === sl)).filter(
+  (h): h is NonNullable<typeof h> => Boolean(h)
+);
 
 // Saha tecrübesi rakamları BURADA ÜRETİLİYOR, elle yazılmıyor: kaynak
 // İSG-KATİP sözleşme listesinin kendisi. Liste değişince ana sayfa da
@@ -26,7 +40,16 @@ const cokTehlikeli = katipReferanslari.filter((k) => k.sinif === 'cok').length;
 const tehlikeli = katipReferanslari.filter((k) => k.sinif === 'teh').length;
 
 const metadata = {
-  title: 'OSGB Hizmeti ve Uzaktan İSG Eğitimi',
+  /*
+   * Title yalnız "OSGB" kelimesine hapsetmiyor: verilen iş bundan geniş
+   * (risk değerlendirmesi, ölçüm, periyodik kontrol, eğitim, mobil sağlık).
+   * Üç ili birden sıkıştırmıyor da — il adları title'ı uzatıp tıklama
+   * oranını düşürür, coğrafi hedefleme zaten ilçe sayfalarında yapılıyor.
+   */
+  title: 'İş Sağlığı ve Güvenliği Hizmetleri',
+  description:
+    'Uzmanlık, işyeri hekimliği, risk değerlendirmesi, eğitim ve mobil sağlık tek noktadan. ' +
+    'Saha hizmeti İstanbul, Kocaeli ve Tekirdağ; eğitim 81 ilde. Ücretsiz İSG ön değerlendirmesi alın.',
   ignoreTitleTemplate: false,
 };
 
@@ -60,15 +83,8 @@ const sektorGorseli = (dosya?: string) =>
       <span class="decoration-accent underline decoration-4 underline-offset-8">uçtan uca çözüm ortağınız.</span>
     </Fragment>
     <Fragment slot="subtitle">
-      Uzmanlık, işyeri hekimliği, risk değerlendirmesi, sağlık ve güvenlik planı, mobil sağlık,
-      çalışan eğitimleri, periyodik kontroller ve İSG dokümantasyonu tek noktadan yönetilsin.{' '}
-      <strong>
-        Kamu kurumlarına ve az tehlikeli sınıftaki küçük iş yerlerine tanınan süre 31 Aralık
-        2024'te doldu; bugün bir çalışanı olan her iş yeri kapsamda.
-      </strong>{' '}
-      Size kaç saat ve hangi hizmet düştüğünü
-      <a class="underline underline-offset-4 hover:no-underline" href="/araclar/isg-yukumluluk-hesaplama/">
-        iki dakikada çıkaralım</a>.
+      Uzmanlık, işyeri hekimliği, risk değerlendirmesi, eğitim, mobil sağlık ve İSG
+      dokümantasyonu tek noktadan planlansın.
     </Fragment>
 
     {/* Güven şeridi: ilk ekranda cevaplanması gereken üç soru — kim veriyor,
@@ -95,7 +111,32 @@ const sektorGorseli = (dosya?: string) =>
     </Fragment>
   </Hero>
 
-  <ReferansSeridi />
+  {/*
+    Mevzuat şeridi. Bu bilgi hero'daydı ve açılışı hukuki açıklamayla
+    başlatıyordu; premium bir B2B açılışı böyle başlamamalı. Ayrı ve daha
+    küçük bir şeride alındı — bilgi kayboldu değil, yeri değişti.
+
+    "Her iş yeri" DENMİYOR: 6331 sayılı Kanun'un 2. maddesi kapsam dışı
+    hâller sayıyor (ev hizmetleri, kendi nam ve hesabına çalışanlar ve
+    benzeri). Kapsamı olduğundan geniş göstermek, mevzuat doğruluğu satan
+    bir sitede en pahalı hata olurdu.
+  */}
+  <section class="border-b border-gray-200 bg-primary/5 dark:border-slate-800 dark:bg-primary/10">
+    <div class="mx-auto flex max-w-6xl flex-wrap items-center gap-x-3 gap-y-1 px-4 py-3 text-sm sm:px-6">
+      <span class="rounded-full bg-primary px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-white">
+        Mevzuat
+      </span>
+      <p class="text-default">
+        Kamu kurumlarına ve az tehlikeli sınıftaki elliden az çalışanı olan iş yerlerine tanınan
+        erteleme <strong>31 Aralık 2024'te sona erdi.</strong> 6331 sayılı Kanun kapsamındaki iş
+        yerlerinde iş güvenliği uzmanı ve işyeri hekimi görevlendirme yükümlülüğü, çalışan
+        sayısına bakılmaksızın yürürlükte.
+      </p>
+      <a class="font-semibold text-primary hover:underline" href="/araclar/isg-yukumluluk-hesaplama/">
+        Yükümlülüğümü hesapla →
+      </a>
+    </div>
+  </section>
 
   {/*
     Saha tecrübesi rakamları. Bu sitenin en güçlü güven unsuru buydu ama
@@ -136,118 +177,51 @@ const sektorGorseli = (dosya?: string) =>
     </div>
   </section>
 
-  <Stats
-    title="Çalışan eğitimi kaç saat?"
-    subtitle="İşyerinizin tehlike sınıfı, her çalışanın alması gereken temel İSG eğitiminin süresini belirler. Bu süreler yönetmelikle sabittir."
-    stats={egitimSureleri.map((e) => ({
-      amount: `${e.saat}`,
-      title: `${e.sinif} · ders saati`,
-    }))}
-  />
+  <ReferansSeridi />
 
-  {/* Sektör vitrini: hangi ortamlarda çalıştığımızı tek bakışta göstermek için. */}
-  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-10 md:py-14">
-    <div class="flex flex-wrap items-end justify-between gap-4 mb-7">
-      <div>
-        <p class="text-sm font-semibold uppercase tracking-wider text-primary mb-1.5">Sektörler</p>
-        <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading tracking-tight">
-          Şantiyede de çalışıyoruz, üretim bandında da
-        </h2>
-      </div>
-      <a href="/sektorler/" class="text-sm font-semibold text-primary hover:underline">
-        {sektorler.length} sektörün tamamı →
-      </a>
-    </div>
-    <ul class="grid grid-cols-2 md:grid-cols-3 gap-4">
-      {
-        vitrin.map((s) => {
-          const gorsel = sektorGorseli(s.gorsel);
-          return (
-            <li>
-              <a
-                href={`/sektorler/${s.slug}/`}
-                class="group relative block overflow-hidden rounded-2xl aspect-[4/3] ring-1 ring-gray-200 dark:ring-slate-700"
-              >
-                {gorsel && (
-                  <Image
-                    src={gorsel}
-                    alt={s.ad}
-                    widths={[400, 700]}
-                    sizes="(max-width: 768px) 50vw, 33vw"
-                    class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-                    loading="lazy"
-                  />
-                )}
-                <span class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-                <span class="absolute inset-x-0 bottom-0 p-4">
-                  <span class="block font-bold text-white text-balance leading-snug">{s.ad}</span>
-                </span>
-              </a>
-            </li>
-          );
-        })
-      }
-    </ul>
-  </section>
+  <SosyalKanit />
 
   <Features
     id="hizmetler"
     tagline="Hizmetlerimiz"
     title="Hangi işleri üstleniyoruz"
-    subtitle="İş sağlığı ve güvenliğinde ihtiyacınız olan her başlık tek elden. Saha ekibinden eğitime, ölçümden dokümantasyona."
+    subtitle="İş sağlığı ve güvenliğinde en çok ihtiyaç duyulan başlıklar. Saha ekibinden eğitime, ölçümden dokümantasyona tek elden."
     columns={3}
     items={[
-      ...hizmetler.map((h) => ({
+      ...anaHizmetler.map((h) => ({
         title: h.ad,
         description: h.ozet,
         icon: h.kapsam === 'saha' ? 'tabler:shield-check' : 'tabler:file-text',
-        callToAction: { text: 'Detay', href: `/hizmetler/${h.slug}/` },
+        callToAction: { text: 'Hizmeti incele', href: `/hizmetler/${h.slug}/` },
       })),
       {
-        title: 'Mobil sağlık aracı',
+        title: 'Mobil sağlık taraması',
         description: 'İşe giriş ve periyodik muayeneler işyerinizde; odyometri, SFT, akciğer grafisi, EKG ve laboratuvar.',
         icon: 'tabler:ambulance',
-        callToAction: { text: 'Detay', href: '/mobil-saglik-taramasi/' },
+        callToAction: { text: 'Hizmeti incele', href: '/mobil-saglik-taramasi/' },
       },
       {
-        title: 'Uzaktan İSG eğitimi',
-        description: 'Zorunlu temel eğitim ve yenileme, 81 ilde. Katılım tutanağı ve Ek-2 belgesi.',
+        title: 'İSG eğitimleri',
+        description: 'Zorunlu temel eğitim ve yenileme. Az tehlikeli sınıfta tamamı uzaktan; katılım tutanağı ve belgesiyle.',
         icon: 'tabler:device-laptop',
-        callToAction: { text: 'Detay', href: '/isg-egitimi/' },
+        callToAction: { text: 'Hizmeti incele', href: '/isg-egitimi/' },
       },
     ]}
-  />
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-transparent"></div>
+    </Fragment>
+  </Features>
 
-  {/* Paket vitrini: 14 hizmeti tek tek okumak yerine profil seçtiriyoruz. */}
-  <section class="border-y border-gray-200 bg-gray-50 dark:border-slate-800 dark:bg-slate-900/40">
-    <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-12">
-      <div class="flex flex-wrap items-end justify-between gap-4">
-        <div>
-          <h2 class="text-2xl font-bold text-heading md:text-3xl">İş yerinize uygun paket</h2>
-          <p class="mt-2 max-w-2xl text-muted">
-            Hangi hizmetlerin size düştüğünü tek tek okumak zorunda değilsiniz.
-          </p>
-        </div>
-        <a class="text-sm font-medium underline underline-offset-4 hover:no-underline" href="/paketler/">
-          Paketleri karşılaştır →
-        </a>
-      </div>
-      <div class="mt-7 grid gap-4 md:grid-cols-3">
-        {
-          paketler.map((p) => (
-            <a
-              href={`/paketler/#${p.slug}`}
-              class="rounded-xl border border-gray-200 bg-white p-5 transition hover:border-primary dark:border-slate-700 dark:bg-slate-900"
-            >
-              <h3 class="font-semibold text-heading">{p.ad}</h3>
-              <p class="mt-1.5 text-sm text-muted">{p.kimIcin}</p>
-              <p class="mt-3 text-xs font-medium text-muted">{p.hizmetler.length} hizmet başlığı →</p>
-            </a>
-          ))
-        }
-      </div>
-    </div>
-  </section>
+  <div class="mx-auto -mt-4 max-w-6xl px-4 pb-10 text-center sm:px-6">
+    <a
+      href="/hizmetler/"
+      class="inline-flex items-center gap-1.5 font-semibold text-primary hover:underline"
+    >
+      Tüm hizmetleri inceleyin →
+    </a>
+  </div>
+
 
   {/*
     "Neden biz" bölümü. Maddeler pazarlama sıfatı değil, sitenin başka
@@ -298,6 +272,120 @@ const sektorGorseli = (dosya?: string) =>
           </div>
         ))
       }
+    </div>
+  </section>
+
+  {/* Sektör vitrini: hangi ortamlarda çalıştığımızı tek bakışta göstermek için. */}
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-10 md:py-14">
+    <div class="flex flex-wrap items-end justify-between gap-4 mb-7">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-wider text-primary mb-1.5">Sektörler</p>
+        <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading tracking-tight">
+          Şantiyede de çalışıyoruz, üretim bandında da
+        </h2>
+      </div>
+      <a href="/sektorler/" class="text-sm font-semibold text-primary hover:underline">
+        {sektorler.length} sektörün tamamı →
+      </a>
+    </div>
+    <ul class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      {
+        vitrin.map((s) => {
+          const gorsel = sektorGorseli(s.gorsel);
+          return (
+            <li>
+              <a
+                href={`/sektorler/${s.slug}/`}
+                class="group relative block overflow-hidden rounded-2xl aspect-[4/3] ring-1 ring-gray-200 dark:ring-slate-700"
+              >
+                {gorsel && (
+                  <Image
+                    src={gorsel}
+                    alt={s.ad}
+                    widths={[400, 700]}
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                    class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                    loading="lazy"
+                  />
+                )}
+                <span class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+                <span class="absolute inset-x-0 bottom-0 p-4">
+                  <span class="block font-bold text-white text-balance leading-snug">{s.ad}</span>
+                </span>
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </section>
+
+  {/*
+    Ana sayfada yalnız ANA HİZMETLER. Önceden `hizmetler` dizisinin tamamı
+    basılıyordu ve ana sayfa bir hizmet kataloğuna dönüşmüştü; ziyaretçi
+    14 kart arasından seçim yapmak zorunda kalıyordu. Diğer hizmetler
+    silinmedi, hizmetler sayfasında duruyor.
+
+    "Detay" yerine "Hizmeti incele": karttaki eylem ne yapacağını söylesin.
+  */}
+  {/* Paket vitrini: 14 hizmeti tek tek okumak yerine profil seçtiriyoruz. */}
+  <section class="border-y border-gray-200 bg-gray-50 dark:border-slate-800 dark:bg-slate-900/40">
+    <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-12">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <h2 class="text-2xl font-bold text-heading md:text-3xl">İş yerinize uygun paket</h2>
+          <p class="mt-2 max-w-2xl text-muted">
+            Hangi hizmetlerin size düştüğünü tek tek okumak zorunda değilsiniz.
+          </p>
+        </div>
+        <a class="text-sm font-medium underline underline-offset-4 hover:no-underline" href="/paketler/">
+          Paketleri karşılaştır →
+        </a>
+      </div>
+      <div class="mt-7 grid gap-4 md:grid-cols-3">
+        {
+          paketler.map((p) => (
+            <a
+              href={`/paketler/#${p.slug}`}
+              class="rounded-xl border border-gray-200 bg-white p-5 transition hover:border-primary dark:border-slate-700 dark:bg-slate-900"
+            >
+              <h3 class="font-semibold text-heading">{p.ad}</h3>
+              <p class="mt-1.5 text-sm text-muted">{p.kimIcin}</p>
+              <p class="mt-3 text-xs font-medium text-muted">{p.hizmetler.length} hizmet başlığı →</p>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+  {/*
+    Uzmanlık kartı. Ana sayfada insan yüzü/güven bağlantısı eksikti. Tek küçük
+    kart yeterli — burası kişisel site değil, kurumsal siteye uzmanlık kanıtı
+    ekliyoruz. FOTOĞRAF YOK: gerçek fotoğraf gelene kadar avatar veya yapay
+    zekâ yüzü kullanılmıyor.
+  */}
+  <section class="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-12">
+    <div class="rounded-2xl border border-gray-200 p-6 dark:border-slate-700 md:p-8">
+      <div class="flex flex-wrap items-start justify-between gap-6">
+        <div class="max-w-2xl">
+          <p class="text-sm font-semibold uppercase tracking-wider text-muted">Uzmanlık altyapısı</p>
+          <h2 class="mt-2 text-2xl font-bold text-heading">{uzman.ozet}</h2>
+          <p class="mt-3 text-muted">{uzman.deneyim}</p>
+          <ul class="mt-4 flex flex-wrap gap-2">
+            {
+              [
+                uzman.belgeSinifi ? `${uzman.belgeSinifi} sınıfı ${uzman.unvan.toLocaleLowerCase('tr-TR')}` : uzman.unvan,
+                ...uzman.egitim,
+              ].map((e) => (
+                <li class="rounded-full bg-gray-100 px-3 py-1 text-sm text-default dark:bg-slate-800">{e}</li>
+              ))
+            }
+          </ul>
+        </div>
+        <a class="font-semibold text-primary hover:underline" href="/hakkimizda/">
+          Uzmanlık ve çalışma modelimizi inceleyin →
+        </a>
+      </div>
     </div>
   </section>
 

@@ -1,8 +1,15 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
-import Note from '~/components/widgets/Note.astro';
-import { site, veriSorumlusu } from '~/data/site';
+import { site, veriSorumlusu, veriSorumlusuEksikleri } from '~/data/site';
+
+// Derleme uyarısı: ziyaretçiye değil, siteyi yayımlayan kişiye.
+if (veriSorumlusuEksikleri.length > 0) {
+  console.warn(
+    `[KVKK] Aydınlatma metninde eksik veri sorumlusu bilgisi: ${veriSorumlusuEksikleri.join(', ')}. ` +
+      'Uydurma değer YAZILMAZ; gerçek bilgi girilene kadar sayfada hiç gösterilmiyor.'
+  );
+}
 
 const metadata = {
   title: 'KVKK Aydınlatma Metni',
@@ -17,12 +24,6 @@ const guncelleme = '19 Eylül 2026';
     subtitle={`Son güncelleme: ${guncelleme}`}
   />
 
-  {!veriSorumlusu.unvan && (
-    <Note
-      title="Tamamlanması gereken"
-      description="Veri sorumlusu unvanı ve tebligata elverişli adres henüz girilmedi. Bu metnin geçerli sayılabilmesi için bu iki bilgi zorunludur."
-    />
-  )}
 
   <section class="mx-auto max-w-3xl px-4 sm:px-6 py-10 prose-like">
     <h2>1. Veri sorumlusu</h2>
@@ -66,10 +67,22 @@ const guncelleme = '19 Eylül 2026';
     <h2>5. Aktarım</h2>
     <p>
       Talebiniz saha iş sağlığı ve güvenliği hizmetine ilişkinse, hizmetin fiilen
-      verilebilmesi için yetki belgeli iş ortağımızla paylaşılır. Bunun dışında
-      verileriniz üçüncü kişilere aktarılmaz, yurt dışına çıkarılmaz ve satılmaz.
-      Form iletimi ve e-posta altyapısı için kullanılan hizmet sağlayıcılar, yalnız
-      iletim amacıyla ve bu metinde belirtilen sınırlar içinde veri işler.
+      verilebilmesi için yetki belgeli iş ortağımızla paylaşılır. Verileriniz
+      pazarlama amacıyla üçüncü kişilere aktarılmaz ve satılmaz.
+    </p>
+    <p>
+      <strong>Yurt dışına aktarım:</strong> Bu sitenin barındırma altyapısı ve form
+      iletimi, merkezleri Türkiye dışında bulunan hizmet sağlayıcılar üzerinden
+      çalışmaktadır. Formu gönderdiğinizde verileriniz sırasıyla site barındırma
+      sağlayıcısının sunucularından geçer, e-posta gönderim sağlayıcısı üzerinden
+      iletilir ve kurumsal e-posta kutumuza ulaşır. Bu zincirde veriler yurt dışında
+      bulunan sunucularda işlenebilmektedir. Aktarım, yalnız talebinizin bize
+      ulaştırılması amacıyla ve bu amaçla sınırlı olarak gerçekleşir.
+    </p>
+    <p>
+      Yurt dışına aktarım yapılmasını istemiyorsanız formu kullanmak yerine
+      <a href={`tel:${site.telefonHref}`}>{site.telefon}</a> numarasından telefonla
+      ulaşabilirsiniz.
     </p>
 
     <h2>6. Saklama süresi</h2>

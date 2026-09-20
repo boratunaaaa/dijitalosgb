@@ -1,0 +1,62 @@
+---
+/**
+ * Dönüşüm olaylarının merkezî tanımı.
+ *
+ * NEDEN VAR: Satış odaklı bir sitede hangi eylemin dönüşüme gittiğini ölçmek
+ * gerekiyor. Ama şu anda sitede ÇALIŞAN BİR ANALİTİK SAĞLAYICI YOK ve KVKK
+ * metni "ziyaretçi davranışını izleyen üçüncü taraf analiz kodu yok" diyor.
+ *
+ * Bu yüzden burada VERİ GÖNDERİLMİYOR. Yapılan tek şey, olayların adını ve
+ * tetiklendiği yeri tek merkezde toplamak: bir sağlayıcı bağlandığında
+ * `window.dataLayer`'a düşen olaylar hazır olacak, sayfa sayfa event kodu
+ * aranmayacak. Sağlayıcı yokken hiçbir istek çıkmıyor ve çerez yazılmıyor,
+ * yani KVKK metnindeki iddia bozulmuyor.
+ *
+ * Bir analitik sağlayıcı bağlanırsa: çerez gerektiriyorsa önce çerez
+ * politikası ve aydınlatma metni güncellenmeli, gerekiyorsa rıza alınmalı.
+ */
+---
+
+<script is:inline>
+  (() => {
+    // Olay adları tek yerde. Sağlayıcı bağlanınca bu diziyi okuyacak.
+    const OLAYLAR = {
+      whatsapp_click: 'a[href*="wa.me"]',
+      phone_click: 'a[href^="tel:"]',
+      service_cta_click: 'a[href*="/teklif-al"]',
+    };
+
+    window.dataLayer = window.dataLayer || [];
+    const bildir = (ad, ayrinti) => {
+      // Sağlayıcı yokken bu yalnız bellekte bir dizi; ağ isteği çıkmaz.
+      window.dataLayer.push({ event: ad, ...ayrinti });
+    };
+
+    for (const [ad, secici] of Object.entries(OLAYLAR)) {
+      document.addEventListener(
+        'click',
+        (e) => {
+          const hedef = e.target instanceof Element ? e.target.closest(secici) : null;
+          if (hedef) bildir(ad, { yol: location.pathname, metin: (hedef.textContent || '').trim().slice(0, 60) });
+        },
+        { passive: true, capture: true }
+      );
+    }
+
+    const form = document.querySelector('form[action="/api/teklif"]');
+    if (form) {
+      let basladi = false;
+      form.addEventListener(
+        'input',
+        () => {
+          if (!basladi) {
+            basladi = true;
+            bildir('lead_form_start', { yol: location.pathname });
+          }
+        },
+        { passive: true }
+      );
+      form.addEventListener('submit', () => bildir('lead_form_submit', { yol: location.pathname }));
+    }
+  })();
+</script>

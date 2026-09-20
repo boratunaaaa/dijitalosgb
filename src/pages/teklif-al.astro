@@ -42,7 +42,7 @@ const alan = 'w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-b
   </section>
 
   <section class="mx-auto max-w-2xl px-4 sm:px-6 pb-16">
-    <form method="post" action="/api/teklif" class="flex flex-col gap-5">
+    <form method="post" action="/api/teklif" class="relative flex flex-col gap-5">
       <div class="flex flex-col gap-2">
         <label for="firma" class="font-medium">Firma adı</label>
         <input id="firma" name="firma" type="text" required class={alan} />
@@ -70,6 +70,18 @@ const alan = 'w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-b
         <label for="iletisim" class="font-medium">Size nasıl dönelim?</label>
         <input id="iletisim" name="iletisim" type="text" required placeholder="telefon veya e-posta" class={alan} />
       </div>
+      {/*
+        Bal küpü: ekran okuyucudan ve klavye sırasından çıkarıldı, gözle de
+        görünmüyor. Gerçek ziyaretçi dolduramaz; dolu geldiyse gönderen bot.
+        `display:none` yerine konumlandırma kullanılıyor — bazı botlar gizli
+        alanları `display` üzerinden ayırt edip atlıyor.
+      */}
+      <div aria-hidden="true" class="absolute left-[-9999px] top-auto h-px w-px overflow-hidden">
+        <label for="website">Bu alanı boş bırakın</label>
+        <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+      </div>
+      <input id="acilis" name="acilis" type="hidden" value="" />
+
       <label class="flex items-start gap-3 text-sm">
         <input id="ticari-izin" name="ticari_izin" type="checkbox" value="evet" class="mt-1" />
         <span class="text-muted">
@@ -98,6 +110,11 @@ const alan = 'w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-b
       ziyaretçi aynı bilgiyi ikinci kez yazmak zorunda kalmasın. Değerler
       yalnız URL'den okunur, hiçbir yere kaydedilmez. */}
   <script>
+    // Formun açıldığı an: sunucu tarafında "insan bu kadar hızlı dolduramaz"
+    // kontrolü için. Kaydedilmiyor, yalnız gönderimle birlikte gidiyor.
+    const acilisAlani = document.getElementById('acilis') as HTMLInputElement | null;
+    if (acilisAlani) acilisAlani.value = String(Date.now());
+
     const p = new URLSearchParams(location.search);
     const calisan = p.get('calisan');
     const sinif = p.get('sinif');

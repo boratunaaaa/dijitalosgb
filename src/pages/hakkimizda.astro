@@ -46,9 +46,17 @@ const structuredData = [
   <Content title="İşin hangi kısmını kim yürütüyor">
     <Fragment slot="content">
       <p>
-        İSG eğitimlerini, risk değerlendirmesi desteğini, acil durum planlarını ve
-        işyeri dokümantasyonunu <strong>doğrudan biz</strong> yürütüyoruz. Bu hatlarda
-        aracı yok: eğitimi veren de, dosyayı kuran da aynı ekip.
+        İSG eğitimlerini <strong>doğrudan biz</strong> veriyoruz. Risk değerlendirmesi, acil
+        durum planı ve işyeri dokümantasyonunda ise <strong>hazırlama ve uygulama desteği</strong>
+        sağlıyoruz: saha incelemesini yapar, dosyayı kurar, ekibe uzman desteği veririz.
+        Bu hatlarda aracı yok — eğitimi veren de, dosyayı kuran da aynı ekip.
+      </p>
+      <p class="mt-3 text-sm text-muted">
+        Mevzuat gereği risk değerlendirmesi, işveren veya vekilinin başkanlığında; iş güvenliği
+        uzmanı, işyeri hekimi, çalışan temsilcileri ve destek elemanlarından oluşan bir ekipçe
+        yapılır. Acil durum planının hazırlanması da işverenin yükümlülüğüdür. Dışarıdan destek
+        almak bu yükümlülüğü ortadan kaldırmaz; biz süreci kurar ve yürütürüz, sorumluluk
+        6331 sayılı Kanun gereği işverende kalır.
       </p>
       <p class="mt-3">
         Saha görevlendirmesi gerektiren hizmetler — iş güvenliği uzmanı ve işyeri hekimi
@@ -104,9 +112,9 @@ const structuredData = [
         {uzman.belgeSinifi ? `${uzman.belgeSinifi} sınıfı ${uzman.unvan.toLocaleLowerCase('tr-TR')}` : uzman.unvan}
       </p>
       <p class="mt-3">
-        Eğitim ve danışmanlık süreçlerinin teknik sorumlusu. Dosyayı kuran, eğitimi veren ve
-        saha tarafında iş ortağıyla koordinasyonu yürüten kişi aynı — talebiniz elden ele
-        dolaşmıyor.
+        Hizmet ve danışmanlık süreçlerini yürüten A sınıfı iş güvenliği uzmanı. Dosyayı kuran,
+        eğitimi veren ve saha tarafında iş ortağıyla koordinasyonu sağlayan kişi aynı — talebiniz
+        elden ele dolaşmıyor.
       </p>
       {uzman.deneyim && <p class="mt-3">{uzman.deneyim}</p>}
     </Fragment>

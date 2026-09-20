@@ -5,12 +5,23 @@ import Features from '~/components/widgets/Features.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import StructuredData from '~/components/common/StructuredData.astro';
 import { site, isOrtagi } from '~/data/site';
+import { sektorler } from '~/data/sektorler';
+import { tehlikeSiniflari, uzmanDakika, hekimDakika, temelEgitim } from '~/data/mevzuat';
 import { ilceler } from '~/data/ilceler';
 
 export function getStaticPaths() {
   return ilceler.map((i) => ({ params: { ilce: i.slug }, props: { ilce: i } }));
 }
 const { ilce } = Astro.props;
+
+const ilceSektorleri = ilce.sektorler
+  .map((sl) => sektorler.find((x) => x.slug === sl))
+  .filter((x): x is NonNullable<typeof x> => Boolean(x));
+
+// "karma" bir tehlike sınıfı değil; o ilçelerde tek bir süre tablosu vermek
+// yanıltıcı olur, bu yüzden bölüm hiç basılmıyor.
+const sinif = ilce.baskinSinif === 'karma' ? null : ilce.baskinSinif;
+const sinifAdi = sinif ? (tehlikeSiniflari.find((t) => t.id === sinif)?.ad ?? '').toLocaleLowerCase('tr-TR') : '';
 
 const metadata = {
   title: `${ilce.ad} OSGB ve İş Güvenliği Hizmeti`,
@@ -43,6 +54,85 @@ const structuredData = [{
       { title: 'Çalışan eğitimi', description: 'Temel eğitim ve yenileme; uygun sınıfta uzaktan.', icon: 'tabler:school' },
     ]}
   />
+  {/*
+    İlçeye ÖZGÜ bölüm. Önceden bu sayfalar yalnız ilçe adı değişen, gövdesi
+    ~650 karakterlik kopyalardı (ölçüldü: sayfalar arası benzerlik %93).
+    Google için doorway page görünümü, ziyaretçi için de değersiz.
+
+    Buraya eklenen her şey VERİDEN geliyor: ilçedeki baskın tehlike sınıfı ve
+    yoğun iş kolları `ilceler.ts`'te, süreler `mevzuat.ts`'te. Uydurma yerel
+    iddia yok.
+  */}
+  <section class="mx-auto max-w-5xl px-4 py-10 sm:px-6">
+    {
+      sinif && (
+        <>
+          <h2 class="text-2xl font-bold text-heading">
+            {ilce.ad}'de {sinifAdi} sınıfta yükümlülük ne kadar?
+          </h2>
+          <p class="mt-3 text-muted">
+            Aşağıdaki süreler {ilce.ad} için değil, <strong>{sinifAdi} tehlike sınıfı</strong> için
+            geçerli olan yönetmelik değerleridir. {ilce.ad}'de yoğun olan iş kolları ağırlıklı
+            bu sınıfta yer aldığı için başlangıç noktası olarak veriliyor; kendi iş yerinizin
+            sınıfı NACE kodunuza göre belirlenir.
+          </p>
+          <dl class="mt-6 grid gap-4 sm:grid-cols-3">
+            <div class="rounded-xl border border-gray-200 p-4 dark:border-slate-700">
+              <dt class="text-sm text-muted">İş güvenliği uzmanı</dt>
+              <dd class="mt-1 text-xl font-bold text-heading">
+                çalışan başına ayda {uzmanDakika[sinif]} dk
+              </dd>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-4 dark:border-slate-700">
+              <dt class="text-sm text-muted">İşyeri hekimi</dt>
+              <dd class="mt-1 text-xl font-bold text-heading">
+                çalışan başına ayda {hekimDakika[sinif]} dk
+              </dd>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-4 dark:border-slate-700">
+              <dt class="text-sm text-muted">Temel İSG eğitimi</dt>
+              <dd class="mt-1 text-xl font-bold text-heading">
+                {temelEgitim[sinif].saat} ders saati
+              </dd>
+            </div>
+          </dl>
+          <p class="mt-4 text-sm">
+            <a class="underline underline-offset-4 hover:no-underline" href="/araclar/isg-yukumluluk-hesaplama/">
+              Kendi çalışan sayınızla hesaplayın →
+            </a>
+          </p>
+        </>
+      )
+    }
+
+    {
+      ilceSektorleri.length > 0 && (
+        <>
+          <h2 class:list={['text-2xl font-bold text-heading', sinif && 'mt-12']}>
+            {ilce.ad}'de yoğun olan iş kolları
+          </h2>
+          <p class="mt-3 text-muted">
+            Bu iş kollarının her birinde öne çıkan riskler ve öncelikli dokümanlar farklı.
+            İlgili sayfada o sektöre özgü başlıkları bulabilirsiniz.
+          </p>
+          <ul class="mt-5 grid gap-3 sm:grid-cols-2">
+            {ilceSektorleri.map((x) => (
+              <li>
+                <a
+                  href={`/sektorler/${x.slug}/`}
+                  class="block rounded-xl border border-gray-200 p-4 transition hover:border-primary dark:border-slate-700"
+                >
+                  <span class="font-semibold text-heading">{x.ad}</span>
+                  <span class="mt-1 block text-sm text-muted">{x.tehlikeSinifi}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </>
+      )
+    }
+  </section>
+
   <CallToAction
     title="Yetkili OSGB altyapısıyla saha hizmeti"
     subtitle={`Uzman ve hekim görevlendirmeleri Bakanlıkça yetkilendirilmiş çözüm ortağımız ${isOrtagi.ad} üzerinden yürütülür; eğitim, danışmanlık ve dokümantasyonu biz yönetiriz.`}
