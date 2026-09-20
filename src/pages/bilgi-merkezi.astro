@@ -3,6 +3,39 @@ import Layout from '~/layouts/PageLayout.astro';
 import StructuredData from '~/components/common/StructuredData.astro';
 import { site } from '~/data/site';
 import { bilgiMerkeziVerileri } from '~/data/bilgi-merkezi';
+import { bolgeSektorSayfalari } from '~/data/bolge-sektor';
+import { sektorler } from '~/data/sektorler';
+
+/**
+ * BÖLGE VE SEKTÖR REHBERLERİ — filtrelenebilir hub.
+ *
+ * NEDEN BURADA: Bu içerikler ana menüde görünmüyor ve görünmemeli; üst menü
+ * her yeni sayfayla büyürse site bir portala dönüşür. Ama menüde olmamak ile
+ * hiçbir yerden bağlanmamak aynı şey değil: hiçbir yerden link almayan sayfa
+ * orphan page olur, taranması zorlaşır ve düşük değer sinyali verir.
+ *
+ * Bu hub o iki ihtiyacı birden karşılıyor: menüde tek satır, altında
+ * kategorize ve aranabilir bir liste. İçerik 200 sayfaya çıksa da sayfa
+ * sade kalır çünkü varsayılan olarak yalnız ilk 12 kart gösteriliyor.
+ *
+ * VERİ YOKSA BÖLÜM HİÇ BASILMIYOR — "yakında" kutusu göstermek, bölümün
+ * hiç olmamasından kötüdür.
+ */
+const rehberler = bolgeSektorSayfalari.filter((b) => !b.indexDisi);
+const iller = [...new Set(rehberler.map((b) => b.il))].sort();
+const sektorAdi = (slug?: string) =>
+  sektorler.find((x) => x.slug === slug)?.ad ?? slug?.replace(/-/g, ' ') ?? '';
+const kullanilanSektorler = [...new Set(rehberler.map((b) => b.sektorSlug).filter(Boolean))]
+  .map((slug) => ({ slug: slug as string, ad: sektorAdi(slug as string) }))
+  .sort((a, b) => a.ad.localeCompare(b.ad, 'tr'));
+/**
+ * Varsayılan olarak gösterilecek kart sayısı.
+ *
+ * TEK KAYNAK: Bu değer listeye `data-ilk` olarak basılıyor ve betik onu
+ * oradan okuyor. İlk sürümde sayı hem burada hem betikte ayrı ayrı
+ * yazılmıştı; biri değişince diğeri sessizce eski kalırdı.
+ */
+const ILK_GOSTERIM = 12;
 
 const metadata = {
   title: 'İSG Bilgi Merkezi ve Sözlük — OSGB Terimleri',
@@ -48,6 +81,99 @@ const breadcrumb = {
     <p class="text-lg text-muted mb-8">
       İş Sağlığı ve Güvenliği uygulamalarında en çok merak edilen kavramlar, yasal zorunluluklar ve OSGB süreçleri hakkında hızlı ve net bilgiler.
     </p>
+
+    {
+      rehberler.length > 0 && (
+        <section id="bolge-rehberleri" class="mb-14 scroll-mt-24">
+          <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+            <h2 class="text-2xl font-bold font-heading text-heading">Bölge ve sektör rehberleri</h2>
+            <span class="text-sm text-muted">{rehberler.length} rehber</span>
+          </div>
+          <p class="mt-2 text-muted">
+            Aynı iş kolu farklı bölgelerde farklı önceliklerle çalışıyor. Aşağıdaki rehberler
+            o bölgedeki iş yapış biçimine göre yazıldı; ilçe veya sektör seçerek daraltabilirsiniz.
+          </p>
+
+          {/* Filtre arayüzü yalnız JavaScript çalışıyorsa görünür.
+              Kapalıyken liste eksiksiz kalır; süzülemeyen bir arayüzle
+              karşılaşılmaz. */}
+          <div id="rehber-filtre" class="mt-6 hidden flex-col gap-3">
+            <label class="sr-only" for="rehber-ara">Rehberlerde ara</label>
+            <input
+              id="rehber-ara"
+              type="search"
+              placeholder="İlçe, sektör veya konu arayın…"
+              class="w-full max-w-md rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-900"
+            />
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="text-xs font-semibold uppercase tracking-wider text-muted">İl</span>
+              <button type="button" data-il="hepsi" class="rehber-il rounded-full border border-primary px-3 py-1 text-sm">
+                Tümü
+              </button>
+              {iller.map((il) => (
+                <button
+                  type="button"
+                  data-il={il}
+                  class="rehber-il rounded-full border border-gray-300 px-3 py-1 text-sm transition hover:border-primary dark:border-slate-600"
+                >
+                  {il}
+                </button>
+              ))}
+            </div>
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="text-xs font-semibold uppercase tracking-wider text-muted">Sektör</span>
+              <button type="button" data-sektor="hepsi" class="rehber-sektor rounded-full border border-primary px-3 py-1 text-sm">
+                Tümü
+              </button>
+              {kullanilanSektorler.map((x) => (
+                <button
+                  type="button"
+                  data-sektor={x.slug}
+                  class="rehber-sektor rounded-full border border-gray-300 px-3 py-1 text-sm transition hover:border-primary dark:border-slate-600"
+                >
+                  {x.ad}
+                </button>
+              ))}
+            </div>
+            <p id="rehber-sayac" class="text-sm text-muted" aria-live="polite" />
+          </div>
+
+          <ul id="rehber-listesi" data-ilk={String(ILK_GOSTERIM)} class="mt-6 grid gap-3 sm:grid-cols-2">
+            {rehberler.map((b, i) => (
+              <li
+                data-il={b.il}
+                data-sektor={b.sektorSlug ?? ''}
+                data-ara={`${b.h1} ${b.ilce ?? ''} ${b.il} ${sektorAdi(b.sektorSlug)}`.toLocaleLowerCase('tr-TR')}
+                data-sira={i}
+              >
+                <a
+                  href={`/bolge/${b.slug}/`}
+                  class="block h-full rounded-xl border border-gray-200 p-4 transition hover:border-primary dark:border-slate-700"
+                >
+                  <span class="text-xs font-semibold uppercase tracking-wider text-muted">
+                    {b.ilce ? `${b.ilce} · ${b.il}` : b.il}
+                  </span>
+                  <span class="mt-1 block font-semibold text-heading">{b.h1}</span>
+                  <span class="mt-1.5 block text-sm text-muted">{b.metaAciklama.slice(0, 105)}…</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <div class="mt-5">
+            <button
+              id="rehber-daha"
+              type="button"
+              class="hidden rounded-full border border-gray-300 px-5 py-2 text-sm font-semibold transition hover:border-primary dark:border-slate-600"
+            >
+              Tümünü göster
+            </button>
+          </div>
+        </section>
+      )
+    }
+
+    <h2 class="text-2xl font-bold font-heading text-heading mb-4">Kavramlar ve sık sorulanlar</h2>
 
     <div class="mb-12 scroll-mt-24">
       <div class="space-y-4">
@@ -128,4 +254,71 @@ const breadcrumb = {
     </ul>
   </section>
 
+<script>
+  // Filtre yalnız JavaScript varsa devreye giriyor; kapalıyken bütün
+  // rehberler görünür kalır.
+  const kutu = document.getElementById('rehber-filtre');
+  const liste = document.getElementById('rehber-listesi');
+  const sayac = document.getElementById('rehber-sayac');
+  const daha = document.getElementById('rehber-daha');
+  // Limit Astro tarafından `data-ilk` ile geçiyor; burada yeniden yazılmıyor.
+  const ILK = Number(liste?.dataset.ilk ?? 12) || 12;
+
+  if (kutu && liste && sayac && daha) {
+    kutu.classList.remove('hidden');
+    kutu.classList.add('flex');
+    const ogeler = Array.from(liste.querySelectorAll<HTMLLIElement>('li[data-ara]'));
+    const ara = document.getElementById('rehber-ara') as HTMLInputElement;
+    const ilDugmeleri = Array.from(document.querySelectorAll<HTMLButtonElement>('.rehber-il'));
+    const sektorDugmeleri = Array.from(document.querySelectorAll<HTMLButtonElement>('.rehber-sektor'));
+    let il = 'hepsi';
+    let sektor = 'hepsi';
+    let hepsiniGoster = false;
+
+    const ciz = () => {
+      const q = (ara.value || '').toLocaleLowerCase('tr-TR').trim();
+      const uyanlar = ogeler.filter(
+        (o) =>
+          (il === 'hepsi' || o.dataset.il === il) &&
+          (sektor === 'hepsi' || o.dataset.sektor === sektor) &&
+          (!q || (o.dataset.ara || '').includes(q))
+      );
+      // Filtre veya arama aktifse tamamı gösterilir; aksi hâlde sayfa
+      // kalabalıklaşmasın diye ilk ILK kadarı.
+      const sinirVar = !hepsiniGoster && !q && il === 'hepsi' && sektor === 'hepsi';
+      for (const o of ogeler) o.hidden = true;
+      uyanlar.slice(0, sinirVar ? ILK : uyanlar.length).forEach((o) => (o.hidden = false));
+
+      sayac.textContent =
+        uyanlar.length === 0
+          ? 'Bu filtrede rehber yok.'
+          : sinirVar && uyanlar.length > ILK
+            ? `${uyanlar.length} rehberden ilk ${ILK} tanesi gösteriliyor`
+            : `${uyanlar.length} rehber gösteriliyor`;
+      daha.hidden = !(sinirVar && uyanlar.length > ILK);
+      daha.classList.toggle('hidden', daha.hidden);
+    };
+
+    ara.addEventListener('input', ciz);
+    for (const d of ilDugmeleri) {
+      d.addEventListener('click', () => {
+        il = d.dataset.il || 'hepsi';
+        for (const x of ilDugmeleri) x.classList.toggle('border-primary', x === d);
+        ciz();
+      });
+    }
+    for (const d of sektorDugmeleri) {
+      d.addEventListener('click', () => {
+        sektor = d.dataset.sektor || 'hepsi';
+        for (const x of sektorDugmeleri) x.classList.toggle('border-primary', x === d);
+        ciz();
+      });
+    }
+    daha.addEventListener('click', () => {
+      hepsiniGoster = true;
+      ciz();
+    });
+    ciz();
+  }
+</script>
 </Layout>
