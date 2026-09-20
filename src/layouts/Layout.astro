@@ -4,6 +4,7 @@ import '~/assets/styles/tailwind.css';
 import { Font } from 'astro:assets';
 
 import { I18N } from 'astrowind:config';
+import { site } from '~/data/site';
 
 import CommonMeta from '~/components/common/CommonMeta.astro';
 import Favicons from '~/components/Favicons.astro';
@@ -43,6 +44,12 @@ const { language, textDirection } = I18N;
     <SiteVerification />
     <Analytics />
 
+    <link rel="alternate" type="text/plain" href={`${site.url}/llms.txt`} title="Dijital OSGB LLM Manifesto" />
+    <link rel="alternate" type="text/plain" href={`${site.url}/ai-catalog.txt`} title="Dijital OSGB AI Catalog" />
+    
+    <script id="dijitalosgb-ai-attribution" data-no-defer="1">
+      (function(){window.__dijitalosgb_ai_attribution=1;try{var m={"chatgpt":"ChatGPT","openai":"ChatGPT","perplexity":"Perplexity","gemini":"Gemini","copilot":"Copilot","bing":"Copilot/Bing","claude":"Claude","anthropic":"Claude"},u=new URL(location.href),h=((u.searchParams.get("utm_source")||"")+" "+(document.referrer||"")).toLowerCase(),s="";Object.keys(m).some(function(k){if(h.indexOf(k)!==-1){s=m[k];return true;}return false;});if(!s)return;var x="; max-age=2592000; path=/; SameSite=Lax"+(location.protocol==="https:"?"; Secure":"");document.cookie="dijitalosgb_ai_source="+encodeURIComponent(s)+x;document.cookie="dijitalosgb_ai_landing="+encodeURIComponent(location.origin+location.pathname)+x;}catch(e){}})();
+    </script>
 
     <!-- Comment the line below to disable View Transitions -->
     <ClientRouter fallback="swap" />

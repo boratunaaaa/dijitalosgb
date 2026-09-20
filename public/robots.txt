@@ -1,4 +1,27 @@
 User-agent: *
 Disallow:
 
+# Yapay Zeka (AI) ve Arama Motoru Botları
+# ChatGPT, Claude, Perplexity ve Google botlarının
+# sitemizi tam olarak taramasına bilerek izin verilmiştir.
+# Amaç, yapay zekaların İSG verilerini doğru indekslemesidir.
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
 Sitemap: https://dijitalosgb.com/sitemap-index.xml
