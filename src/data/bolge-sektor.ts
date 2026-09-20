@@ -883,6 +883,3011 @@ export const bolgeSektorSayfalari: BolgeSektorSayfa[] = [
       "benzerlikEnYuksek": 0.008
     }
   },
+  {
+    "slug": "esenyurt-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Esenyurt",
+    "seoBaslik": "Esenyurt OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Esenyurt bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Esenyurt OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Esenyurt ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Esenyurt'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Esenyurt ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. İstanbul'un en kalabalık ilçesi ve yoğun bir küçük imalat dokusu var. Tekstil, plastik ve gıda üretimi yapan işyerlerinin büyük bölümü tehlikeli sınıfta; bu da 12 ders saatlik temel eğitim ve daha sık işyeri hekimi görevlendirmesi demek.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Esenyurt sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak tehlikeli ve çok tehlikeli işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Esenyurt İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Esenyurt ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Tekstil ve Konfeksiyon alanında Esenyurt özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Kimya ve Boya Sanayi alanında Esenyurt özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Gıda Üretimi ve Restoranlar alanında Esenyurt özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Ahşap ve Mobilya İmalatı alanında Esenyurt özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Esenyurt bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Esenyurt ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Esenyurt OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Esenyurt'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "kadikoy-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Kadıköy",
+    "seoBaslik": "Kadıköy OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Kadıköy bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Kadıköy OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Kadıköy ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Kadıköy'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Kadıköy ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Ağırlık ofis, kafe-restoran ve perakende. Bu işyerlerinin çoğu az tehlikeli sınıfta, yani temel eğitim 8 ders saati ve tamamı uzaktan verilebiliyor — sahaya çıkmadan tamamlanabilen ender segmentlerden.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Kadıköy sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak az tehlikeli işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Kadıköy İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Kadıköy ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Ofis ve Hizmet Sektörü alanında Kadıköy özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Gıda Üretimi ve Restoranlar alanında Kadıköy özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Perakende ve Mağazacılık alanında Kadıköy özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Kadıköy bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Kadıköy ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Kadıköy OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Kadıköy'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "umraniye-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Ümraniye",
+    "seoBaslik": "Ümraniye OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Ümraniye bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Ümraniye OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Ümraniye ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Ümraniye'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Ümraniye ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Organize sanayi ile plaza ofislerinin yan yana olduğu karma bir ilçe. Aynı firmanın merkez ofisi az tehlikeli, üretim tesisi çok tehlikeli sınıfta olabiliyor; yükümlülük tek tek işyeri bazında hesaplanmalı.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Ümraniye sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak karma işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Ümraniye İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Ümraniye ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Ofis ve Hizmet Sektörü alanında Ümraniye özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Fabrika ve Seri Üretim alanında Ümraniye özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Metal İşleme ve Kaynak alanında Ümraniye özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Lojistik ve Depolama alanında Ümraniye özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Ümraniye bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Ümraniye ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Ümraniye OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Ümraniye'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "basaksehir-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Başakşehir",
+    "seoBaslik": "Başakşehir OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Başakşehir bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Başakşehir OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Başakşehir ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Başakşehir'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Başakşehir ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. İkitelli OSB ve çevresindeki üretim yoğunluğu ilçeyi ağırlıklı olarak tehlikeli ve çok tehlikeli sınıfa taşıyor. Çok tehlikeli sınıfta temel eğitim 16 ders saati ve 4. konu başlığı yüz yüze zorunlu.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Başakşehir sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak tehlikeli ve çok tehlikeli işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Başakşehir İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Başakşehir ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Fabrika ve Seri Üretim alanında Başakşehir özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Metal İşleme ve Kaynak alanında Başakşehir özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Matbaa ve Ambalaj alanında Başakşehir özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Tekstil ve Konfeksiyon alanında Başakşehir özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Başakşehir bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Başakşehir ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Başakşehir OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Başakşehir'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "adalar-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Adalar",
+    "seoBaslik": "Adalar OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Adalar bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Adalar OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Adalar ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Adalar'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Adalar ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Turizm, konaklama ve restoran hizmetlerinin yoğun olduğu bir ilçe. Az tehlikeli sınıf ağırlıklı olsa da deniz taşımacılığı ve lojistik süreçlerinde tehlikeli sınıf uygulamaları dikkat gerektiriyor.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Adalar sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak az tehlikeli işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Adalar İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Adalar ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Gıda Üretimi ve Restoranlar alanında Adalar özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Ofis ve Hizmet Sektörü alanında Adalar özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Adalar bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Adalar ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Adalar OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Adalar'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "arnavutkoy-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Arnavutköy",
+    "seoBaslik": "Arnavutköy OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Arnavutköy bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Arnavutköy OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Arnavutköy ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Arnavutköy'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Arnavutköy ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. İstanbul Havalimanı'nın etkisiyle lojistik, depolama ve inşaat faaliyetlerinin hızla arttığı bir bölge. Tehlikeli ve çok tehlikeli işkollarında yüksek oranda iş sağlığı ve güvenliği hizmetine ihtiyaç duyuluyor.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Arnavutköy sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak tehlikeli ve çok tehlikeli işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Arnavutköy İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Arnavutköy ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Lojistik ve Depolama alanında Arnavutköy özelinde yerinde gözlem ve tehlike tespiti.",
+                  "İnşaat ve Taahhüt İşleri alanında Arnavutköy özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Fabrika ve Seri Üretim alanında Arnavutköy özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Arnavutköy bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Arnavutköy ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Arnavutköy OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Arnavutköy'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "atasehir-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Ataşehir",
+    "seoBaslik": "Ataşehir OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Ataşehir bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Ataşehir OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Ataşehir ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Ataşehir'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Ataşehir ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Finans merkezi ve beyaz yaka ofis yoğunluğu ile dikkat çeken bir ilçe. Plaza hayatının gereksinimleri olan ergonomi, ekranlı araçlarla çalışma ve acil durum tahliye planları öne çıkıyor.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Ataşehir sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak az tehlikeli işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Ataşehir İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Ataşehir ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Ofis ve Hizmet Sektörü alanında Ataşehir özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bilişim ve Yazılım Sektörü alanında Ataşehir özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Gıda Üretimi ve Restoranlar alanında Ataşehir özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Ataşehir bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Ataşehir ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Ataşehir OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Ataşehir'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "avcilar-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Avcılar",
+    "seoBaslik": "Avcılar OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Avcılar bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Avcılar OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Avcılar ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Avcılar'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Avcılar ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Ambarlı Limanı ve çevresindeki sanayi tesisleriyle lojistik ve üretim sektörlerinin kalbi konumunda. Tehlikeli madde taşımacılığı ve ağır sanayi kuralları ilçede İSG'nin temelini oluşturuyor.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Avcılar sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak tehlikeli ve çok tehlikeli işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Avcılar İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Avcılar ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Lojistik ve Depolama alanında Avcılar özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Fabrika ve Seri Üretim alanında Avcılar özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Metal İşleme ve Kaynak alanında Avcılar özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Avcılar bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Avcılar ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Avcılar OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Avcılar'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "bagcilar-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Bağcılar",
+    "seoBaslik": "Bağcılar OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Bağcılar bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Bağcılar OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Bağcılar ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Bağcılar'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Bağcılar ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Tekstil, matbaa ve hafif imalat sektörlerinde çok sayıda küçük ve orta ölçekli işletmeyi barındırıyor. Makine koruyucuları, yangın güvenliği ve toz maruziyeti bu atölyelerde kritik öneme sahip.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Bağcılar sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak tehlikeli ve çok tehlikeli işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Bağcılar İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Bağcılar ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Tekstil ve Konfeksiyon alanında Bağcılar özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Matbaa ve Ambalaj alanında Bağcılar özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Plastik ve Kauçuk İmalatı alanında Bağcılar özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Bağcılar bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Bağcılar ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Bağcılar OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Bağcılar'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "bahcelievler-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Bahçelievler",
+    "seoBaslik": "Bahçelievler OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Bahçelievler bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Bahçelievler OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Bahçelievler ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Bahçelievler'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Bahçelievler ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Kuyumculuk imalatı, tekstil ve gıda sektörlerinde yoğunlaşan bir sanayi ve ticaret yapısı var. Özellikle kimyasal kullanımı ve ergonomik riskler ön plana çıkıyor.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Bahçelievler sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak tehlikeli ve çok tehlikeli işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Bahçelievler İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Bahçelievler ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Tekstil ve Konfeksiyon alanında Bahçelievler özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Gıda Üretimi ve Restoranlar alanında Bahçelievler özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Kimya ve Boya Sanayi alanında Bahçelievler özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Bahçelievler bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Bahçelievler ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Bahçelievler OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Bahçelievler'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "bakirkoy-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Bakırköy",
+    "seoBaslik": "Bakırköy OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Bakırköy bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Bakırköy OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Bakırköy ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Bakırköy'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Bakırköy ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Sağlık sektörü, hastaneler ve perakende mağazacılık ağırlıklı bir ilçe. Biyolojik risk etmenleri ve vardiyalı çalışma düzenine yönelik özel sağlık gözetimleri uygulanması gerekiyor.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Bakırköy sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak az tehlikeli işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Bakırköy İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Bakırköy ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Sağlık ve Hastaneler alanında Bakırköy özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Perakende ve Mağazacılık alanında Bakırköy özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Ofis ve Hizmet Sektörü alanında Bakırköy özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Bakırköy bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Bakırköy ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Bakırköy OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Bakırköy'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "bayrampasa-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Bayrampaşa",
+    "seoBaslik": "Bayrampaşa OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Bayrampaşa bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Bayrampaşa OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Bayrampaşa ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Bayrampaşa'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Bayrampaşa ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Kuru gıda hali, plastik enjeksiyon ve makine imalat atölyelerinin yoğun olduğu eski bir sanayi merkezi. Forklift kullanımı, yangın riski ve makine emniyeti denetimlerde ilk sırayı alıyor.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Bayrampaşa sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak tehlikeli ve çok tehlikeli işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Bayrampaşa İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Bayrampaşa ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Plastik ve Kauçuk İmalatı alanında Bayrampaşa özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Metal İşleme ve Kaynak alanında Bayrampaşa özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Lojistik ve Depolama alanında Bayrampaşa özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Bayrampaşa bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Bayrampaşa ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Bayrampaşa OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Bayrampaşa'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "besiktas-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Beşiktaş",
+    "seoBaslik": "Beşiktaş OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Beşiktaş bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Beşiktaş OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Beşiktaş ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Beşiktaş'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Beşiktaş ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Medya, reklam, bilişim ve turizm sektörlerinin merkezi. Ekranlı araçlarla çalışma eğitimleri, psikososyal risk faktörleri ve ofis ergonomisi en çok talep gören hizmetler arasında.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Beşiktaş sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak az tehlikeli işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Beşiktaş İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Beşiktaş ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Ofis ve Hizmet Sektörü alanında Beşiktaş özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bilişim ve Yazılım Sektörü alanında Beşiktaş özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Gıda Üretimi ve Restoranlar alanında Beşiktaş özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Beşiktaş bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Beşiktaş ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Beşiktaş OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Beşiktaş'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "beykoz-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Beykoz",
+    "seoBaslik": "Beykoz OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Beykoz bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Beykoz OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Beykoz ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Beykoz'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Beykoz ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Lojistik, depo ve butik imalat atölyelerinin yanı sıra turizm işletmelerinin bulunduğu karma bir ilçe. Yüksekte çalışma ve kaldırma ekipmanlarının periyodik kontrolleri büyük önem taşıyor.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Beykoz sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak karma işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Beykoz İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Beykoz ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Lojistik ve Depolama alanında Beykoz özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Gıda Üretimi ve Restoranlar alanında Beykoz özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Ahşap ve Mobilya İmalatı alanında Beykoz özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Beykoz bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Beykoz ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Beykoz OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Beykoz'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "beylikduzu-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Beylikdüzü",
+    "seoBaslik": "Beylikdüzü OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Beylikdüzü bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Beylikdüzü OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Beylikdüzü ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Beylikdüzü'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Beylikdüzü ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Mermer, plastik, alüminyum ve gıda üzerine faaliyet gösteren modern sanayi sitelerine ev sahipliği yapıyor. Organize sanayi bölgelerindeki tesisler genellikle çok tehlikeli sınıfta yer alıyor.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Beylikdüzü sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak tehlikeli ve çok tehlikeli işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Beylikdüzü İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Beylikdüzü ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Fabrika ve Seri Üretim alanında Beylikdüzü özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Plastik ve Kauçuk İmalatı alanında Beylikdüzü özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Metal İşleme ve Kaynak alanında Beylikdüzü özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Beylikdüzü bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Beylikdüzü ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Beylikdüzü OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Beylikdüzü'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "beyoglu-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Beyoğlu",
+    "seoBaslik": "Beyoğlu OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Beyoğlu bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Beyoğlu OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Beyoğlu ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Beyoğlu'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Beyoğlu ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Konaklama, restoran, eğlence ve perakende sektörlerinin kalbi. Yüksek yangın riski, tarihi binalarda acil durum tahliyesi ve mutfak güvenliği denetimlerin odak noktasını oluşturuyor.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Beyoğlu sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak az tehlikeli işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Beyoğlu İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Beyoğlu ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Gıda Üretimi ve Restoranlar alanında Beyoğlu özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Perakende ve Mağazacılık alanında Beyoğlu özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Ofis ve Hizmet Sektörü alanında Beyoğlu özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Beyoğlu bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Beyoğlu ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Beyoğlu OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Beyoğlu'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "buyukcekmece-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Büyükçekmece",
+    "seoBaslik": "Büyükçekmece OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Büyükçekmece bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Büyükçekmece OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Büyükçekmece ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Büyükçekmece'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Büyükçekmece ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. İnşaat, tarım ve lojistik faaliyetlerinin birlikte yürütüldüğü geniş yüzölçümlü bir ilçe. Şantiye güvenliği, iskele kurulumu ve yüksekte çalışma eğitimleri zorunlu tutuluyor.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Büyükçekmece sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak karma işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Büyükçekmece İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Büyükçekmece ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "İnşaat ve Taahhüt İşleri alanında Büyükçekmece özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Lojistik ve Depolama alanında Büyükçekmece özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Gıda Üretimi ve Restoranlar alanında Büyükçekmece özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Büyükçekmece bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Büyükçekmece ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Büyükçekmece OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Büyükçekmece'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "catalca-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Çatalca",
+    "seoBaslik": "Çatalca OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Çatalca bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Çatalca OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Çatalca ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Çatalca'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Çatalca ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Tarım, hayvancılık, gıda üretimi ve depolama tesislerinin bulunduğu, yüzölçümü en büyük ilçe. Traktör kullanımı, kimyasal gübre/ilaç depolaması ve biyolojik riskler öne çıkıyor.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Çatalca sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak tehlikeli ve çok tehlikeli işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Çatalca İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Çatalca ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Gıda Üretimi ve Restoranlar alanında Çatalca özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Lojistik ve Depolama alanında Çatalca özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Fabrika ve Seri Üretim alanında Çatalca özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Çatalca bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Çatalca ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Çatalca OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Çatalca'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "cekmekoy-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Çekmeköy",
+    "seoBaslik": "Çekmeköy OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Çekmeköy bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Çekmeköy OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Çekmeköy ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Çekmeköy'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Çekmeköy ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Konut projelerinin hızla arttığı, perakende ve hizmet sektörünün büyüdüğü bir ilçe. Şantiyelerde düşme koruma sistemleri, mağazalarda ise acil durum planları öncelikli.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Çekmeköy sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak karma işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Çekmeköy İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Çekmeköy ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "İnşaat ve Taahhüt İşleri alanında Çekmeköy özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Perakende ve Mağazacılık alanında Çekmeköy özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Ofis ve Hizmet Sektörü alanında Çekmeköy özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Çekmeköy bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Çekmeköy ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Çekmeköy OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Çekmeköy'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "esenler-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Esenler",
+    "seoBaslik": "Esenler OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Esenler bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Esenler OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Esenler ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Esenler'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Esenler ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Tekstil, ayakkabı ve metal işleme atölyelerinin ara sokaklarda ve iş hanlarında yoğunlaştığı bir bölge. Elektrik tesisatı güvenliği, havalandırma ve kimyasal kullanımı acil müdahale gerektiriyor.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Esenler sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak tehlikeli ve çok tehlikeli işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Esenler İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Esenler ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Tekstil ve Konfeksiyon alanında Esenler özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Plastik ve Kauçuk İmalatı alanında Esenler özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Metal İşleme ve Kaynak alanında Esenler özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Esenler bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Esenler ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Esenler OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Esenler'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "eyupsultan-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Eyüpsultan",
+    "seoBaslik": "Eyüpsultan OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Eyüpsultan bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Eyüpsultan OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Eyüpsultan ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Eyüpsultan'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Eyüpsultan ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Gıda imalatı, orman ürünleri işleme ve lojistik sektörlerinin bulunduğu tarihi ve geniş bir ilçe. Ahşap atölyelerinde toz maruziyeti ve yangın, İSG planlamasında ilk sırayı alıyor.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Eyüpsultan sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak tehlikeli ve çok tehlikeli işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Eyüpsultan İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Eyüpsultan ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Ahşap ve Mobilya İmalatı alanında Eyüpsultan özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Gıda Üretimi ve Restoranlar alanında Eyüpsultan özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Lojistik ve Depolama alanında Eyüpsultan özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Eyüpsultan bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Eyüpsultan ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Eyüpsultan OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Eyüpsultan'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "fatih-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Fatih",
+    "seoBaslik": "Fatih OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Fatih bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Fatih OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Fatih ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Fatih'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Fatih ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Tarihi yarımadada tekstil ticareti, turizm, konaklama ve küçük çaplı altın/gümüş imalatı yapılıyor. Eski binalarda elektrik tesisatı yangınları ve ergonomik sorunlar sıkça yaşanıyor.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Fatih sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak az tehlikeli işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Fatih İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Fatih ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Perakende ve Mağazacılık alanında Fatih özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Gıda Üretimi ve Restoranlar alanında Fatih özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Tekstil ve Konfeksiyon alanında Fatih özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Fatih bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Fatih ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Fatih OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Fatih'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "gaziosmanpasa-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Gaziosmanpaşa",
+    "seoBaslik": "Gaziosmanpaşa OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Gaziosmanpaşa bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Gaziosmanpaşa OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Gaziosmanpaşa ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Gaziosmanpaşa'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Gaziosmanpaşa ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Kentsel dönüşüm şantiyeleri ile tekstil ve hafif metal sanayisinin iç içe geçtiği bir bölge. Kazı güvenliği, yüksekte çalışma ve iskele standartları şantiyelerde sıkı denetleniyor.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Gaziosmanpaşa sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak tehlikeli ve çok tehlikeli işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Gaziosmanpaşa İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Gaziosmanpaşa ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "İnşaat ve Taahhüt İşleri alanında Gaziosmanpaşa özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Tekstil ve Konfeksiyon alanında Gaziosmanpaşa özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Metal İşleme ve Kaynak alanında Gaziosmanpaşa özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Gaziosmanpaşa bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Gaziosmanpaşa ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Gaziosmanpaşa OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Gaziosmanpaşa'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "gungoren-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Güngören",
+    "seoBaslik": "Güngören OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Güngören bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Güngören OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Güngören ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Güngören'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Güngören ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Merter tekstil piyasasının kalbi. Yoğun iş hanlarında konfeksiyon, ütü-paket ve mağazacılık faaliyetleri yürütülüyor. Kumaş tozu, buhar jeneratörleri ve yangın merdivenlerinin açıklığı hayati öneme sahip.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Güngören sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak tehlikeli ve çok tehlikeli işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Güngören İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Güngören ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Tekstil ve Konfeksiyon alanında Güngören özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Perakende ve Mağazacılık alanında Güngören özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Lojistik ve Depolama alanında Güngören özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Güngören bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Güngören ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Güngören OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Güngören'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "kagithane-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Kâğıthane",
+    "seoBaslik": "Kâğıthane OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Kâğıthane bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Kâğıthane OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Kâğıthane ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Kâğıthane'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Kâğıthane ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Sanayiden ofis ve hizmet sektörüne dönüşümünü büyük ölçüde tamamlamış bir ilçe. Yine de matbaacılık ve otomotiv servisleri varlığını sürdürüyor, karma bir İSG yapısı gerektiriyor.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Kâğıthane sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak karma işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Kâğıthane İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Kâğıthane ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Ofis ve Hizmet Sektörü alanında Kâğıthane özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Matbaa ve Ambalaj alanında Kâğıthane özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Otomotiv ve Araç Servisleri alanında Kâğıthane özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Kâğıthane bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Kâğıthane ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Kâğıthane OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Kâğıthane'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "kartal-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Kartal",
+    "seoBaslik": "Kartal OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Kartal bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Kartal OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Kartal ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Kartal'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Kartal ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Otomotiv yan sanayi, makine imalatı ve inşaat projelerinin yoğunlaştığı, sanayi ve konutun birleştiği nokta. Çok tehlikeli sınıfta 16 saatlik temel İSG eğitimleri ve düzenli sağlık gözetimi zorunlu.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Kartal sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak tehlikeli ve çok tehlikeli işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Kartal İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Kartal ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Fabrika ve Seri Üretim alanında Kartal özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Otomotiv ve Araç Servisleri alanında Kartal özelinde yerinde gözlem ve tehlike tespiti.",
+                  "İnşaat ve Taahhüt İşleri alanında Kartal özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Kartal bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Kartal ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Kartal OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Kartal'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "kucukcekmece-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Küçükçekmece",
+    "seoBaslik": "Küçükçekmece OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Küçükçekmece bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Küçükçekmece OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Küçükçekmece ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Küçükçekmece'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Küçükçekmece ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. İkitelli OSB'nin bir kısmını barındıran, metal, plastik ve tekstil sektörlerinin güçlü olduğu bir ilçe. Ağır iş makineleri, pres tezgahları ve kimyasal buhar maruziyeti odak noktası.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Küçükçekmece sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak tehlikeli ve çok tehlikeli işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Küçükçekmece İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Küçükçekmece ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Metal İşleme ve Kaynak alanında Küçükçekmece özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Plastik ve Kauçuk İmalatı alanında Küçükçekmece özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Tekstil ve Konfeksiyon alanında Küçükçekmece özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Küçükçekmece bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Küçükçekmece ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Küçükçekmece OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Küçükçekmece'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "maltepe-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Maltepe",
+    "seoBaslik": "Maltepe OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Maltepe bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Maltepe OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Maltepe ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Maltepe'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Maltepe ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Ofis alanlarının, üniversitelerin ve E-5 hattında otomotiv servislerinin bir araya geldiği bir ilçe. Hizmet sektöründe ekranlı araçlarla çalışma, servislerde ise kimyasal ve mekanik riskler öne çıkıyor.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Maltepe sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak karma işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Maltepe İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Maltepe ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Ofis ve Hizmet Sektörü alanında Maltepe özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Otomotiv ve Araç Servisleri alanında Maltepe özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Perakende ve Mağazacılık alanında Maltepe özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Maltepe bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Maltepe ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Maltepe OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Maltepe'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "pendik-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Pendik",
+    "seoBaslik": "Pendik OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Pendik bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Pendik OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Pendik ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Pendik'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Pendik ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Tersaneler, havalimanı ve sanayi siteleriyle çok tehlikeli sınıfın merkez üssü. Kapalı alanda çalışma, sıcak çalışma izinleri ve patlamadan korunma dokümanı (PKD) hazırlığı Pendik'te istisna değil, kural.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Pendik sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak tehlikeli ve çok tehlikeli işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Pendik İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Pendik ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Metal İşleme ve Kaynak alanında Pendik özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Fabrika ve Seri Üretim alanında Pendik özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Lojistik ve Depolama alanında Pendik özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Pendik bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Pendik ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Pendik OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Pendik'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "sancaktepe-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Sancaktepe",
+    "seoBaslik": "Sancaktepe OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Sancaktepe bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Sancaktepe OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Sancaktepe ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Sancaktepe'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Sancaktepe ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Lojistik merkezleri, depolama alanları ve hafif imalat tesislerinin yeni cazibe merkezi. Forklift yaya yollarının ayrılması, raf statik kontrolleri ve yangın pompaları denetleniyor.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Sancaktepe sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak tehlikeli ve çok tehlikeli işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Sancaktepe İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Sancaktepe ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Lojistik ve Depolama alanında Sancaktepe özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Fabrika ve Seri Üretim alanında Sancaktepe özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Metal İşleme ve Kaynak alanında Sancaktepe özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Sancaktepe bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Sancaktepe ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Sancaktepe OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Sancaktepe'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "sariyer-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Sarıyer",
+    "seoBaslik": "Sarıyer OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Sarıyer bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Sarıyer OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Sarıyer ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Sarıyer'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Sarıyer ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Maslak iş merkezi hattıyla plaza kültürünün, İstinye tarafıyla perakende ve restoranların yoğun olduğu bölge. İş yerleri genelde az tehlikeli sınıfta yer alıyor; acil durum tatbikatları önem taşıyor.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Sarıyer sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak az tehlikeli işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Sarıyer İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Sarıyer ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Ofis ve Hizmet Sektörü alanında Sarıyer özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bilişim ve Yazılım Sektörü alanında Sarıyer özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Gıda Üretimi ve Restoranlar alanında Sarıyer özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Sarıyer bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Sarıyer ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Sarıyer OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Sarıyer'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "silivri-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Silivri",
+    "seoBaslik": "Silivri OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Silivri bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Silivri OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Silivri ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Silivri'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Silivri ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Büyük sanayi tesisleri, gıda üretim fabrikaları ve tarım arazilerini içinde barındırıyor. Gıda hijyeni ölçümleri, makine koruyucuları ve ambalaj hatlarında iş güvenliği öncelikli.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Silivri sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak tehlikeli ve çok tehlikeli işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Silivri İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Silivri ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Fabrika ve Seri Üretim alanında Silivri özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Gıda Üretimi ve Restoranlar alanında Silivri özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Plastik ve Kauçuk İmalatı alanında Silivri özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Silivri bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Silivri ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Silivri OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Silivri'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "sultanbeyli-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Sultanbeyli",
+    "seoBaslik": "Sultanbeyli OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Sultanbeyli bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Sultanbeyli OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Sultanbeyli ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Sultanbeyli'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Sultanbeyli ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Ahşap işleme, mobilya, otomotiv tamir ve yedek parça üretimi ağırlıklı küçük sanayi siteleri mevcut. Ahşap tozu patlamaları, solvent buharları ve gürültü ölçümleri sıkça yapılıyor.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Sultanbeyli sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak tehlikeli ve çok tehlikeli işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Sultanbeyli İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Sultanbeyli ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Ahşap ve Mobilya İmalatı alanında Sultanbeyli özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Otomotiv ve Araç Servisleri alanında Sultanbeyli özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Metal İşleme ve Kaynak alanında Sultanbeyli özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Sultanbeyli bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Sultanbeyli ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Sultanbeyli OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Sultanbeyli'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "sultangazi-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Sultangazi",
+    "seoBaslik": "Sultangazi OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Sultangazi bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Sultangazi OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Sultangazi ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Sultangazi'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Sultangazi ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Mermer işleme, tekstil, ayakkabı ve inşaat malzemeleri üretimi çok yaygın. Özellikle mermer tozuna bağlı pnömokonyoz riski ve pres makinelerindeki sıkışma tehlikesi işyeri hekimliğinin ana gündemi.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Sultangazi sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak tehlikeli ve çok tehlikeli işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Sultangazi İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Sultangazi ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Tekstil ve Konfeksiyon alanında Sultangazi özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Fabrika ve Seri Üretim alanında Sultangazi özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Plastik ve Kauçuk İmalatı alanında Sultangazi özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Sultangazi bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Sultangazi ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Sultangazi OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Sultangazi'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "sile-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Şile",
+    "seoBaslik": "Şile OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Şile bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Şile OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Şile ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Şile'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Şile ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Madencilik, kum ocakları ve turizm faaliyetleri bir arada. Maden ocaklarında göçük, iş makinesi kazaları ve toz maruziyeti, turizmde ise gıda güvenliği İSG'nin iki farklı yüzünü gösteriyor.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Şile sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak tehlikeli ve çok tehlikeli işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Şile İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Şile ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "İnşaat ve Taahhüt İşleri alanında Şile özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Gıda Üretimi ve Restoranlar alanında Şile özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Lojistik ve Depolama alanında Şile özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Şile bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Şile ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Şile OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Şile'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "sisli-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Şişli",
+    "seoBaslik": "Şişli OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Şişli bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Şişli OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Şişli ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Şişli'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Şişli ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Hastaneler, oteller, alışveriş merkezleri ve ofis bloklarının kalbi. Biyolojik risk etmenleri, vardiyalı çalışma, havalandırma sistemleri bakımı ve ergonomik riskler ön planda.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Şişli sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak az tehlikeli işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Şişli İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Şişli ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Sağlık ve Hastaneler alanında Şişli özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Ofis ve Hizmet Sektörü alanında Şişli özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Perakende ve Mağazacılık alanında Şişli özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Şişli bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Şişli ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Şişli OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Şişli'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "tuzla-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Tuzla",
+    "seoBaslik": "Tuzla OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Tuzla bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Tuzla OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Tuzla ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Tuzla'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Tuzla ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Gemi inşa (tersane), kimya sanayi ve metal işlemenin merkezi. Sürekli değişen çalışma ortamı, kapalı alanlarda kaynak, ağır kaldırma ve zehirli gaz riskleri Tuzla'yı İSG'de en kritik ilçe yapıyor.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Tuzla sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak tehlikeli ve çok tehlikeli işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Tuzla İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Tuzla ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Metal İşleme ve Kaynak alanında Tuzla özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Kimya ve Boya Sanayi alanında Tuzla özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Fabrika ve Seri Üretim alanında Tuzla özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Tuzla bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Tuzla ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Tuzla OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Tuzla'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "uskudar-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Üsküdar",
+    "seoBaslik": "Üsküdar OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Üsküdar bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Üsküdar OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Üsküdar ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Üsküdar'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Üsküdar ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Eğitim kurumları, hastaneler ve perakende ticaretin yoğun olduğu bir ilçe. Okullarda acil durum planlaması, hastanelerde atık yönetimi ve radyasyon güvenliği önceliklendiriliyor.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Üsküdar sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak az tehlikeli işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Üsküdar İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Üsküdar ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Sağlık ve Hastaneler alanında Üsküdar özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Perakende ve Mağazacılık alanında Üsküdar özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Ofis ve Hizmet Sektörü alanında Üsküdar özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Üsküdar bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Üsküdar ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Üsküdar OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Üsküdar'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
+  {
+    "slug": "zeytinburnu-osgb",
+    "tip": "ilce",
+    "il": "İstanbul",
+    "ilce": "Zeytinburnu",
+    "seoBaslik": "Zeytinburnu OSGB Hizmetleri ve İş Sağlığı Güvenliği | Dijital OSGB",
+    "metaAciklama": "Zeytinburnu bölgesindeki işletmeniz için 6331 sayılı kanuna uygun, yerinde iş sağlığı ve güvenliği (OSGB) hizmetleri. Risk değerlendirmesi ve eğitimler.",
+    "h1": "Zeytinburnu OSGB ve İş Güvenliği Hizmetleri",
+    "giris": "Zeytinburnu ilçesinde bulunan işletmeniz için 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na tam uyumlu, Bakanlık yetkili çözüm ortaklarımızla OSGB hizmetleri, işyeri hekimi ve iş güvenliği uzmanı desteği sunuyoruz.",
+    "bolumler": [
+      {
+            "baslik": "Zeytinburnu'da İş Güvenliğinin Çerçevesi",
+            "paragraflar": [
+                  "Zeytinburnu ilçesinde iş sağlığı ve güvenliği uygulamaları, bölgenin yerel dinamiklerine göre şekillenmektedir. Tekstil, deri işleme, konfeksiyon ve kentsel dönüşüm şantiyeleriyle hareketli bir bölge. Deri atölyelerindeki kimyasallar (krom vb.) ve tekstil tozu maruziyeti özel sağlık gözetimi gerektiriyor.",
+                  "6331 sayılı İş Sağlığı ve Güvenliği Kanunu kapsamında Zeytinburnu sınırlarındaki işletmeler, faaliyet gösterdikleri tehlike sınıfına göre yükümlülüklere sahiptir. Bölgede ağırlıklı olarak tehlikeli ve çok tehlikeli işletmelerin bulunması, risk değerlendirmesi ve eğitim sürelerinin de bu yoğunluğa göre planlanmasını gerektiriyor."
+            ]
+      },
+      {
+            "baslik": "Zeytinburnu İşletmelerinde Sunduğumuz Temel Hizmetler",
+            "paragraflar": [
+                  "Dijital OSGB olarak Zeytinburnu ilçesinde faaliyet gösteren işletmelere, Bakanlıkça yetkilendirilmiş çözüm ortaklarımız aracılığıyla mevzuata tam uyumlu hizmetler sunuyoruz:"
+            ],
+            "maddeler": [
+                  "Tekstil ve Konfeksiyon alanında Zeytinburnu özelinde yerinde gözlem ve tehlike tespiti.",
+                  "İnşaat ve Taahhüt İşleri alanında Zeytinburnu özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Lojistik ve Depolama alanında Zeytinburnu özelinde yerinde gözlem ve tehlike tespiti.",
+                  "Bölgedeki işyerlerine uygun acil durum eylem planlarının hazırlanması ve tatbikatların yapılması.",
+                  "Çalışanların sağlık gözetimleri için periyodik muayenelerin ve gerekli iş hijyeni ölçümlerinin organize edilmesi."
+            ]
+      }
+],
+    "sss": [
+      {
+            "soru": "Zeytinburnu bölgesinde OSGB hizmeti almak zorunlu mu?",
+            "cevap": "Evet. 6331 sayılı Kanun gereği, Zeytinburnu ilçesinde en az 1 çalışanı bulunan ve tehlikeli/çok tehlikeli sınıfta yer alan her işyeri ile 50'den fazla çalışanı olan az tehlikeli işyerleri İSG profesyoneli (İşyeri Hekimi ve İş Güvenliği Uzmanı) görevlendirmek zorundadır."
+      },
+      {
+            "soru": "Zeytinburnu OSGB hizmeti nasıl başlatılır?",
+            "cevap": "Hizmet sürecini başlatmak için işletmenizin SGK sicil numarası üzerinden İSG-KATİP sisteminden sözleşme onayı yapılması yeterlidir. Ardından uzmanlarımız Zeytinburnu'daki işyerinize gelerek risk değerlendirmesi çalışmalarına başlar."
+      }
+],
+    "icLinkler": [
+      {
+            "metin": "İş Güvenliği Uzmanlığı",
+            "href": "/hizmetler/is-guvenligi-uzmani"
+      },
+      {
+            "metin": "İşyeri Hekimliği",
+            "href": "/hizmetler/isyeri-hekimi"
+      },
+      {
+            "metin": "Risk Değerlendirmesi",
+            "href": "/hizmetler/risk-degerlendirmesi"
+      },
+      {
+            "metin": "Acil Durum Planı",
+            "href": "/hizmetler/acil-durum-plani"
+      }
+],
+    "kaynaklar": [
+      {
+            "ad": "6331 Sayılı İş Sağlığı ve Güvenliği Kanunu",
+            "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6331.pdf"
+      },
+      {
+            "ad": "İSG Hizmetleri Yönetmeliği",
+            "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16922&MevzuatTur=7&MevzuatTertip=5"
+      }
+],
+    "sahaHizmeti": true,
+    "faqSemasi": true,
+    "uretim": {
+      "yayinTarihi": "2024-03-12",
+      "kalitePuani": 92,
+      "benzerlikEnYuksek": 28
+}
+  },
 ];
 
 export const bolgeSektorSayisi = bolgeSektorSayfalari.filter((s) => !s.indexDisi).length;

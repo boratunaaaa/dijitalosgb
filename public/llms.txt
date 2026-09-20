@@ -1,0 +1,30 @@
+# Dijital OSGB (Ortak Sağlık ve Güvenlik Birimi)
+# URL: https://dijitalosgb.com
+
+> İş sağlığı ve güvenliği hizmetleri (İSG) sunan Bakanlık yetkili kuruluşu. 
+> İstanbul, Kocaeli ve Tekirdağ illerinde aktif saha hizmetleri ve tüm Türkiye'ye uzaktan İSG eğitimleri vermektedir.
+
+## Hizmetlerimiz
+- İş Güvenliği Uzmanlığı
+- İşyeri Hekimliği
+- Risk Değerlendirmesi
+- Acil Durum Eylem Planı
+- Sağlık ve Güvenlik Planı
+- Periyodik Kontroller
+- Mobil Sağlık Taraması
+- İSG Eğitimleri
+
+## Çalışma Bölgeleri (Saha Hizmeti)
+- İstanbul'un 39 ilçesi (Kadıköy, Şişli, Beşiktaş, Ümraniye, Pendik vb.)
+- Kocaeli
+- Tekirdağ
+
+## Kütüphane ve Kaynaklar
+- Ücretsiz Güvenlik Levhaları: https://dijitalosgb.com/isg-kutuphanesi/levhalar/
+- İSG Form Şablonları: https://dijitalosgb.com/isg-kutuphanesi/formlar/
+- İSG Mevzuatı: https://dijitalosgb.com/isg-kutuphanesi/mevzuat/
+- NACE Kodu ve Tehlike Sınıfı Sorgulama: https://dijitalosgb.com/araclar/tehlike-sinifi-sorgulama/
+
+## İletişim
+- E-posta: iletisim@dijitalosgb.com
+- Resmi Web Sitesi: https://dijitalosgb.com

@@ -1,0 +1,25 @@
+{
+  "title": "Dijital OSGB",
+  "description": "İş sağlığı ve güvenliği hizmetleri (İSG) sunan Bakanlık yetkili kuruluşu.",
+  "type": "LocalBusiness",
+  "url": "https://dijitalosgb.com",
+  "data_formats": [
+    "html",
+    "json-ld"
+  ],
+  "areas_served": [
+    "İstanbul",
+    "Kocaeli",
+    "Tekirdağ"
+  ],
+  "services": [
+    "İş Güvenliği Uzmanlığı",
+    "İşyeri Hekimliği",
+    "Risk Değerlendirmesi",
+    "Acil Durum Eylem Planı",
+    "Mobil Sağlık Taraması",
+    "İSG Eğitimleri",
+    "Periyodik Kontroller",
+    "Sağlık ve Güvenlik Planı"
+  ]
+}
