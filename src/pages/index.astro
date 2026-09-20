@@ -15,7 +15,7 @@ import { hizmetler } from '~/data/hizmetler';
 import { sektorler } from '~/data/sektorler';
 import { levhaSayisi } from '~/data/levhalar';
 import { formSayisi } from '~/data/kutuphane';
-import { katipReferanslari, katipReferansSayisi } from '~/data/katip-referanslar';
+import { katipReferanslari, sozlesmeGosterimi } from '~/data/katip-referanslar';
 import { paketler } from '~/data/paketler';
 
 // Ana sayfada gösterilecek altı hizmet. Tam liste hizmetler sayfasında;
@@ -93,7 +93,7 @@ const sektorGorseli = (dosya?: string) =>
       <dl class="mt-9 grid grid-cols-2 gap-x-6 gap-y-5 border-t border-gray-200 dark:border-slate-700 pt-6 sm:grid-cols-4">
         <div>
           <dt class="text-xs font-semibold uppercase tracking-wider text-muted">Saha deneyimi</dt>
-          <dd class="mt-1 font-semibold text-heading">{katipReferansSayisi} hizmet sözleşmesi</dd>
+          <dd class="mt-1 font-semibold text-heading">{sozlesmeGosterimi} hizmet sözleşmesi</dd>
         </div>
         <div>
           <dt class="text-xs font-semibold uppercase tracking-wider text-muted">Saha hizmeti</dt>
@@ -148,8 +148,9 @@ const sektorGorseli = (dosya?: string) =>
     <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-12">
       <h2 class="text-center text-2xl font-bold text-heading md:text-3xl">Rakamlarla saha tecrübesi</h2>
       <p class="mx-auto mt-3 max-w-2xl text-center text-muted">
-        Aşağıdaki sayılar, Çalışma ve Sosyal Güvenlik Bakanlığı'nın kayıt sistemi İSG-KATİP'te
-        adımıza tanımlanmış hizmet sözleşmelerinden çıkarılmıştır.
+        Bugüne kadar {sozlesmeGosterimi} hizmet sözleşmesi. Aşağıdaki sayılar, Çalışma ve Sosyal
+        Güvenlik Bakanlığı'nın kayıt sistemi İSG-KATİP'te adımıza tanımlanmış sözleşmelerden
+        çıkarılan, iş yeri adıyla listelenebilen bölümdür.
       </p>
       <dl class="mt-8 grid grid-cols-2 gap-6 text-center md:grid-cols-4">
         <div>
@@ -171,7 +172,7 @@ const sektorGorseli = (dosya?: string) =>
       </dl>
       <p class="mt-6 text-center text-sm">
         <a class="font-medium underline underline-offset-4 hover:no-underline" href="/referanslar/">
-          {katipReferansSayisi} sözleşmenin tamamını iş yeri adıyla görün →
+          Sözleşmeli iş yerlerinin listesini adıyla görün →
         </a>
       </p>
     </div>

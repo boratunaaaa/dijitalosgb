@@ -340,3 +340,16 @@ export const katipReferanslari: KatipReferans[] = [
 ];
 
 export const katipReferansSayisi = katipReferanslari.length;
+
+/**
+ * Bugüne kadar verilen toplam hizmet sözleşmesi — işletme beyanı.
+ *
+ * NEDEN AYRI BİR SABİT: Aşağıdaki liste, elimizdeki İSG-KATİP dökümünden
+ * çıkarılmış bir kesit; toplam saha geçmişinin tamamı değil. Tek bir kesin
+ * sayı yazmak, listeden sayılabilen satır adediyle çelişiyordu. Bu yüzden
+ * vitrinlerde yuvarlanmış alt sınır gösteriliyor, listenin kendisi ise
+ * kaç satır içeriyorsa onu söylemeye devam ediyor.
+ *
+ * Bu sayıyı değiştirmek gerekirse yalnız burayı güncelle.
+ */
+export const sozlesmeGosterimi = '500+';
