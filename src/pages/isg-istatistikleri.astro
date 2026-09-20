@@ -1,0 +1,209 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import StructuredData from '~/components/common/StructuredData.astro';
+import { site } from '~/data/site';
+
+const metadata = {
+  title: 'İSG İdari Para Cezaları Nasıl Hesaplanır?',
+  description:
+    '6331 sayılı Kanun\'daki idari para cezaları nasıl belirlenir, tehlike sınıfı ve çalışan sayısı tutarı nasıl değiştirir, güncel tutara nereden bakılır? Sahada en sık görülen iş kazası nedenleri.',
+};
+
+const sayfaUrl = `${site.url}/isg-istatistikleri/`;
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: metadata.title,
+    description: metadata.description,
+    url: sayfaUrl,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Ana sayfa', item: `${site.url}/` },
+      { '@type': 'ListItem', position: 2, name: 'İdari para cezaları', item: sayfaUrl },
+    ],
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <StructuredData slot="head" schema={schema} />
+
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 py-10 md:py-14">
+    <nav aria-label="Konum" class="text-sm text-muted mb-6">
+      <a href="/" class="hover:underline">Ana sayfa</a>
+      <span class="mx-1.5">/</span>
+      <span class="text-default">İSG İstatistikleri</span>
+    </nav>
+
+    <h1 class="text-3xl md:text-4xl font-bold font-heading text-heading tracking-tight mb-4 text-balance">
+      İSG idari para cezaları nasıl hesaplanır?
+    </h1>
+    <p class="text-lg text-muted mb-10 pb-8 border-b border-gray-200 dark:border-slate-700">
+      İşyerlerinin yasal uyumluluk oranlarını artırmak ve iş kazalarını önlemek adına hazırladığımız veri merkezine hoş geldiniz. 6331 sayılı Kanun'daki idari para cezalarının nasıl belirlendiğini ve sahada en sık karşılaşılan kaza nedenlerini aşağıda bulabilirsiniz.
+    </p>
+
+    <h2 class="text-2xl font-bold font-heading text-heading mb-4">İdari para cezası nasıl belirlenir?</h2>
+
+    {/*
+      TUTAR YAZILMIYOR — BİLEREK.
+
+      Burada önceden 2026 yılına ait tutarlar tablo hâlinde veriliyordu. İki
+      sorunu vardı. Birincisi, tablonun kendi dipnotu bu değerlerin "ortalama
+      yeniden değerleme oranlarıyla ÖNGÖRÜLMÜŞ ÖRNEK değerler" olduğunu
+      söylüyordu; yani rakamlar resmî değil tahmindi, ama başlık ve giriş
+      metni onları güncel resmî tutar gibi sunuyordu. Ziyaretçi tabloyu okur,
+      yıldızlı notu değil.
+
+      İkincisi, tutarlar her yıl yeniden değerleme oranıyla değişiyor. Sayfaya
+      yazılan her rakam en geç bir yıl içinde yanlış bilgiye dönüşür ve
+      güncellenmediği sürece öyle kalır. Uyumluluk satan bir sitede bu,
+      düzeltmesi en pahalı hata türüdür.
+
+      Bunun yerine cezanın MEKANİZMASI anlatılıyor: bu bilgi eskimiyor,
+      işverenin kendi riskini tahmin etmesine yetiyor ve güncel tutar için
+      resmî kaynağa yönlendiriyor.
+    */}
+    <p class="text-muted mb-4">
+      6331 sayılı Kanun'un 26. maddesi her ihlal için bir <strong>taban tutar</strong> belirler.
+      Ödenecek ceza bu taban tutarın doğrudan kendisi değildir; üç şey tutarı değiştirir.
+    </p>
+
+    <ol class="mb-6 list-decimal space-y-3 pl-5 text-muted">
+      <li>
+        <strong class="text-default">Yeniden değerleme oranı.</strong> Kanundaki taban tutarlar
+        her yıl, Vergi Usul Kanunu uyarınca belirlenen yeniden değerleme oranında artırılır.
+        Bu yüzden geçen yılın tutarı bu yıl geçerli değildir.
+      </li>
+      <li>
+        <strong class="text-default">Tehlike sınıfı.</strong> Bazı ihlallerde ceza, iş yerinin
+        az tehlikeli, tehlikeli veya çok tehlikeli sınıfta olmasına göre katlanarak uygulanır.
+      </li>
+      <li>
+        <strong class="text-default">Çalışan sayısı.</strong> Aynı ihlal, çalışan sayısı
+        arttıkça daha yüksek tutarla cezalandırılabilir.
+      </li>
+    </ol>
+
+    <div class="mb-6 rounded-2xl bg-gray-50 p-6 dark:bg-slate-800/60">
+      <h3 class="font-bold text-heading">Cezayı asıl büyüten şey: süreklilik</h3>
+      <p class="mt-2 text-muted">
+        Uzman ve işyeri hekimi görevlendirmemek gibi bazı ihlallerde ceza tek seferlik değildir;
+        <strong>aykırılığın devam ettiği her ay için ayrıca uygulanır</strong>. Risk değerlendirmesi
+        yapmamakta da eksikliğin sürdüğü her ay için ceza tekrar eder. Bu yüzden gecikmenin
+        maliyeti doğrusal değil, birikimlidir.
+      </p>
+      <p class="mt-3 text-muted">
+        Ayrıca ceza tek yaptırım değildir. Çok tehlikeli sınıftaki bazı işlerde risk
+        değerlendirmesi hiç yapılmamışsa <strong>işin durdurulması</strong> kararı verilebilir.
+      </p>
+    </div>
+
+    <div class="mb-10 rounded-2xl border border-primary/20 bg-primary/5 p-6 dark:bg-primary/10">
+      <h3 class="font-bold text-heading">Güncel tutarı nereden öğrenirsiniz?</h3>
+      <p class="mt-2 text-muted">
+        Yürürlükteki tutarlar için tek doğru kaynak mevzuatın kendisidir. Aşağıdaki bağlantıdan
+        6331 sayılı Kanun'un 26. maddesindeki güncel metne ulaşabilirsiniz; tebligat almışsanız
+        tebligattaki tutar esastır.
+      </p>
+      <p class="mt-4">
+        <a
+          class="font-semibold text-primary underline underline-offset-4 hover:no-underline"
+          href="https://www.mevzuat.gov.tr/mevzuatmetin/1.5.6331.pdf"
+          rel="nofollow noopener"
+          target="_blank"
+        >
+          6331 sayılı İş Sağlığı ve Güvenliği Kanunu (mevzuat.gov.tr) &rarr;
+        </a>
+      </p>
+      <p class="mt-3 text-sm text-muted">
+        Hangi yükümlülüğün size düştüğünü ve ayda kaç saat uzman ve hekim süresi gerektiğini
+        <a class="underline underline-offset-4" href="/araclar/isg-yukumluluk-hesaplama/">hesaplayıcıdan</a>
+        çıkarabilirsiniz.
+      </p>
+    </div>
+
+    <h2 class="text-2xl font-bold font-heading text-heading mb-4">Sahada en sık görülen iş kazası nedenleri</h2>
+    <p class="text-muted mb-4">
+      Aşağıdaki başlıklar, uygulamada en sık karşılaşılan kaza türlerini ve altlarında yatan
+      tipik eksiklikleri anlatıyor. Ulusal istatistik verileri için Sosyal Güvenlik Kurumu'nun
+      yayımladığı iş kazası ve meslek hastalığı istatistiklerine bakılmalıdır.
+    </p>
+    <ul class="space-y-3 mb-10 text-default">
+      <li class="flex gap-3">
+        <span class="text-primary shrink-0 font-bold">1.</span>
+        <span><strong>Yüksekten Düşme:</strong> Özellikle inşaat ve dış cephe çalışmalarında yaşam hattı, emniyet kemeri kullanılmaması. (Yapı işlerinde ölümlü kazaların başlıca nedeni olarak öne çıkar.)</span>
+      </li>
+      <li class="flex gap-3">
+        <span class="text-primary shrink-0 font-bold">2.</span>
+        <span><strong>Malzeme Düşmesi / Çarpması:</strong> Şantiyelerde baret kullanılmaması, yüklerin yanlış istiflenmesi.</span>
+      </li>
+      <li class="flex gap-3">
+        <span class="text-primary shrink-0 font-bold">3.</span>
+        <span><strong>Makine Kazaları (Uzuv Kopmaları):</strong> Koruyucu kapakları çıkarılmış pres makineleri ve dönen aksamlı aletlerde yaşanan kazalar.</span>
+      </li>
+      <li class="flex gap-3">
+        <span class="text-primary shrink-0 font-bold">4.</span>
+        <span><strong>Trafik İş Kazaları:</strong> İşyerine ait servis veya nakliye araçlarıyla görev esnasında yaşanan kazalar.</span>
+      </li>
+      <li class="flex gap-3">
+        <span class="text-primary shrink-0 font-bold">5.</span>
+        <span><strong>Elektrik Çarpması:</strong> Panolarda LOTO (Etiketle-Kilitle) prosedürünün uygulanmaması ve yalıtım hataları.</span>
+      </li>
+    </ul>
+
+    <div class="mt-10 rounded-2xl bg-primary/5 dark:bg-primary/10 ring-1 ring-primary/20 p-6 md:p-8">
+      <h2 class="text-xl font-bold font-heading text-heading mb-2">Cezai Yaptırımlardan ve Kazalardan Korunun</h2>
+      <p class="text-muted mb-5">
+        6331 sayılı Kanun işletmelere ağır yaptırımlar öngörmektedir. İSG yükümlülüklerinizi yerine getirerek hem çalışanlarınızı hem de şirketinizi güvence altına alın.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a
+          href="/teklif-al/"
+          class="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 font-semibold text-white hover:opacity-90 transition"
+        >
+          OSGB Hizmeti Teklifi Alın
+        </a>
+        <a
+          href="/araclar/isg-yukumluluk-hesaplama/"
+          class="inline-flex items-center justify-center rounded-full ring-1 ring-gray-300 dark:ring-slate-600 px-6 py-3 font-semibold text-default hover:bg-gray-50 dark:hover:bg-slate-800 transition"
+        >
+          Yükümlülüğümü Hesapla
+        </a>
+      </div>
+    </div>
+  </section>
+  {/*
+    KAYNAK GÖSTERİMİ: Bu sayfa mevzuat iddiaları taşıyor; hukuki kapı
+    iddianın kaynağa bağlanmasını istiyor. Kaynaksız mevzuat anlatımı
+    sayfayı düşürür.
+  */}
+  <section class="mx-auto max-w-4xl px-4 pb-14 sm:px-6">
+    <h2 class="text-lg font-bold text-heading">Kaynaklar ve ilgili mevzuat</h2>
+    <p class="mt-2 text-sm text-muted">
+      Bu sayfadaki yükümlülük ve yaptırım anlatımı aşağıdaki düzenlemelere dayanır.
+      Güncel tutarlar için mevzuatın yürürlükteki metni esastır.
+    </p>
+    <ul class="mt-3 list-disc space-y-1.5 pl-5 text-sm text-muted">
+      {
+        [
+          { ad: '6331 sayılı İş Sağlığı ve Güvenliği Kanunu (özellikle 25. ve 26. maddeler)', url: 'https://www.mevzuat.gov.tr/mevzuatmetin/1.5.6331.pdf' },
+          { ad: 'İş Sağlığı ve Güvenliği Risk Değerlendirmesi Yönetmeliği', url: 'https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16925&MevzuatTur=7&MevzuatTertip=5' },
+          { ad: 'Çalışma ve Sosyal Güvenlik Bakanlığı — İş Sağlığı ve Güvenliği Genel Müdürlüğü', url: 'https://www.csgb.gov.tr/' },
+          { ad: 'Sosyal Güvenlik Kurumu — iş kazası ve meslek hastalığı istatistikleri', url: 'https://www.sgk.gov.tr/' },
+        ].map((k) => (
+          <li>
+            <a class="underline underline-offset-4" href={k.url} rel="nofollow noopener" target="_blank">
+              {k.ad}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+</Layout>

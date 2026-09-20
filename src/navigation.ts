@@ -68,6 +68,9 @@ export const headerData = {
       links: [
         { text: 'Bilgi Merkezi', href: getPermalink('/bilgi-merkezi') },
         { text: 'Sıkça sorulan sorular', href: getPermalink('/sss') },
+        { text: 'İSG istatistikleri ve cezalar', href: getPermalink('/isg-istatistikleri') },
+        { text: 'OSGB kıyaslama rehberi', href: getPermalink('/rehber/bireysel-uzman-vs-osgb') },
+        { text: 'Denetim hazırlık testi', href: getPermalink('/araclar/isg-denetim-testi') },
         { text: 'İSG kütüphanesi', href: getPermalink('/isg-kutuphanesi') },
         { text: 'Hesaplama araçları', href: getPermalink('/araclar') },
         { text: 'Form şablonları (PDF)', href: getPermalink('/isg-kutuphanesi/formlar') },
@@ -111,10 +114,13 @@ export const footerData = {
       links: [
         { text: 'Hesaplama araçları', href: getPermalink('/araclar') },
         { text: 'İSG kütüphanesi', href: getPermalink('/isg-kutuphanesi') },
+        { text: 'İSG istatistikleri ve cezalar', href: getPermalink('/isg-istatistikleri') },
         { text: 'Form şablonları (PDF)', href: getPermalink('/isg-kutuphanesi/formlar') },
         { text: 'Güvenlik levhaları (PDF)', href: getPermalink('/isg-kutuphanesi/levhalar') },
         { text: 'Mevzuat dizini', href: getPermalink('/isg-kutuphanesi/mevzuat') },
         { text: 'İSG rehberi', href: getPermalink('/blog') },
+        { text: 'OSGB kıyaslama rehberi', href: getPermalink('/rehber/bireysel-uzman-vs-osgb') },
+        { text: 'Denetim hazırlık testi', href: getPermalink('/araclar/isg-denetim-testi') },
         { text: 'Bilgi Merkezi', href: getPermalink('/bilgi-merkezi') },
         { text: 'Sıkça sorulan sorular', href: getPermalink('/sss') },
       ],

@@ -1,0 +1,214 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import StructuredData from '~/components/common/StructuredData.astro';
+import { site } from '~/data/site';
+
+const metadata = {
+  title: 'İSG Dosyanız Eksiksiz mi? Ücretsiz Kontrol Listesi',
+  description:
+    'İş yerinizin İSG dosyasında hangi başlıklar eksik? On soruluk ücretsiz kontrol listesiyle risk değerlendirmesi, eğitim, periyodik kontrol ve sağlık gözetimi durumunuzu gözden geçirin.',
+};
+
+const sayfaUrl = `${site.url}/araclar/isg-denetim-testi/`;
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'İSG Bakanlık Denetimi Hazırlık Testi',
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Any',
+    url: sayfaUrl,
+    description: metadata.description,
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'TRY',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Ana sayfa', item: `${site.url}/` },
+      { '@type': 'ListItem', position: 2, name: 'Araçlar', item: `${site.url}/araclar/` },
+      { '@type': 'ListItem', position: 3, name: 'İSG Denetim Testi', item: sayfaUrl },
+    ],
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <StructuredData slot="head" schema={schema} />
+
+  <section class="relative max-w-3xl mx-auto px-4 sm:px-6 py-10 md:py-16">
+    <div class="text-center mb-10 md:mb-14">
+      <h1 class="text-3xl md:text-5xl font-bold font-heading text-heading tracking-tight mb-4">
+        İSG dosyanız eksiksiz mi?
+      </h1>
+      <p class="text-lg text-muted">
+        On soruda iş yerinizin İSG dosyasındaki eksikleri görün. Test ücretsiz; sonucunda hangi başlıkların tamamlanması gerektiğini listeliyoruz.
+      </p>
+    </div>
+
+    <!-- QUIZ CONTAINER -->
+    <div id="quiz-container" class="bg-white dark:bg-slate-900 rounded-2xl shadow-sm ring-1 ring-gray-200 dark:ring-slate-700 p-6 md:p-10">
+      
+      <!-- PROGRESS BAR -->
+      <div id="progress-container" class="mb-8">
+        <div class="flex justify-between text-sm text-muted mb-2 font-medium">
+          <span id="progress-text">Soru 1 / 10</span>
+          <span id="progress-percentage">10%</span>
+        </div>
+        <div class="w-full bg-gray-200 dark:bg-slate-800 rounded-full h-2.5">
+          <div id="progress-bar" class="bg-primary h-2.5 rounded-full transition-all duration-300" style="width: 10%"></div>
+        </div>
+      </div>
+
+      <!-- QUESTION AREA -->
+      <div id="question-area" class="min-h-[150px]">
+        <h2 id="question-text" class="text-xl md:text-2xl font-semibold text-heading mb-8">
+          Yükleniyor...
+        </h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <button id="btn-yes" class="flex items-center justify-center gap-2 py-4 px-6 rounded-xl border-2 border-green-200 bg-green-50 text-green-700 hover:bg-green-100 dark:border-green-900/50 dark:bg-green-900/20 dark:text-green-400 dark:hover:bg-green-900/40 transition font-semibold text-lg w-full">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+            Evet
+          </button>
+          
+          <button id="btn-no" class="flex items-center justify-center gap-2 py-4 px-6 rounded-xl border-2 border-red-200 bg-red-50 text-red-700 hover:bg-red-100 dark:border-red-900/50 dark:bg-red-900/20 dark:text-red-400 dark:hover:bg-red-900/40 transition font-semibold text-lg w-full">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
+            Hayır
+          </button>
+        </div>
+      </div>
+
+      <!-- RESULTS AREA (HIDDEN INITIALLY) -->
+      <div id="results-area" class="hidden text-center">
+        <div id="score-circle" class="w-32 h-32 mx-auto rounded-full flex items-center justify-center mb-6 text-4xl font-bold text-white shadow-lg">
+          0
+        </div>
+        <h2 id="result-title" class="text-2xl md:text-3xl font-bold text-heading mb-4">Sonuç Başlığı</h2>
+        <p id="result-desc" class="text-lg text-muted mb-8">Sonuç açıklaması burada yer alacak.</p>
+        
+        <div class="bg-gray-50 dark:bg-slate-800 rounded-xl p-6 mb-8 text-left border border-gray-200 dark:border-slate-700">
+          <h3 class="font-semibold text-heading mb-4 text-lg">Eksikleri kapatmak için ne gerekiyor?</h3>
+          <p class="text-sm text-muted mb-4">Ücretsiz ön değerlendirmede iş yerinizin tehlike sınıfına ve çalışan sayısına göre hangi yükümlülüklerin düştüğünü yazılı olarak çıkarıyoruz.</p>
+          <a href="/teklif-al/" class="inline-flex w-full items-center justify-center gap-2 py-3 px-6 rounded-full bg-primary text-white font-semibold hover:opacity-90 transition">
+            Ücretsiz Ön Değerlendirme
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg>
+          </a>
+        </div>
+        
+        <button id="btn-restart" class="text-sm font-medium text-primary hover:underline">
+          Testi Yeniden Çöz
+        </button>
+      </div>
+
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // Sorular Listesi
+  const questions = [
+    "Risk değerlendirme raporunuz güncel mi ve çalışanlara tebliğ edildi mi?",
+    "Acil durum eylem planınız hazır mı ve en az yılda bir tatbikat yapılıyor mu?",
+    "Tüm çalışanlarınızın İSG eğitimleri yasal sürelere uygun olarak tamamlandı ve belgelendi mi?",
+    "İşe girişlerde ve periyodik olarak çalışanların sağlık muayeneleri eksiksiz yapılıyor mu?",
+    "İş yerinde kullanılan makine, tezgâh ve ekipmanların periyodik kontrolleri düzenli olarak yapıldı mı?",
+    "Çalışanlara uygun Kişisel Koruyucu Donanımlar (KKD) zimmet tutanağı imzalatılarak teslim edildi mi?",
+    "Ramak kala olayları kayıt altına alınıyor ve iş kazası defteri düzenli tutuluyor mu?",
+    "Yangın söndürme tüpleri ve uyarı sistemlerinin periyodik bakımı yapıldı mı?",
+    "Çalışma ortamı ölçümleri (toz, gürültü, aydınlatma vb.) yapılıp raporlandı mı?",
+    "İSG Hizmetleri (Uzman ve Hekim) yasal çalışma sürelerine uygun olarak İSG-KATİP üzerinden atandı mı?"
+  ];
+
+  let currentQuestionIndex = 0;
+  let score = 0;
+
+  // DOM Elements
+  const questionArea = document.getElementById('question-area');
+  const resultsArea = document.getElementById('results-area');
+  const progressContainer = document.getElementById('progress-container');
+  
+  const questionText = document.getElementById('question-text');
+  const progressText = document.getElementById('progress-text');
+  const progressBar = document.getElementById('progress-bar');
+  const progressPercentage = document.getElementById('progress-percentage');
+  
+  const btnYes = document.getElementById('btn-yes');
+  const btnNo = document.getElementById('btn-no');
+  const btnRestart = document.getElementById('btn-restart');
+  
+  const scoreCircle = document.getElementById('score-circle');
+  const resultTitle = document.getElementById('result-title');
+  const resultDesc = document.getElementById('result-desc');
+
+  function initQuiz() {
+    currentQuestionIndex = 0;
+    score = 0;
+    questionArea.classList.remove('hidden');
+    progressContainer.classList.remove('hidden');
+    resultsArea.classList.add('hidden');
+    showQuestion();
+  }
+
+  function showQuestion() {
+    // Soru Metni
+    questionText.textContent = questions[currentQuestionIndex];
+    
+    // Progress
+    const progress = Math.round(((currentQuestionIndex + 1) / questions.length) * 100);
+    progressText.textContent = `Soru ${currentQuestionIndex + 1} / ${questions.length}`;
+    progressPercentage.textContent = `${progress}%`;
+    progressBar.style.width = `${progress}%`;
+  }
+
+  function handleAnswer(isYes) {
+    if (isYes) score += 10;
+    
+    currentQuestionIndex++;
+    
+    if (currentQuestionIndex < questions.length) {
+      showQuestion();
+    } else {
+      showResults();
+    }
+  }
+
+  function showResults() {
+    questionArea.classList.add('hidden');
+    progressContainer.classList.add('hidden');
+    resultsArea.classList.remove('hidden');
+    
+    // Skor Animasyonu ve Gösterimi (Basit)
+    scoreCircle.textContent = score;
+    
+    // Renk ve Mesaj Belirleme
+    scoreCircle.className = "w-32 h-32 mx-auto rounded-full flex items-center justify-center mb-6 text-5xl font-bold text-white shadow-lg";
+    
+    if (score >= 80) {
+      scoreCircle.classList.add('bg-green-500');
+      resultTitle.textContent = "Harika Durumdasınız! 🟢";
+      resultDesc.textContent = "Temel başlıkların çoğu yerinde görünüyor. Kalan maddeleri tamamlamak ve kayıtların güncel kaldığından emin olmak için ücretsiz ön değerlendirme isteyebilirsiniz.";
+    } else if (score >= 50) {
+      scoreCircle.classList.add('bg-yellow-500');
+      resultTitle.textContent = "Birkaç başlık eksik";
+      resultDesc.textContent = "Bazı başlıklar tamam, bazıları eksik görünüyor. Eksik kalan her madde hem denetimde sorulan bir belge hem de sahada karşılığı olan bir önlem; hangisinin size düştüğünü birlikte çıkaralım.";
+    } else {
+      scoreCircle.classList.add('bg-red-500');
+      resultTitle.textContent = "Dosyada belirgin eksikler var";
+      resultDesc.textContent = "Temel başlıkların önemli bölümü eksik görünüyor. Bunlar yalnız denetimde istenen belgeler değil, sahada kazayı önleyen önlemlerin kendisi. Nereden başlanacağını sıralamak için ücretsiz ön değerlendirme isteyebilirsiniz.";
+    }
+  }
+
+  // Event Listeners
+  if(btnYes) btnYes.addEventListener('click', () => handleAnswer(true));
+  if(btnNo) btnNo.addEventListener('click', () => handleAnswer(false));
+  if(btnRestart) btnRestart.addEventListener('click', initQuiz);
+
+  // Sayfa yüklendiğinde başlat
+  document.addEventListener('DOMContentLoaded', initQuiz);
+</script>

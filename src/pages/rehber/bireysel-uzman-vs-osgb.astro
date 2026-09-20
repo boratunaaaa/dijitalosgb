@@ -1,0 +1,163 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import StructuredData from '~/components/common/StructuredData.astro';
+import { site } from '~/data/site';
+
+const metadata = {
+  title: 'Bireysel İSG Uzmanı ile OSGB Firması Karşılaştırması',
+  description:
+    'İş sağlığı ve güvenliği hizmetini bireysel uzmandan almak ile OSGB firmasından almak arasındaki hukuki, mali ve operasyonel farklar.',
+};
+
+const sayfaUrl = `${site.url}/rehber/bireysel-uzman-vs-osgb/`;
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: metadata.title,
+    description: metadata.description,
+    url: sayfaUrl,
+    author: { '@type': 'Organization', name: site.name, url: site.url },
+    publisher: { '@type': 'Organization', name: site.name, url: site.url },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Ana sayfa', item: `${site.url}/` },
+      { '@type': 'ListItem', position: 2, name: 'Rehber', item: `${site.url}/blog/` },
+      { '@type': 'ListItem', position: 3, name: 'Bireysel Uzman vs OSGB', item: sayfaUrl },
+    ],
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <StructuredData slot="head" schema={schema} />
+
+  <article class="max-w-4xl mx-auto px-4 sm:px-6 py-10 md:py-14">
+    <nav aria-label="Konum" class="text-sm text-muted mb-6">
+      <a href="/" class="hover:underline">Ana sayfa</a>
+      <span class="mx-1.5">/</span>
+      <a href="/blog/" class="hover:underline">Rehber</a>
+      <span class="mx-1.5">/</span>
+      <span class="text-default">Kıyaslama</span>
+    </nav>
+
+    <h1 class="text-3xl md:text-4xl font-bold font-heading text-heading tracking-tight mb-5 text-balance">
+      Bireysel İSG Uzmanı vs OSGB Firması: Hangisini Seçmelisiniz?
+    </h1>
+
+    <p class="text-lg text-muted mb-10 pb-8 border-b border-gray-200 dark:border-slate-700">
+      İşverenlerin en sık sorduğu sorulardan biri: "Bünyemde SGK'lı olarak bireysel bir İş Güvenliği Uzmanı mı çalıştırmalıyım, yoksa dışarıdan bir Ortak Sağlık ve Güvenlik Birimi (OSGB) ile mi anlaşmalıyım?" Bu rehberde, her iki yöntemin avantajlarını ve hukuki sorumluluklarını tarafsız bir şekilde kıyaslıyoruz.
+    </p>
+
+    <h2 class="text-2xl font-bold font-heading text-heading mb-4">Maliyet ve Operasyonel Kıyaslama</h2>
+    <div class="overflow-x-auto mb-10">
+      <table class="w-full text-left text-sm text-default border-collapse border border-gray-300 dark:border-slate-700">
+        <thead class="bg-gray-100 dark:bg-slate-800 text-heading font-semibold">
+          <tr>
+            <th class="border border-gray-300 dark:border-slate-700 px-4 py-3">Karşılaştırma Kriteri</th>
+            <th class="border border-gray-300 dark:border-slate-700 px-4 py-3 w-2/5">Bireysel İSG Uzmanı (Tam/Kısmi Süreli)</th>
+            <th class="border border-gray-300 dark:border-slate-700 px-4 py-3 w-2/5">OSGB (Yetkili Çözüm Ortağı) Hizmeti</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200 dark:divide-slate-700">
+          <tr>
+            <td class="border border-gray-300 dark:border-slate-700 px-4 py-3 font-semibold">SGK ve Özlük Hakları</td>
+            <td class="border border-gray-300 dark:border-slate-700 px-4 py-3">Maaş, SGK primi, ihbar/kıdem tazminatı, yemek ve yol masrafları işverene aittir.</td>
+            <td class="border border-gray-300 dark:border-slate-700 px-4 py-3">Uzmanın tüm özlük hakları ve SGK masrafları OSGB tarafından karşılanır. Sadece fatura ödenir.</td>
+          </tr>
+          <tr class="bg-gray-50 dark:bg-slate-900/50">
+            <td class="border border-gray-300 dark:border-slate-700 px-4 py-3 font-semibold">Süreklilik (İzin/Rapor Durumu)</td>
+            <td class="border border-gray-300 dark:border-slate-700 px-4 py-3">Uzman yıllık izne ayrıldığında veya hastalandığında yerine vekil bulmak zordur. Hizmet aksayabilir.</td>
+            <td class="border border-gray-300 dark:border-slate-700 px-4 py-3">Uzman izne çıktığında OSGB anında aynı belge sınıfına sahip yedek uzman görevlendirir. Hizmet kesintisiz sürer.</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-300 dark:border-slate-700 px-4 py-3 font-semibold">Hizmet Çeşitliliği</td>
+            <td class="border border-gray-300 dark:border-slate-700 px-4 py-3">Sadece İSG uzmanlığı hizmeti alırsınız. İşyeri hekimi ve diğer sağlık personeli (DSP) için ayrı alım yapmalısınız.</td>
+            <td class="border border-gray-300 dark:border-slate-700 px-4 py-3">Uzman, Hekim, DSP ve Mobil Sağlık hizmetlerini tek çatı altından alırsınız. Organizasyon kolaylığı sağlar.</td>
+          </tr>
+          <tr class="bg-gray-50 dark:bg-slate-900/50">
+            <td class="border border-gray-300 dark:border-slate-700 px-4 py-3 font-semibold">Hukuki Güvence ve Rücu</td>
+            <td class="border border-gray-300 dark:border-slate-700 px-4 py-3">Olası bir iş kazasında rücu (tazminat yansıtma) doğrudan bireysel çalışana yapılır; çalışanın ödeme gücü sınırlıdır.</td>
+            <td class="border border-gray-300 dark:border-slate-700 px-4 py-3">OSGB üzerinden alınan hizmette görevlendirme yetkili kuruluş adına kayda geçer; kuruluşun kendi iç düzeni ve varsa sigorta kapsamı sözleşme öncesinde yazılı olarak sorulmalıdır.</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-300 dark:border-slate-700 px-4 py-3 font-semibold">Fatura ve Gider Gösterimi</td>
+            <td class="border border-gray-300 dark:border-slate-700 px-4 py-3">Bordro üzerinden giderleştirilir.</td>
+            <td class="border border-gray-300 dark:border-slate-700 px-4 py-3">Kesilen faturanın tamamı şirket gideri (masraf) olarak gösterilir ve KDV indirimi sağlanır.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="text-2xl font-bold font-heading text-heading mb-4">Hangi Durumda Hangisi Tercih Edilmeli?</h2>
+    
+    <div class="grid md:grid-cols-2 gap-6 mb-10">
+      <div class="rounded-xl ring-1 ring-gray-200 dark:ring-slate-700 bg-white dark:bg-slate-900 p-6">
+        <h3 class="text-xl font-bold text-heading mb-3 text-primary">Bireysel Uzmanı Kimler Seçmeli?</h3>
+        <ul class="space-y-2 text-default list-disc pl-5">
+          <li>Çalışan sayısı çok yüksek (örn: 1000+ çalışan) olan dev sanayi tesisleri.</li>
+          <li>Aylık İSG hizmet süresi tam zamanlı (217 saat) dolan firmalar.</li>
+          <li>Kendi bünyesinde büyük bir İSG departmanı (kurul) kurmak isteyen kurumsal holdingler.</li>
+        </ul>
+      </div>
+      <div class="rounded-xl ring-1 ring-gray-200 dark:ring-slate-700 bg-white dark:bg-slate-900 p-6">
+        <h3 class="text-xl font-bold text-heading mb-3 text-primary">OSGB'yi Kimler Seçmeli?</h3>
+        <ul class="space-y-2 text-default list-disc pl-5">
+          <li>Kısmi süreli (ayda birkaç saat/gün) hizmete ihtiyacı olan KOBİ'ler.</li>
+          <li>Çalışan sayısı 1 ile 500 arasında olan tüm işletmeler.</li>
+          <li>Hekim, sağlık taraması ve İSG hizmetini tek faturada çözmek isteyenler.</li>
+          <li>Personel özlük işleriyle (SGK, kıdem, izin) uğraşmak istemeyen işverenler.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-10 rounded-2xl bg-primary/5 dark:bg-primary/10 ring-1 ring-primary/20 p-6 md:p-8">
+      <h2 class="text-xl font-bold font-heading text-heading mb-2">İşletmeniz İçin En Doğru Kararı Verin</h2>
+      <p class="text-muted mb-5">
+        Şirketinizin NACE koduna, tehlike sınıfına ve çalışan sayısına göre en maliyet-etkin çözümü birlikte belirleyelim.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a
+          href="/teklif-al/"
+          class="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 font-semibold text-white hover:opacity-90 transition"
+        >
+          OSGB Hizmeti Teklifi Alın
+        </a>
+        <a
+          href="/iletisim/"
+          class="inline-flex items-center justify-center rounded-full ring-1 ring-gray-300 dark:ring-slate-600 px-6 py-3 font-semibold text-default hover:bg-gray-50 dark:hover:bg-slate-800 transition"
+        >
+          Uzmanla Görüşün
+        </a>
+      </div>
+    </div>
+  </article>
+  <section class="mx-auto max-w-4xl px-4 pb-14 sm:px-6">
+    <h2 class="text-lg font-bold text-heading">Kaynaklar ve ilgili mevzuat</h2>
+    <p class="mt-2 text-sm text-muted">
+      Bu sayfadaki yükümlülük anlatımı aşağıdaki düzenlemelere dayanır. Kendi iş yerinize
+      düşen kapsam tehlike sınıfınıza ve çalışan sayınıza göre değişir.
+    </p>
+    <ul class="mt-3 list-disc space-y-1.5 pl-5 text-sm text-muted">
+      {
+        [
+          { ad: '6331 sayılı İş Sağlığı ve Güvenliği Kanunu', url: 'https://www.mevzuat.gov.tr/mevzuatmetin/1.5.6331.pdf' },
+          { ad: 'İş Sağlığı ve Güvenliği Hizmetleri Yönetmeliği', url: 'https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16700&MevzuatTur=7&MevzuatTertip=5' },
+          { ad: 'İş Güvenliği Uzmanlarının Görev, Yetki, Sorumluluk ve Eğitimleri Hakkında Yönetmelik', url: 'https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16999&MevzuatTur=7&MevzuatTertip=5' },
+          { ad: 'Çalışma ve Sosyal Güvenlik Bakanlığı — İSG Genel Müdürlüğü', url: 'https://www.csgb.gov.tr/' },
+        ].map((k) => (
+          <li>
+            <a class="underline underline-offset-4" href={k.url} rel="nofollow noopener" target="_blank">
+              {k.ad}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+</Layout>

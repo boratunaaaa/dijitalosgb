@@ -54,6 +54,20 @@ const faqSchema = {
   })),
 };
 
+const dictionarySchema = {
+  '@context': 'https://schema.org',
+  '@type': 'DefinedTermSet',
+  '@id': sayfaUrl,
+  name: 'İSG Bilgi Merkezi ve Sözlük',
+  description: metadata.description,
+  hasDefinedTerm: bilgiMerkeziVerileri.map((s) => ({
+    '@type': 'DefinedTerm',
+    name: s.soru,
+    description: s.cevap,
+    inDefinedTermSet: sayfaUrl,
+  })),
+};
+
 const breadcrumb = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -66,6 +80,7 @@ const breadcrumb = {
 
 <Layout metadata={metadata}>
   <StructuredData slot="head" schema={faqSchema} />
+  <StructuredData slot="head" schema={dictionarySchema} />
   <StructuredData slot="head" schema={breadcrumb} />
 
   <section class="max-w-4xl mx-auto px-4 sm:px-6 py-10 md:py-14">
