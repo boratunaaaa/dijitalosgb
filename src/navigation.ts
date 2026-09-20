@@ -44,13 +44,6 @@ const oneCikanSektorler = [
 export const headerData = {
   links: [
     {
-      text: 'Kurumsal',
-      links: [
-        { text: 'Hakkımızda', href: getPermalink('/hakkimizda') },
-        { text: 'Referanslar', href: getPermalink('/referanslar') },
-      ],
-    },
-    {
       text: 'Hizmetler',
       href: getPermalink('/hizmetler'),
       links: [
@@ -81,6 +74,13 @@ export const headerData = {
         { text: 'Güvenlik levhaları (PDF)', href: getPermalink('/isg-kutuphanesi/levhalar') },
         { text: 'Mevzuat dizini', href: getPermalink('/isg-kutuphanesi/mevzuat') },
         { text: 'İSG rehberi', href: getPermalink('/blog') },
+      ],
+    },
+    {
+      text: 'Kurumsal',
+      links: [
+        { text: 'Hakkımızda', href: getPermalink('/hakkimizda') },
+        { text: 'Referanslar', href: getPermalink('/referanslar') },
       ],
     },
     { text: 'İletişim', href: getPermalink('/iletisim') },
