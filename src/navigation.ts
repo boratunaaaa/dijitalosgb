@@ -44,10 +44,18 @@ const oneCikanSektorler = [
 export const headerData = {
   links: [
     {
+      text: 'Kurumsal',
+      links: [
+        { text: 'Hakkımızda', href: getPermalink('/hakkimizda') },
+        { text: 'Referanslar', href: getPermalink('/referanslar') },
+      ],
+    },
+    {
       text: 'Hizmetler',
       href: getPermalink('/hizmetler'),
       links: [
         ...anaHizmetler.map((h) => ({ text: h.ad, href: getPermalink(`/hizmetler/${h.slug}`) })),
+        { text: 'İSG eğitimleri', href: getPermalink('/isg-egitimi') },
         { text: 'Mobil sağlık taraması', href: getPermalink('/mobil-saglik-taramasi') },
         { text: 'Hazır paketler', href: getPermalink('/paketler') },
         { text: 'Tüm hizmetler →', href: getPermalink('/hizmetler') },
@@ -62,25 +70,19 @@ export const headerData = {
       ],
     },
     {
-      text: 'Eğitimler',
-      href: getPermalink('/isg-egitimi'),
-    },
-    {
       text: 'Kaynaklar',
       href: getPermalink('/isg-kutuphanesi'),
       links: [
-        { text: 'Hesaplama araçları', href: getPermalink('/araclar') },
+        { text: 'Bilgi Merkezi', href: getPermalink('/bilgi-merkezi') },
+        { text: 'Sıkça sorulan sorular', href: getPermalink('/sss') },
         { text: 'İSG kütüphanesi', href: getPermalink('/isg-kutuphanesi') },
+        { text: 'Hesaplama araçları', href: getPermalink('/araclar') },
         { text: 'Form şablonları (PDF)', href: getPermalink('/isg-kutuphanesi/formlar') },
         { text: 'Güvenlik levhaları (PDF)', href: getPermalink('/isg-kutuphanesi/levhalar') },
         { text: 'Mevzuat dizini', href: getPermalink('/isg-kutuphanesi/mevzuat') },
         { text: 'İSG rehberi', href: getPermalink('/blog') },
-        { text: 'Bilgi Merkezi', href: getPermalink('/bilgi-merkezi') },
-        { text: 'Sıkça sorulan sorular', href: getPermalink('/sss') },
       ],
     },
-    { text: 'Hakkımızda', href: getPermalink('/hakkimizda') },
-    { text: 'Referanslar', href: getPermalink('/referanslar') },
     { text: 'İletişim', href: getPermalink('/iletisim') },
   ],
   actions: [{ text: 'Ücretsiz Ön Değerlendirme', href: getPermalink('/teklif-al'), variant: 'primary' }],
