@@ -10,10 +10,10 @@
       "service": "",
       "primaryIntent": "local-commercial",
       "primaryKeyword": "Ataşehir ofislerinde iş sağlığı ve güvenliği",
-      "status": "approved",
+      "status": "published",
       "createdAt": "2026-09-20T13:45:58+00:00",
-      "publishedAt": "",
-      "updatedAt": "2026-09-20T13:45:58+00:00",
+      "publishedAt": "2026-09-20T13:49:55+00:00",
+      "updatedAt": "2026-09-20T13:49:55+00:00",
       "qualityScore": 88,
       "similarityMax": 0.008,
       "wordCount": 733,
@@ -30,8 +30,8 @@
         "/araclar/ilk-yardimci-sayisi-hesaplama/",
         "/isg-egitimi/"
       ],
-      "commit": "",
-      "deployment": "",
+      "commit": "5053dd9",
+      "deployment": "cloudflare-pages",
       "rejectionReason": "",
       "indexable": true,
       "canonical": "https://dijitalosgb.com/bolge/atasehir-ofis-hizmet/",
@@ -40,10 +40,13 @@
         "Service",
         "FAQPage"
       ],
-      "sitemapIncluded": false,
+      "sitemapIncluded": true,
       "llmsEligible": false,
       "llmsPriority": 0,
-      "inboundInternalLinks": [],
+      "inboundInternalLinks": [
+        "/osgb-hizmeti/",
+        "/sektorler/ofis-hizmet/"
+      ],
       "outboundInternalLinks": [
         "/hizmetler/is-guvenligi-uzmanligi/",
         "/araclar/isg-yukumluluk-hesaplama/",
@@ -52,8 +55,8 @@
         "/araclar/ilk-yardimci-sayisi-hesaplama/",
         "/isg-egitimi/"
       ],
-      "datePublished": "",
-      "dateModified": "",
+      "datePublished": "2026-09-20T13:49:55+00:00",
+      "dateModified": "2026-09-20T13:49:55+00:00",
       "legalReviewed": true,
       "technicalSeoPassed": true
     },
@@ -66,10 +69,10 @@
       "service": "",
       "primaryIntent": "local-commercial",
       "primaryKeyword": "Başakşehir metal işleme atölyelerinde iş güvenliği",
-      "status": "approved",
+      "status": "published",
       "createdAt": "2026-09-20T13:45:58+00:00",
-      "publishedAt": "",
-      "updatedAt": "2026-09-20T13:45:58+00:00",
+      "publishedAt": "2026-09-20T13:49:55+00:00",
+      "updatedAt": "2026-09-20T13:49:55+00:00",
       "qualityScore": 87,
       "similarityMax": 0.011,
       "wordCount": 793,
@@ -86,8 +89,8 @@
         "/hizmetler/risk-degerlendirmesi/",
         "/isg-kutuphanesi/formlar/"
       ],
-      "commit": "",
-      "deployment": "",
+      "commit": "5053dd9",
+      "deployment": "cloudflare-pages",
       "rejectionReason": "",
       "indexable": true,
       "canonical": "https://dijitalosgb.com/bolge/basaksehir-metal-kaynak/",
@@ -96,10 +99,13 @@
         "Service",
         "FAQPage"
       ],
-      "sitemapIncluded": false,
+      "sitemapIncluded": true,
       "llmsEligible": false,
       "llmsPriority": 0,
-      "inboundInternalLinks": [],
+      "inboundInternalLinks": [
+        "/osgb-hizmeti/",
+        "/sektorler/metal-kaynak/"
+      ],
       "outboundInternalLinks": [
         "/hizmetler/is-guvenligi-uzmanligi/",
         "/araclar/isg-yukumluluk-hesaplama/",
@@ -108,8 +114,8 @@
         "/hizmetler/risk-degerlendirmesi/",
         "/isg-kutuphanesi/formlar/"
       ],
-      "datePublished": "",
-      "dateModified": "",
+      "datePublished": "2026-09-20T13:49:55+00:00",
+      "dateModified": "2026-09-20T13:49:55+00:00",
       "legalReviewed": true,
       "technicalSeoPassed": true
     },
@@ -122,10 +128,10 @@
       "service": "",
       "primaryIntent": "local-commercial",
       "primaryKeyword": "Beylikdüzü lojistik ve depo iş güvenliği",
-      "status": "approved",
+      "status": "published",
       "createdAt": "2026-09-20T13:45:58+00:00",
-      "publishedAt": "",
-      "updatedAt": "2026-09-20T13:45:58+00:00",
+      "publishedAt": "2026-09-20T13:49:55+00:00",
+      "updatedAt": "2026-09-20T13:49:55+00:00",
       "qualityScore": 91,
       "similarityMax": 0.009,
       "wordCount": 719,
@@ -142,8 +148,8 @@
         "/araclar/acil-durum-ekip-sayisi-hesaplama/",
         "/isg-kutuphanesi/formlar/"
       ],
-      "commit": "",
-      "deployment": "",
+      "commit": "5053dd9",
+      "deployment": "cloudflare-pages",
       "rejectionReason": "",
       "indexable": true,
       "canonical": "https://dijitalosgb.com/bolge/beylikduzu-lojistik-depo/",
@@ -152,10 +158,13 @@
         "Service",
         "FAQPage"
       ],
-      "sitemapIncluded": false,
+      "sitemapIncluded": true,
       "llmsEligible": true,
       "llmsPriority": 4,
-      "inboundInternalLinks": [],
+      "inboundInternalLinks": [
+        "/osgb-hizmeti/",
+        "/sektorler/lojistik-depo/"
+      ],
       "outboundInternalLinks": [
         "/hizmetler/is-guvenligi-uzmanligi/",
         "/araclar/isg-yukumluluk-hesaplama/",
@@ -164,8 +173,8 @@
         "/araclar/acil-durum-ekip-sayisi-hesaplama/",
         "/isg-kutuphanesi/formlar/"
       ],
-      "datePublished": "",
-      "dateModified": "",
+      "datePublished": "2026-09-20T13:49:55+00:00",
+      "dateModified": "2026-09-20T13:49:55+00:00",
       "legalReviewed": true,
       "technicalSeoPassed": true
     },
@@ -178,10 +187,10 @@
       "service": "",
       "primaryIntent": "local-commercial",
       "primaryKeyword": "Esenyurt tekstil ve konfeksiyon iş güvenliği",
-      "status": "approved",
+      "status": "published",
       "createdAt": "2026-09-20T13:45:58+00:00",
-      "publishedAt": "",
-      "updatedAt": "2026-09-20T13:45:58+00:00",
+      "publishedAt": "2026-09-20T13:49:55+00:00",
+      "updatedAt": "2026-09-20T13:49:55+00:00",
       "qualityScore": 91,
       "similarityMax": 0.011,
       "wordCount": 751,
@@ -199,8 +208,8 @@
         "/araclar/egitim-yenileme-tarihi-hesaplama/",
         "/araclar/tehlike-sinifi-sorgulama/"
       ],
-      "commit": "",
-      "deployment": "",
+      "commit": "5053dd9",
+      "deployment": "cloudflare-pages",
       "rejectionReason": "",
       "indexable": true,
       "canonical": "https://dijitalosgb.com/bolge/esenyurt-tekstil-konfeksiyon/",
@@ -209,10 +218,13 @@
         "Service",
         "FAQPage"
       ],
-      "sitemapIncluded": false,
+      "sitemapIncluded": true,
       "llmsEligible": true,
       "llmsPriority": 4,
-      "inboundInternalLinks": [],
+      "inboundInternalLinks": [
+        "/osgb-hizmeti/",
+        "/sektorler/tekstil-konfeksiyon/"
+      ],
       "outboundInternalLinks": [
         "/hizmetler/is-guvenligi-uzmanligi/",
         "/araclar/isg-yukumluluk-hesaplama/",
@@ -222,8 +234,8 @@
         "/araclar/egitim-yenileme-tarihi-hesaplama/",
         "/araclar/tehlike-sinifi-sorgulama/"
       ],
-      "datePublished": "",
-      "dateModified": "",
+      "datePublished": "2026-09-20T13:49:55+00:00",
+      "dateModified": "2026-09-20T13:49:55+00:00",
       "legalReviewed": true,
       "technicalSeoPassed": true
     },
@@ -236,10 +248,10 @@
       "service": "",
       "primaryIntent": "local-commercial",
       "primaryKeyword": "Tuzla metal işleme ve kaynak iş güvenliği",
-      "status": "approved",
+      "status": "published",
       "createdAt": "2026-09-20T13:45:58+00:00",
-      "publishedAt": "",
-      "updatedAt": "2026-09-20T13:45:58+00:00",
+      "publishedAt": "2026-09-20T13:49:55+00:00",
+      "updatedAt": "2026-09-20T13:49:55+00:00",
       "qualityScore": 95,
       "similarityMax": 0.0,
       "wordCount": 920,
@@ -257,8 +269,8 @@
         "/isg-kutuphanesi/formlar/",
         "/hizmetler/mesleki-yeterlilik-belgesi/"
       ],
-      "commit": "",
-      "deployment": "",
+      "commit": "5053dd9",
+      "deployment": "cloudflare-pages",
       "rejectionReason": "",
       "indexable": true,
       "canonical": "https://dijitalosgb.com/bolge/tuzla-metal-kaynak/",
@@ -267,10 +279,13 @@
         "Service",
         "FAQPage"
       ],
-      "sitemapIncluded": false,
+      "sitemapIncluded": true,
       "llmsEligible": true,
       "llmsPriority": 4,
-      "inboundInternalLinks": [],
+      "inboundInternalLinks": [
+        "/osgb-hizmeti/",
+        "/sektorler/metal-kaynak/"
+      ],
       "outboundInternalLinks": [
         "/hizmetler/is-guvenligi-uzmanligi/",
         "/araclar/isg-yukumluluk-hesaplama/",
@@ -280,8 +295,8 @@
         "/isg-kutuphanesi/formlar/",
         "/hizmetler/mesleki-yeterlilik-belgesi/"
       ],
-      "datePublished": "",
-      "dateModified": "",
+      "datePublished": "2026-09-20T13:49:55+00:00",
+      "dateModified": "2026-09-20T13:49:55+00:00",
       "legalReviewed": true,
       "technicalSeoPassed": true
     }

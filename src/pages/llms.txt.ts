@@ -19,15 +19,54 @@ import { hizmetler } from "../data/hizmetler";
 /**
  * llms.txt'ye girecek programatik sayfalar.
  *
- * KURAL: dosya bir URL çöplüğü olmayacak. Üretilen her bölge/sektör sayfası
- * buraya OTOMATİK GİRMEZ; yalnız kalite puanı eşiği geçen ve indekslenebilir
- * olanlar girer, en fazla 20 tanesi. Öncelik daima pillar sayfalarda.
+ * TEK KARAR KAYNAĞI REGISTRY (ek talimat #11). Önceki sürüm burada kendi
+ * `qualityScore >= 90` mantığını çalıştırıyordu; registry'de ise ayrıca
+ * `llmsEligible` alanı vardı. İki ayrı karar sistemi, er ya da geç
+ * birbirinden ayrışır ve hangisinin doğru olduğu belirsizleşir.
+ *
+ * Artık seçim yalnız registry'den geliyor ve dört şartın HEPSİ aranıyor
+ * (ek talimat #12): status published, indexable, technicalSeoPassed ve
+ * llmsEligible. Bunlar `sync.py` tarafından ÖLÇÜLEREK yazılıyor; yani
+ * yayımlanmamış, noindex, canonical'ı tutmayan veya QA'dan düşmüş bir URL
+ * buraya giremiyor.
+ *
+ * Sıralama: önce llmsPriority, sonra qualityScore. Üst sınır korunuyor —
+ * dosya pillar ağırlıklı kalmalı, yerel URL çöplüğüne dönüşmemeli.
  */
-const LLMS_PUAN_ESIGI = 90;
-const secilmisBolgeler = bolgeSektorSayfalari
-  .filter((b) => !b.indexDisi && b.uretim.kalitePuani >= LLMS_PUAN_ESIGI)
-  .sort((a, b) => b.uretim.kalitePuani - a.uretim.kalitePuani)
-  .slice(0, 20);
+import registry from "../../data/seo-content-registry.json";
+
+const LLMS_MAX = 20;
+
+type RegistryEntry = {
+  slug: string;
+  h1?: string;
+  primaryKeyword?: string;
+  status?: string;
+  indexable?: boolean;
+  technicalSeoPassed?: boolean;
+  llmsEligible?: boolean;
+  llmsPriority?: number;
+  qualityScore?: number;
+};
+
+const secilmisBolgeler = (registry.entries as RegistryEntry[])
+  .filter(
+    (e) =>
+      e.status === "published" &&
+      e.indexable === true &&
+      e.technicalSeoPassed === true &&
+      e.llmsEligible === true
+  )
+  .sort(
+    (a, b) =>
+      (b.llmsPriority ?? 0) - (a.llmsPriority ?? 0) ||
+      (b.qualityScore ?? 0) - (a.qualityScore ?? 0)
+  )
+  .slice(0, LLMS_MAX)
+  .map((e) => {
+    const sayfa = bolgeSektorSayfalari.find((b) => b.slug === e.slug);
+    return { slug: e.slug, baslik: sayfa?.h1 ?? e.primaryKeyword ?? e.slug };
+  });
 
 export const GET: APIRoute = () => {
   const satirlar = [
@@ -82,7 +121,7 @@ export const GET: APIRoute = () => {
       ? [
           "### Bölge ve sektör rehberleri",
           "",
-          ...secilmisBolgeler.map((b) => `- ${b.h1}: ${site.url}/bolge/${b.slug}/`),
+          ...secilmisBolgeler.map((b) => `- ${b.baslik}: ${site.url}/bolge/${b.slug}/`),
           "",
         ]
       : []),

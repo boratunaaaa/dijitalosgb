@@ -5,11 +5,19 @@ export interface BilgiMerkeziOgesi {
   linkMetni?: string;
 }
 
+/*
+ * BAĞLANTI KURALI: Buradaki her `link` değeri sitede GERÇEKTEN bulunan bir
+ * yola işaret etmek zorunda. İlk sürümde üç bağlantı var olmayan blog
+ * slug'larına gidiyordu ve sayfa kullanıcıyı 404'e götürüyordu; biri
+ * (`patlamadan-korunma-dokumani-pkd-nedir`) daha önce birleştirilip
+ * yönlendirilmiş bir yazının eski adresiydi. Yeni bağlantı eklerken
+ * `npm run build` sonrası kırık iç link taraması çalıştırın.
+ */
 export const bilgiMerkeziVerileri: BilgiMerkeziOgesi[] = [
   {
     soru: "İSG-Katip Nedir ve Ne İşe Yarar?",
     cevap: "İSG-Katip (İş Sağlığı ve Güvenliği Kayıt, Takip ve İzleme Programı), Çalışma ve Sosyal Güvenlik Bakanlığı tarafından iş sağlığı ve güvenliği hizmetlerinin e-Devlet üzerinden kayıt altına alınması, takip edilmesi ve izlenmesi amacıyla kurulan resmi bir sistemdir. OSGB atamaları, işyeri hekimi ve iş güvenliği uzmanı sözleşmeleri bu sistem üzerinden onaylanmak zorundadır.",
-    link: "/blog/isg-katip-onayi-nasil-yapilir",
+    link: "/blog/isg-katip-nedir/",
     linkMetni: "İSG-Katip Onayı Hakkında Detaylı Bilgi"
   },
   {
@@ -30,8 +38,8 @@ export const bilgiMerkeziVerileri: BilgiMerkeziOgesi[] = [
   },
   {
     soru: "İşyeri Hekimi Bulundurma Zorunluluğu Hangi İşletmeleri Kapsar?",
-    cevap: "Çok tehlikeli ve tehlikeli sınıfta yer alan tüm işletmeler ile az tehlikeli sınıfta yer alıp 50 ve daha fazla çalışanı olan tüm işletmeler (kamu dahil) işyeri hekimi görevlendirmek zorundadır.",
-    link: "/blog/isyeri-hekimi-zorunlulugu-neleri-kapsar",
+    cevap: "6331 sayılı Kanun kapsamındaki iş yerleri, tehlike sınıfı ve çalışan sayısına bakılmaksızın işyeri hekimi görevlendirmekle yükümlüdür. Az tehlikeli sınıftaki elliden az çalışanı olan iş yerlerine ve kamu kurumlarına tanınan erteleme 31 Aralık 2024'te sona erdi. Tehlike sınıfı ve çalışan sayısı, zorunluluğun olup olmadığını değil ayda kaç dakika hizmet alınacağını belirler.",
+    link: "/blog/isyeri-hekimi-zorunlulugu-2026/",
     linkMetni: "İşyeri Hekimi Zorunluluğu Makalesi"
   },
   {
@@ -54,8 +62,8 @@ export const bilgiMerkeziVerileri: BilgiMerkeziOgesi[] = [
   },
   {
     soru: "Patlamadan Korunma Dokümanı (PKD) Kimler İçin Zorunludur?",
-    cevap: "Yanıcı, parlayıcı veya patlayıcı maddelerin bulunduğu, üretildiği, kullanıldığı veya depolandığı tüm işyerleri (akaryakıt istasyonları, kimya fabrikaları, boyahaneler, tekstil tozunun olduğu tesisler vb.) Patlamadan Korunma Dokümanı hazırlamak zorundadır.",
-    link: "/blog/patlamadan-korunma-dokumani-pkd-nedir",
+    cevap: "Patlayıcı ortam oluşma ihtimali bulunan iş yerlerinde işveren, patlama risklerini değerlendirip Patlamadan Korunma Dokümanı hazırlamakla yükümlüdür. Uygulamada en sık karşılaşılan örnekler akaryakıt istasyonları, kimya ve boya tesisleri, un ve yem fabrikaları ile ahşap işleme atölyeleridir; belirleyici olan sektörün adı değil, ortamda patlayıcı bir bulut oluşup oluşamayacağıdır.",
+    link: "/blog/patlamadan-korunma-dokumani-kimler-icin/",
     linkMetni: "PKD Hakkında Kapsamlı Bilgi"
   }
 ];

@@ -37,23 +37,76 @@ const schema: Record<string, unknown>[] = [
       { '@type': 'ListItem', position: 3, name: s.h1, item: url },
     ],
   },
-  {
+];
+
+/*
+ * ŞEMA SAYFA TİPİNE GÖRE SEÇİLİYOR — hepsine Service basılmıyor.
+ *
+ * "Tuzla metal ve kaynak işlerinde iş güvenliği" bir REHBER sayfasıdır;
+ * birincil amacı hizmet satmak değil, o iş kolunun risklerini ve
+ * yükümlülüklerini anlatmaktır. Ona Service şeması basmak, sayfanın gerçek
+ * niteliğiyle uyuşmayan bir varlık bildirmek olurdu. Service yalnız sayfanın
+ * ana amacı doğrudan hizmet sunmaksa (ilce-hizmet) kullanılıyor.
+ */
+if (s.tip === 'ilce-hizmet') {
+  schema.push({
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: s.h1,
     description: s.metaAciklama,
     url,
     inLanguage: 'tr-TR',
-    // areaServed yalnız GERÇEKTEN saha hizmeti verilen bölgelerde ilçe/il
-    // adı taşır. Verilmiyorsa hizmet ülke geneli uzaktan olarak tanımlanır.
+    // areaServed yalnız GERÇEKTEN saha hizmeti verilen bölgelerde ilçe adı
+    // taşır; verilmiyorsa hizmet ülke geneli uzaktan olarak tanımlanır.
     areaServed: s.sahaHizmeti
       ? [{ '@type': 'AdministrativeArea', name: s.ilce ? `${s.ilce}, ${s.il}` : s.il }]
       : [{ '@type': 'Country', name: 'Türkiye' }],
     provider: { '@id': `${site.url}/#organization` },
-  },
-];
+  });
+} else if (s.tip === 'ilce') {
+  schema.push({
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: s.h1,
+    description: s.metaAciklama,
+    url,
+    inLanguage: 'tr-TR',
+    isPartOf: { '@id': `${site.url}/#website` },
+  });
+} else {
+  /*
+   * AUTHOR/PUBLISHER GERÇEĞİ YANSITIYOR (ek talimat #59).
+   * "Yazar: Mehmet Kadir Uğur" YAZILMIYOR: bu metinler bilgi merkezi
+   * içeriğidir ve tek tek insan eliyle yazılmış gibi gösterilmemeli.
+   * Publisher kurumun kendisi; uzman incelemesi yapılmadığı sürece
+   * reviewer alanı da eklenmiyor.
+   */
+  schema.push({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: s.h1,
+    description: s.metaAciklama,
+    url,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    inLanguage: 'tr-TR',
+    datePublished: s.uretim.yayinTarihi,
+    dateModified: s.uretim.guncellemeTarihi ?? s.uretim.yayinTarihi,
+    author: { '@type': 'Organization', name: `${site.name} Bilgi Merkezi`, url: site.url },
+    publisher: { '@id': `${site.url}/#organization` },
+    ...(s.kaynaklar.filter((k) => k.url).length > 0
+      ? { citation: s.kaynaklar.filter((k) => k.url).map((k) => k.url) }
+      : {}),
+  });
+}
 
-if (s.sss.length > 0) {
+/*
+ * FAQPage OTOMATİK DEĞİL (ek talimat #4).
+ * `sss` dolu diye şema basmıyoruz; karar veri katmanındaki `faqSemasi`
+ * alanında. Rich result beklentisiyle yapısal veri eklemek, hem Google'ın
+ * daralan desteği hem de bakım yükü nedeniyle tercih edilmiyor. SSS
+ * içeriğinin kullanıcıya ve yapay zekâ özetlerine değeri metnin kendisinde.
+ */
+if (s.faqSemasi && s.sss.length > 0) {
   schema.push({
     '@context': 'https://schema.org',
     '@type': 'FAQPage',

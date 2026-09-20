@@ -95,4 +95,37 @@ const breadcrumb = {
       </div>
     </div>
   </section>
+
+  {/*
+    KAYNAK GÖSTERİMİ (ek talimat #61): Bu sayfa mevzuat iddiaları taşıyor.
+    Hukuki kapının kuralı, iddianın kaynağa bağlanmasını istiyor; kaynaksız
+    mevzuat anlatımı sayfayı düşürür. Bağlantılar yeni sekmede ve rel
+    noopener ile açılıyor.
+  */}
+  <section class="mx-auto max-w-4xl px-4 pb-14 sm:px-6">
+    <h2 class="text-lg font-bold text-heading">Kaynaklar ve ilgili mevzuat</h2>
+    <p class="mt-2 text-sm text-muted">
+      Bu sayfadaki yükümlülükler aşağıdaki düzenlemelere dayanır. Kendi iş yerinize
+      düşen kapsam tehlike sınıfınıza ve çalışan sayınıza göre değişir.
+    </p>
+    <ul class="mt-3 list-disc space-y-1.5 pl-5 text-sm text-muted">
+      {
+        [
+          { ad: '6331 sayılı İş Sağlığı ve Güvenliği Kanunu', url: 'https://www.mevzuat.gov.tr/mevzuatmetin/1.5.6331.pdf' },
+          { ad: 'İş Sağlığı ve Güvenliği Risk Değerlendirmesi Yönetmeliği', url: 'https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=16925&MevzuatTur=7&MevzuatTertip=5' },
+          { ad: 'İşyerlerinde Acil Durumlar Hakkında Yönetmelik', url: 'https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=18721&MevzuatTur=7&MevzuatTertip=5' },
+          { ad: 'İş Ekipmanlarının Kullanımında Sağlık ve Güvenlik Şartları Yönetmeliği', url: 'https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=18704&MevzuatTur=7&MevzuatTertip=5' },
+          { ad: 'Çalışanların İSG Eğitimlerinin Usul ve Esasları Hakkında Yönetmelik (2 Nisan 2026, RG 33212)', url: 'https://www.resmigazete.gov.tr/' },
+          { ad: 'Çalışanların Patlayıcı Ortamların Tehlikelerinden Korunması Hakkında Yönetmelik', url: 'https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=18697&MevzuatTur=7&MevzuatTertip=5' },
+        ].map((k) => (
+          <li>
+            <a class="underline underline-offset-4" href={k.url} rel="nofollow noopener" target="_blank">
+              {k.ad}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
 </Layout>

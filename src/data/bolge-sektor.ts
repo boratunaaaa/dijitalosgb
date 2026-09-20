@@ -59,9 +59,22 @@ export type BolgeSektorSayfa = {
   /** Saha hizmeti verilebilen bir bölge mi? Metindeki ifadeleri bu belirler. */
   sahaHizmeti: boolean;
 
+  /**
+   * FAQPage şeması basılsın mı?
+   *
+   * OTOMATİK DEĞİL, BİLEREK: `sss` dolu diye şema basmak "rich result
+   * çıksın" beklentisidir. Google'ın bu sonuç tipine desteği daralmış
+   * durumda ve zorunlu olmayan her şema bakım yüküdür. Karar motorun
+   * `faq_semasi_uygun_mu` kapısından geliyor: sayfa rehber niteliğinde
+   * olacak ve SSS sayısı anlamlı olacak.
+   */
+  faqSemasi?: boolean;
+
   /** Motorun verdiği puan ve ölçümler — şeffaflık için saklanıyor. */
   uretim: {
     yayinTarihi: string;
+    /** Gerçek son ANLAMLI içerik değişikliği; her derlemede güncellenmez. */
+    guncellemeTarihi?: string;
     kalitePuani: number;
     benzerlikEnYuksek: number;
   };
@@ -80,12 +93,12 @@ export const bolgeSektorSayfalari: BolgeSektorSayfa[] = [
     "seoBaslik": "Tuzla Metal ve Kaynak İşlerinde İş Güvenliği",
     "metaAciklama": "Tuzla'daki metal işleme ve gemi bakım atölyelerinde sıcak çalışma izni, kapalı alan girişi ve gaz ölçümü nasıl kurulur? Yükümlülükler ve uygulama düzeni.",
     "h1": "Tuzla'da metal işleme ve kaynak atölyelerinde iş güvenliği",
-    "giris": "Tuzla'da metal işi çoğu zaman gemi bakım ve onarımına bağlı yürüyor. Bu da kaynağı sabit bir tezgâh işi olmaktan çıkarıp, her gün farklı bir kapalı hacimde ve farklı bir yükseklikte yapılan bir iş hâline getiriyor. Yükümlülüğün merkezinde bu yüzden çalışma izni sistemi var.",
+    "giris": "Tuzla'da gemi bakım ve onarımıyla ilişkili metal işlerine rastlanabiliyor. Böyle bir işte kaynak, sabit bir tezgâh işi olmaktan çıkıp her gün farklı bir kapalı hacimde ve farklı bir yükseklikte yapılan bir işe dönüşebiliyor. Yükümlülüğün merkezinde bu yüzden çalışma izni sistemi var.",
     "bolumler": [
       {
         "baslik": "Tuzla'da metal işini ayıran şey ne?",
         "paragraflar": [
-          "Tuzla'daki metal işletmelerinin önemli bölümü, gemi inşa ve bakım faaliyetinin çevresinde konumlanmış durumda. Bir atölyede sabit tezgâh başında yapılan kaynakla, tekne içindeki bir tankın içinde yapılan kaynak aynı iş değildir: ikincisinde ortam kapalı, havalandırma zorlamalı, kaçış yolu tek ve çoğu zaman dar.",
+          "Tuzla'da gemi inşa ve bakım faaliyetiyle ilişkili metal işleme atölyeleriyle karşılaşılabiliyor. Bir atölyede sabit tezgâh başında yapılan kaynakla, tekne içindeki bir tankın içinde yapılan kaynak aynı iş değildir: ikincisinde ortam kapalı, havalandırma zorlamalı ve kaçış yolu dar olabiliyor.",
           "Bu nedenle bölgedeki iş yerlerinde risk değerlendirmesi tek başına yeterli kalmıyor. Değerlendirmenin çıktısı, günlük olarak uygulanan bir çalışma izni düzenine dönüşmediği sürece sahada karşılığı olmuyor. Denetimde de, kaza incelemesinde de bakılan şey iznin kâğıdı değil, iznin gerçekten uygulanıp uygulanmadığı oluyor.",
           "İkinci ayırt edici nokta alt yüklenici yoğunluğu. Aynı gemide veya aynı tesiste birden fazla işverenin çalışanı bir arada bulunabiliyor. 6331 sayılı Kanun aynı çalışma alanını paylaşan işverenlere koordinasyon yükümlülüğü getiriyor; uygulamada en sık aksayan da bu oluyor: bir ekip kaynak yaparken diğeri altta boya yapıyorsa, ikisinin de izni ayrı ayrı doğru olsa bile birlikte tehlikeli hâle geliyorlar."
         ]
@@ -132,10 +145,10 @@ export const bolgeSektorSayfalari: BolgeSektorSayfa[] = [
       {
         "baslik": "Tuzla için özel durumlar",
         "paragraflar": [
-          "Bölgede iş yoğunluğu proje bazlı dalgalanıyor. Bir gemi havuza girdiğinde saha birkaç gün içinde kalabalıklaşıyor, iş bittiğinde boşalıyor. Bu, eğitim planlamasını zorlaştıran bir durum: sahaya yeni giren çalışanın işe başlama eğitimi ve iş yerine özgü bilgilendirmesi, o gün yapılmak zorunda."
+          "Proje bazlı çalışan tesislerde iş temposu dalgalanabiliyor: bir gemi havuza girdiğinde saha kısa sürede kalabalıklaşıp iş bittiğinde boşalabiliyor. Bu, eğitim planlamasını zorlaştıran bir durum. Çalışanlara işe başlamadan önce işe başlama eğitiminin verilmesi ve iş yerine özgü bilgilendirmenin yapılması gerekir."
         ],
         "maddeler": [
-          "Kapalı alan girişlerinde gözcü hiçbir koşulda içeri girmez; kapalı alan ölümlerinin büyük bölümü kurtarmak için giren ikinci kişidir.",
+          "Kapalı alan girişlerinde gözcü hiçbir koşulda içeri girmez. Kurtarmak için hazırlıksız içeri girmek, kurtarmaya çalışan kişinin de aynı ortamda etkilenmesiyle sonuçlanabilir; bu yüzden kurtarma ekipmanı ve planı önceden hazır olmak zorundadır.",
           "Sıcak çalışma bittikten sonra alan en az bir süre gözetlenir; kor hâlindeki kıvılcım daha sonra alev alabiliyor.",
           "Aynı anda farklı katmanlarda çalışan ekipler varsa izinler ayrı ayrı değil birlikte değerlendirilmeli.",
           "Deniz kenarındaki nem, elektrikli el aletlerinde yalıtım kontrolünü daha sık gerektiriyor."
@@ -205,6 +218,14 @@ export const bolgeSektorSayfalari: BolgeSektorSayfa[] = [
       }
     ],
     "kaynaklar": [
+        {
+          "ad": "Mesleki Yeterlilik Kurumu — tehlikeli ve çok tehlikeli işlerde mesleki yeterlilik belgesi zorunluluğu getirilen meslekler",
+          "url": "https://www.myk.gov.tr/"
+        },
+        {
+          "ad": "Çalışanların İş Sağlığı ve Güvenliği Eğitimlerinin Usul ve Esasları Hakkında Yönetmelik (2 Nisan 2026, RG 33212)",
+          "url": "https://www.resmigazete.gov.tr/"
+        },
       {
         "ad": "6331 sayılı İş Sağlığı ve Güvenliği Kanunu",
         "url": "https://www.mevzuat.gov.tr/mevzuatmetin/1.5.6331.pdf"
@@ -223,6 +244,7 @@ export const bolgeSektorSayfalari: BolgeSektorSayfa[] = [
       "href": "/teklif-al/"
     },
     "sahaHizmeti": true,
+    "faqSemasi": true,
     "uretim": {
       "yayinTarihi": "2026-09-20T13:45:58+00:00",
       "kalitePuani": 95,
@@ -238,7 +260,7 @@ export const bolgeSektorSayfalari: BolgeSektorSayfa[] = [
     "seoBaslik": "Başakşehir Metal Atölyelerinde İş Güvenliği",
     "metaAciklama": "İkitelli çevresindeki metal işleme atölyelerinde makine koruyucusu, pres güvenliği ve ekipman periyodik kontrolü. Küçük ölçekli iş yerleri için yükümlülük rehberi.",
     "h1": "Başakşehir'de metal işleme atölyelerinde iş güvenliği",
-    "giris": "Başakşehir'deki metal işi ağırlıkla atölye ölçeğinde yürüyor: birkaç tezgâh, bir pres, bir kaynak köşesi ve az sayıda çalışan. Bu ölçekte en sık karşılaşılan eksik, tehlikeli bir işin yapılması değil; tezgâhın koruyucusunun sökülmüş ve ekipmanın kontrol raporunun süresinin dolmuş olması.",
+    "giris": "Başakşehir'de atölye ölçeğinde metal işleyen iş yerleriyle karşılaşılabiliyor: birkaç tezgâh, bir pres, bir kaynak köşesi ve az sayıda çalışan. Bu ölçekte eksiklik çoğu zaman tehlikeli bir işin yapılmasından değil, tezgâhın koruyucusunun sökülmüş ve ekipmanın kontrol raporunun süresinin dolmuş olmasından doğuyor.",
     "bolumler": [
       {
         "baslik": "Atölye ölçeği neyi değiştiriyor?",
@@ -290,7 +312,7 @@ export const bolgeSektorSayfalari: BolgeSektorSayfa[] = [
       {
         "baslik": "Başakşehir için özel durumlar",
         "paragraflar": [
-          "Bölgedeki atölyelerin önemli bölümü fason üretim yapıyor; yani işin niteliği müşteriye göre değişiyor. Bir ay sac kesimi ağırlıklıyken ertesi ay kaynak ve montaj öne çıkabiliyor. Risk değerlendirmesinin, yapılan işin değiştiği anda gözden geçirilmesi bu yüzden kâğıt üzerinde bir kural değil, pratik bir ihtiyaç."
+          "Atölye ölçeğinde fason üretim yapan iş yerlerinde işin niteliği müşteriye göre değişebiliyor: bir dönem sac kesimi öne çıkarken başka bir dönem kaynak ve montaj ağır basabiliyor. Risk değerlendirmesinin, yapılan işin değiştiği anda gözden geçirilmesi bu yüzden kâğıt üzerinde bir kural değil, pratik bir ihtiyaç."
         ],
         "maddeler": [
           "Kiralık veya ödünç alınan tezgâhın güvenli kullanımından, kullanan iş yeri sorumludur; kira sözleşmesi bunu devretmez.",
@@ -377,6 +399,7 @@ export const bolgeSektorSayfalari: BolgeSektorSayfa[] = [
       "href": "/teklif-al/"
     },
     "sahaHizmeti": true,
+    "faqSemasi": true,
     "uretim": {
       "yayinTarihi": "2026-09-20T13:45:58+00:00",
       "kalitePuani": 87,
@@ -392,7 +415,7 @@ export const bolgeSektorSayfalari: BolgeSektorSayfa[] = [
     "seoBaslik": "Esenyurt Tekstil Atölyelerinde İş Sağlığı ve Güvenliği",
     "metaAciklama": "Esenyurt'taki konfeksiyon ve tekstil atölyelerinde pamuk tozu, gürültü, yangın yükü ve makine güvenliği. Yükümlülükler ve uygulamada atlanan başlıklar.",
     "h1": "Esenyurt'ta tekstil ve konfeksiyon atölyelerinde iş güvenliği",
-    "giris": "Esenyurt'ta tekstil işi çoğunlukla kat aralarına yerleşmiş orta ölçekli atölyelerde yürüyor. Bu iş kolunda riskler görünür değil: kimse ağır bir yük kaldırmıyor, yüksekte çalışmıyor. Buna rağmen yangın yükü, toz ve gürültü birlikte ciddi bir tablo oluşturuyor.",
+    "giris": "Esenyurt'ta kat aralarına yerleşmiş orta ölçekli konfeksiyon atölyeleriyle karşılaşılabiliyor. Bu iş kolunda riskler görünür değil: kimse ağır bir yük kaldırmıyor, yüksekte çalışmıyor. Buna rağmen yangın yükü, toz ve gürültü birlikte ciddi bir tablo oluşturabiliyor.",
     "bolumler": [
       {
         "baslik": "Tekstilde riskin görünmez olması",
@@ -535,6 +558,7 @@ export const bolgeSektorSayfalari: BolgeSektorSayfa[] = [
       "href": "/teklif-al/"
     },
     "sahaHizmeti": true,
+    "faqSemasi": true,
     "uretim": {
       "yayinTarihi": "2026-09-20T13:45:58+00:00",
       "kalitePuani": 91,
@@ -550,7 +574,7 @@ export const bolgeSektorSayfalari: BolgeSektorSayfa[] = [
     "seoBaslik": "Beylikdüzü Depo ve Lojistik Tesislerinde İş Güvenliği",
     "metaAciklama": "Beylikdüzü'ndeki dağıtım depolarında forklift-yaya ayrımı, raf sistemleri ve yükleme rampası güvenliği. Yükümlülükler ve sahada en sık atlanan başlıklar.",
     "h1": "Beylikdüzü'nde depo ve lojistik tesislerinde iş güvenliği",
-    "giris": "Beylikdüzü'ndeki depolarda en ağır sonuçlu kazalar genellikle iki noktada yoğunlaşıyor: forkliftin yaya güzergâhıyla kesiştiği yerde ve yükleme rampasında. İkisi de yerleşim kararıyla çözülebilen, sonradan eğitimle kapatılması zor risklerdir.",
+    "giris": "Depo ve dağıtım tesislerinde en ağır sonuçlu kazalar iki noktada toplanabiliyor: forkliftin yaya güzergâhıyla kesiştiği yer ve yükleme rampası. İkisi de yerleşim kararıyla çözülebilen, sonradan eğitimle kapatılması zor risklerdir.",
     "bolumler": [
       {
         "baslik": "Depoda riskin toplandığı yer",
@@ -689,6 +713,7 @@ export const bolgeSektorSayfalari: BolgeSektorSayfa[] = [
       "href": "/teklif-al/"
     },
     "sahaHizmeti": true,
+    "faqSemasi": true,
     "uretim": {
       "yayinTarihi": "2026-09-20T13:45:58+00:00",
       "kalitePuani": 91,
@@ -704,7 +729,7 @@ export const bolgeSektorSayfalari: BolgeSektorSayfa[] = [
     "seoBaslik": "Ataşehir Ofislerinde İş Sağlığı ve Güvenliği",
     "metaAciklama": "Ataşehir'deki plaza ofislerinde ergonomi, yüksek katlı bina tahliyesi ve iklimlendirme kaynaklı riskler. Az tehlikeli sınıfta yükümlülük ne kadar?",
     "h1": "Ataşehir'de ofis ve hizmet işletmelerinde iş güvenliği",
-    "giris": "Ataşehir'de ofis işletmeleri çoğunlukla az tehlikeli sınıfta yer alıyor. Bu, yükümlülüğün olmadığı anlamına gelmiyor; yalnız sürelerin kısa olduğu anlamına geliyor. Plaza ortamında asıl mesele riskin yokluğu değil, yavaş ilerlediği için fark edilmemesi.",
+    "giris": "Ofis ve büro faaliyetleri genel olarak az tehlikeli sınıfta değerlendirilir; kendi iş yerinizin sınıfı NACE kodunuza göre belirlenir. Az tehlikeli sınıfta olmak yükümlülüğün olmadığı anlamına gelmiyor, yalnız sürelerin kısa olduğu anlamına geliyor. Plaza ortamında asıl mesele riskin yokluğu değil, yavaş ilerlediği için fark edilmemesi.",
     "bolumler": [
       {
         "baslik": "Plaza ofisinde risk neden atlanıyor?",
@@ -756,7 +781,7 @@ export const bolgeSektorSayfalari: BolgeSektorSayfa[] = [
       {
         "baslik": "Ataşehir için özel durumlar",
         "paragraflar": [
-          "Bölgedeki ofislerin önemli bölümü çok kiracılı plazalarda. Bu, tahliye ve yangın düzeninin tek başına kiracının kontrolünde olmadığı anlamına geliyor; plan bina yönetimiyle birlikte kurulmak zorunda."
+          "Çok kiracılı plazalarda yer alan ofislerde tahliye ve yangın düzeni tek başına kiracının kontrolünde olmuyor; plan bina yönetimiyle birlikte kurulmak zorunda."
         ],
         "maddeler": [
           "Tatbikat kendi katınızla sınırlı yapılırsa gerçek tahliye süresi ölçülmüş olmaz.",
@@ -825,6 +850,14 @@ export const bolgeSektorSayfalari: BolgeSektorSayfa[] = [
       }
     ],
     "kaynaklar": [
+        {
+          "ad": "İşyerlerinde Acil Durumlar Hakkında Yönetmelik",
+          "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=18721&MevzuatTur=7&MevzuatTertip=5"
+        },
+        {
+          "ad": "İlk Yardım Yönetmeliği",
+          "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=19059&MevzuatTur=7&MevzuatTertip=5"
+        },
       {
         "ad": "6331 sayılı İş Sağlığı ve Güvenliği Kanunu",
         "url": "https://www.mevzuat.gov.tr/mevzuatmetin/1.5.6331.pdf"
@@ -843,6 +876,7 @@ export const bolgeSektorSayfalari: BolgeSektorSayfa[] = [
       "href": "/teklif-al/"
     },
     "sahaHizmeti": true,
+    "faqSemasi": true,
     "uretim": {
       "yayinTarihi": "2026-09-20T13:45:58+00:00",
       "kalitePuani": 88,
