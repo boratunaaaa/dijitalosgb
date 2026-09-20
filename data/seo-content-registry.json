@@ -13,7 +13,7 @@
       "status": "published",
       "createdAt": "2026-09-20T13:45:58+00:00",
       "publishedAt": "2026-09-20T13:49:55+00:00",
-      "updatedAt": "2026-09-20T13:49:55+00:00",
+      "updatedAt": "2026-09-20T17:14:23+00:00",
       "qualityScore": 88,
       "similarityMax": 0.008,
       "wordCount": 733,
@@ -30,15 +30,17 @@
         "/araclar/ilk-yardimci-sayisi-hesaplama/",
         "/isg-egitimi/"
       ],
-      "commit": "5053dd9",
+      "commit": "6c16f0ad56ef",
       "deployment": "cloudflare-pages",
       "rejectionReason": "",
       "indexable": true,
       "canonical": "https://dijitalosgb.com/bolge/atasehir-ofis-hizmet/",
       "schemaTypes": [
+        "Article",
         "BreadcrumbList",
-        "Service",
-        "FAQPage"
+        "FAQPage",
+        "Organization",
+        "WebSite"
       ],
       "sitemapIncluded": true,
       "llmsEligible": false,
@@ -56,7 +58,7 @@
         "/isg-egitimi/"
       ],
       "datePublished": "2026-09-20T13:49:55+00:00",
-      "dateModified": "2026-09-20T13:49:55+00:00",
+      "dateModified": "2026-09-20T17:14:23+00:00",
       "legalReviewed": true,
       "technicalSeoPassed": true
     },
@@ -72,7 +74,7 @@
       "status": "published",
       "createdAt": "2026-09-20T13:45:58+00:00",
       "publishedAt": "2026-09-20T13:49:55+00:00",
-      "updatedAt": "2026-09-20T13:49:55+00:00",
+      "updatedAt": "2026-09-20T17:14:23+00:00",
       "qualityScore": 87,
       "similarityMax": 0.011,
       "wordCount": 793,
@@ -89,20 +91,23 @@
         "/hizmetler/risk-degerlendirmesi/",
         "/isg-kutuphanesi/formlar/"
       ],
-      "commit": "5053dd9",
+      "commit": "6c16f0ad56ef",
       "deployment": "cloudflare-pages",
       "rejectionReason": "",
       "indexable": true,
       "canonical": "https://dijitalosgb.com/bolge/basaksehir-metal-kaynak/",
       "schemaTypes": [
+        "Article",
         "BreadcrumbList",
-        "Service",
-        "FAQPage"
+        "FAQPage",
+        "Organization",
+        "WebSite"
       ],
       "sitemapIncluded": true,
       "llmsEligible": false,
       "llmsPriority": 0,
       "inboundInternalLinks": [
+        "/osgb/basaksehir/",
         "/osgb-hizmeti/",
         "/sektorler/metal-kaynak/"
       ],
@@ -115,7 +120,7 @@
         "/isg-kutuphanesi/formlar/"
       ],
       "datePublished": "2026-09-20T13:49:55+00:00",
-      "dateModified": "2026-09-20T13:49:55+00:00",
+      "dateModified": "2026-09-20T17:14:23+00:00",
       "legalReviewed": true,
       "technicalSeoPassed": true
     },
@@ -131,7 +136,7 @@
       "status": "published",
       "createdAt": "2026-09-20T13:45:58+00:00",
       "publishedAt": "2026-09-20T13:49:55+00:00",
-      "updatedAt": "2026-09-20T13:49:55+00:00",
+      "updatedAt": "2026-09-20T17:14:23+00:00",
       "qualityScore": 91,
       "similarityMax": 0.009,
       "wordCount": 719,
@@ -148,15 +153,17 @@
         "/araclar/acil-durum-ekip-sayisi-hesaplama/",
         "/isg-kutuphanesi/formlar/"
       ],
-      "commit": "5053dd9",
+      "commit": "6c16f0ad56ef",
       "deployment": "cloudflare-pages",
       "rejectionReason": "",
       "indexable": true,
       "canonical": "https://dijitalosgb.com/bolge/beylikduzu-lojistik-depo/",
       "schemaTypes": [
+        "Article",
         "BreadcrumbList",
-        "Service",
-        "FAQPage"
+        "FAQPage",
+        "Organization",
+        "WebSite"
       ],
       "sitemapIncluded": true,
       "llmsEligible": true,
@@ -174,7 +181,7 @@
         "/isg-kutuphanesi/formlar/"
       ],
       "datePublished": "2026-09-20T13:49:55+00:00",
-      "dateModified": "2026-09-20T13:49:55+00:00",
+      "dateModified": "2026-09-20T17:14:23+00:00",
       "legalReviewed": true,
       "technicalSeoPassed": true
     },
@@ -190,7 +197,7 @@
       "status": "published",
       "createdAt": "2026-09-20T13:45:58+00:00",
       "publishedAt": "2026-09-20T13:49:55+00:00",
-      "updatedAt": "2026-09-20T13:49:55+00:00",
+      "updatedAt": "2026-09-20T17:14:23+00:00",
       "qualityScore": 91,
       "similarityMax": 0.011,
       "wordCount": 751,
@@ -208,20 +215,23 @@
         "/araclar/egitim-yenileme-tarihi-hesaplama/",
         "/araclar/tehlike-sinifi-sorgulama/"
       ],
-      "commit": "5053dd9",
+      "commit": "6c16f0ad56ef",
       "deployment": "cloudflare-pages",
       "rejectionReason": "",
       "indexable": true,
       "canonical": "https://dijitalosgb.com/bolge/esenyurt-tekstil-konfeksiyon/",
       "schemaTypes": [
+        "Article",
         "BreadcrumbList",
-        "Service",
-        "FAQPage"
+        "FAQPage",
+        "Organization",
+        "WebSite"
       ],
       "sitemapIncluded": true,
       "llmsEligible": true,
       "llmsPriority": 4,
       "inboundInternalLinks": [
+        "/osgb/esenyurt/",
         "/osgb-hizmeti/",
         "/sektorler/tekstil-konfeksiyon/"
       ],
@@ -235,7 +245,7 @@
         "/araclar/tehlike-sinifi-sorgulama/"
       ],
       "datePublished": "2026-09-20T13:49:55+00:00",
-      "dateModified": "2026-09-20T13:49:55+00:00",
+      "dateModified": "2026-09-20T17:14:23+00:00",
       "legalReviewed": true,
       "technicalSeoPassed": true
     },
@@ -251,7 +261,7 @@
       "status": "published",
       "createdAt": "2026-09-20T13:45:58+00:00",
       "publishedAt": "2026-09-20T13:49:55+00:00",
-      "updatedAt": "2026-09-20T13:49:55+00:00",
+      "updatedAt": "2026-09-20T17:14:23+00:00",
       "qualityScore": 95,
       "similarityMax": 0.0,
       "wordCount": 920,
@@ -269,15 +279,17 @@
         "/isg-kutuphanesi/formlar/",
         "/hizmetler/mesleki-yeterlilik-belgesi/"
       ],
-      "commit": "5053dd9",
+      "commit": "6c16f0ad56ef",
       "deployment": "cloudflare-pages",
       "rejectionReason": "",
       "indexable": true,
       "canonical": "https://dijitalosgb.com/bolge/tuzla-metal-kaynak/",
       "schemaTypes": [
+        "Article",
         "BreadcrumbList",
-        "Service",
-        "FAQPage"
+        "FAQPage",
+        "Organization",
+        "WebSite"
       ],
       "sitemapIncluded": true,
       "llmsEligible": true,
@@ -296,7 +308,7 @@
         "/hizmetler/mesleki-yeterlilik-belgesi/"
       ],
       "datePublished": "2026-09-20T13:49:55+00:00",
-      "dateModified": "2026-09-20T13:49:55+00:00",
+      "dateModified": "2026-09-20T17:14:23+00:00",
       "legalReviewed": true,
       "technicalSeoPassed": true
     }
