@@ -321,6 +321,57 @@ export const sorular: Soru[] = [
     cevap:
       'İSG eğitimleri, danışmanlık ve dokümantasyon hizmetlerinde coğrafi sınır yoktur; Türkiye genelinde çalışıyoruz. Saha görevlendirmesi gerektiren hizmetlerde ise çözüm ortaklarımızın yetki alanı belirleyicidir; işyerinizin bulunduğu il için uygun çözümü birlikte kuruyoruz.',
   },
+
+  {
+    kategori: 'zorunluluk',
+    soru: 'İşyerinde kaç ilk yardımcı bulundurmalıyım?',
+    cevap: 'Az tehlikeli işyerlerinde her 20 çalışan için 1, tehlikeli ve çok tehlikeli işyerlerinde ise her 10 çalışan için 1 ilk yardımcı bulundurulması zorunludur. İlk yardımcılar Sağlık Bakanlığı onaylı 16 saatlik temel ilk yardım eğitimi almış ve sertifikalandırılmış olmalıdır.'
+  },
+  {
+    kategori: 'risk',
+    soru: 'Ramak kala olay nedir, bildirilmesi zorunlu mu?',
+    cevap: 'Ramak kala olay, işyerinde meydana gelen ancak yaralanma veya zarara yol açmayan olaylardır (örneğin başınıza düşmek üzere olan bir malzemenin kıl payı ıskalaması). Ramak kala olayların tutanakla kayıt altına alınması ve risk değerlendirmesinin güncellenmesi zorunludur; aksi takdirde kazaya dönüşmesi an meselesidir.'
+  },
+  {
+    kategori: 'denetim',
+    soru: 'İş kıyafeti KKD sayılır mı?',
+    cevap: 'Hayır. Normal iş kıyafetleri veya üniformalar Kişisel Koruyucu Donanım (KKD) sayılmaz. Bir malzemenin KKD sayılabilmesi için belirli bir riske karşı koruma sağlaması ve CE işareti taşıması gerekir (örneğin çelik burunlu ayakkabı, baret, reflektif yelek veya aleve dayanıklı özel elbise).'
+  },
+  {
+    kategori: 'denetim',
+    soru: 'Alt işverenin iş kazasından asıl işveren sorumlu mu?',
+    cevap: 'Evet. İş Kanunu Madde 2 uyarınca asıl işveren, alt işverenin işçilerine karşı o işyeri ile ilgili olarak Kanundan doğan yükümlülüklerinden alt işverenle birlikte müteselsilen (ortaklaşa) sorumludur. Alt işverenin evrak eksikliği asıl işvereni de bağlar.'
+  },
+  {
+    kategori: 'saglik',
+    soru: 'Hamile çalışanlar gece vardiyasında çalıştırılabilir mi?',
+    cevap: 'Kesinlikle hayır. Gebe çalışanlar, gebeliklerinin sağlık raporuyla tespitinden itibaren doğuma kadar geçen sürede gece postalarında çalıştırılamazlar. Ayrıca emziren kadın çalışanlar, doğumdan sonraki 1 yıl boyunca gece postalarında çalıştırılamaz.'
+  },
+  {
+    kategori: 'profesyonel',
+    soru: 'İş güvenliği uzmanı işi durdurabilir mi?',
+    cevap: 'İş güvenliği uzmanının doğrudan işi durdurma yetkisi yoktur. Uzman, hayati tehlike arz eden durumu tespit edip işverene bildirir (onaylı deftere yazar). İşveren makul sürede tedbir almazsa uzman durumu Bakanlığa bildirmekle yükümlüdür. İşi durdurma yetkisi Bakanlık müfettişlerindedir.'
+  },
+  {
+    kategori: 'denetim',
+    soru: 'İş kazası tutanağında şahit şart mı?',
+    cevap: 'İş kazası tutanağında kaza anını gören şahitlerin ifadesi ve imzası hukuki süreç açısından kritik öneme sahiptir. Eğer olayı gören kimse yoksa, tutanağa "şahit yoktur" şeklinde açıkça belirtilmeli ve ilk müdahale edenlerin bilgisine başvurulmalıdır.'
+  },
+  {
+    kategori: 'risk',
+    soru: 'Yangın tüplerinin dolumu kaç yılda bir yapılır?',
+    cevap: 'Binaların Yangından Korunması Hakkında Yönetmelik gereği yangın söndürme cihazlarının (YSC) altı ayda bir görsel kontrolü, yılda bir periyodik bakımı yapılır. Standart kuru kimyevi tozlu cihazların (KKT) dolumu ve hidrostatik testi ise dört yılda bir yapılmak zorundadır.'
+  },
+  {
+    kategori: 'saglik',
+    soru: 'Ekranlı araçlarda göz muayenesi şart mı?',
+    cevap: 'Evet. Ekranlı Araçlarla Çalışmalarda Sağlık ve Güvenlik Önlemleri Hakkında Yönetmelik gereği; ekranlı araçlarla (bilgisayar) çalışanlara işe girişlerinde ve çalışma süresince periyodik olarak göz muayenesi yapılması zorunludur. Sonuçlara göre gerekli durumlarda özel gözlük temin edilebilir.'
+  },
+  {
+    kategori: 'egitim',
+    soru: 'Gürültü ölçümü (dozimetri) zorunlu mu?',
+    cevap: 'İşyerindeki gürültü seviyesi 80 dB(A) değerini aşıyorsa, işveren riskleri belirlemek için gürültü ölçümü yaptırmak zorundadır. Maruziyet eylem değeri olan 80 dB(A) aşıldığında işveren kulaklık bulundurmakla, 85 dB(A) aşıldığında ise kulaklığın kullanılmasını sağlamakla yükümlüdür.'
+  },
 ];
 
 export const soruSayisi = sorular.length;

@@ -34,9 +34,370 @@ export type BlogYazisi = {
   >;
   /** İlgili iç sayfalar. */
   baglantilar?: { metin: string; href: string }[];
-};
+}
 
 export const yazilar: BlogYazisi[] = [
+  {
+    slug: 'ergonomi-ve-ekranli-araclarla-calisma',
+    baslik: 'Masa Başı Çalışanlar İçin İSG: Ergonomi ve Ekranlı Araçlar',
+    ozet: 'Ofis çalışanlarında görülen boyun fıtığı ve karpal tünel sendromu gibi rahatsızlıklar meslek hastalığı sayılabilir. İşveren, çalışma alanını ergonomik kurallara göre düzenlemekle yükümlüdür.',
+    tarih: '2026-09-20',
+    kategori: 'sektorel',
+    sure: 5,
+    govde: [
+      { tip: 'p', metin: 'Kısaca: Ekranlı araçlarla çalışma, İSG mevzuatında özel bir yönetmelikle düzenlenmiştir. Sürekli bilgisayar başında çalışmak, kas-iskelet sistemi hastalıkları ve görme bozuklukları gibi riskler taşır.' },
+      { tip: 'h2', metin: 'İşverenin Alması Gereken Önlemler' },
+      { tip: 'liste', maddeler: [
+        'Ekran, klavye ve çalışma masası çalışanın boyuna uygun ve ayarlanabilir olmalıdır.',
+        'Sırt destekli ve yüksekliği ayarlanabilir ergonomik çalışma koltukları temin edilmelidir.',
+        'Ekranlarda parlama ve yansımayı önleyecek aydınlatma düzenlemeleri yapılmalıdır.',
+        'Çalışanların periyodik göz muayeneleri aksatılmadan yapılmalıdır.'
+      ] },
+      { tip: 'not', metin: 'Önemli: Ekranlı araçlarla çalışanlara, işin gereği olarak düzenli dinlenme molaları verilmesi veya ekran başı işlerinin periyodik olarak diğer işlerle değiştirilmesi zorunludur.' }
+    ]
+  },
+  {
+    slug: 'kimyasallarla-calismalarda-isg-msds',
+    baslik: 'Kimyasallarla Çalışmalarda İSG: MSDS Okuma ve Depolama Kuralları',
+    ozet: 'Kimyasal maddelerin güvenli depolanması ve kullanılması, işyerindeki zehirlenme ve parlama risklerini ortadan kaldırır. Malzeme Güvenlik Bilgi Formu (MSDS/SDS) bu sürecin anayasasıdır.',
+    tarih: '2026-09-20',
+    kategori: 'uygulama',
+    sure: 6,
+    govde: [
+      { tip: 'p', metin: 'Kısaca: İşyerine giren her türlü kimyasalın (temizlik malzemesi dahil) bir Güvenlik Bilgi Formu (MSDS) bulunmak zorundadır. Bu formlar Türkçe olmalı ve çalışanların erişebileceği yerlerde bulundurulmalıdır.' },
+      { tip: 'h2', metin: 'Kimyasal Depolamada Temel Kurallar' },
+      { tip: 'liste', maddeler: [
+        'Birbiriyle reaksiyona girebilecek kimyasallar (örneğin asitler ve bazlar) aynı rafta veya yan yana depolanamaz.',
+        'Depolama alanlarında uygun havalandırma ve dökülmelere karşı taşma havuzu bulunmalıdır.',
+        'Çalışanlar, kimyasalın risklerine uygun KKD (nitril eldiven, tam yüz maskesi vb.) kullanmalıdır.'
+      ] },
+      { tip: 'not', metin: 'Sık yapılan hata: Kimyasalların su şişesi gibi etiketsiz ambalajlara bölünerek kullanılması, ölümcül zehirlenme vakalarının en yaygın nedenidir.' }
+    ]
+  },
+  {
+    slug: 'gurultu-ve-titresim-maruziyeti-sinir-degerler',
+    baslik: 'Gürültü ve Titreşim Maruziyeti: Sınır Değerler Nelerdir?',
+    ozet: 'İşitme kaybı en sık rastlanan ve geri dönüşü olmayan meslek hastalıklarından biridir. 85 desibeli aşan ortamlarda kulak koruyucu kullanılması yasal zorunluluktur.',
+    tarih: '2026-09-20',
+    kategori: 'mevzuat',
+    sure: 5,
+    govde: [
+      { tip: 'p', metin: 'Kısaca: İşveren, çalışanların gürültü ve titreşime maruziyetini en aza indirmek için kaynağında müdahale etmek zorundadır. Eğer kaynakta izolasyon sağlanamıyorsa, KKD kullanımı ve maruziyet süresinin kısaltılması uygulanır.' },
+      { tip: 'h2', metin: 'Gürültü Eylem ve Sınır Değerleri' },
+      { tip: 'liste', maddeler: [
+        'En Düşük Maruziyet Eylem Değeri (80 dB): İşveren, kulak koruyucuları hazır bulundurmalıdır.',
+        'En Yüksek Maruziyet Eylem Değeri (85 dB): Çalışanların kulak koruyucuları kullanması zorunludur.',
+        'Maruziyet Sınır Değeri (87 dB): KKD\'nin koruma etkisi hesaba katıldığında bile bu değere ulaşılamaz, ulaşıldığı an çalışma durdurulur.'
+      ] },
+      { tip: 'not', metin: 'Gürültü ölçümleri akredite laboratuvarlar tarafından kişisel dozimetre kullanılarak yapılmalı ve risk değerlendirmesine eklenmelidir.' }
+    ]
+  },
+  {
+    slug: 'kadin-gebe-ve-emziren-calisanlarin-isg-haklari',
+    baslik: 'Kadın, Gebe ve Emziren Çalışanların İSG Hakları',
+    ozet: 'Gebe veya emziren çalışanların kimyasal maruziyeti, gece çalışması ve ağır yük kaldırması yasaktır. İşveren, çalışma koşullarını sağlık raporuna göre yeniden düzenlemelidir.',
+    tarih: '2026-09-20',
+    kategori: 'mevzuat',
+    sure: 4,
+    govde: [
+      { tip: 'p', metin: 'Kısaca: Gebe veya Emziren Kadınların Çalıştırılma Şartlarına Dair Yönetmelik, bu durumdaki kadın çalışanlara özel sağlık ve güvenlik hakları tanır.' },
+      { tip: 'h2', metin: 'Gece Çalışması Yasağı' },
+      { tip: 'p', metin: 'Kadın çalışanlar, gebeliklerinin sağlık raporuyla tespitinden itibaren doğuma kadar ve emziren kadın çalışanlar doğum tarihinden başlamak üzere 1 yıl süre ile gece postalarında çalıştırılamazlar.' },
+      { tip: 'h2', metin: 'Çalışma Ortamında Düzenlemeler' },
+      { tip: 'liste', maddeler: [
+        'Gebe çalışanların uzun süre ayakta veya sürekli oturarak çalışması önlenmelidir.',
+        'Toksik, üreme sistemine zarar veren kimyasallarla temasları tamamen kesilmelidir.',
+        'Günde 7.5 saatten fazla çalıştırılamazlar.'
+      ] }
+    ]
+  },
+  {
+    slug: 'genc-ve-cocuk-iscilerin-calistirilma-sartlari',
+    baslik: 'Genç ve Çocuk İşçilerin Çalıştırılma Şartları Nelerdir?',
+    ozet: '18 yaşını doldurmamış çalışanlar "genç işçi", 15 yaşını doldurmamış olanlar "çocuk işçi" sayılır. Bu yaş grubunun ağır, tehlikeli veya gece işlerinde çalıştırılması yasaktır.',
+    tarih: '2026-09-20',
+    kategori: 'mevzuat',
+    sure: 4,
+    govde: [
+      { tip: 'p', metin: 'Kısaca: İş Kanunu ve İSG mevzuatı, bedensel ve ruhsal gelişimlerini tamamlamamış olan genç ve çocuk işçilerin korunmasına özel önem verir. Çalıştırılabilecekleri işler yönetmelikle tek tek sayılmıştır.' },
+      { tip: 'h2', metin: 'Kritik Yasaklar' },
+      { tip: 'liste', maddeler: [
+        'Sanayiye ait işlerde 18 yaşını doldurmamış çocuk ve genç işçiler gece postalarında çalıştırılamaz.',
+        'Yer altı veya su altı işlerinde (maden, kanalizasyon, dalgıçlık) 18 yaş altı kişilerin çalıştırılması kesinlikle yasaktır.',
+        'Zehirli, kanserojen veya mutajen maddelerin bulunduğu ortamlara girişleri yasaktır.'
+      ] },
+      { tip: 'not', metin: 'Çırak ve stajyerler de genç/çocuk işçi kapsamında değerlendirilir ve aynı kısıtlamalara tabidirler.' }
+    ]
+  },
+  {
+    slug: 'isyerinde-termal-konfor-sartlari',
+    baslik: 'İşyerinde Termal Konfor Şartları: Aşırı Sıcak ve Soğukta Çalışma',
+    ozet: 'İşyerindeki sıcaklık, nem ve hava akım hızı; çalışanın konsantrasyonunu doğrudan etkileyerek iş kazası riskini artırabilir.',
+    tarih: '2026-09-20',
+    kategori: 'uygulama',
+    sure: 3,
+    govde: [
+      { tip: 'p', metin: 'Kısaca: Termal konfor; ortamın ne çok sıcak ne çok soğuk, nemin dengeli, havalandırmanın yeterli olduğu ideal çalışma şartlarını ifade eder.' },
+      { tip: 'h2', metin: 'Fiziksel Risk Etmenleri Yönetmeliği' },
+      { tip: 'p', metin: 'Çalışma ortamının sıcaklığı, yapılan işin niteliğine (ağır fiziksel iş, oturarak iş vb.) ve çalışanın harcadığı efora uygun olmalıdır. Aşırı sıcaklarda sıvı kaybı ve ısı çarpması, aşırı soğuklarda ise donuklar ve dikkat kaybı riski yüksektir. Gerekli ölçümler yapılarak uygun havalandırma/iklimlendirme sistemleri kurulmalıdır.' }
+    ]
+  },
+  {
+    slug: 'psikososyal-riskler-ve-mobbing',
+    baslik: 'İSG Boyutuyla Psikososyal Riskler ve Mobbing',
+    ozet: 'Aşırı iş yükü, stres, yıldırma (mobbing) ve uzun çalışma saatleri, iş kazalarına ve ruhsal rahatsızlıklara zemin hazırlayan en tehlikeli psikososyal risk etmenleridir.',
+    tarih: '2026-09-19',
+    kategori: 'uygulama',
+    sure: 5,
+    govde: [
+      { tip: 'p', metin: 'Kısaca: İSG sadece fiziksel yaralanmaları değil, çalışanların ruhsal ve sosyal sağlığını korumayı da hedefler. Psikososyal riskler, işin tasarımından, organizasyonundan veya yönetiminden kaynaklanır.' },
+      { tip: 'h2', metin: 'İşverenin Yükümlülüğü' },
+      { tip: 'p', metin: 'Risk değerlendirmesi yapılırken, çalışanların işe bağlı stresi, tükenmişlik sendromu ve olası mobbing durumları analiz edilmelidir. Adil bir iş dağılımı, iletişim kanallarının açık tutulması ve dinlenme haklarının kullandırılması öncelikli koruma yöntemleridir.' }
+    ]
+  },
+  {
+    slug: 'kapali-ve-dar-alanlarda-calisma-kurallari',
+    baslik: 'Kapalı ve Dar Alanlarda Çalışma (Kuyu, Silo, Kanalizasyon)',
+    ozet: 'Yeterli havalandırması olmayan, sürekli giriş-çıkışa uygun tasarlanmamış dar alanlarda yapılan çalışmalarda en büyük risk zehirli gaz birikimi veya oksijen yetersizliğidir.',
+    tarih: '2026-09-19',
+    kategori: 'sektorel',
+    sure: 4,
+    govde: [
+      { tip: 'p', metin: 'Kısaca: Silolar, rögar boşlukları, tüneller, tanklar ve gemi ambarları kapalı alan kabul edilir. Bu alanlarda ölümcül iş kazaları genellikle boğulma veya patlama şeklinde gerçekleşir.' },
+      { tip: 'h2', metin: 'Alınması Gereken Önlemler' },
+      { tip: 'liste', maddeler: [
+        'Çalışma öncesinde atmosfer ölçümleri (oksijen seviyesi, yanıcı gaz H2S/CO vb.) yapılmalıdır.',
+        'Giriş için mutlaka "Kapalı Alan Giriş İzni" formu düzenlenmeli ve onaylanmalıdır.',
+        'İçeride çalışan kişiyi sürekli gözlemleyecek ve acil durumda müdahale edecek dışarıda bir gözetmen bulunmalıdır.',
+        'Gerekli hallerde temiz hava beslemeli maskeler kullanılmalıdır.'
+      ] }
+    ]
+  },
+  {
+    slug: 'asbestle-calismalarda-isg-sokum-kurallari',
+    baslik: 'Asbestle Çalışmalarda İSG: Söküm ve Yıkım Kuralları',
+    ozet: 'Kanserojen bir lif olan asbestin üretimi ve kullanımı yasaktır. Eski binaların yıkımı veya yalıtım sökümü işlerinde, mutlaka Asbest Söküm Uzmanı kontrolünde çalışılmalıdır.',
+    tarih: '2026-09-19',
+    kategori: 'sektorel',
+    sure: 5,
+    govde: [
+      { tip: 'p', metin: 'Kısaca: Asbest solunduğunda akciğer zarı kanserine (mezotelyoma) neden olur. Yıkım yapılacak binalarda öncelikle asbest envanter raporu hazırlanmalı, asbest varsa özel karantina yöntemleriyle sökülüp bertaraf edilmelidir.' },
+      { tip: 'h2', metin: 'Kimler Asbest Sökümü Yapabilir?' },
+      { tip: 'p', metin: 'Asbest söküm işi, sadece Bakanlıkça belgelendirilmiş "Asbest Söküm Çalışanları" tarafından ve bir "Asbest Söküm Uzmanı" nezaretinde yapılabilir. Normal inşaat işçilerinin bu işlemi yapması hem yasal olarak yasak hem de son derece tehlikelidir.' }
+    ]
+  },
+  {
+    slug: 'elle-tasima-isleri-yonetmeligi-agirlik-sinirlari',
+    baslik: 'Elle Taşıma İşleri Yönetmeliği: Maksimum Ağırlık Sınırı Var mı?',
+    ozet: 'İSG mevzuatında erkek veya kadın çalışanlar için tek bir "maksimum kilo" sınırı yoktur. Bunun yerine, yükün özelliği ve kaldırma mesafesine göre hesaplama (NIOSH vb.) yapılır.',
+    tarih: '2026-09-19',
+    kategori: 'mevzuat',
+    sure: 4,
+    govde: [
+      { tip: 'p', metin: 'Kısaca: Bel ve sırt incinmeleri en yaygın iş kazalarındandır. İşveren, yükün elle taşınmasını gerektirmeyen (forklift, transpalet vb.) mekanik sistemleri kurmakla yükümlüdür.' },
+      { tip: 'h2', metin: 'Elle Taşıma Kaçınılmazsa' },
+      { tip: 'p', metin: 'Eğer işin doğası gereği elle taşıma zorunluysa, yükün doğru pozisyonda (dizleri kırarak, bel dik) kaldırılması için çalışanlara uygulamalı ergonomi eğitimi verilmesi şarttır.' }
+    ]
+  },
+  {
+    slug: 'is-kazalarinda-sgk-rucu-davalari',
+    baslik: 'İş Kazalarında SGK Rücu Davaları: İşverene Dönen Maliyetler',
+    ozet: 'Bir iş kazası sonucu SGK çalışana aylık bağlarsa, işverenin kusuru oranında bu parayı faiziyle birlikte işverenden geri ister. Buna rücu davası denir.',
+    tarih: '2026-09-19',
+    kategori: 'mevzuat',
+    sure: 5,
+    govde: [
+      { tip: 'p', metin: 'Kısaca: İSG ihmallerinin en ağır faturası rücu davalarıdır. İşveren gerekli eğitimleri vermemiş veya KKD kullandırmamışsa (kusurluysa), devletin kazazedeye ödediği milyonlarca liralık tazminat işverenin şahsi ve şirket malvarlığından tahsil edilir.' },
+      { tip: 'not', metin: 'Risk değerlendirmesi, eğitim tutanakları ve onaylı defter kayıtları, rücu davalarında işverenin kusur oranını düşürebilecek yegane resmi delillerdir.' }
+    ]
+  },
+  {
+    slug: 'biyolojik-risk-etmenleri-laboratuvar-hastane',
+    baslik: 'Biyolojik Risk Etmenleri: Laboratuvar, Hastane ve Atık Tesisleri',
+    ozet: 'Mikroorganizmalar, hücre kültürleri ve parazitlere maruz kalma riski, özellikle sağlık sektörü ve atık yönetiminde biyolojik tehlike oluşturur.',
+    tarih: '2026-09-19',
+    kategori: 'sektorel',
+    sure: 4,
+    govde: [
+      { tip: 'p', metin: 'Kısaca: Biyolojik risk etmenleri enfeksiyon risk düzeyine göre Grup 1 (en düşük) ile Grup 4 (en yüksek) arasında sınıflandırılır. İşveren, çalışma ortamını dekontamine etmek, aşılama programlarını uygulamak ve kesici/delici alet yaralanmalarını önlemek zorundadır.' }
+    ]
+  },
+  {
+    slug: 'gece-calismalari-ve-vardiyali-calismalarda-isg',
+    baslik: 'Gece Çalışmaları ve Vardiyalı Çalışmalarda İSG',
+    ozet: 'Gece postalarında 7.5 saatten fazla çalışmak yasaktır. Vardiya sistemindeki uyku bozuklukları dikkat kaybına ve ciddi iş kazalarına yol açar.',
+    tarih: '2026-09-19',
+    kategori: 'mevzuat',
+    sure: 4,
+    govde: [
+      { tip: 'p', metin: 'Kısaca: İş Kanununa göre çalışma süresinin yarısından fazlası saat 20:00 ile 06:00 arasına denk gelen çalışmalar gece çalışması sayılır.' },
+      { tip: 'h2', metin: 'Sağlık Muayeneleri' },
+      { tip: 'p', metin: 'Gece postasında çalışacak personelin işe başlamadan önce gece çalışmasına uygun olduğuna dair rapor alması zorunludur. Ayrıca bu muayeneler en geç iki yılda bir periyodik olarak tekrarlanmalıdır.' }
+    ]
+  },
+  {
+    slug: 'loto-etiketleme-kilitleme-sistemi',
+    baslik: 'Bakım Onarımda Hayat Kurtaran Sistem: Etiketleme-Kilitleme (LOTO)',
+    ozet: 'Makine bakımı sırasında fişin çekilmesi yetmez. Enerji kaynağının fiziksel bir asma kilit ile kilitlenmesi ve etiketin takılması (LOTO), ölümcül kazaları önler.',
+    tarih: '2026-09-18',
+    kategori: 'uygulama',
+    sure: 5,
+    govde: [
+      { tip: 'p', metin: 'Kısaca: Bakımcı makinenin içindeyken, başka bir çalışanın haber vermeden şalteri kaldırması sanayideki en ölümcül iş kazası türlerinden biridir. LOTO (Lockout/Tagout) sistemi enerjiyi fiziksel olarak hapseder.' },
+      { tip: 'h2', metin: 'Nasıl Uygulanır?' },
+      { tip: 'liste', maddeler: [
+        'Makine durdurulur ve tüm enerji hatları (elektrik, hava, su) kesilir.',
+        'Şalter veya vana üzerine asma kilit takılır (Kilitleme).',
+        'Kilit üzerine "Dikkat Çalışma Var, Çalıştırmayın" etiketi asılır (Etiketleme).',
+        'Kilidin anahtarı sadece bakımı yapan kişide kalır.'
+      ] }
+    ]
+  },
+  {
+    slug: 'kaynak-islerinde-is-guvenligi',
+    baslik: 'Kaynak İşlerinde İSG: Duman Emme Sistemleri ve Meslek Hastalıkları',
+    ozet: 'Kaynak işlemi sırasında açığa çıkan metal dumanları, ultraviyole (UV) ışınlar ve yanıcı gazlar hem akciğer rahatsızlıklarına hem de göz hasarlarına neden olur.',
+    tarih: '2026-09-18',
+    kategori: 'sektorel',
+    sure: 4,
+    govde: [
+      { tip: 'p', metin: 'Kısaca: Kaynak dumanının genel havalandırma ile dağıtılması yeterli değildir; lokal cebri çekiş (lokal aspirasyon) sistemi kurularak duman doğrudan kaynağında emilmelidir.' },
+      { tip: 'h2', metin: 'Kişisel Koruma' },
+      { tip: 'p', metin: 'Kaynakçıya kıvılcımlara dayanıklı deri önlük, uygun filtreli kaynak maskesi ve solunum koruyucu maske sağlanmalı, kullanımları denetlenmelidir.' }
+    ]
+  },
+  {
+    slug: 'elektrik-tesisleri-ve-topraklama-olcumleri',
+    baslik: 'Elektrik Tesisleri ve Topraklama Ölçümleri (Kaçak Akım Rölesi)',
+    ozet: 'İşyerlerinde elektrik çarpmalarını önlemek için yılda en az bir kez topraklama ölçümü yapılması ve elektrik panolarında Kaçak Akım Rölesi (KAR) bulunması zorunludur.',
+    tarih: '2026-09-18',
+    kategori: 'uygulama',
+    sure: 5,
+    govde: [
+      { tip: 'p', metin: 'Kısaca: İş Ekipmanlarının Periyodik Kontrolleri Yönetmeliğine göre elektrik tesisatı ve topraklama kontrolleri EMO (Elektrik Mühendisleri Odası) kayıtlı mühendisler tarafından yılda 1 yapılmalıdır.' },
+      { tip: 'not', metin: 'Sık Karşılaşılan Eksiklik: Elektrik panolarında 30 mA (hayat koruma) ve 300 mA (yangın koruma) Kaçak Akım Rölelerinin bulunmaması veya sürekli attığı gerekçesiyle köprülenerek iptal edilmesi.' }
+    ]
+  },
+  {
+    slug: 'ramak-kala-olay-bildirimi-ve-onemi',
+    baslik: 'Ramak Kala Olay Bildirimi: Kazadan Önceki Son Uyarı',
+    ozet: 'İşyerinde yaralanmaya yol açmayan ama kıl payı atlatılan tehlikelere ramak kala olay denir. Bunların bildirilmesi, ağır kazalar gerçekleşmeden önce önlem almanın en pratik yoludur.',
+    tarih: '2026-09-18',
+    kategori: 'uygulama',
+    sure: 4,
+    govde: [
+      { tip: 'p', metin: 'Kısaca: İSG Yönetmeliklerine göre, işyerinde meydana gelen ramak kala olayların tutanak altına alınarak risk değerlendirmesinde dikkate alınması yasal bir zorunluluktur.' },
+      { tip: 'h2', metin: 'Neden Önemli?' },
+      { tip: 'p', metin: 'Kazaların istatistiksel dağılımını açıklayan Heinrich Piramidi\'ne göre, her 1 ağır yaralanmalı kazanın altında 300 ramak kala olay yatar. Ramak kalaları tespit edip önlem alan işyeri, piramidin tepe noktasına (ölümcül kazaya) ulaşılmasını engellemiş olur.' }
+    ]
+  },
+  {
+    slug: 'isyerinde-ilk-yardimci-bulundurma-zorunlulugu',
+    baslik: 'İşyerinde İlk Yardımcı Bulundurma Zorunluluğu',
+    ozet: 'İlk Yardım Yönetmeliği uyarınca iş yerlerinde tehlike sınıfına göre belirlenen oranda belgeli ilk yardımcı bulundurulur: az tehlikeli sınıfta her 20, tehlikeli sınıfta her 15, çok tehlikeli sınıfta her 10 çalışan için en az bir kişi.',
+    tarih: '2026-09-18',
+    kategori: 'mevzuat',
+    sure: 4,
+    govde: [
+      { tip: 'p', metin: 'Kısaca: İşyerlerinde acil bir sağlık durumunda ambulans gelene kadar yapılacak doğru müdahale hayat kurtarır.' },
+      { tip: 'h2', metin: 'Oranlar Nelerdir?' },
+      { tip: 'liste', maddeler: [
+        'Az Tehlikeli İşyerlerinde: Her 20 çalışana 1 ilk yardımcı.',
+        'Tehlikeli İşyerlerinde: Her 15 çalışana 1 ilk yardımcı.',
+        'Çok Tehlikeli İşyerlerinde: Her 10 çalışana 1 ilk yardımcı.'
+      ] }
+    ]
+  },
+  {
+    slug: 'is-kiyafetleri-ile-kkd-arasindaki-fark',
+    baslik: 'İş Kıyafetleri ile Kişisel Koruyucu Donanım (KKD) Arasındaki Fark',
+    ozet: 'Üzerinde şirket logosu olan her tişört veya tulum KKD değildir. KKD olabilmesi için ürünün CE işaretli olması ve belirli bir fiziksel/kimyasal riske karşı koruma sağlaması gerekir.',
+    tarih: '2026-09-17',
+    kategori: 'uygulama',
+    sure: 3,
+    govde: [
+      { tip: 'p', metin: 'Kısaca: Çalışanlara verilen üniformalar veya yağmurluklar normal iş elbiseleridir. Ancak; çelik burunlu ayakkabı, baret, reflektörlü yelek, yanmaz kıyafet veya asit önlüğü Kişisel Koruyucu Donanımdır.' },
+      { tip: 'h2', metin: 'Zimmet Formu' },
+      { tip: 'p', metin: 'Müfettiş denetimlerinde normal iş elbisesinin faturası KKD kanıtı sayılmaz. KKD\'ler, ürün standardı (Örn: EN ISO 20345) yazılarak özel bir Zimmet Tutanağı ile çalışana imza karşılığı teslim edilmelidir.' }
+    ]
+  },
+  {
+    slug: 'yangin-sondurme-cihazlarinin-ysc-kontrolu',
+    baslik: 'Yangın Söndürme Cihazlarının (YSC) Kontrolü ve Seçimi',
+    ozet: 'İşyerindeki yangın tüpleri süs eşyası değildir. Yanlış yangın sınıfına yanlış tüple müdahale etmek faciayı büyütür. YSC\'lerin periyodik bakımı hayati önem taşır.',
+    tarih: '2026-09-17',
+    kategori: 'uygulama',
+    sure: 4,
+    govde: [
+      { tip: 'p', metin: 'Kısaca: Binaların Yangından Korunması Hakkında Yönetmelik gereği, işyerindeki tehlikeye uygun tipte (KKT, CO2, Köpüklü vb.) cihaz seçilmelidir. Örneğin elektrik panosu yangınlarında su veya köpük kullanılmaz; CO2 tüpü bulundurulmalıdır.' },
+      { tip: 'h2', metin: 'Bakım Periyotları' },
+      { tip: 'liste', maddeler: [
+        'Ayda bir: İşletme içi gözle kontrol (ibrenin yeşilde olduğu ve pimin yerinde olduğu kontrolü).',
+        'Yılda bir: Yetkili firma tarafından genel bakım.',
+        'Dört yılda bir: İçindeki maddenin tamamen boşaltılarak dolum yapılması ve gövdenin hidrostatik testten geçirilmesi.'
+      ] }
+    ]
+  },
+  {
+    slug: 'yuksekte-calismada-yasam-hatlari-ve-ankraj',
+    baslik: 'Yüksekte Çalışmada Yaşam Hatları ve Ankraj Noktaları',
+    ozet: 'Çalışana paraşüt tipi emniyet kemeri giydirmek tek başına koruma sağlamaz. O kemerin bağlanabileceği, düşme anındaki şoku taşıyabilecek güvenli bir yaşam hattı (EN 795) şarttır.',
+    tarih: '2026-09-17',
+    kategori: 'sektorel',
+    sure: 5,
+    govde: [
+      { tip: 'p', metin: 'Kısaca: Şantiyelerde, çatı işlerinde veya yüksek raflarda emniyet kemeri kullanan çalışanın karabinasını güvenle takacağı noktaya ankraj denir. Çürük bir iskele borusuna veya ağırlık taşımayan bir profile bağlanan kemer sahte bir güven hissi yaratır.' },
+      { tip: 'not', metin: 'Yatay ve dikey yaşam hatları yetkili uzmanlarca kurulmalı ve periyodik olarak bakımları yapılmalıdır.' }
+    ]
+  },
+  {
+    slug: 'titresimli-el-aletleriyle-calisma',
+    baslik: 'Titreşimli El Aletleriyle Çalışma ve Beyaz Parmak Hastalığı',
+    ozet: 'Hilti, matkap, pnömatik kırıcılar veya motorlu testereler ile uzun süre çalışanlarda, el-kol titreşimi kaynaklı damar ve sinir tahribatları oluşur.',
+    tarih: '2026-09-17',
+    kategori: 'uygulama',
+    sure: 3,
+    govde: [
+      { tip: 'p', metin: 'Kısaca: İşyerlerinde Titreşim Maruziyeti yönetmeliği, çalışanın el-kol veya tüm vücut titreşimine maruz kalma sınırlarını belirler. Sürekli titreşimli el aletleri kullanımı, halk arasında "beyaz parmak" olarak bilinen Reynaud sendromuna neden olabilir.' },
+      { tip: 'h2', metin: 'Korunma Yöntemleri' },
+      { tip: 'p', metin: 'Titreşim yalıtımlı ekipman seçimi, titreşim emici eldiven kullanımı ve en önemlisi cihaz kullanım süresinin rotasyonla kısıtlanması gereklidir.' }
+    ]
+  },
+  {
+    slug: 'saglik-sektorunde-hastanelerde-isg',
+    baslik: 'Sağlık Sektöründe İSG: Hastanelerdeki İğne Batması Riskleri',
+    ozet: 'Hastaneler ve tıp merkezleri "Çok Tehlikeli" sınıftadır. Sağlık çalışanlarının en büyük İSG riski kesici/delici alet yaralanmaları ve kan yoluyla bulaşan enfeksiyonlardır.',
+    tarih: '2026-09-17',
+    kategori: 'sektorel',
+    sure: 4,
+    govde: [
+      { tip: 'p', metin: 'Kısaca: Sağlık sektöründe biyolojik riskler (Hepatit B, C, HIV vb.) ve radyasyon (Röntgen, Tomografi) öne çıkar. İşveren, korumalı tıbbi aletler (güvenli enjektörler) sağlamalı ve delici-kesici alet atık kutularının standartlara uygun olmasını denetlemelidir.' }
+    ]
+  },
+  {
+    slug: 'tarim-ve-ormancilikta-is-guvenligi',
+    baslik: 'Tarım ve Ormancılıkta İSG: Mevsimlik İşçiler ve Traktör Kazaları',
+    ozet: 'Tarım sektörü, ölümcül iş kazalarında inşaat ve madencilikten sonra en riskli alanlardan biridir. Traktör devrilmeleri, pestisit (tarım ilacı) zehirlenmeleri ve açık havada güneş çarpması başı çeker.',
+    tarih: '2026-09-16',
+    kategori: 'sektorel',
+    sure: 4,
+    govde: [
+      { tip: 'p', metin: 'Kısaca: Açık arazide dağınık çalışma ortamı, denetimi zorlaştırır. Ancak tarım işletmeleri de İSG kanununa tabidir. Traktörlerde devrilmeye karşı ROPS kabini kullanımı ve tarım ilaçları atılırken uygun solunum koruyucu maskelerin sağlanması kritik önem taşır.' }
+    ]
+  },
+  {
+    slug: 'isg-profesyonellerinin-yasal-sorumlulugu',
+    baslik: 'İSG Profesyonellerinin (Uzman/Hekim) Yasal Sorumluluğu Kime Ait?',
+    ozet: 'İş kazasında hapse kim girer? İSG profesyonelleri rehber ve danışmandır; işyerinde önlemleri almak ve uygulamakla yükümlü olan "İşveren"dir.',
+    tarih: '2026-09-16',
+    kategori: 'mevzuat',
+    sure: 6,
+    govde: [
+      { tip: 'p', metin: 'Kısaca: 6331 sayılı İSG Kanunu, "işyerinde sağlığı ve güvenliği sağlama yükümlülüğünün" işverene ait olduğunu çok net belirtir. İş güvenliği uzmanı veya işyeri hekimi atamak, bu sorumluluğu onlara devretmek anlamına gelmez.' },
+      { tip: 'h2', metin: 'Uzmanın Sorumluluğu Nerede Başlar?' },
+      { tip: 'p', metin: 'Uzmanın görevi riskleri tespit etmek ve çözüm önerisiyle birlikte işverene yazılı olarak bildirmektir (Onaylı Defter). Eğer uzman hayati bir tehlikeyi göremez, eksik değerlendirir veya işverene bildirmezse "görevi ihmal" veya kazada "taksir" kapsamında sorumlu tutulabilir. Ancak uzman bildirmiş ve işveren yapmamışsa, tüm hukuki ve cezai sorumluluk işverendedir.' }
+    ]
+  },
   {
     slug: 'isyeri-hekimi-zorunlulugu-2026',
     baslik: 'İşyeri Hekimi Hangi Durumlarda Zorunludur? (2026 Güncel)',
@@ -126,7 +487,7 @@ export const yazilar: BlogYazisi[] = [
       {
         tip: 'p',
         metin:
-          'Kısaca: 6331 sayılı Kanun Madde 10 gereği her işveren risk değerlendirmesi yapmak veya yaptırmakla yükümlüdür. Tehlike sınıfı gözetmeksizin, bakkaldan holdinge kadar her işyeri için zorunludur.',
+          'Kısaca: 6331 sayılı Kanun Madde 10 gereği her işveren risk değerlendirmesi yapmak veya yaptırmakla yükümlüdür. Tehlike sınıfı gözetilmez; 6331 sayılı Kanun kapsamındaki iş yerlerinin tamamı için geçerlidir.',
       },
       { tip: 'h2', metin: 'Cezalar Nasıl Hesaplanır?' },
       {

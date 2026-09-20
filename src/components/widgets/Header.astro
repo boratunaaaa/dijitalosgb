@@ -81,7 +81,23 @@ const persistKey = `header-${Array.from(
           'lg:flex lg:justify-between': position !== 'center',
         },
         {
-          'lg:grid lg:grid-cols-3 lg:items-center': position === 'center',
+          /*
+           * SÜTUNLAR İÇERİĞE GÖRE BOYUTLANIYOR, ÜÇE BÖLÜNMÜYOR.
+           *
+           * Önceki `lg:grid-cols-3` üç EŞİT sütun üretiyordu. Menü büyüdükçe
+           * doğal genişliği (ölçüldü: 553px) bir sütunun payını (1240px'te
+           * ~413px) aştı ve orta sütun iki yana taşıp hem logoyu hem sağdaki
+           * eylem bloğunu örttü. Çakışma 1440px'te bile vardı; yani sorun
+           * "menü çok uzun" değil, sütun genişliğinin içerikten bağımsız
+           * sabitlenmesiydi. Menü kısaltarak çözülmeye çalışıldığı için de
+           * kapanmıyordu.
+           *
+           * `auto_1fr_auto`: logo ve sağ blok kendi genişliklerini alır,
+           * menü ortada kalan boşluğu kullanır. Boşluk yetmezse menü kendi
+           * içinde kaydırılır (aşağıdaki min-w-0 + overflow bunu sağlıyor),
+           * komşularının üstüne binmez.
+           */
+          'lg:grid lg:grid-cols-[auto_1fr_auto] lg:items-center lg:gap-x-4': position === 'center',
         },
         {
           'max-w-7xl': !isFullWidth,
@@ -107,12 +123,26 @@ const persistKey = `header-${Array.from(
           <ToggleMenu />
         </div>
       </div>
+      {/*
+        NAV HÜCREYİ DOLDURUYOR (lg:w-full), İÇERİĞİNE GÖRE GENİŞLEMİYOR.
+
+        Önceki `lg:w-auto` menüyü içeriğine göre boyutlandırıyordu: 1024-1100
+        aralığında hücre 467 piksel kalırken menü 553 piksel kaplıyor ve iki
+        yana taşıp logoyu ve sağdaki eylem bloğunu örtüyordu. Çakışma menü
+        kısaltılarak iki kez kapatılmaya çalışılmış ama sebep menünün uzunluğu
+        değil, genişliğinin hücreden bağımsız olmasıydı.
+
+        Hücreyi dolduran bir nav, sığmadığında kendi içinde yatay kayar
+        (overflow-x-auto) — komşularının üstüne binmez. Kaydırma çubuğu
+        başlıkta çirkin durduğu için gizlendi; kaydırma hâlâ çalışıyor.
+        Menü sığdığında `lg:w-max` + `mx-auto` sayesinde ortalanmış görünür.
+      */}
       <nav
-        class="items-center w-full lg:w-auto hidden lg:flex lg:mx-5 text-default overflow-y-auto overflow-x-hidden lg:overflow-visible lg:justify-self-center"
+        class="items-center w-full lg:w-full lg:min-w-0 hidden lg:flex text-default overflow-y-auto overflow-x-hidden lg:overflow-x-auto lg:overflow-y-visible [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         aria-label="Ana menü"
       >
         <ul
-          class="flex flex-col lg:flex-row lg:self-center w-full lg:w-auto text-xl lg:text-[0.9375rem] tracking-[0.01rem] font-medium lg:justify-center"
+          class="flex flex-col lg:flex-row lg:self-center w-full lg:w-max lg:mx-auto text-xl lg:text-[0.9375rem] tracking-[0.01rem] font-medium"
         >
           {
             links.map(({ text, href, links }) => (
@@ -121,7 +151,7 @@ const persistKey = `header-${Array.from(
                   <>
                     <button
                       type="button"
-                      class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap"
+                      class="hover:text-link dark:hover:text-white px-4 lg:px-3 py-3 flex items-center whitespace-nowrap"
                     >
                       {text}{' '}
                       <Icon
@@ -148,7 +178,7 @@ const persistKey = `header-${Array.from(
                 ) : (
                   <a
                     class:list={[
-                      'hover:text-link dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap',
+                      'hover:text-link dark:hover:text-white px-4 lg:px-3 py-3 flex items-center whitespace-nowrap',
                       { 'aw-link-active': isActive(href) },
                     ]}
                     href={href}
