@@ -15,6 +15,14 @@ import { hizmetler } from '~/data/hizmetler';
 import { sektorler } from '~/data/sektorler';
 import { levhaSayisi } from '~/data/levhalar';
 import { formSayisi } from '~/data/kutuphane';
+import { katipReferanslari, katipReferansSayisi } from '~/data/katip-referanslar';
+
+// Saha tecrübesi rakamları BURADA ÜRETİLİYOR, elle yazılmıyor: kaynak
+// İSG-KATİP sözleşme listesinin kendisi. Liste değişince ana sayfa da
+// değişir; "300+" gibi zamanla yalan olacak yuvarlak bir sayı yazılmıyor.
+const benzersizIsYeri = new Set(katipReferanslari.map((k) => k.ad)).size;
+const cokTehlikeli = katipReferanslari.filter((k) => k.sinif === 'cok').length;
+const tehlikeli = katipReferanslari.filter((k) => k.sinif === 'teh').length;
 
 const metadata = {
   title: 'OSGB Hizmeti ve Uzaktan İSG Eğitimi',
@@ -80,6 +88,44 @@ const sektorGorseli = (dosya?: string) =>
 
   <ReferansSeridi />
 
+  {/*
+    Saha tecrübesi rakamları. Bu sitenin en güçlü güven unsuru buydu ama
+    yalnız referanslar sayfasının içinde duruyordu; ana sayfaya gelen
+    "bu firma benim ölçeğimi kaldırır mı" sorusu cevapsız kalıyordu.
+    Rakamlar İSG-KATİP sözleşme kaydından üretiliyor, beyan değil.
+  */}
+  <section class="border-y border-gray-200 bg-gray-50 dark:border-slate-800 dark:bg-slate-900/40">
+    <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-12">
+      <h2 class="text-center text-2xl font-bold text-heading md:text-3xl">Rakamlarla saha tecrübesi</h2>
+      <p class="mx-auto mt-3 max-w-2xl text-center text-muted">
+        Aşağıdaki sayılar beyan değil: Çalışma ve Sosyal Güvenlik Bakanlığı'nın kayıt sistemi
+        İSG-KATİP'te adımıza tanımlanmış hizmet sözleşmelerinden çıkarıldı.
+      </p>
+      <dl class="mt-8 grid grid-cols-2 gap-6 text-center md:grid-cols-4">
+        <div>
+          <dt class="text-3xl font-bold tabular-nums text-heading md:text-4xl">{benzersizIsYeri}</dt>
+          <dd class="mt-1 text-sm text-muted">ayrı iş yeri</dd>
+        </div>
+        <div>
+          <dt class="text-3xl font-bold tabular-nums text-heading md:text-4xl">{cokTehlikeli}</dt>
+          <dd class="mt-1 text-sm text-muted">çok tehlikeli sınıf</dd>
+        </div>
+        <div>
+          <dt class="text-3xl font-bold tabular-nums text-heading md:text-4xl">{tehlikeli}</dt>
+          <dd class="mt-1 text-sm text-muted">tehlikeli sınıf</dd>
+        </div>
+        <div>
+          <dt class="text-3xl font-bold text-heading md:text-4xl">A</dt>
+          <dd class="mt-1 text-sm text-muted">sınıfı İSG uzmanı</dd>
+        </div>
+      </dl>
+      <p class="mt-6 text-center text-sm">
+        <a class="font-medium underline underline-offset-4 hover:no-underline" href="/referanslar/">
+          {katipReferansSayisi} sözleşmenin tamamını iş yeri adıyla görün →
+        </a>
+      </p>
+    </div>
+  </section>
 
   <Stats
     title="Çalışan eğitimi kaç saat?"
@@ -162,6 +208,58 @@ const sektorGorseli = (dosya?: string) =>
       },
     ]}
   />
+
+  {/*
+    "Neden biz" bölümü. Maddeler pazarlama sıfatı değil, sitenin başka
+    yerlerinde zaten kanıtı olan şeyler: kütüphane sayısı, hizmet listesi,
+    yetki devri açıklaması, mevzuat tarihleri. Kanıtı olmayan iddia girmiyor.
+  */}
+  <section class="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-14">
+    <h2 class="text-2xl font-bold text-heading md:text-3xl">Neden Dijital OSGB</h2>
+    <p class="mt-3 max-w-2xl text-muted">
+      İş sağlığı ve güvenliği birden fazla tedarikçiye bölündüğünde takvim tutmuyor: eğitim
+      bir yerde, ölçüm başka yerde, periyodik kontrol üçüncü yerde kalıyor. Biz bu süreci
+      tek noktadan yürütüyoruz.
+    </p>
+    <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        [
+          {
+            baslik: 'Tek noktadan yönetim',
+            metin: `Uzmanlık, hekimlik, ölçüm, periyodik kontrol, eğitim ve dokümantasyon ${hizmetler.length} ayrı hizmet başlığı altında aynı ekip tarafından planlanıyor.`,
+          },
+          {
+            baslik: 'Her tehlike sınıfında saha',
+            metin: `İSG-KATİP kaydına göre ${cokTehlikeli} çok tehlikeli ve ${tehlikeli} tehlikeli sınıf iş yeri. Ofisten madene aynı mevzuat, farklı uygulama.`,
+          },
+          {
+            baslik: 'Yetki sınırları açık',
+            metin:
+              'Saha OSGB hizmeti yetki belgeli iş ortağımız üzerinden yürüyor ve bunu sayfalarda açıkça yazıyoruz. Veremeyeceğimiz hizmeti taahhüt etmiyoruz.',
+          },
+          {
+            baslik: 'Mevzuat takibi',
+            metin:
+              'Sitedeki süreler ve yükümlülükler yönetmelik değiştiğinde güncelleniyor; 2 Nisan 2026 tarihli yeni eğitim yönetmeliği sayfalara aynı ay işlendi.',
+          },
+          {
+            baslik: 'Dokümantasyon hazır geliyor',
+            metin: `${formSayisi} form şablonu ve ${levhaSayisi} güvenlik levhası ücretsiz, A4 PDF olarak indirilebiliyor. Hizmet alan iş yerine dosya düzeniyle birlikte teslim ediliyor.`,
+          },
+          {
+            baslik: 'Uzaktan çalışabilen kısım uzaktan',
+            metin:
+              'Az tehlikeli sınıfta eğitimin tamamı uzaktan verilebiliyor; saha gerektiren işler için İstanbul, Kocaeli ve Tekirdağ\'da yerinde hizmet var.',
+          },
+        ].map((k) => (
+          <div class="rounded-lg border border-gray-200 p-5 dark:border-slate-700">
+            <h3 class="font-semibold text-heading">{k.baslik}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted">{k.metin}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
 
   <Steps
     title="Başlangıçtan ilk saha ziyaretine"

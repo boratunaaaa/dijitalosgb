@@ -95,7 +95,7 @@ export const footerData = {
       title: 'Kurumsal',
       links: [
         { text: 'Hakkımızda', href: getPermalink('/hakkimizda') },
-        { text: `Referanslar (${referansSayisi}+)`, href: getPermalink('/referanslar') },
+        { text: 'Referanslar', href: getPermalink('/referanslar') },
         { text: 'Teklif al', href: getPermalink('/teklif-al') },
         { text: 'KVKK Aydınlatma Metni', href: getPermalink('/kvkk') },
         { text: 'Gizlilik Politikası', href: getPermalink('/gizlilik-politikasi') },
