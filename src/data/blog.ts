@@ -324,7 +324,7 @@ export const yazilar: BlogYazisi[] = [
       {
         tip: 'p',
         metin:
-          'Tehlikeli ve çok tehlikeli işlerde çalışan personelin (örneğin kaynakçı, çelik kondisyoncu) MYK belgesi yoksa, kişi başı ağır idari para cezaları kesilir. İSG Temel Eğitimi almış olmak, MYK belgesi yerine kesinlikle geçmez.',
+          'Her tehlikeli iş MYK kapsamında değildir; zorunluluk, Bakanlık tebliğleriyle sayılan mesleklere (kaynakçı, çelik kaynakçısı, doğal gaz tesisatçısı gibi) getirilir. Bu mesleklerde belgesiz çalıştırmada kişi başı idari para cezası uygulanır. İSG temel eğitimi almış olmak MYK belgesinin yerine geçmez; bunlar ayrı yükümlülüklerdir.',
       },
       {
         tip: 'not',

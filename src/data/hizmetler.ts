@@ -278,7 +278,7 @@ export const hizmetler: Hizmet[] = [
     ad: 'Mesleki yeterlilik belgesi',
     h1: 'Mesleki Yeterlilik Belgesi (MYK) Süreç Yönetimi',
     ozet:
-      'Tehlikeli ve çok tehlikeli işlerde belgesiz çalıştırma yasak. Hangi personelin hangi belgeyi alması gerektiğini çıkarıp sınav ve belgelendirme sürecini yürütüyoruz.',
+      'MYK tebliğleriyle belge zorunluluğu getirilen tehlikeli ve çok tehlikeli mesleklerde belgesiz çalıştırma yasak. Hangi personelin hangi belgeyi alması gerektiğini çıkarıp sınav ve belgelendirme sürecini yürütüyoruz.',
     kapsam: 'ulusal',
     giris:
       '6645 sayılı Kanunu ile 5544 sayılı Mesleki Yeterlilik Kurumu Kanunu’na eklenen hüküm gereği; ' +

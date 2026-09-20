@@ -5,6 +5,11 @@ import { site, isOrtagi, uzman } from '~/data/site';
 import { isOrtagiReferanslari, uzmanReferanslari, referansSayisi } from '~/data/referanslar';
 import { katipReferanslari, katipReferansSayisi } from '~/data/katip-referanslar';
 
+// Liste hizmet SÖZLEŞMELERİNDEN çıkarıldı; aynı iş yeriyle birden fazla
+// sözleşme olabildiği için sözleşme sayısı ile ayrı iş yeri sayısı aynı
+// değil. İkisini de yazmak, tek büyük sayı yazmaktan daha güvenilir.
+const benzersizSayisi = new Set(katipReferanslari.map((k) => k.ad)).size;
+
 const metadata = {
   title: 'Referanslar — Hizmet Verilen Kurumlar',
   description: `İSG uzmanı olarak görev alınan projeler ve saha hizmetini veren yetkili iş ortağımızın hizmet verdiği ${referansSayisi} kurum.`,
@@ -80,7 +85,7 @@ const breadcrumb = {
       <p class="text-muted mb-5 max-w-3xl">
         Bu liste beyan değil: İSG-KATİP'te — Çalışma ve Sosyal Güvenlik
         Bakanlığı'nın kayıt sisteminde — adımıza tanımlanmış hizmet
-        sözleşmelerinden çıkarıldı. {katipReferansSayisi} ayrı iş yeri.
+        sözleşmelerinden çıkarıldı. {katipReferansSayisi} hizmet sözleşmesi, {benzersizSayisi} ayrı iş yeri.
         İnşaattan gıdaya, metalden lojistiğe her tehlike sınıfında saha
         tecrübesi demek.
       </p>
