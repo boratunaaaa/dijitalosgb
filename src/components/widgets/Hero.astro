@@ -100,9 +100,9 @@ const hasImage = Boolean(image);
                       ? 'h-auto max-h-[28rem] object-contain'
                       : 'rounded-2xl shadow-xl ring-1 ring-gray-900/5 aspect-4/3 object-cover',
                   ]}
-                  widths={[400, 600, 800, 1120]}
-                  sizes="(max-width: 1023px) 100vw, 560px"
-                  quality={60}
+                  widths={[360, 480, 640, 800]}
+                  sizes="(max-width: 1023px) calc(100vw - 2rem), 560px"
+                  quality={55}
                   loading="eager"
                   fetchpriority="low"
                   {/* low: mobilde görsel başlığın ALTINDA; LCP başlık metni. Görsel fontla bant
