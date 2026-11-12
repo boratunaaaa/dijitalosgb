@@ -292,7 +292,8 @@ const sektorGorseli = (dosya?: string) =>
                 {gorsel && (
                   <Image
                     src={gorsel}
-                    alt={s.ad}
+                    alt=""
+                    aria-hidden="true"
                     widths={[400, 700]}
                     sizes="(max-width: 768px) 50vw, 33vw"
                     class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"

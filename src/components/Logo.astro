@@ -13,8 +13,11 @@ import logo from '~/assets/images/logo.png';
 <Image
   src={logo}
   alt={SITE?.name}
-  width={760}
-  height={132}
+  width={460}
+  height={80}
+  widths={[230, 460]}
+  sizes="(min-width: 640px) 230px, 207px"
+  quality={70}
   loading="eager"
   class="h-9 w-auto sm:h-10"
 />

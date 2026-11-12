@@ -28,9 +28,16 @@ export default defineConfig({
 
   // Prefetch links as they enter the viewport for snappier navigations
   // (works together with <ClientRouter />, which enables prefetch by default).
+  // 'hover': link yalnız üzerine gelince/dokununca önceden yüklenir. 'viewport' ana sayfada
+  // ekrandaki her linki (16+ sayfa) indiriyordu; yavaş mobil ağda ilk yükleme 11 sn'ye çıkıyordu.
   prefetch: {
     prefetchAll: true,
-    defaultStrategy: 'viewport',
+    defaultStrategy: 'hover',
+  },
+
+  // CSS'i sayfaya göm: ayrı .css isteği ilk boyamayı (FCP/LCP) engelliyordu (~21 KB).
+  build: {
+    inlineStylesheets: 'always',
   },
 
   // Native Fonts API: self-hosts + subsets + preloads Inter and generates
@@ -38,17 +45,54 @@ export default defineConfig({
   // consumed through the `--font-inter` CSS variable in CustomStyles.astro.
   fonts: [
     {
-      provider: fontProviders.fontsource(),
+      // Inter, KENDİ alt kümemizden (src/assets/fonts). Fontsource'un latin-ext dosyası Vietnamca vb.
+      // dahil 133 KB'tı; Türkçe için yalnız Latin Extended-A (ğ, ş, İ…) gerekiyor. Ağırlık ekseni de
+      // sitede kullanılan 300–800 aralığına kısıldı. Toplam 206 KB → 76 KB; başlık (LCP) font
+      // gelince yeniden çizildiği için bu doğrudan LCP'yi kısaltır.
+      // 'latin-ext' (Ext-A) ŞART: yalnız latin yüklenirse ğ/ş/İ sistem fontuna düşer ('yükümlülüǧünüz').
+      // Yeniden üretim: fonttools varLib.instancer wght=300:800 + pyftsubset (unicode aralıkları aşağıda).
+      provider: fontProviders.local(),
       name: 'Inter',
       cssVariable: '--font-inter',
-      weights: ['100 900'],
-      styles: ['normal'],
-      // 'latin-ext' ŞART: Türkçe ğ, ş, ı, İ karakterleri latin altkümesinde
-      // YOK. Yalnız 'latin' ile yüklenince tarayıcı bu harfleri sistem
-      // fontundan alıyor ve kelime ortasında yazı tipi değişiyor
-      // ('yükümlülüǧünüz'). Türkçe bir sitede görünür bir kusur.
-      subsets: ['latin', 'latin-ext'],
       fallbacks: ['sans-serif'],
+      options: {
+        variants: [
+          {
+            src: ['./src/assets/fonts/inter-latin.woff2'],
+            weight: '300 800',
+            style: 'normal',
+            display: 'swap',
+            unicodeRange: [
+              'U+0000-00FF',
+              'U+0131',
+              'U+0152-0153',
+              'U+02BB-02BC',
+              'U+02C6',
+              'U+02DA',
+              'U+02DC',
+              'U+0304',
+              'U+0308',
+              'U+0329',
+              'U+2000-206F',
+              'U+20AC',
+              'U+2122',
+              'U+2191',
+              'U+2193',
+              'U+2212',
+              'U+2215',
+              'U+FEFF',
+              'U+FFFD',
+            ],
+          },
+          {
+            src: ['./src/assets/fonts/inter-latin-ext-a.woff2'],
+            weight: '300 800',
+            style: 'normal',
+            display: 'swap',
+            unicodeRange: ['U+0100-017F'],
+          },
+        ],
+      },
     },
   ],
 

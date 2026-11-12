@@ -100,10 +100,13 @@ const hasImage = Boolean(image);
                       ? 'h-auto max-h-[28rem] object-contain'
                       : 'rounded-2xl shadow-xl ring-1 ring-gray-900/5 aspect-4/3 object-cover',
                   ]}
-                  widths={[400, 768, 1024]}
+                  widths={[400, 600, 800, 1120]}
                   sizes="(max-width: 1023px) 100vw, 560px"
+                  quality={60}
                   loading="eager"
-                  fetchpriority="high"
+                  fetchpriority="low"
+                  {/* low: mobilde görsel başlığın ALTINDA; LCP başlık metni. Görsel fontla bant
+                      genişliği için yarışınca LCP gecikiyordu. Masaüstünde ağ hızlı, fark etmez. */}
                   {...(imageWhole ? { inferSize: true, layout: 'none' } : { width: 1024, height: 768 })}
                   format="webp"
                   {...imageProps}
