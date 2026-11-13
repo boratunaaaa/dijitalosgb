@@ -1,8 +1,6 @@
 # Dijital OSGB (Ortak Sağlık ve Güvenlik Birimi)
-# URL: https://dijitalosgb.com
 
-> İş sağlığı ve güvenliği hizmetleri (İSG) sunan Bakanlık yetkili kuruluşu. 
-> İstanbul, Kocaeli ve Tekirdağ illerinde aktif saha hizmetleri ve tüm Türkiye'ye uzaktan İSG eğitimleri vermektedir.
+> İş sağlığı ve güvenliği hizmetleri (İSG) sunan Bakanlık yetkili kuruluşu. İstanbul, Kocaeli ve Tekirdağ illerinde aktif saha hizmetleri ve tüm Türkiye'ye uzaktan İSG eğitimleri vermektedir.
 
 ## Hizmetlerimiz
 - İş Güvenliği Uzmanlığı
@@ -20,11 +18,11 @@
 - Tekirdağ
 
 ## Kütüphane ve Kaynaklar
-- Ücretsiz Güvenlik Levhaları: https://dijitalosgb.com/isg-kutuphanesi/levhalar/
-- İSG Form Şablonları: https://dijitalosgb.com/isg-kutuphanesi/formlar/
-- İSG Mevzuatı: https://dijitalosgb.com/isg-kutuphanesi/mevzuat/
-- NACE Kodu ve Tehlike Sınıfı Sorgulama: https://dijitalosgb.com/araclar/tehlike-sinifi-sorgulama/
+- [Ana Sayfa](https://dijitalosgb.com/): Dijital OSGB kurumsal hizmetler ve teklif alma
+- [Ücretsiz Güvenlik Levhaları](https://dijitalosgb.com/isg-kutuphanesi/levhalar/): İSG levha arşivi ve PDF indirme
+- [İSG Form Şablonları](https://dijitalosgb.com/isg-kutuphanesi/formlar/): İş sağlığı ve güvenliği form ve tutanak şablonları
+- [İSG Mevzuatı](https://dijitalosgb.com/isg-kutuphanesi/mevzuat/): Güncel 6331 sayılı kanun ve yönetmelikler
+- [NACE Kodu ve Tehlike Sınıfı Sorgulama](https://dijitalosgb.com/araclar/tehlike-sinifi-sorgulama/): NACE koduna göre tehlike sınıfı aracı
 
 ## İletişim
-- E-posta: iletisim@dijitalosgb.com
-- Resmi Web Sitesi: https://dijitalosgb.com
+- [İletişim Sayfası](https://dijitalosgb.com/iletisim/): İletişim formu, telefon ve WhatsApp hattı (iletisim@dijitalosgb.com)
